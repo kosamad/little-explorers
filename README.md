@@ -105,7 +105,7 @@ This table outlines the design for the PostgreSQL database used to store the dat
 
 ![database_design](documentation/design_images/holiday_database_outline.png)
 
-
+## ?. Finished site
 ## ?. Technologies
 
 ### Languages
@@ -117,6 +117,10 @@ HTML, CSS, JavaScript & Python
 * [LucidCharts](https://www.lucidchart.com) - To produce the site flow chart and database design.
 * [TableConvert](https://tableconvert.com/csv-to-markdown)- For simplifying the writing of Markdown tables,
 
+
+## ?. Testing
+## ?. Deployment
+## ?. Credits
 
 
 ## Gitpod Reminders
