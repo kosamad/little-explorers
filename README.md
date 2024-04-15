@@ -183,6 +183,17 @@ I employed Coolers to select a colour palette that complements the theme of the 
 
 ![site colours](documentation/design_images/little_explorers_colour.png)
 
+#### Typography
+
+The fonts selected for the website were chosen to match those featured in the logo, ensuring a cohesive design. 
+These are: 
+[Pacifico](https://fonts.google.com/specimen/Pacifico)
+[Montserrat](https://fonts.google.com/specimen/Montserrat)
+
+They complement each other well and offer distinct contrast across various sections of the site. For general text, I opted for Lexend due to its exceptional readability, especially for users with additional needs.
+
+[Lexend](https://fonts.google.com/specimen/Lexend)
+
 ## ?. Finished site
 ## ?. Technologies
 
