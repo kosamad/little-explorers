@@ -13,10 +13,12 @@ if os.path.exists("env.py"):
 app = Flask(__name__)
 
 # App configuration variables
+# Secret Key
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
+# Add Database
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 
-# Create Instance os SQAlchemy
+# Initialise the database
 db = SQLAlchemy(app)
 
 # Import routes file
