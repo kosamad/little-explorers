@@ -230,11 +230,12 @@ HTML, CSS, JavaScript & Python
 
 * [Github](https://github.com/) - to save and store the files for the website.
 * [Git](https://git-scm.com/) - for version control, using the Gittpod terminal to commit to Git and Push to GitHub.
-* [LucidCharts](https://www.lucidchart.com) - To produce the site flow chart and database design.
-* [TableConvert](https://tableconvert.com/csv-to-markdown)- For simplifying the writing of Markdown tables
+* [LucidCharts](https://www.lucidchart.com) - to produce the site flow chart and database design.
+* [TableConvert](https://tableconvert.com/csv-to-markdown)- for simplifying the writing of Markdown tables
 * [Balsamiq](https://balsamiq.com/) - to create wireframes.
 * [Coolers](https://coolors.co/) - to view the colour scheme.
-* [Canva](https://www.canva.com/) - to create the logo
+* [Canva](https://www.canva.com/) - to create the logo.
+* [Favicon](https://favicon.io/) - to generate the favicons for the page. 
 
 ## ?. Testing
 ## ?. Deployment
