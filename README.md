@@ -123,51 +123,66 @@ Additionally, each page will feature a footer providing links to social media pl
 
 The content on each page is customised to its specific purpose but maintains a consistent design language across all pages, ensuring seamless flow and enhancing the user experience. Further details about the features on each page are outlined in the ????????[finished site]()section below. 
 
-**Home Page**
+<details><summary>Home Page</summary>
+<img src="documentation/design_images/wireframes/home.png">
+</details>
 
- ![home page](documentation/design_images/wireframes/home.png)
+<details><summary>Create Account</summary>
+ <img src="documentation/design_images/wireframes/create_account.png">
+</details>
 
-**Create Account**
- ![create account page](documentation/design_images/wireframes/create_account.png)
+<details><summary>Sign In</summary>
+ <img src="documentation/design_images/wireframes/sign_in.png">
+</details>
 
-**Sign In**
- ![sign in page](documentation/design_images/wireframes/sign_in.png)
+<details><summary>Recommendations Gallery</summary>
+<img src="documentation/design_images/wireframes/holidays.png">
+</details>
 
-**Recommendations Gallery**
- ![recommendations gallery page](documentation/design_images/wireframes/holidays.png)
+<details><summary>Full Page Reccomendation</summary>
+ <img src="documentation/design_images/wireframes/full_page_recommendation.png">
+</details>
 
-**Full Page Reccomendation**
- ![recommendation full page](documentation/design_images/wireframes/full_page_recommendation.png)
+<details><summary>User Profile Page</summary>
+<img src="documentation/design_images/wireframes/my_profile.png">
+</details>
 
-**User Profile Page**
- ![user rpofile page](documentation/design_images/wireframes/my_profile.png)
+<details><summary>Add Recommendation</summary>
+ <img src="documentation/design_images/wireframes/add_recommendation%20.png">
+</details>
 
-**Add Recommendation**
- ![add recommendation page](documentation/design_images/wireframes/add_recommendation%20.png)
+<details><summary>Edit Recommendation</summary>
+<img src="(documentation/design_images/wireframes/edit_recommendation.png">
+</details>
 
-**Edit Recommendation**
- ![edit recommendation page](documentation/design_images/wireframes/edit_recommendation.png)
+<details><summary>Admin Profile Page</summary>
+<img src="documentation/design_images/wireframes/admin_profile.png">
+</details>
 
-**Admin Profile Page**
- ![admin rpofile page](documentation/design_images/wireframes/admin_profile.png)
+<details><summary>Admin Add Holiday Type</summary>
+<img src="documentation/design_images/wireframes/admin_add_holiday_type.png">
+</details>
 
-**Admin Add Holiday Type**
- ![add holiday type page](documentation/design_images/wireframes/admin_add_holiday_type.png)
+<details><summary>Admin Edit Holiday Type</summary>
+<img src="documentation/design_images/wireframes/admin_edit_holiday_type.png">
+</details>
 
-**Admin Edit Holiday Type**
- ![edit holiday type page](documentation/design_images/wireframes/admin_edit_holiday_type.png)
+<details><summary>Contact Form</summary>
+<img src="documentation/design_images/wireframes/contact_form.png">
+</details>
 
-**Contact Form**
- ![contact form page](documentation/design_images/wireframes/contact_form.png)
+<details><summary>Report Recommendation</summary>
+<img src="documentation/design_images/wireframes/report%20recommendation%20.png">
+</details>
 
-**Report Recommendation**
- ![report recommendation form](documentation/design_images/wireframes/report%20recommendation%20.png)
+<details><summary>Admin Edit User Page</summary>
+<img src="documentation/design_images/wireframes/admin_edit_user.png">
+</details>
 
-**Admin Edit User Page**
- ![admin edit user page](documentation/design_images/wireframes/admin_edit_user.png)
+<details><summary>Modal Example</summary>
+ <img src="documentation/design_images/wireframes/example_delete_modal.png">
+</details>
 
-**Modal Example**
- ![example modal](documentation/design_images/wireframes/example_delete_modal.png)
 
 ### Surface Design
 
@@ -187,12 +202,17 @@ I employed Coolers to select a colour palette that complements the theme of the 
 
 The fonts selected for the website were chosen to match those featured in the logo, ensuring a cohesive design. 
 These are: 
-[Pacifico](https://fonts.google.com/specimen/Pacifico)
-[Montserrat](https://fonts.google.com/specimen/Montserrat)
+
+* [Pacifico](https://fonts.google.com/specimen/Pacifico)
+* [Montserrat](https://fonts.google.com/specimen/Montserrat)
 
 They complement each other well and offer distinct contrast across various sections of the site. For general text, I opted for Lexend due to its exceptional readability, especially for users with additional needs.
 
-[Lexend](https://fonts.google.com/specimen/Lexend)
+* [Lexend](https://fonts.google.com/specimen/Lexend)
+
+#### Imagery
+
+#### Features
 
 ## ?. Finished site
 ## ?. Technologies
