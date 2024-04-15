@@ -60,6 +60,64 @@ This project is my third Milestone Project as part of the Code Institute's Diplo
 
 --- 
 
+### **Scope Plane**
+
+The following opportunity matrix summarises the key features that could be implemented on Little Explorers and the difficulty/viabitliy of each feature. The opportunities will be developed based on their priority scores.
+
+#### **Table 1 Opportunity Summary**
+
+| **Opportunity**                                                                               | **User**       | **Inportance** | **Viability** | **Score** |
+|-----------------------------------------------------------------------------------------------|----------------|----------------|---------------|-----------|
+| All pages - Navbar                                                                            | All            | 5              | 5             | 10        |
+| All pages - Footer containing social links, contact, copyright and disclaimer                 | All            | 5              | 5             | 10        |
+| Homepage - brand and explanatory text                                                         | All            | 5              | 5             | 10        |
+| Homepage - Showcase of some recommendations                                                   | All            | 5              | 5             | 10        |
+| Recommended holiday main page - Showcase of recommendations + Map showing holiday desinations | All            | 5              | 3             | 8         |
+| Recommended holiday main page - Map with clickable links                                      | All            | 5              | 2             | 7         |
+| Filter function to find tailored recommendations                                              | All            | 5              | 3             | 8         |
+| Contact Page                                                                                  | All            | 5              | 5             | 10        |
+| Sign In Functionality                                                                         | All            | 5              | 5             | 10        |
+| Create Account Functionality                                                                  | All            | 5              | 5             | 10        |
+| Sign Out Functionality                                                                        | Signed In User | 5              | 5             | 10        |
+| Passowrd reset Functionalitliy                                                                | Signed In User | 3              | 1             | 4         |
+| Profile Page with user's own recommendations + edit/delete options                            | Signed In User | 5              | 5             | 10        |
+| User add Recommendation Page                                                                  | Signed In User | 5              | 5             | 10        |
+| User edit Recommendation Page                                                                 | Signed In User | 5              | 5             | 10        |
+| Holiday Recommendation Full Page information with map                                         | Signed In User | 5              | 4             | 9         |
+| Ability to Report a Recommendation                                                            | Signed In User | 4              | 4             | 9         |
+| Admin profile page with options to add/edit recommendations and holiday types                 | Admin Only     | 5              | 5             | 10        |
+| Manage Holiday Type Page (with edit/delete links)                                             | Admin Only     | 5              | 5             | 10        |
+| Add Holiday Type Page                                                                         | Admin Only     | 5              | 5             | 10        |
+| Edit Holiday Type Page (with delete button)                                                   | Admin Only     | 5              | 5             | 10        |
+| User search function                                                                          | Admin Only     | 4              | 3             | 7         |
+| Delete user functionalitly                                                                    | Admin Only     | 4              | 4             | 8         |
+| Custom Error Pages                                                                            | All            | 5              | 3             | 8         |
+
+### Stucture Plane
+
+Based on the [User Stories](README.md#user-stories) and the opportunities outlined in [Table 1](README.md#table-1-opportunity-summary) the following structure was planned for the site. 
+
+This site map outlines the design of the website and which pages are accesible to which user. 
+
+![site map](documentation/design_images/little_explorer_site_map.png)
+
+This table outlines the design for the PostgreSQL database used to store the data, a relational database.
+
+![database_design](documentation/design_images/holiday_database_outline.png)
+
+
+## ?. Technologies
+
+### Languages
+
+HTML, CSS, JavaScript & Python
+
+### Frameworks, Libraries and Programs Used
+
+* [LucidCharts](https://www.lucidchart.com) - To produce the site flow chart and database design.
+* [TableConvert](https://tableconvert.com/csv-to-markdown)- For simplifying the writing of Markdown tables,
+
+
 
 ## Gitpod Reminders
 
