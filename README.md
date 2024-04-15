@@ -117,7 +117,14 @@ The following wireframes were created to outline the content for each page and d
 
 I've opted to expand the display of the mobile and tablet designs to ensure thorough planning of content placement, accounting for the constraints of these devices.
 
+All pages will consist of a logo and navigation bar, enabling users to navigate to different sections of the site. The logo or title will serve as a link back to the homepage.
+
+Additionally, each page will feature a footer providing links to social media platforms, a site disclaimer, and a contact link for reaching the site administrators.
+
+The content on each page is customised to its specific purpose but maintains a consistent design language across all pages, ensuring seamless flow and enhancing the user experience. Further details about the features on each page are outlined in the ????????[finished site]()section below. 
+
 **Home Page**
+
  ![home page](documentation/design_images/wireframes/home.png)
 
 **Create Account**
@@ -162,7 +169,19 @@ I've opted to expand the display of the mobile and tablet designs to ensure thor
 **Modal Example**
  ![example modal](documentation/design_images/wireframes/example_delete_modal.png)
 
- 
+### Surface Design
+
+#### Logo
+
+I utilised Canva to discover an image featuring a compass against a backdrop of mountains, evoking imagery of exploration and direction. I then adjusted the colors and fonts to create a more playful aesthetic, symbolizing the site's association with children's holidays.
+
+![site logo](documentation/design_images/le_logo.png)
+
+#### Colours
+
+I employed Coolers to select a colour palette that complements the theme of the site, evoking imagery of the outdoors, sun, and play. I ensured the palette includes colours that offer a good contrast for edit and delete buttons, while maintaining harmony with the overall design.
+
+![site colours](documentation/design_images/little_explorers_colour.png)
 
 ## ?. Finished site
 ## ?. Technologies
@@ -173,9 +192,13 @@ HTML, CSS, JavaScript & Python
 
 ### Frameworks, Libraries and Programs Used
 
+* [Github](https://github.com/) - to save and store the files for the website.
+* [Git](https://git-scm.com/) - for version control, using the Gittpod terminal to commit to Git and Push to GitHub.
 * [LucidCharts](https://www.lucidchart.com) - To produce the site flow chart and database design.
-* [TableConvert](https://tableconvert.com/csv-to-markdown)- For simplifying the writing of Markdown tables,
-
+* [TableConvert](https://tableconvert.com/csv-to-markdown)- For simplifying the writing of Markdown tables
+* [Balsamiq](https://balsamiq.com/) - to create wireframes.
+* [Coolers](https://coolors.co/) - to view the colour scheme.
+* [Canva](https://www.canva.com/) - to create the logo
 
 ## ?. Testing
 ## ?. Deployment
