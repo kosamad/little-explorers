@@ -16,6 +16,8 @@ This project is my third Milestone Project as part of the Code Institute's Diplo
 
 ## User Experience Design
 
+Applying UX design principles, I carefully considered the essential features needed by both site owners and users to foster engagement and mutual benefits, resulting in a functional, user-friendly website.
+
 ### **Strategy Plane**
 
 #### Site Goals
@@ -85,6 +87,7 @@ The following opportunity matrix summarises the key features that could be imple
 | User edit Recommendation Page                                                                 | Signed In User | 5              | 5             | 10        |
 | Holiday Recommendation Full Page information with map                                         | Signed In User | 5              | 4             | 9         |
 | Ability to Report a Recommendation                                                            | Signed In User | 4              | 4             | 9         |
+| Ability to rent child-related holiday equipment from the site                                 | Signed In User | 2              | 2             | 4         |
 | Admin profile page with options to add/edit recommendations and holiday types                 | Admin Only     | 5              | 5             | 10        |
 | Manage Holiday Type Page (with edit/delete links)                                             | Admin Only     | 5              | 5             | 10        |
 | Add Holiday Type Page                                                                         | Admin Only     | 5              | 5             | 10        |
@@ -92,6 +95,7 @@ The following opportunity matrix summarises the key features that could be imple
 | User search function                                                                          | Admin Only     | 4              | 3             | 7         |
 | Delete user functionalitly                                                                    | Admin Only     | 4              | 4             | 8         |
 | Custom Error Pages                                                                            | All            | 5              | 3             | 8         |
+
 
 ### Stucture Plane
 
@@ -104,6 +108,61 @@ This site map outlines the design of the website and which pages are accesible t
 This table outlines the design for the PostgreSQL database used to store the data, a relational database.
 
 ![database_design](documentation/design_images/holiday_database_outline.png)
+
+### Skeleton Plane
+
+#### Wireframes
+
+The following wireframes were created to outline the content for each page and demonstrate its responsive behavior across different devices.
+
+I've opted to expand the display of the mobile and tablet designs to ensure thorough planning of content placement, accounting for the constraints of these devices.
+
+**Home Page**
+ ![home page](documentation/design_images/wireframes/home.png)
+
+**Create Account**
+ ![create account page](documentation/design_images/wireframes/create_account.png)
+
+**Sign In**
+ ![sign in page](documentation/design_images/wireframes/sign_in.png)
+
+**Recommendations Gallery**
+ ![recommendations gallery page](documentation/design_images/wireframes/holidays.png)
+
+**Full Page Reccomendation**
+ ![recommendation full page](documentation/design_images/wireframes/full_page_recommendation.png)
+
+**User Profile Page**
+ ![user rpofile page](documentation/design_images/wireframes/my_profile.png)
+
+**Add Recommendation**
+ ![add recommendation page](documentation/design_images/wireframes/add_recommendation%20.png)
+
+**Edit Recommendation**
+ ![edit recommendation page](documentation/design_images/wireframes/edit_recommendation.png)
+
+**Admin Profile Page**
+ ![admin rpofile page](documentation/design_images/wireframes/admin_profile.png)
+
+**Admin Add Holiday Type**
+ ![add holiday type page](documentation/design_images/wireframes/admin_add_holiday_type.png)
+
+**Admin Edit Holiday Type**
+ ![edit holiday type page](documentation/design_images/wireframes/admin_edit_holiday_type.png)
+
+**Contact Form**
+ ![contact form page](documentation/design_images/wireframes/contact_form.png)
+
+**Report Recommendation**
+ ![report recommendation form](documentation/design_images/wireframes/report%20recommendation%20.png)
+
+**Admin Edit User Page**
+ ![admin edit user page](documentation/design_images/wireframes/admin_edit_user.png)
+
+**Modal Example**
+ ![example modal](documentation/design_images/wireframes/example_delete_modal.png)
+
+ 
 
 ## ?. Finished site
 ## ?. Technologies
