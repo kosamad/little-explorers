@@ -212,6 +212,11 @@ They complement each other well and offer distinct contrast across various secti
 
 #### Imagery
 
+The images featured across the site serve to inform users about the experiences they can expect from recommended holidays and inspire them to embark on such adventures. Each image was chosen to ensure brightness, beauty, and the ability to maintain quality even on large screens.
+
+The Favicon for the site was created from the logo using [favicon](https://favicon.io/). The title text has been removed for clarity. 
+
+
 #### Features
 
 ## ?. Finished site
