@@ -7,4 +7,4 @@ from taskmanager.models import Holiday, Recommendation
 # Create Route Decorator
 @app.route("/")
 def home():
-    return render_template("base.html")
+    return render_template("home.html")
