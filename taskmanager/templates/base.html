@@ -31,13 +31,13 @@
         <nav class="bg-white">
             <div class="container">
                 <div class="nav-wrapper">
-                    <a href="{{ url_for('home')}}" class="brand-logo left-align"><img
+                    <a href="{{ url_for('index')}}" class="brand-logo left-align"><img
                             src="{{ url_for('static', filename='images/logo_nav_bar.png') }}" alt="little EXPLORER Logo"
                             id="nav-logo"></a>
                     <a href="#" aria-label="Mobile Nav Trigger" data-target="mobile-demo"
                         class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="{{ url_for('home')}}">HOME</a></li>
+                        <li><a href="{{ url_for('index')}}">HOME</a></li>
                         <li><a href="">HOLIDAYS</a></li>
                         <!-- {% if session.user %}
                     <li><a href="{{ url_for('add_holiday')}}">ADD HOLIDAY</a></li>
@@ -53,7 +53,7 @@
         </nav>
         <!-- mobile nav-bar -->
         <ul class="sidenav right font-title" id="mobile-demo">
-            <li><a href="{{ url_for('home')}}">HOME</a></li>
+            <li><a href="{{ url_for('index')}}">HOME</a></li>
             <li><a href="">HOLIDAYS</a></li>
             <!-- {% if session.user %}
             <li><a href="{{ url_for('add_holiday')}}">ADD HOLIDAY</a></li>
@@ -89,7 +89,7 @@
                     </p>
                 </div>
                 <div class="social-links col m8 s6">
-                    <h5>FOLLOW <span class="pacifico" id="f-little">little</span> EXPLORERS</h5>
+                    <h5 class = "center-align">FOLLOW <span class="pacifico" id="f-little">little</span> EXPLORERS</h5>
                     <div class="row center-align">
                     <div class="col s3">
                         <a href="https://twitter.com/?lang=en" target="_blank"
