@@ -52,6 +52,28 @@ main {
   font-weight: 500;
 }
 
+/* Home Page */
+
+#home-hero-div {  
+    position: relative;
+    height: 600px;     
+    background-image: url(../images/pexels-tatianasyrikova-3932948.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+  }
+
+.bg-hero {
+  background-color: rgb(252, 177, 133,0.8); 
+  /* rgb(224, 177, 156); */
+  margin-top: calc(10% - 50px);
+  color: white; 
+}
+
+.hero-subtitle {  font-size: large;
+  font-weight: 500;  
+}
+
 
 /* Footer */
 
@@ -61,6 +83,7 @@ footer {
 
 footer h4 {
   font-size:medium;
+  text-decoration: underline;
 }
 
 footer h5 {
