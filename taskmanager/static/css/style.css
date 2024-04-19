@@ -4,7 +4,6 @@
 
 .montserrat-500 {
   font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
 }
@@ -31,6 +30,15 @@ main {
   background-color: #268DC8;
 }
 
+.bg-dgreen{ background-color: #04724D;}
+
+.btn-orange{
+  background-color:#FF914D;
+}
+
+.btn-orange:hover {background-color: #04724D;}
+
+
 /* Navbar */
 #nav-logo{
   max-width: 100%;
@@ -56,24 +64,26 @@ main {
 
 #home-hero-div {  
     position: relative;
-    height: 600px;     
-    background-image: url(../images/pexels-tatianasyrikova-3932948.jpg);
+    height: 70vh;     
+    background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(0 0 0 / 24%)), url(../images/pexels-tatianasyrikova-3934049.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;  
+    background-size: cover;     
+  }
+  .hero-headline {  
+}
+
+.hero-subtitle {
+    font-size: 1.5rem; 
+    margin-top: 20px; 
+    font-weight: 500;  
   }
 
-.bg-hero {
-  background-color: rgb(252, 177, 133,0.8); 
-  /* rgb(224, 177, 156); */
-  margin-top: calc(10% - 50px);
+
+.hero-inner {
+  /* background-color: rgb(252, 177, 133,0.8);   */
   color: white; 
 }
-
-.hero-subtitle {  font-size: large;
-  font-weight: 500;  
-}
-
 
 /* Footer */
 
@@ -115,3 +125,7 @@ footer p {
     height: 56px;   
      }
 }
+
+@media screen and (max-width: 455px) {
+  #home-hero-div { background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(0 0 0 / 24%)), url(../images/pexels-tatianasyrikova-3934049-mobile.jpg);
+}}
