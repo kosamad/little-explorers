@@ -2,11 +2,23 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap');
 
-.montserrat-500 {
+.fira-600{
+  font-family: "Fira Sans", sans-serif;
+    font-weight: 600;
+}
+
+.fira-500{ font-family: "Fira Sans", sans-serif;
+  font-weight: 500;}
+
+  /* .fira-400{ font-family: "Fira Sans", sans-serif;
+    font-weight: 400;} */
+
+
+/* .montserrat-500 {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-style: normal;
-}
+} */
 
 .pacifico {
   font-family: "Pacifico", cursive;
@@ -38,6 +50,9 @@ main {
 
 .btn-orange:hover {background-color: #04724D;}
 
+.btn-dgreen {background-color: #04724D;}
+
+.btn-dgreen:hover{background-color: #268DC8;}
 
 /* Navbar */
 #nav-logo{
@@ -71,14 +86,15 @@ main {
     background-size: cover;     
   }
   
-  .hero-headline {  
+  .hero-headline { 
 }
 
 .hero-subtitle {
     font-size: 1.5rem; 
-    margin-top: 20px; 
-    font-weight: 500;  
+    margin-top: 20px;
+    
   }
+
 .hero-inner {  
   color: white; 
 }
@@ -89,7 +105,7 @@ margin-top: 2%;
 
 #holiday-title-1,
 #holiday-title-2,
-#holiday-title-,
+#holiday-title-3,
 #holiday-title-4 {
 margin-top: 5% ;
 font-family: "Fira Sans", sans-serif;
@@ -105,18 +121,46 @@ font-weight: 600;
   background: linear-gradient(rgb(0 0 0 / 8%), rgba(0, 0, 0, 0.5));
 }
 
-.about-div{color: white;
+#browse-cards {
+    margin-bottom: 2%;
+  }
+
+/* 
+  #join-section{ padding: 1vw 0;} */
+
+  .join-p {margin:  0 0 1.9466666667rem 0;
+    text-align: justify;}
+
+#account-log {margin-bottom: 10px;}
+
+#quote-hero-div{  
+  position: relative;
+  height: 70vh;     
+  background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(0 0 0 / 24%)), url(../images/pexels-yuliantopoitier-1231365.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;     
+}
+
+.quote-div{color: white;
   position: relative;
   height: 100%; 
  }
 
- .about-overlay{position: absolute;
+.quote-overlay{position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7));
   z-index: 1;}
+
+#quote-section p {font-size: 3rem;
+  position: relative; 
+  z-index: 1; 
+  color: white; }
+
+
 
 /* Footer */
 

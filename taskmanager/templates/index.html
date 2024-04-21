@@ -4,25 +4,20 @@
 <!-- Hero Image Div -->
 <div id="home-hero-div" class="row valign-wrapper">
     <div class="hero-inner col s12 center-align">
-        <h1 class="montserrat-500 hero-headline">Discover Holiday Bliss</h1>
-        <h2 class="hero-subtitle">Explore Child Friendly Holidays Across The UK</h2>
-        <a id="browse-hero" class="waves-effect waves-light btn btn-orange"><i class="fas fa-search"></i> Browse
+        <h1 class="hero-headline fira-600">Big Adventures For <span class="pacifico" id="f-little">little</span>
+            EXPLORERS</h1>
+        <h2 class="hero-subtitle fira-500">Discover Child Friendly Holidays Across The UK</h2>
+        <a id="browse-hero" class="waves-effect waves-light btn btn-orange fira-500"><i class="fas fa-search"></i>
+            Browse
             Holidays</a>
     </div>
 </div>
 
-
+<!-- Holiday Showcase section -->
 <div class="container">
-
     <div class="row center-align">
         <div>
-            <p>At Little Explorers we believe that finding a child-friendly holiday should be quick and easy.</p>
-        </div>
-        <div>
-            <p>Browse our user recommended holidays and find your dream getaway</p>
-        </div>
-        <div>
-            <h3 class="">We Think You'll Love<h3>
+            <h3 class="fira-600">We Think You'll Love<h3>
         </div>
     </div>
     <!-- Cards Modifed from Materialize-->
@@ -30,9 +25,10 @@
         <div class="col s12 m4 l3">
             <div class="card">
                 <div class="card-image">
-                    <img src="images/sample-1.jpg">
-                    <span class="card-title" id="holiday-title-1">River Lodge</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light bg-dgreen"><i
+                    <img src="../static/images/pexels-axp-photography-500641970-18729436.jpg" alt="">
+                    <div class="image-overlay"></div>
+                    <span class="card-title" id="holiday-title-1">Riverside Lodge</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
                             class="fas fa-search"></i></a>
                 </div>
                 <div class="card-content">
@@ -44,9 +40,10 @@
         <div class="col s12 m4 l3">
             <div class="card">
                 <div class="card-image">
-                    <img src="images/sample-1.jpg">
+                    <img src="../static/images/pexels-axp-photography-500641970-18729436.jpg" alt="">
+                    <div class="image-overlay"></div>
                     <span class="card-title" id="holiday-title-2">Cosy Devon Cottage</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light bg-dgreen"><i
+                    <a class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
                             class="fas fa-search"></i></a>
                 </div>
                 <div class="card-content">
@@ -58,9 +55,10 @@
         <div class="col s12 m4 l3">
             <div class="card">
                 <div class="card-image">
-                    <img src="images/sample-1.jpg">
+                    <img src="../static/images/pexels-axp-photography-500641970-18729436.jpg" alt="">
+                    <div class="image-overlay"></div>
                     <span class="card-title" id="holiday-title-3">Beachfront House</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light bg-dgreen"><i
+                    <a class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
                             class="fas fa-search"></i></a>
                 </div>
                 <div class="card-content">
@@ -77,12 +75,9 @@
                     <span>
                         <h4 class="card-title" id="holiday-title-4">Bristol Townhouse</h4>
                     </span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light bg-dgreen"><i
+                    <a class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
                             class="fas fa-search"></i></a>
                 </div>
-                <!-- <div class="center-align">
-                        <h4 class="cards-title">Bristol Townhouse</h4></div>
-                        <div class="divider"></div> -->
                 <div class="card-content">
                     <p>I am a very simple card. I am good at containing small bits of information. I am convenient
                         because I require little markup to use effectively.</p>
@@ -91,72 +86,47 @@
         </div>
     </div>
 
-    <div class="row">HUGE BUTTON TO SEE MORE HOLIDAYS WHOLE WIDTH OF PAGE</div>
+    <div class="row">
+        <a id="browse-cards" class="waves-effect waves-light btn btn-orange col s12 fira-500">SEE MORE HOLIDAYS</a>
+    </div>
 </div>
 
-<!-- Decription of section  SEE MSP3 part about what next section will look like-->
-
+<!-- Call To Action *Join* Section -->
 <div class="container">
     <div class="row center-align">
-        <div class="col s6">
-            <img src="../static/images/pexels-axp-photography-500641970-18729436.jpg" alt=""
-                style="max-width: 100%; height: auto;">
+        <div class="col s12 l9">
+            <img src="../static/images/ben-wicks-iDCtsz-INHI-unsplash.jpg" alt=""
+                style=" max-width:100%; height: auto; object-fit: cover;">
         </div>
-        <div class="col s6">
-            <h3 class="center-align">Join Our Community</h3>
+        <div class="col s12 l3 valign-wrapper" id="join-section">
             <div>
-                <p>Have you recenlty enjoed a memorable holiday? Join our community and spread the joy by sharing your
-                    experiences with us</p>
-            </div>
+            <h3 class="center-align fira-500">Join Us</h3>
+            <div class="">
+                <p class="join-p">Little Explorers is your gateway to unforgettable family adventures across the UK.
+                    We're dedicated to bringing together a community of diverse travelers who share a passion for exploring with
+                    their loved ones. Join us as we embark on a journey of discovery and create lasting memories together.</p>
+            </div>            
+                <div class="center-align">
+                    <a class="waves-effect waves-light btn btn-dgreen"><i class="fas fa-user-plus"></i> Create
+                        Account</a>
+                </div>
+                <div class="center-align">
+                    <p id="account-log">
+                        <a href="">Already got an account? Log in here</a>
+                    </p>
+                </div>            
         </div>
-
     </div>
 </div>
-
-
-
 </div>
-
-
 
 <!-- Hero Image Div -->
-<div id="home-hero-div" class="row">
-    <div class="about-div col s4 center-align">
-        <div class="about-overlay"></div>
-        <h3 class="montserrat-500 hero-headline">About Us</h3>
-        <p class="">Little Explorers is your gateway to unforgettable family adventures across the UK.
-            We're dedicated to bringing together a community of diverse travelers who share a passion for exploring with
-            their loved ones. Join us as we embark on a journey of discovery and create lasting memories together.</p>
-        <a id="browse-hero" class="waves-effect waves-light btn btn-orange"><i class="fas fa-search"></i> Browse
-            Holidays</a>
+<div id="quote-hero-div" class="row">
+    <div class="quote-div col s4 center-align valign-wrapper" id="quote-section">
+        <div class="quote-overlay"></div>       
+        <p class="fira-600"><i class="fas fa-quote-left"></i> This site has truly transformed our holiday experiences. <i class="fas fa-quote-right"></i>  </p>     
     </div>
 </div>
-
-<div class="row center-align">
-    <div>
-        <h3>Who Are We?</h3>
-    </div>
-    <div>
-        <p>Something about working towards a like-minded community of diverse travelers....</p>
-    </div>
-    <div>
-        <p>Browse our user recommended holidays and find your dream getaway</p>
-    </div>
-    <div>
-        <a class="waves-effect waves-light btn btn-orange"><i class="fas fa-search"></i> Browse Holidays</a>
-    </div>
-    <div>
-        <p>Have you recenlty enjoed a memorable holiday? Join our community and spread the joy by sharing your
-            experiences with us</p>
-    </div>
-    <div>
-        <a class="waves-effect waves-light btn btn-orange"><i class="fas fa-user-plus"></i> Create Account</a>
-    </div>
-    <div>
-        <a href="">Already got an account? Log in here</a>
-    </div>
-</div>
-
 </div>
 
 
