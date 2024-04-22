@@ -17,6 +17,6 @@ def contact():
 def holiday_types():
     return render_template('holiday_types.html')
 
-@app.route("/add_holiday_type", methods=["GET", "POST"])
-def add_holiday_type():
-    return render_template('add_holiday_type.html')
+@app.route("/add_holiday_types", methods=["GET", "POST"])
+def add_holiday_types():
+    return render_template('add_holiday_types.html')
