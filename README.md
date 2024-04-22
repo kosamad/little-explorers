@@ -230,6 +230,10 @@ Base.html
 Base.html serves as the foundation for every page, reducing redundancy in code and enhancing efficiency. By consolidating common HTML elements, it accelerates load times, streamlines webpage appearance, and optimizes backend performance.
 
 
+Contact.html
+
+The emails functionality was created using Email.JS with a template that sends to the admin team the name, email address and message submitted by the user. 
+
 ## ?. Technologies
 
 ### Languages
@@ -246,10 +250,13 @@ HTML, CSS, JavaScript & Python
 * [Coolers](https://coolors.co/) - to view the colour scheme.
 * [Canva](https://www.canva.com/) - to create the logo.
 * [Favicon](https://favicon.io/) - to generate the favicons for the page. 
+* [Email.JS] (https://www.emailjs.com/) - to send and recieve emails. 
 
 ## ?. Testing
 ## ?. Deployment
 ## ?. Credits
+
+* The email functionality was adapted from the Code Institute’s tutorial for EmailJS - Putting it all together > Sending Emails Using EmailJS > Sending Emails!
 
 
 ## Gitpod Reminders
