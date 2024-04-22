@@ -14,34 +14,35 @@
     </div>
 </div>
 
+<!-- Email Form adapted from CI tutorial and materialize docs -->
 <div class="container col s10 bg-dgrey contact-container">
     <div class="row">
-        <form class="col s12">
+        <form class="col s12" onsubmit="return sendMail(this);">
             <!-- Name field -->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="first_name" type="text" minlength="3" maxlength="25" class="validate" required>
-                    <label for="first_name">Name</label>
+                    <input id="name" name="name" type="text" class="validate" autocomplete="name" required>
+                    <label for="name">Name</label>
                 </div>
             </div>
             <!-- Email address field -->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email_address" name="email_address" type="text" minlength="3" maxlength="25" class="validate" required>
+                    <input id="email_address" name="email_address" type="email" autocomplete="email"  minlength="3" maxlength="25" class="validate" required>
                     <label for="email_address">Email</label>
                 </div>
             </div>           
             <!-- Message field -->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="textarea1" class="materialize-textarea" maxlength="500" type="text"
+                    <textarea id="message" name="message" class="materialize-textarea" maxlength="500" type="text" 
                     required></textarea>
-                    <label for="textarea1">Message (max 500 characters)</label>
+                    <label for="message">Message (max 500 characters)</label>
                 </div>
             </div>
             <!-- Send button -->
             <div class="col s12 center-align">
-                <button type="submit" class="col s8 offset-s2 m6 offset-m3 l3 offset-l4 btn-large btn-dgreen form-submit-button">Send
+                <button type="submit" class="col s8 offset-s2 m6 offset-m3 l3 offset-l4 btn-large btn-dgreen">Send
                 </button>
             </div>
         </form>
