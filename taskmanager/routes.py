@@ -9,6 +9,14 @@ from taskmanager.models import Holiday, Recommendation
 def home():
     return render_template("index.html")
 
-@app.route('/contact')
+@app.route("/contact")
 def contact():
     return render_template('contact.html')
+
+@app.route("/holiday_types")
+def holiday_types():
+    return render_template('holiday_types.html')
+
+@app.route("/add_holiday_type", methods=["GET", "POST"])
+def add_holiday_type():
+    return render_template('add_holiday_type.html')

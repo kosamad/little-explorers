@@ -52,6 +52,8 @@
                         <!-- {% if session.user %}
                     <li><a href="{{ url_for('add_holiday')}}">ADD HOLIDAY</a></li>
                     {% endif %} -->
+                      <!-- need to add this bwlow into admin only  -->
+                      <li><a href="{{ url_for('holiday_types')}}">MANAGE HOLIDAY TYPES</a></li>
                         <!-- Dropdown Trigger -->
                         <li>
                             <a class="dropdown-trigger" href="#!" data-target="dropdown1">ACCOUNT<i
@@ -70,6 +72,10 @@
             <li><a href="{{ url_for('my_profile', username=session['user']) }}">PROFILE</a></li>
             <li><a href="{{ url_for('sign_out')}}">SIGN OUT</a></li>
             {% else %} -->
+            <!-- need to add this bwlow into admin only  -->
+            
+
+            <!-- not signed in user -->
             <li><a href="">CREATE ACCOUNT</a></li>
             <li><a href="">SIGN IN</a></li>
             <!-- {% endif %} -->
