@@ -68,6 +68,7 @@ main {
   padding: 1% 0;
 }
 
+
 /* Navbar */
 #nav-logo{
   max-width: 100%;
@@ -220,6 +221,9 @@ footer h4 {
   font-size:medium;
   text-decoration: underline;
 }
+.email-promt{color:white;}
+
+.email-promt:hover{color:#FF914D;}
 
 footer h5 {
   font-size: small;
@@ -235,6 +239,8 @@ footer p {
 }
 
 .linkedin {margin-left: 5px;}
+
+
 
 /* Media Queries */
 @media screen and (max-width: 1241px) {
