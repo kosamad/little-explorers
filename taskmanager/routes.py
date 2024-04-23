@@ -13,9 +13,14 @@ def home():
 def contact():
     return render_template('contact.html')
 
+
+# Holiday type template route
 @app.route("/holiday_types")
+# Database query the Holiday model, get holiday types and order by name. Template displayed to user. 
 def holiday_types():
-    return render_template('holiday_types.html')
+    holiday_types = list(Holiday.query.order_by(Holiday.holiday_name).all())
+    return render_template('holiday_types.html', holiday_types=holiday_types)
+
 
 # Add cataegory bytton uses Get method, renders add_holiday_types page. Submiting the form (POST) posts data to database
 @app.route("/add_holiday_types", methods=["GET", "POST"])

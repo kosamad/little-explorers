@@ -60,6 +60,14 @@ main {
 
 .btn-dgreen:hover{background-color: #268DC8;}
 
+.btn-lgreen {background-color: #20BF55;}
+
+.btn-pink {background-color: #B8336A}
+
+.btn-lgreen:hover, .btn-pink:hover {
+  background-color: #FF914D;
+}
+
 .btn-blue{
   background-color: #268DC8;
 }
