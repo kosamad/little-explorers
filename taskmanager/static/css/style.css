@@ -246,7 +246,10 @@ footer p {
 
 .social-links a {
   color:#FF914D;
+  font-size: 20px;
 }
+
+.social-links a:hover{color:#B8336A;}
 
 .linkedin {margin-left: 5px;}
 
