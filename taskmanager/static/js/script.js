@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function checkMaxLength(input) {
   if (input.value.length > input.maxLength) {
-      input.value = input.value.slice(0, input.maxLength);
+      input.value = input.value.slice(0, input.maxLength);      
   }
 }
 
