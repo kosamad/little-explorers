@@ -1,5 +1,5 @@
 # Imports from Flask
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 # Import from taskmanager package
 from taskmanager import app, db
 from taskmanager.models import Holiday, Recommendation
@@ -19,4 +19,9 @@ def holiday_types():
 
 @app.route("/add_holiday_types", methods=["GET", "POST"])
 def add_holiday_types():
+    if request.method == "POST":
+        holiday_type = Holiday(holiday_name=request.form.get("holiday_name"), selected_icon=request.form.get("selected_icon"))
+        db.session.add(holiday_type)
+        db.session.commit()
+        return redirect(url_for("holiday_types"))
     return render_template('add_holiday_types.html')
