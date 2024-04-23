@@ -20,19 +20,19 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="holiday_name" placeholder="5-15 letters/numbers" name="holiday_name" minlength="3"
-                            maxlength="25" type="text" class="validate" required>
+                            maxlength="15" type="text" class="validate" required oninput="checkMaxLength(this)">
                         <label for="holiday_name">Holiday Type Name</label>
                     </div>
                 </div>
 
                 <div class="row">
                     <!-- Hidden input field to store the selected icon class -->
-                    <input id="selected_icon" name="selected_icon" type="hidden">
+                    <input id="selected_icon" name="selected_icon" type="hidden" required>
                     <!-- Display the selected icon to the user -->
                     <div id="selected_icon_display" class="input-field col s12 m6 l6">
                         <label for="display_only">Icon</label>
-                        <input id="display_only" name="display_only" type="text" readonly
-                            placeholder="Select Icon using the Button" required>                        
+                        <input id="display_only" name="display_only" type="text" class="validate" required
+                            placeholder="Select Icon using the Button">                        
                     </div>
                     <div class="input-field col s12 m6 l6">
                         <!-- Dropdown Trigger -->
@@ -48,32 +48,32 @@
                 <ul id="icon-dropdown" class="dropdown-content">
                     <li><a href="#!" class="icon-option" data-icon="fas fa-umbrella-beach"><i
                                 class="fas fa-umbrella-beach"></i>
-                            Beach Resort</a></li>
+                           </a></li>
                     <li><a href="#!" class="icon-option" data-icon="fas fa-water"><i class="fas fa-water"></i>
-                            Riverside</a></li>
+                            </a></li>
                     <li><a href="#!" class="icon-option" data-icon="fas fa-tree"><i class="fas fa-tree"></i>
-                            Woodland</a></li>
+                           </a></li>
                     <li><a href="#!" class="icon-option" data-icon="fas fa-mountain"><i class="fas fa-mountain"></i>
-                            Mountain</a></li>
+                            </a></li>
                     <li><a href="#!" class="icon-option" data-icon="fas fa-campground"><i class="fas fa-campground"></i>
-                            Camping</a></li>
-                    <li><a href="#!" class="icon-option" data-icon="fas fa-city"><i class="fas fa-city"></i>City</a>
+                            </a></li>
+                    <li><a href="#!" class="icon-option" data-icon="fas fa-city"><i class="fas fa-city"></i></a>
                     </li>
                     <li><a href="#!" class="icon-option" data-icon="fa-solid fa-sailboat"><i
-                                class="fa-solid fa-sailboat"></i>Lake</a></li>
+                                class="fa-solid fa-sailboat"></i></a></li>
                     <li><a href="#!" class="icon-option" data-icon="fa-solid fa-tree-city"><i
-                                class="fa-solid fa-tree-city"></i>Tree House</a></li>
+                                class="fa-solid fa-tree-city"></i></a></li>
                     <li><a href="#!" class="icon-option" data-icon="fa-solid fa-plug-circle-minus"><i
-                                class="fa-solid fa-plug-circle-minus"></i>Off The Grid</a></li>
+                                class="fa-solid fa-plug-circle-minus"></i></a></li>
                     <li><a href="#!" class="icon-option" data-icon="fa-brands fa-fort-awesome"><i
-                                class="fa-brands fa-fort-awesome"></i>Castle</a></li>
+                                class="fa-brands fa-fort-awesome"></i></a></li>
                     <li><a href="#!" class="icon-option" data-icon="fa-solid fa-tractor"><i
-                                class="fa-solid fa-tractor"></i>Farm</a></li>
+                                class="fa-solid fa-tractor"></i></a></li>
                     <li><a href="#!" class="icon-option" data-icon="fa-solid fa-person-swimming"><i
-                                class="fa-solid fa-person-swimming"></i>Swimming Pool</a></li>
+                                class="fa-solid fa-person-swimming"></i></a></li>
                     <li><a href="#!" class="icon-option" data-icon="fa-solid fa-fire"><i
-                                class="fa-solid fa-fire"></i>Log
-                            Burner</a></li>
+                                class="fa-solid fa-fire"></i>
+                           </a></li>
                 </ul>
 
                 <!-- submit button -->
