@@ -75,6 +75,8 @@ main {
 
 .admin-container {padding: 5%;}
 
+.submit-btn {margin-top: 6%;}
+
 /* Navbar */
 #nav-logo{
   max-width: 100%;
@@ -214,6 +216,10 @@ margin:2% auto}
     }
 
 /* Add holiday_type Page */
+
+#icon-dropdown {
+  min-width: 200px;
+}
 
 /* Footer */
 
