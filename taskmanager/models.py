@@ -9,12 +9,12 @@ class Holiday(db.Model):
     #schema for the Type model
     id = db.Column(db.Integer, primary_key=True)
     holiday_name = db.Column(db.String(15), unique=True, nullable=False) #!!!!! work out how manycharacters limit for responsive design
-    selected_icon = db.Column(db.String(50), nullable=False)
+    selected_icon = db.Column(db.Text, nullable=False)
     recommendation = db.relationship("Recommendation", backref="holiday", cascade="all, delete", lazy=True)
     def __repr__(self):
         # represent self in the form of a string
-        return self.holiday_name, selected_icon
-
+        return self.holiday_name, self.selected_icon
+        
 # # 2. Users table
 # class Users(db.Model):
 #     #schema for the Users model

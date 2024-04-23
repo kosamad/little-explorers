@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Get the icon class from the data-icon attribute
       var iconClass = event.target.getAttribute('data-icon');
       // Update the selected icon div
-      selectedIcon.innerHTML = '<input id="selected_icon" name="selected_icon" type="text" disabled value required><label for="selected_icon">Selected Icon:    <i class="' + iconClass + '"></i></label>';
+      selectedIcon.innerHTML = '<input id="selected_icon" name="selected_icon" type="text" readonly required><label for="selected_icon">Selected Icon:    <i class="' + iconClass + '"></i></label>';
       console.log(iconClass);
     }
   });
