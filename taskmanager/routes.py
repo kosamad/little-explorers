@@ -17,6 +17,7 @@ def contact():
 def holiday_types():
     return render_template('holiday_types.html')
 
+# Add cataegory bytton uses Get method, renders add_holiday_types page. Submiting the form (POST) posts data to database
 @app.route("/add_holiday_types", methods=["GET", "POST"])
 def add_holiday_types():
     if request.method == "POST":
