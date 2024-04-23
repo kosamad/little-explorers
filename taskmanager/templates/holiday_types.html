@@ -1,23 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
+
 <!-- banner -->
-<div class="bg-lblue">
+<div class="bg-dgreen">
     <div class="container heading-banner">
         <div class="row">
             <div class="col s12 center-align">
-                <h1 class="fira-600 white-text">Holiday Types</h1>
+                <h1 class="fira-600 white-text">Add Holiday Types</h1>
             </div>
             <div class="row">
                 <div class="col s12 center-align">
-                    <a href="{{ url_for('add_holiday_types') }}" class="btn-large btn-dgreen"></a>
+                    <a href="{{ url_for('add_holiday_types') }}" class=" fira-600 btn-large btn-blue">ADD<i
+                            class="fas fa-plus-square right"></i></a>
                 </div>
             </div>
-            
-
         </div>
     </div>
 </div>
 
 
-{% endblock %}
+
+    {% endblock %}

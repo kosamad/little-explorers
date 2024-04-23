@@ -42,9 +42,13 @@ main {
   background-color: #268DC8;
 }
 
+.bg-white{background-color: #ffffff;}
+
 .bg-dgreen{ background-color: #04724D;}
 
 .bg-lblue{ background-color: #beddea;}
+
+.bg-lorange { background-color:#ffd5bc;}
 
 .btn-orange{
   background-color:#FF914D;
@@ -65,9 +69,11 @@ main {
 }
 
 .heading-banner {
+  height: 250px;
   padding: 1% 0;
 }
 
+.admin-container {padding: 5%;}
 
 /* Navbar */
 #nav-logo{
@@ -208,8 +214,6 @@ margin:2% auto}
     }
 
 /* Add holiday_type Page */
-    
-
 
 /* Footer */
 

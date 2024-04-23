@@ -2,15 +2,68 @@
 {% block content %}
 
 <!-- banner -->
-<div class="bg-lblue">
+<div class="bg-dgreen">
     <div class="container heading-banner">
         <div class="row">
             <div class="col s12 center-align">
-                <h1 class="fira-600 white-text">Holiday Types</h1>
-            </div>                     
-
-        </div>    </div>
+                <h1 class="fira-600 white-text">Add Holiday Types</h1>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="bg-lorange">
+    <div class="container col s10 bg-white admin-container">
+        <div class="row">
+            <form class="col s12" method="POST" action="{{ url_for('add_holiday_types') }}">
+                <!-- Holiday type name -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="holiday_name" placeholder="5-15 letters/numbers" name="holiday_name" minlength="3"
+                            maxlength="25" type="text" class="validate" required>
+                        <label for="holiday_name">Holiday Type Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div id="selected-icon" class=" input-field col s12 m6 l6">
+                        <input id="selected_icon" name="selected_icon" type="text" disabled value
+                            placeholder="Select Icon using the Button" required>
+                        <label for="selected_icon">Icon</label>
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <!-- Dropdown Trigger -->
+                        <a id="dropdown-trigger-two" class="dropdown-trigger btn btn-dgreen icon-btn" href="#!"
+                            data-target="icon-dropdown"><i class="fa-solid fa-caret-down right"></i>Select Icon</a>
+                    </div>
+                </div>
+             
+
+
+                <!-- Dropdown Structure -->
+                <ul id="icon-dropdown" class="dropdown-content">
+                    <li><a href="#!" class="icon-option" data-icon="fa fa-camera"><i class="fa fa-camera"></i>
+                            Camera</a></li>
+                    <li><a href="#!" class="icon-option" data-icon="fa fa-car"><i class="fa fa-car"></i> Car</a></li>
+                    <li><a href="#!" class="icon-option" data-icon="fa fa-plane"><i class="fa fa-plane"></i> Plane</a>
+                    </li>
+                    <!-- Add more options as needed -->
+                </ul>
+
+                <!-- submit button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button type="submit" class="btn-large btn-blue">
+                            Submit <i class="fas fa-plus-square right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 
 
 {% endblock %}
