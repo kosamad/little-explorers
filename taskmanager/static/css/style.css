@@ -224,7 +224,9 @@ margin:2% auto}
     }
 
 /* Add holiday_type Page */
+#display_only {color: rgba(0, 0, 0, 0.42);}
 
+#icon-dropdown{width:200px;}
 
 
 /* Footer */

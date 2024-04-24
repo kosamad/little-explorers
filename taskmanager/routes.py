@@ -22,7 +22,7 @@ def holiday_types():
     return render_template('holiday_types.html', holiday_types=holiday_types)
 
 
-# Add cataegory bytton uses Get method, renders add_holiday_types page. Submiting the form (POST) posts data to database
+# Add cataegory bytton uses Get method, renders add_holiday_types page. Submiting the form (POST) posts data (holiday_name and icon) to database
 @app.route("/add_holiday_types", methods=["GET", "POST"])
 def add_holiday_types():
     if request.method == "POST":
@@ -31,3 +31,9 @@ def add_holiday_types():
         db.session.commit()
         return redirect(url_for("holiday_types"))
     return render_template('add_holiday_types.html')
+
+
+@app.route("/edit_holiday_types/<int:holiday_id>", methods=["GET", "POST"])
+def edit_holiday_types(holiday_id):
+    holiday_type = Holiday.query.get_or_404(holiday_id)
+    return render_template('edit_holiday_types.html',holiday_type=holiday_type)

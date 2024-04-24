@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- banner -->
+<div class="bg-dgreen">
+    <div class="container heading-banner valign-wrapper">
+        <div class="row val">
+            <div class="col s12 center-align">
+                <h1 class="fira-600 white-text">Edit Holiday Types</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-lorange">
+    <div class="container col s10 bg-white admin-container">
+        <div class="row">
+            <form class="col s12" method="POST" action="{{ url_for('edit_holiday_types',holiday_id=holiday_type.id) }}">
+                <!-- Holiday type name -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="holiday_name" placeholder="5-15 letters/numbers" name="holiday_name" value="{{ holiday_type.holiday_name }}" minlength="3"
+                            maxlength="15" type="text" class="validate" required oninput="checkMaxLength(this)">
+                        <label for="holiday_name">Holiday Type Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Hidden input field to store the selected icon class -->
+                    <input id="selected_icon" name="selected_icon" type="hidden" required>
+                    <!-- Display the selected icon to the user -->
+                    <div id="selected_icon_display" class="input-field col s12 m6 l6">
+                         <input id="display_only" name="display_only" type="text" class="validate" required readonly placeholder="Select Icon using the Button">
+                         <label for="display_only">Current icon Selected: <i class="{{ holiday_type.selected_icon }}"></i></label>                                                                
+                    </div>
+                    <div class="input-field col s12 m6 l6">
+                        <!-- Dropdown Trigger -->
+                        <a id="dropdown-trigger-two" class="dropdown-trigger btn btn-dgreen icon-btn" href="#!"
+                            data-target="icon-dropdown"><i class="fa-solid fa-caret-down right"></i>Select Icon</a>
+                    </div>
+                </div>
+
+               <!-- Dropdown Structure -->
+               <ul id="icon-dropdown" class="dropdown-content">
+                <li><a href="#!" class="icon-option" data-icon="fas fa-umbrella-beach"><i
+                            class="fas fa-umbrella-beach"></i> Select</a></li>
+                <li><a href="#!" class="icon-option" data-icon="fas fa-water"><i class="fas fa-water"></i>
+                        Select</a></li>
+                <li><a href="#!" class="icon-option" data-icon="fas fa-tree"><i class="fas fa-tree"></i> Select</a>
+                </li>
+                <li><a href="#!" class="icon-option" data-icon="fas fa-mountain"><i class="fas fa-mountain"></i>
+                        Select</a></li>
+                <li><a href="#!" class="icon-option" data-icon="fas fa-campground"><i class="fas fa-campground"></i>
+                        Select</a></li>
+                <li><a href="#!" class="icon-option" data-icon="fas fa-city"><i class="fas fa-city"></i> Select</a>
+                </li>
+                <li><a href="#!" class="icon-option" data-icon="fa-solid fa-sailboat"><i
+                            class="fa-solid fa-sailboat"></i> Select</a></li>
+                <li><a href="#!" class="icon-option" data-icon="fa-solid fa-tree-city"><i
+                            class="fa-solid fa-tree-city"></i> Select</a></li>
+                <li><a href="#!" class="icon-option" data-icon="fa-solid fa-plug-circle-minus"><i
+                            class="fa-solid fa-plug-circle-minus"></i> Select</a></li>
+                <li><a href="#!" class="icon-option" data-icon="fa-brands fa-fort-awesome"><i
+                            class="fa-brands fa-fort-awesome"></i> Select</a></li>
+                <li><a href="#!" class="icon-option" data-icon="fa-solid fa-tractor"><i
+                            class="fa-solid fa-tractor"></i> Select</a></li>
+                <li><a href="#!" class="icon-option" data-icon="fa-solid fa-person-swimming"><i
+                            class="fa-solid fa-person-swimming"></i> Select</a></li>
+                <li><a href="#!" class="icon-option" data-icon="fa-solid fa-fire"><i class="fa-solid fa-fire"></i>
+                        Select</a></li>
+                <li><a href="#!" class="icon-option" data-icon="fa fa-home"><i class="fa fa-home"></i> Select</a>
+                </li>
+            </ul>
+
+                <!-- submit button -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button type="submit" class="btn-large btn-blue submit-btn">
+                            Save <i class="fa-solid fa-square-check right"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
