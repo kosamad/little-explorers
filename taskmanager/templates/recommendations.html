@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<!-- banner -->
+<div class="bg-dgreen">
+    <div class="container heading-banner">
+        <div class="row">
+            <div class="col s12 center-align">
+                <h1 class="fira-600 white-text">Holidays</h1>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <a href="{{ url_for('add_recommendation') }}" class=" fira-600 btn-large btn-blue">Recommend A Holiday<i
+                            class="fas fa-plus-square right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-lorange">
+    <div class="container admin-container">        
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

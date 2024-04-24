@@ -2,7 +2,7 @@
 from flask import render_template, request, redirect, url_for
 # Import from taskmanager package
 from taskmanager import app, db
-from taskmanager.models import Holiday, Recommendation
+from taskmanager.models import Holiday, Recommendation, Users
 
 # Create Route Decorator
 @app.route("/")
@@ -14,7 +14,36 @@ def contact():
     return render_template('contact.html')
 
 
-# Holiday type template route
+# Recommendations Route
+@app.route("/recommendations")
+def recommendations():
+    return render_template("recommendations.html")
+
+# Add Recommendation Route
+@app.route("/add_recommendation", methods=["GET", "POST"])
+def add_recommendation():
+    holiday_types = list(Holiday.query.order_by(Holiday.holiday_name).all())
+    if request.method == "POST":
+        recommendation = Recommendation(
+            recommendation_name=request.form.get("recommendation_name"),
+            location_name=request.form.get("location_name"),
+            occupants=request.form.get("occupants"),
+            recommendation_review=request.form.get("recommendation_review"),  
+            region=request.form.get("region"),
+            image=request.form.get(" image"),
+            recommendation_date=request.form.get("recommendation_date"),
+            holiday_id=request.form.get("holiday_id"),
+            map_long=request.form.get("map_long"),
+            map_lat=request.form.get("map_lat"),
+            user_id=request.form.get("user_id"),
+        )         
+        db.session.add(recommendation)
+        db.session.commit()
+        return redirect(url_for("recommendations"))
+    return render_template('add_recommendation.html', holiday_types=holiday_types )
+
+
+# Holiday type Route
 @app.route("/holiday_types")
 # Database query the Holiday model, get holiday types and order by name. Template displayed to user. 
 def holiday_types():
@@ -22,7 +51,7 @@ def holiday_types():
     return render_template('holiday_types.html', holiday_types=holiday_types)
 
 
-# Add cataegory bytton uses Get method, renders add_holiday_types page. Submiting the form (POST) posts data (holiday_name and icon) to database
+# Add holiday type. Button uses Get method, renders add_holiday_types page. Submiting the form (POST) posts data (holiday_name and icon) to database
 @app.route("/add_holiday_types", methods=["GET", "POST"])
 def add_holiday_types():
     if request.method == "POST":
@@ -32,7 +61,7 @@ def add_holiday_types():
         return redirect(url_for("holiday_types"))
     return render_template('add_holiday_types.html')
 
-
+# Edit holiday types (name and icon)
 @app.route("/edit_holiday_types/<int:holiday_id>", methods=["GET", "POST"])
 def edit_holiday_types(holiday_id):
     holiday_type = Holiday.query.get_or_404(holiday_id)
@@ -42,3 +71,27 @@ def edit_holiday_types(holiday_id):
         db.session.commit()
         return redirect(url_for("holiday_types"))
     return render_template('edit_holiday_types.html',holiday_type=holiday_type)
+
+
+
+
+
+# Admin User Route
+@app.route('/create_admin')
+def create_admin():
+    admin_user = Users(username='admin', email='admin@example.com', password_hash='hashed_password', is_admin=True)
+    db.session.add(admin_user)
+    db.session.commit()
+    return 'Admin user created successfully.'
+
+
+# Route to add a new user
+@app.route('/add_user', methods=['POST'])
+def add_user():   
+    username = request.form.get('username')
+    email = request.form.get('email')
+    password = request.form.get('password')  
+    new_user = Users(username=username, email=email, password_hash=password)   
+    db.session.add(new_user) 
+    db.session.commit()
+    return 'User added successfully.'
