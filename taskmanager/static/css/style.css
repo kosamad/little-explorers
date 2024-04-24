@@ -85,6 +85,29 @@ main {
 
 .submit-btn {margin-top: 6%;}
 
+/* CSS modifications for Materialize form */
+  
+/* label color */
+  .input-field label {
+    color: #000;
+  }
+
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+    color: #04724D;
+  }
+
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+    border-bottom: 1px solid #04724D;  
+    box-shadow: 0 1px 0 0 #04724D;
+  }
+   /* valid color */
+    .input-field input[type=text].valid {
+      border-bottom: 1px solid #04724D;
+      box-shadow: 0 1px 0 0 #04724D;
+    }
+
 /* Navbar */
 #nav-logo{
   max-width: 100%;
@@ -195,33 +218,11 @@ font-weight: 600;
   z-index: 1; 
   color: white; }
 
-  /* Contact Page */
 
+  /* Contact Page */
 .contact-container{padding: 5%;
 margin:2% auto}
 
-/* CSS modifications for Materialize form */
-  
-/* label color */
-  .input-field label {
-    color: #000;
-  }
-
-   /* label focus color */
-   .input-field input[type=text]:focus + label {
-    color: #04724D;
-  }
-
-   /* label underline focus color */
-   .input-field input[type=text]:focus {
-    border-bottom: 1px solid #04724D;  
-    box-shadow: 0 1px 0 0 #04724D;
-  }
-   /* valid color */
-    .input-field input[type=text].valid {
-      border-bottom: 1px solid #04724D;
-      box-shadow: 0 1px 0 0 #04724D;
-    }
 
 /* Add holiday_type Page */
 #display_only {color: rgba(0, 0, 0, 0.42);}
@@ -235,10 +236,15 @@ margin:2% auto}
   border-width: 10px; 
 }
 
-  .icon-display{ font-size: 25px;}
+.icon-display{ font-size: 25px;}
 
-  .card .card-action {background-color: #beddea;}
+.card .card-action {background-color: #beddea;}
 
+/* Add Recommendation Page */
+#a-recommendation-page {padding: 5%;}
+
+.a-recommendation-container {padding: 5%;
+  margin:0 auto}
 
 /* Footer */
 

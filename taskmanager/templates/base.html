@@ -48,7 +48,8 @@
                             class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('home')}}">HOME</a></li>
-                        <li><a href="">HOLIDAYS</a></li>
+                        <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
+                        <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li> 
                         <!-- {% if session.user %}
                     <li><a href="{{ url_for('add_holiday')}}">ADD HOLIDAY</a></li>
                     {% endif %} -->
@@ -66,7 +67,8 @@
         <!-- mobile nav-bar -->
         <ul class="sidenav right font-title" id="mobile-demo">
             <li><a href="{{ url_for('home')}}">HOME</a></li>
-            <li><a href="">HOLIDAYS</a></li>
+            <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
+            <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>            
             <!-- {% if session.user %}
             <li><a href="{{ url_for('add_holiday')}}">ADD HOLIDAY</a></li>
             <li><a href="{{ url_for('my_profile', username=session['user']) }}">PROFILE</a></li>
