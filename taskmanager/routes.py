@@ -36,4 +36,9 @@ def add_holiday_types():
 @app.route("/edit_holiday_types/<int:holiday_id>", methods=["GET", "POST"])
 def edit_holiday_types(holiday_id):
     holiday_type = Holiday.query.get_or_404(holiday_id)
+    if request.method == "POST":
+        holiday_type.holiday_name = request.form.get("holiday_name")
+        holiday_type.selected_icon = request.form.get("selected_icon")
+        db.session.commit()
+        return redirect(url_for("holiday_types"))
     return render_template('edit_holiday_types.html',holiday_type=holiday_type)
