@@ -228,6 +228,17 @@ margin:2% auto}
 
 #icon-dropdown{width:200px;}
 
+#holiday-type-title {margin-bottom: 6%;}
+
+.card-padding {border-color: #04724D;   
+  border-style: solid;
+  border-width: 10px; 
+}
+
+  .icon-display{ font-size: 25px;}
+
+  .card .card-action {background-color: #beddea;}
+
 
 /* Footer */
 
