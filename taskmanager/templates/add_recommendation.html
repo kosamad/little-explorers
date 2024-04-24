@@ -26,9 +26,9 @@
                         <label for="recommendation_name">Holiday Name</label>
                     </div>
                 </div>
-                <!-- category id -->
+                <!-- Holiday Type Id (User select from name) -->
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="input-field col s6">
                         <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
                         <select id="holiday_id" name="holiday_id" class="validate" required>
                             <option value="" disabled selected>Choose Holiday Type</option>
@@ -38,7 +38,12 @@
                         </select>
                         <label for="holiday_id">Holiday Type</label>
                     </div>
-                </div>            
+                </div>  
+                 <!-- Display Icon to User --> 
+                 <div class="input-field col s6" >
+                    <i class="{{ holiday_type.selected_icon }} icon-display"></i>
+                 </div> 
+
         </div>
 
 
