@@ -19,17 +19,16 @@
             <form class="col s12" method="POST" action="{{ url_for('add_recommendation') }}">
                 <!-- Recommendation name field -->
                 <div class="row">
-                    <div class="input-field col s12">
-                        <input id="recommendation_name" placeholder="max 15 letters/numbers" name="recommendation_name"
+                    <div class="input-field col s9">
+                        <input id="recommendation_name" placeholder="Max 15 characters" name="recommendation_name"
                             minlength="3" maxlength="15" type="text" class="validate" required
                             oninput="checkMaxLength(this)">
-                        <label for="recommendation_name">Holiday Name</label>
+                        <label for="recommendation_name">Holiday Title</label>
                     </div>
                 </div>
                 <!-- Holiday Type Id (User select from name) -->
                 <div class="row">
-                    <div class="input-field col s6">
-                        <i class="fas fa-folder-open prefix light-blue-text text-darken-4"></i>
+                    <div class="input-field col s9">
                         <select id="holiday_id" name="holiday_id" class="validate" required>
                             <option value="" disabled selected>Choose Holiday Type</option>
                             {% for holiday_type in holiday_types %}
@@ -38,11 +37,113 @@
                         </select>
                         <label for="holiday_id">Holiday Type</label>
                     </div>
-                </div>  
-                 <!-- Display Icon to User --> 
-                 <div class="input-field col s6" >
-                    <!-- <i class="{{ holiday_type.selected_icon }} icon-display"></i> -->
-                 </div> 
+                </div>
+                <!-- Region (User select from options) -->
+                <div class="row">
+                    <div class="input-field col s9">
+                        <select id="region" name="region" class="validate" required>
+                            <option value="" disabled selected>Region</option>
+                            <option value="south-west">South West</option>
+                            <option value="south-east">South East</option>
+                            <option value="west-midlands">West Midlands</option>
+                            <option value="east-midlands">East Midlands</option>
+                            <option value="north-west">North West</option>
+                            <option value="north-east">North East</option>
+                            <option value="yorkshire-and-the-humber">Yorkshire and the Humber</option>
+                            <option value="east-of-england">East of England</option>
+                            <option value="london">London</option>
+                        </select>
+                        <label for="region">Region</label>
+                    </div>
+                </div>
+                <!-- Occupant Selection-->
+                <div class="row">
+                    <div class="input-field col s3">
+                        <select id="occupant" name="occupant" class="validate" required>
+                            <option value="" disabled selected>Occupants</option>
+                            <option value="2">2</option>
+                            <option value="3-4">3-4</option>
+                            <option value="5-6">5-6</option>
+                            <option value="7-8">7-8</option>
+                            <option value="9+">9+</option>
+                        </select>
+                        <label for="occupant">Occupants</label>
+                    </div>
+                    <!-- Occupant Selection-->
+                    <div class="input-field col s6">
+                        <input id="recommendation_date" name="recommendation_date" class="validate datepicker" required>
+                        <label for="recommendation_date">When did you visit?</label>
+                    </div>
+                </div>
+                <!-- Location Name and map (map code adapted from Imran Sayed at Codeytek Academy youtube tutorial)-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="location_name" name="location_name" class="validate" type="text" placeholder="Search Box" maxlength="
+                        120" placeholder="Search" type="text" required>
+                        <label for="location_name">Address</label>
+                    </div>
+                </div>
+
+                <div>Please check the location on the map and either move the marker or re-type your location.</div>
+
+
+                <!-- HIDDEN FROM USER, autofilled by JS using location/map information  -->
+                <!-- map Longitude -->
+                <div class="row" style="display: none;">
+                    <div class="input-field col s6">
+                        <label for="map_long">Map Longitute</label>
+                        <input id="map_long" name="map_long" type="text" required>
+                    </div>
+                </div>
+                <!-- map Latitude -->
+                <div class="row" style="display: none;">
+                    <div class="input-field col s6">
+                        <label for="map_lat">Map Latitude</label>
+                        <input id="map_lat" name="map_lat" type="text" required>
+                    </div>
+                </div>
+
+                <div id="map-canvas"></div>
+
+
+                <!-- Upload Image -->
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="image" name="image" minlength="5" maxlength="30" type="text" class="validate"
+                            required>
+                        <label for="image">Upload an Image</label>
+                    </div>
+
+                    <div class="col s2"> <a class="waves-effect waves-light btn modal-trigger question-mark"
+                            href="#modal1">?</a></div>
+
+
+                </div>
+
+
+                <!-- Image Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div>
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat right"><i
+                                class="fa-solid fa-square-xmark"></i></a>
+                    </div>
+                    <div>
+                        <div style="text-align: justify;" class="modal-content fira-500">
+                            <p>HOW TO .................</p>
+                        </div>
+                        <div class="center-align modal-image">
+                            <img alt="image showing google map co-ordinates" src="../static/images/map_coordinates.png"
+                                height="150px">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
 
         </div>
 
