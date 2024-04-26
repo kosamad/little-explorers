@@ -7,24 +7,30 @@ function initialize() {
       longEl = document.querySelector('#map_long'),
       element = document.getElementById('map-canvas');
 
-  mapOptions = {
-      // How far the maps zooms in.
-      zoom: 5,
-      // Current Lat and Long position of the pin
+
+// Initial Map loaded
+  mapOptions = {      
+      zoom: 5,      
       center: new google.maps.LatLng(54.4592725673968, -2.8300778240695252),
-      // center : {
-      // lat: -34.397,
-      // lng: 150.644
-      // },
-      disableDefaultUI: false, // Disables the controls like zoom control on the map if set to true
-      scrollWheel: true, // If set to false disables the scrolling on the map.
-      draggable: true, // If set to false , you cannot move the map around.
-      // mapTypeId: google.maps.MapTypeId.HYBRID, // If set to HYBRID its between sat and ROADMAP, Can be set to SATELLITE as well.
-      // maxZoom: 11, // Wont allow you to zoom more than this
-      // minZoom: 9  // Wont allow you to go more up.
+     
+      disableDefaultUI: false,
+      scrollWheel: true, 
+      draggable: true,
+      //max zoom so area cannot be set too specifically.
+  //  maxZoom: 12, 
+      
   };
 
   // Creating a new map object using the constructor function google.maps.Map
   map = new google.maps.Map(element, mapOptions);
+
+//Adding a marker to the map
+  marker = new google.maps.Marker({
+		position: {lat:53.46796246, lng: -2.32526235},
+		map: map,		
+		draggable: true
+	});
+
+  //can add mutliple markers to map by creating different marker variables
 }
 
