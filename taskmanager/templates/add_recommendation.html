@@ -35,7 +35,7 @@
                             <option value="{{ holiday_type.id }}">{{ holiday_type.holiday_name }}</option>
                             {% endfor %}
                         </select>
-                        <label for="holiday_id">Holiday Type</label>
+                        <label for="holiday_id"></label>
                     </div>
                 </div>
                 <!-- Region (User select from options) -->
@@ -67,18 +67,19 @@
                             <option value="7-8">7-8</option>
                             <option value="9+">9+</option>
                         </select>
-                        <label for="occupant">Occupants</label>
+                        <label for="occupant"></label>
                     </div>
-                    <!-- Occupant Selection-->
+                    <!-- Date Selection-->
                     <div class="input-field col s6">
                         <input id="recommendation_date" name="recommendation_date" class="validate datepicker" required>
-                        <label for="recommendation_date">When did you visit?</label>
+                        <label for="recommendation_date"></label>
                     </div>
                 </div>
                 <!-- Location Name and map (map code adapted from Imran Sayed at Codeytek Academy youtube tutorial)-->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="location_name" name="location_name" class="validate" type="text" placeholder="Search Box" maxlength="
+                        <input id="location_name" name="location_name" class="validate" type="text"
+                            placeholder="Search Box" maxlength="
                         120" placeholder="Search" type="text" required>
                         <label for="location_name">Address</label>
                     </div>
@@ -86,7 +87,11 @@
 
                 <div>Please check the location on the map and either move the marker or re-type your location.</div>
 
+                <div id="map-canvas"></div>
 
+
+
+                
                 <!-- HIDDEN FROM USER, autofilled by JS using location/map information  -->
                 <!-- map Longitude -->
                 <div class="row" style="display: none;">
@@ -103,10 +108,16 @@
                     </div>
                 </div>
 
-                <div id="map-canvas"></div>
 
 
-                <!-- Upload Image -->
+
+
+
+
+
+
+
+                <!-- Upload Image
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="image" name="image" minlength="5" maxlength="30" type="text" class="validate"
@@ -117,11 +128,10 @@
                     <div class="col s2"> <a class="waves-effect waves-light btn modal-trigger question-mark"
                             href="#modal1">?</a></div>
 
+                </div> -->
 
-                </div>
 
-
-                <!-- Image Modal Structure -->
+                <!-- Image Modal Structure
                 <div id="modal1" class="modal">
                     <div>
                         <a href="#!" class="modal-close waves-effect waves-green btn-flat right"><i
@@ -136,15 +146,7 @@
                                 height="150px">
                         </div>
                     </div>
-                </div>
-
-
-
-
-
-
-
-
+                </div> -->
         </div>
 
 
@@ -158,4 +160,15 @@
 </div>
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+
+<!-- Maps specific JS-->
+<script src="{{ url_for('static', filename='js/maps.js') }}"></script>
+
+<!-- Google Maps API -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY8GR3DNBlbz_RmwXJF7SRbBn4igCcsUg&libraries=places&callback=initialize">
+</script>
 {% endblock %}

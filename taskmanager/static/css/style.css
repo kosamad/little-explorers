@@ -246,6 +246,13 @@ margin:2% auto}
 .a-recommendation-container {padding: 5%;
   margin:0 auto}
 
+#map-canvas {
+  height: 400px; 
+  width: 100%; 
+    margin: 0;
+	padding: 0;
+  }
+  
 .question-mark{
   display: flex;  
   align-items: center;
