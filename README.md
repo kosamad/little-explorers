@@ -238,6 +238,8 @@ Contact.html
 
 The emails functionality was created using Email.JS with a template that sends to the admin team the name, email address and message submitted by the user. 
 
+MAP- RESTRICT KEY ONCE DEPLOYED
+
 ## ?. Technologies
 
 ### Languages
