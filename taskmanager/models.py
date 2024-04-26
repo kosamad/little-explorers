@@ -34,7 +34,7 @@ class Recommendation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     recommendation_name = db.Column(db.String(25), unique=True, nullable=False)
     location_name = db.Column(db.String(25), nullable=False)
-    occupants = db.Column(db.Integer, nullable=False) 
+    occupants = db.Column(db.String(15), nullable=False) 
     recommendation_review = db.Column(db.Text, nullable=False)   
     region = db.Column(db.String(25), nullable=False)
     image = db.Column(db.Text, unique=True,) # hash it so this is the case. 
