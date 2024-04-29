@@ -2,7 +2,9 @@
 from flask import render_template, request, redirect, url_for
 # Import from taskmanager package
 from taskmanager import app, db
-from taskmanager.models import Holiday, Recommendation, Users
+from taskmanager.models import Holiday, Recommendation, User
+
+from werkzeug.utils import secure_filename
 
 # Create Route Decorator
 @app.route("/")
@@ -24,13 +26,26 @@ def recommendations():
 def add_recommendation():
     holiday_types = list(Holiday.query.order_by(Holiday.holiday_name).all())
     if request.method == "POST":
+        if 'image' in request.files:
+            image = request.files['image']            
+            if image.filename != '':
+                filename = secure_filename(image.filename)
+                image.save(os.path.join(app.config['user_uploaded_images'], filename))
+                mimetype = image.mimetype
+                # Create a new Image object and add it to the database
+                new_image = Image(name=filename, mimetype=mimetype) 
+                db.session.add(new_image)
+                db.session.commit()
+
+        # Create a new Recommendation object and add it to the database
         recommendation = Recommendation(
             recommendation_name=request.form.get("recommendation_name"),
             location_name=request.form.get("location_name"),
             occupants=request.form.get("occupants"),
             recommendation_review=request.form.get("recommendation_review"),  
             region=request.form.get("region"),
-            image=request.form.get(" image"),
+            image=request.form.get("image"),
+            mimetype=request.form.get("mimetype"),
             recommendation_date=request.form.get("recommendation_date"),
             holiday_id=request.form.get("holiday_id"),
             map_long=request.form.get("map_long"),
@@ -41,7 +56,6 @@ def add_recommendation():
         db.session.commit()
         return redirect(url_for("recommendations"))
     return render_template('add_recommendation.html', holiday_types=holiday_types )
-
 
 # Holiday type Route
 @app.route("/holiday_types")

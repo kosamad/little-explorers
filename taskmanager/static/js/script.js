@@ -17,18 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // datepicker initialization
   let datepicker = document.querySelectorAll(".datepicker");
   M.Datepicker.init(datepicker, {
-    format: "mmmm, yyyy",
+    format: "dd mmmm, yyyy",
     i18n: {
       done: "Select"
     }
   });
 
-//  modal initialization
+  //  modal initialization
   var modal = document.querySelectorAll('.modal');
   M.Modal.init(modal);
-
-
-
 
 
   // // Icon idendtificaion in the new recommendation form.
@@ -65,19 +62,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+
 })
-
-
-// function to check length of input field in holiday type title. 
-function checkMaxLength(input) {
-  if (input.value.length > input.maxLength) {
-    input.value = input.value.slice(0, input.maxLength);
-  }
-}
-
-function checkMaxLength30(input) {
-  if (input.value.length > input.maxLength) {
-    input.value = input.value.slice(0, input.maxLength);
-  }
-}
-

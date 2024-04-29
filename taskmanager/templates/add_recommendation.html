@@ -35,14 +35,14 @@
                             <option value="{{ holiday_type.id }}">{{ holiday_type.holiday_name }}</option>
                             {% endfor %}
                         </select>
-                        <label for="holiday_id"></label>
+                        <label for="holiday_id">Holiday Type</label>
                     </div>
                 </div>
                 <!-- Region (User select from options) -->
                 <div class="row">
                     <div class="input-field col s9">
-                        <select id="region" name="region" class="validate" required>
-                            <option value="" disabled selected>Region</option>
+                        <select id="region" name="region" class="validate" placeholder="Select Region" required>
+                            <option value="" disabled selected>Select</option>
                             <option value="south-west">South West</option>
                             <option value="south-east">South East</option>
                             <option value="west-midlands">West Midlands</option>
@@ -59,19 +59,21 @@
                 <!-- Occupant Selection-->
                 <div class="row">
                     <div class="input-field col s3">
-                        <select id="occupant" name="occupant" class="validate" required>
-                            <option value="" disabled selected>Occupants</option>
+                        <select id="occupants" name="occupants" class="validate" required
+                           >
+                            <option value="" disabled selected>Select</option>
                             <option value="2">2</option>
                             <option value="3-4">3-4</option>
                             <option value="5-6">5-6</option>
                             <option value="7-8">7-8</option>
                             <option value="9+">9+</option>
                         </select>
-                        <label for="occupant"></label>
+                        <label for="occupants">Occupants</label>
                     </div>
                     <!-- Date Selection-->
                     <div class="input-field col s6">
-                        <input id="recommendation_date" name="recommendation_date" class="validate datepicker" required>
+                        <input id="recommendation_date" name="recommendation_date" class="validate datepicker" required
+                            placeholder="When did you visit?">
                         <label for="recommendation_date"></label>
                     </div>
                 </div>
@@ -79,8 +81,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="location_name" name="location_name" class="validate" type="text"
-                            placeholder="Search for Location" maxlength="
-                        120" placeholder="Search" type="text" required>
+                            placeholder="start typing to search" maxlength="
+                        120" required>
                         <label for="location_name">Address</label>
                     </div>
                 </div>
@@ -88,9 +90,6 @@
                 <div>Please check the location on the map and either move the marker or re-type your location.</div>
 
                 <div id="map-canvas"></div>
-
-
-
 
                 <!-- HIDDEN FROM USER, autofilled by JS using location/map" -->
                 <!-- map Longitude -->
@@ -106,6 +105,37 @@
                         <label for="map_lat"></label>
                         <input id="map_lat" name="map_lat" type="text" required>
                     </div>
+                </div>
+
+                <!-- Recommendation Review-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="recommendation_review" name="recommendation_review"
+                            class="materialize-textarea validate"
+                            placeholder="Describe your stay, activities in the area, and what made it special. Your review can guide others planning family-friendly holidays. Max 500 words"
+                            maxlength="120" required></textarea>
+                        <label for="recommendation_review">Review</label>
+                    </div>
+                </div>
+
+                <div class="row"> Please select a landscape image to accompany your recommendation </div>
+
+                <!-- Image Upload-->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="file" id="image" name="image" placeholder="Please select a Landscape image">
+                        <button type="button" id="upload-button">Save</button>
+                        <label for="image"></label>
+                    </div>
+
+                    <div class="col s12" id="uploaded-image"></div>
+
+                    <div class="col s6">
+                    <input id="mimetype" name="mimetype" type="text" required>   
+                    <label for="mimetype"></label> 
+                    </div>
+
+                    
                 </div>
 
 
@@ -152,7 +182,7 @@
 
         <!-- Send button -->
         <div class="col s12 center-align">
-            <button type="submit" class="col s8 offset-s2 m6 offset-m3 l3 offset-l4 btn-large btn-dgreen">Send
+            <button type="submit" id="submit-button" class="col s8 offset-s2 m6 offset-m3 l3 offset-l4 btn-large btn-dgreen">Submit
             </button>
         </div>
         </form>
@@ -163,10 +193,10 @@
 {% endblock %}
 
 {% block scripts %}
-
+<!-- image upload specific JS-->
+<script src="{{ url_for('static', filename='js/addRecommendation.js') }}"></script>
 <!-- Maps specific JS-->
 <script src="{{ url_for('static', filename='js/maps.js') }}"></script>
-
 <!-- Google Maps API -->
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY8GR3DNBlbz_RmwXJF7SRbBn4igCcsUg&libraries=places&callback=initialize">

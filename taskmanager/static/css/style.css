@@ -252,6 +252,11 @@ margin:2% auto}
     margin: 0;
 	padding: 0;
   }
+
+  #uploaded-image img{
+  max-width: 100%;
+  height:auto;  
+  }
   
 .question-mark{
   display: flex;  
@@ -265,6 +270,9 @@ margin:2% auto}
 }
 
 .modal-content h4 {font-size: 20px;}
+
+#recommendation_review{min-height: 100px;
+}
 
 
 /* Footer */
