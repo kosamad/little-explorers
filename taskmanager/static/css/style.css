@@ -241,9 +241,11 @@ margin:2% auto}
 .card .card-action {background-color: #beddea;}
 
 /* Add Recommendation Page */
-#a-recommendation-page {padding: 5%;}
+#a-recommendation-page,
+#create-account-page {
+  padding: 5%;}
 
-.a-recommendation-container {padding: 5%;
+.blue-container {padding: 5%;
   margin:0 auto}
 
 #map-canvas {

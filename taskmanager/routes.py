@@ -6,15 +6,20 @@ from taskmanager.models import Holiday, Recommendation, User
 
 from werkzeug.utils import secure_filename
 
-# Create Route Decorator
+# Home page Route
 @app.route("/")
 def home():
     return render_template("index.html")
 
+# Contact Route
 @app.route("/contact")
 def contact():
     return render_template('contact.html')
 
+# Create Account Route
+@app.route("/create_account")
+def create_account():
+    return render_template('create_account.html')
 
 # Recommendations Route
 @app.route("/recommendations")

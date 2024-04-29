@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- banner -->
+<div class="bg-dgreen">
+    <div class="container center-align heading-banner">
+        <h1 class="fira-600 white-text">Create Account</h1>
+        <div>
+            <p class="white-text">
+                Join our community and share the fantastic holiday discoveries you've made. Set up a free account using the form below 
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="bg-lblue" id="create-account-page">
+    <div class="container col s10 bg-white blue-container ">
+    <div class="row">
+        <form class="col s12" method="POST" action="{{ url_for('create_account') }}">
+            <!-- Name field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="username" name="username" type="text" class="validate" autocomplete="name" required>
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <!-- Email address field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" name="email" type="email" autocomplete="email"  minlength="3" maxlength="25" class="validate" required>
+                    <label for="email">Email Address</label>
+                </div>
+            </div>           
+            <!-- Password field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    
+                    <label for="password_hash"></label>
+                </div>
+            </div>
+            <!-- Repeat password field -->
+            <div class="row">
+                <div class="input-field col s12">
+                    
+                    <label for="password_check"></label>
+                </div>
+            </div>
+            <!-- Is Admin- only displayed to admins (ADD IN THIS FUNCTION ONCE HAVE AN ADMIN ACCOUNT) -->
+            <div class="row">
+                <div class="input-field col s12">
+                    
+                    <label for="is_admin"></label>
+                </div>
+            </div>
+
+
+            <!-- Create Account button -->
+            <div class="col s12 center-align">
+                <button type="submit" class="col s8 offset-s2 m6 offset-m3 l3 offset-l4 btn-large btn-dgreen">Send
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}
