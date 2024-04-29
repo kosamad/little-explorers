@@ -257,12 +257,15 @@ HTML, CSS, JavaScript & Python
 * [Canva](https://www.canva.com/) - to create the logo.
 * [Favicon](https://favicon.io/) - to generate the favicons for the page. 
 * [Email.JS] (https://www.emailjs.com/) - to send and recieve emails. 
+* [Google Maps JS API](https://developers.google.com/maps/documentation/javascript/overview) - to create and update features on the maps. 
 
 ## ?. Testing
 ## ?. Deployment
 ## ?. Credits
 
 * The email functionality was adapted from the Code Institute’s tutorial for EmailJS - Putting it all together > Sending Emails Using EmailJS > Sending Emails!
+
+* The map on the add recommendation page was adapted from the YouTube tutorial by [Imran Sayed](https://www.youtube.com/watch?v=yhhkNtdg5x0&list=PLD8nQCAhR3tT9dU8JKLpG3av-WMQGPPFP&index=1)
 
 
 ## Gitpod Reminders
