@@ -21,10 +21,26 @@ def contact():
 def create_account():
     return render_template('create_account.html')
 
+# Sign in Route
+@app.route("/sign_in")
+def sign_in():
+    return render_template('sign_in.html')
+
 # Recommendations Route
 @app.route("/recommendations")
 def recommendations():
     return render_template("recommendations.html")
+
+# Route to add a new user
+@app.route('/add_user', methods=['POST'])
+def add_user():   
+    username = request.form.get('username')
+    email = request.form.get('email')
+    password = request.form.get('password')  
+    new_user = Users(username=username, email=email, password_hash=password)   
+    db.session.add(new_user) 
+    db.session.commit()
+    return 'User added successfully.'
 
 # Add Recommendation Route
 @app.route("/add_recommendation", methods=["GET", "POST"])
@@ -104,13 +120,3 @@ def create_admin():
     return 'Admin user created successfully.'
 
 
-# Route to add a new user
-@app.route('/add_user', methods=['POST'])
-def add_user():   
-    username = request.form.get('username')
-    email = request.form.get('email')
-    password = request.form.get('password')  
-    new_user = Users(username=username, email=email, password_hash=password)   
-    db.session.add(new_user) 
-    db.session.commit()
-    return 'User added successfully.'
