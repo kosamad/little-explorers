@@ -1,5 +1,5 @@
 # Imports from Flask
-from flask import render_template, request, redirect, url_for, flash
+from flask import render_template, request, redirect, url_for, flash, session
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user 
 # Import from taskmanager package
 from taskmanager import app, db
@@ -12,7 +12,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 # Home page Route
-@app.route("/")
+@app.route("/home")
 def home():
     return render_template("index.html")
 
@@ -36,11 +36,16 @@ def sign_in():
         email = request.form.get('email')
         password = request.form.get('password_hash')
         # Check email address in database
-        email_to_check = User.query.filter_by(email=email).first()      
-        if email_to_check:
+        user = User.query.filter_by(email=email).first()     
+        if user:
             # Check hashed password and return true/false
-            if check_password_hash(email_to_check.password_hash, password):
-                flash("Login successful", "success")
+            if check_password_hash(user.password_hash, password):
+                # Assign user information to session to give user specific functionality
+                session['user_id'] = user.id
+                session['username'] = user.username
+                session['email'] = user.email
+                session['is_admin'] = user.is_admin
+                flash("Login Successful", "success")
                 # change below to profile page once made
                 return redirect(url_for("add_recommendation"))
             else:
@@ -51,6 +56,16 @@ def sign_in():
     return render_template('sign_in.html')
 
 
+# Sign out Route
+@app.route("/sign_out")
+def sign_out():
+    # Remove user authentication information from session
+    session.pop('user_id', None)
+    session.pop('username', None)
+    session.pop('email', None)
+    session.pop('is_admin', None)
+    flash('You have been signed out.', 'info')  
+    return redirect(url_for('home'))
 
 
 
@@ -65,7 +80,8 @@ def users_check():
 @app.route('/create_account', methods=['POST'])
 def add_user():   
     username = request.form.get('username')
-    email = request.form.get('email')
+    email = request.form.get('email') 
+    is_admin = request.form.get("is_admin", "").lower() == "true"
     password = request.form.get('password_hash') 
     # sha256 is an algorhythm to generate the hashed password
     password_hash = generate_password_hash(password, "sha256")  
@@ -80,9 +96,10 @@ def add_user():
     if existing_email:
         return "An account with this Email address already exists."
 
-    new_user = User(username=username, email=email, password_hash=password_hash)   
+    new_user = User(username=username, email=email, password_hash=password_hash,is_admin=is_admin)   
     db.session.add(new_user) 
     db.session.commit()
+    flash("You have created an account, please Sign In", "success")
     return redirect(url_for('sign_in'))
      
 # Recommendations Route

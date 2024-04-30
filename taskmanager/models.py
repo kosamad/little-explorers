@@ -22,7 +22,7 @@ class User(db.Model):
     username = db.Column(db.String(15), unique=True, nullable=False)
     email = db.Column(db.String(50), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)    
-    is_admin = db.Column(db.Boolean, default=False)  
+    is_admin = db.Column(db.Boolean, default=False, nullable=False)  
     recommendation = db.relationship("Recommendation", backref="user", cascade="all, delete", lazy=True)
     
     # methods to manage password hashing and verification using werkzeug.securtiy
