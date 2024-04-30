@@ -12,7 +12,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 # Home page Route
-@app.route("/home")
+@app.route("/")
 def home():
     return render_template("index.html")
 
@@ -25,9 +25,6 @@ def contact():
 @app.route("/create_account")
 def create_account():
     return render_template('create_account.html')
-
-
-
 
 # Sign in Route
 @app.route("/sign_in",methods=["GET","POST"])
@@ -55,7 +52,6 @@ def sign_in():
             flash('Invalid email or password. Please try again.', 'error')
     return render_template('sign_in.html')
 
-
 # Sign out Route
 @app.route("/sign_out")
 def sign_out():
@@ -68,13 +64,11 @@ def sign_out():
     return redirect(url_for('home'))
 
 
-
 # Check User
 @app.route("/users_check")
 def users_check():
     users = list(User.query.all())
     return render_template('users_check.html', users=users)  
-
 
 # Route to add a new user
 @app.route('/create_account', methods=['POST'])
@@ -173,17 +167,4 @@ def edit_holiday_types(holiday_id):
         db.session.commit()
         return redirect(url_for("holiday_types"))
     return render_template('edit_holiday_types.html',holiday_type=holiday_type)
-
-
-
-
-
-# Admin User Route
-@app.route('/create_admin')
-def create_admin():
-    admin_user = Users(username='admin', email='admin@example.com', password_hash='hashed_password', is_admin=True)
-    db.session.add(admin_user)
-    db.session.commit()
-    return 'Admin user created successfully.'
-
 
