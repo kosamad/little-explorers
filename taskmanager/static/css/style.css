@@ -85,6 +85,11 @@ main {
 
 .submit-btn {margin-top: 6%;}
 
+#flash-messages{
+  background-color: #beddea;
+  padding: 2%;
+}
+
 /* CSS modifications for Materialize form */
   
 /* label color */

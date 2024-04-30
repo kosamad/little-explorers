@@ -64,3 +64,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 })
+
+// Removing flash messages after 3 seconds
+setTimeout(function() {
+  var flashMessages = document.getElementById('flash-messages');
+  if (flashMessages) {
+      flashMessages.remove();
+  }
+}, 3000); 
