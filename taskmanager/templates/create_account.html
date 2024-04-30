@@ -36,15 +36,18 @@
                 <!-- Password field -->
                 <div class="row">
                     <div class="input-field col s12">
-
-                        <label for="password_hash"></label>
+                        <input id="password_hash" name="password_hash" type="password" minlength="3" maxlength="25"
+                            class="validate" required>
+                        <label for="password_hash">Password</label>
                     </div>
                 </div>
                 <!-- Repeat password field -->
                 <div class="row">
                     <div class="input-field col s12">
-
-                        <label for="password_check"></label>
+                        <input id="password_hash2" name="password_hash2" type="password" minlength="3" maxlength="25"
+                        class="validate" required required oninput="checkPasswordMatch()">
+                        <label for="password_hash2">Confirm Password</label>
+                        <div id="password_error"></div>
                     </div>
                 </div>
                 <!-- Is Admin- only displayed to admins (ADD IN THIS FUNCTION ONCE HAVE AN ADMIN ACCOUNT) -->
@@ -76,4 +79,9 @@
 
 
 </div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Create account specific JS-->
+<script src="{{ url_for('static', filename='js/createAccount.js') }}"></script>
 {% endblock %}
