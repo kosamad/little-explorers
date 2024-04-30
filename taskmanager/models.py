@@ -21,9 +21,23 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(15), unique=True, nullable=False)
     email = db.Column(db.String(50), unique=True, nullable=False)
-    password_hash = db.Column(db.String(128), nullable=False)
+    password_hash = db.Column(db.String(128), nullable=False)    
     is_admin = db.Column(db.Boolean, default=False)  
     recommendation = db.relationship("Recommendation", backref="user", cascade="all, delete", lazy=True)
+    
+    # methods to manage password hashing and verification using werkzeug.securtiy
+    # Adapted from the Codemy tutorials Flask Friday 
+    @property
+    def password(self):
+        raise AttributeError('password is not an readable attribute')
+    
+    @password.setter
+    def password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def verify_password(self, password):
+        return check_password_hash(self.password_hash, password)
+    
     def __repr__(self):
         return "#{0} - Username: {1} | Email: {2}".format(
             self.id, self.username, self.email

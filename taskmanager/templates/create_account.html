@@ -45,20 +45,23 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="password_hash2" name="password_hash2" type="password" minlength="3" maxlength="25"
-                        class="validate" required required oninput="checkPasswordMatch()">
+                            class="validate" required required oninput="checkPasswordMatch()">
                         <label for="password_hash2">Confirm Password</label>
                         <div id="password_error"></div>
                     </div>
                 </div>
-                <!-- Is Admin- only displayed to admins (ADD IN THIS FUNCTION ONCE HAVE AN ADMIN ACCOUNT) -->
+                <!-- Is Admin- only displayed to admins so they can create new admin accounts (ADD IN THIS FUNCTION ONCE HAVE AN ADMIN ACCOUNT) -->
                 <div class="row">
                     <div class="input-field col s12">
-
-                        <label for="is_admin"></label>
+                        <div class="switch">
+                            <label for="is_admin">
+                                <input id="is_admin" name="is_admin" type="checkbox">
+                                <span class="lever"></span>
+                               IS THIS AN ADMIN ACCOUNT?
+                            </label>
+                        </div>
                     </div>
                 </div>
-
-
                 <!-- Create Account button -->
                 <div clas="row">
                     <div class="col s12 center-align">

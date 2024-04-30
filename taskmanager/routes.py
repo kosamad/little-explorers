@@ -1,10 +1,15 @@
 # Imports from Flask
 from flask import render_template, request, redirect, url_for
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user 
 # Import from taskmanager package
 from taskmanager import app, db
 from taskmanager.models import Holiday, Recommendation, User
 
+# Importing for photo upload
 from werkzeug.utils import secure_filename
+# Importing for password generation
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 # Home page Route
 @app.route("/")
@@ -26,22 +31,44 @@ def create_account():
 def sign_in():
     return render_template('sign_in.html')
 
+# Check User
+@app.route("/users_check")
+def users_check():
+    users = list(User.query.all())
+    return render_template('users_check.html', users=users)  
+
+
+
+# Route to add a new user
+@app.route('/create_account', methods=['POST'])
+def add_user():   
+    username = request.form.get('username')
+    email = request.form.get('email')
+    password = request.form.get('password_hash') 
+    # sha256 is an algorhythm to generate the hashed password
+    password_hash = generate_password_hash(password, "sha256")  
+
+    # Check if the username already exists in the database
+    existing_user = User.query.filter_by(username=username).first()
+    if existing_user:
+        return "Username already exists. Please choose a different username."
+
+    # Check if the email address already exists in the database
+    existing_email = User.query.filter_by(email=email).first()
+    if existing_email:
+        return "An account with this Email address already exists."
+
+    new_user = User(username=username, email=email, password_hash=password_hash)   
+    db.session.add(new_user) 
+    db.session.commit()
+    return redirect(url_for('sign_in'))
+     
 # Recommendations Route
 @app.route("/recommendations")
 def recommendations():
     return render_template("recommendations.html")
 
-# Route to add a new user
-@app.route('/add_user', methods=['POST'])
-def add_user():   
-    username = request.form.get('username')
-    email = request.form.get('email')
-    password = request.form.get('password')  
-    new_user = Users(username=username, email=email, password_hash=password)   
-    db.session.add(new_user) 
-    db.session.commit()
-    return 'User added successfully.'
-
+    
 # Add Recommendation Route
 @app.route("/add_recommendation", methods=["GET", "POST"])
 def add_recommendation():
