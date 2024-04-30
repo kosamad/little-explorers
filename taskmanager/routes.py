@@ -1,5 +1,5 @@
 # Imports from Flask
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, flash
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user 
 # Import from taskmanager package
 from taskmanager import app, db
@@ -26,17 +26,39 @@ def contact():
 def create_account():
     return render_template('create_account.html')
 
+
+
+
 # Sign in Route
-@app.route("/sign_in")
+@app.route("/sign_in",methods=["GET","POST"])
 def sign_in():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password_hash')
+        # Check email address in database
+        email_to_check = User.query.filter_by(email=email).first()      
+        if email_to_check:
+            # Check hashed password and return true/false
+            if check_password_hash(email_to_check.password_hash, password):
+                flash("Login successful", "success")
+                # change below to profile page once made
+                return redirect(url_for("add_recommendation"))
+            else:
+                flash('Invalid email or password. Please try again.', 'error')
+                return redirect(url_for('sign_in'))  
+        else:
+            flash('Invalid email or password. Please try again.', 'error')
     return render_template('sign_in.html')
+
+
+
+
 
 # Check User
 @app.route("/users_check")
 def users_check():
     users = list(User.query.all())
     return render_template('users_check.html', users=users)  
-
 
 
 # Route to add a new user
@@ -67,7 +89,6 @@ def add_user():
 @app.route("/recommendations")
 def recommendations():
     return render_template("recommendations.html")
-
     
 # Add Recommendation Route
 @app.route("/add_recommendation", methods=["GET", "POST"])
@@ -98,7 +119,7 @@ def add_recommendation():
             holiday_id=request.form.get("holiday_id"),
             map_long=request.form.get("map_long"),
             map_lat=request.form.get("map_lat"),
-            user_id=request.form.get("user_id"),
+            user_id=current_user.id,
         )         
         db.session.add(recommendation)
         db.session.commit()
