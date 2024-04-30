@@ -29,10 +29,17 @@
         <!-- Nav bar from materialize, combining a dropdown menu with mobile side navbar -->
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <!-- {% if session.user %} -->
-            <li><a href="">PROFILE</a></li>
-            <li><a href="">SIGN OUT</a></li>
-            <!-- {% else %} -->
+            {% if 'user_id' in session %}
+                {% if session.get('is_admin') == True %}
+                <!-- Admin specific content -->
+                <li><a href="">HOLIDAY TYPES</a></li>
+                <li><a href="">MANAGE HOLIDAY TYPES</a></li>
+                {% endif %}
+                <!-- Signed in user content -->
+                <li><a href="">PROFILE</a></li>
+                <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
+            {% else %}
+            <!-- Signed out user content -->
             <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
             <li><a href="{{ url_for('sign_in')}}">SIGN IN</a></li>
             <li><a href="{{ url_for('users_check')}}">Users</a></li>
@@ -84,6 +91,19 @@
             <!-- {% endif %} -->
         </ul>
     </header>
+
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert fira-500" id="flash-messages">
+                        <h4 class="center-align ">{{message}}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
 
     <!-- main page content -->
     <main>
