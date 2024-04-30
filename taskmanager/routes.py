@@ -89,12 +89,14 @@ def add_user():
     # Check if the username already exists in the database
     existing_user = User.query.filter_by(username=username).first()
     if existing_user:
-        return "Username already exists. Please choose a different username."
+       flash("Sorry, the username you entered is already taken.", "error")
+       return redirect(url_for("create_account"))
 
     # Check if the email address already exists in the database
     existing_email = User.query.filter_by(email=email).first()
     if existing_email:
-        return "An account with this Email address already exists."
+        flash("An account with this Email address already exists. Please sign in.")
+        return redirect(url_for("sign_in"))
 
     new_user = User(username=username, email=email, password_hash=password_hash,is_admin=is_admin)   
     db.session.add(new_user) 
