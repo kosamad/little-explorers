@@ -1,5 +1,7 @@
 # Import db from taskmanager package
 from taskmanager import db
+# Import flask_login requriment. 
+from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user 
 
 
 # Database Tables
@@ -17,7 +19,7 @@ class Holiday(db.Model):
     )
         
 # 2. User table
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(15), unique=True, nullable=False)
     email = db.Column(db.String(50), unique=True, nullable=False)

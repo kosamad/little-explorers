@@ -1,6 +1,5 @@
 # Imports from Flask
 from flask import render_template, request, redirect, url_for, flash, session
-from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user 
 # Import from taskmanager package
 from taskmanager import app, db
 from taskmanager.models import Holiday, Recommendation, User
@@ -107,6 +106,7 @@ def recommendations():
 @app.route("/add_recommendation", methods=["GET", "POST"])
 def add_recommendation():
     holiday_types = list(Holiday.query.order_by(Holiday.holiday_name).all())
+    user_id = session.get('user_id')
     if request.method == "POST":
         if 'image' in request.files:
             image = request.files['image']            
@@ -132,12 +132,12 @@ def add_recommendation():
             holiday_id=request.form.get("holiday_id"),
             map_long=request.form.get("map_long"),
             map_lat=request.form.get("map_lat"),
-            user_id=current_user.id,
+            user_id = session.get('user_id')
         )         
         db.session.add(recommendation)
         db.session.commit()
         return redirect(url_for("recommendations"))
-    return render_template('add_recommendation.html', holiday_types=holiday_types )
+    return render_template('add_recommendation.html', holiday_types=holiday_types, user_id=user_id )
 
 # Holiday type Route
 @app.route("/holiday_types")
@@ -168,3 +168,23 @@ def edit_holiday_types(holiday_id):
         return redirect(url_for("holiday_types"))
     return render_template('edit_holiday_types.html',holiday_type=holiday_type)
 
+# Users
+@app.route("/users")
+# Database query the User model, get users and order by name. 
+def users():
+    users = list(User.query.order_by(User.username).all())
+    return render_template('users.html', users=users)
+
+# Delete User 
+@app.route("/delete_user/<int:user_id>")
+def delete_user(user_id):
+    users = User.query.get_or_404(user_id)
+    db.session.delete(users)
+    db.session.commit()
+    return redirect(url_for("users"))
+
+
+@app.route("/check_current_user")
+def check_current_user():
+    print(current_user)
+    return "Check console for current_user details"

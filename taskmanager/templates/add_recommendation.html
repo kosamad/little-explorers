@@ -20,8 +20,8 @@
                 <!-- Recommendation name field -->
                 <div class="row">
                     <div class="input-field col s9">
-                        <input id="recommendation_name" placeholder="Max 15 characters" name="recommendation_name"
-                            minlength="3" maxlength="15" type="text" class="validate" required
+                        <input id="recommendation_name" placeholder="Max 30 characters" name="recommendation_name"
+                            minlength="3" maxlength="30" type="text" class="validate" required
                             oninput="checkMaxLength(this)">
                         <label for="recommendation_name">Holiday Title</label>
                     </div>
@@ -59,8 +59,7 @@
                 <!-- Occupant Selection-->
                 <div class="row">
                     <div class="input-field col s3">
-                        <select id="occupants" name="occupants" class="validate" required
-                           >
+                        <select id="occupants" name="occupants" class="validate" required>
                             <option value="" disabled selected>Select</option>
                             <option value="2">2</option>
                             <option value="3-4">3-4</option>
@@ -112,8 +111,8 @@
                     <div class="input-field col s12">
                         <textarea id="recommendation_review" name="recommendation_review"
                             class="materialize-textarea validate"
-                            placeholder="Describe your stay, activities in the area, and what made it special. Your review can guide others planning family-friendly holidays. Max 500 words"
-                            maxlength="120" required></textarea>
+                            placeholder="Describe your stay, activities in the area, and what made it special. Your review can guide others planning family-friendly holidays. Max 1000 characters"
+                            maxlength="2000" required></textarea>
                         <label for="recommendation_review">Review</label>
                     </div>
                 </div>
@@ -130,12 +129,12 @@
 
                     <div class="col s12" id="uploaded-image"></div>
 
-                    <div class="col s6">
-                    <input id="mimetype" name="mimetype" type="text" required>   
-                    <label for="mimetype"></label> 
+                    <div class="col s6" style="display:none;">
+                        <input id="mimetype" name="mimetype" type="text" required>
+                        <label for="mimetype">mimetype</label>
                     </div>
 
-                    
+
                 </div>
 
 
@@ -180,9 +179,25 @@
         </div>
 
 
+        <!-- HIDDEN FROM USER  style="display: none;"-->
+        <!-- User ID -->
+        <div class="row">
+            <div class="input-field col s6">
+                <label for="user_id">User ID</label>
+                <input id="user_id" name="user_id" type="text" required value="{{ session.get('user_id') }}" required>
+            </div>
+        </div>
+        
+
+     
+        
+
+
+
         <!-- Send button -->
         <div class="col s12 center-align">
-            <button type="submit" id="submit-button" class="col s8 offset-s2 m6 offset-m3 l3 offset-l4 btn-large btn-dgreen">Submit
+            <button type="submit" id="submit-button"
+                class="col s8 offset-s2 m6 offset-m3 l3 offset-l4 btn-large btn-dgreen">Submit
             </button>
         </div>
         </form>
