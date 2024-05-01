@@ -76,12 +76,16 @@ main {
   background-color: #FF914D;
 }
 
+.modal-btn {padding: 0 0 5% 0;}
+
 .heading-banner {
   height: 250px;
   padding: 1% 0;
 }
 
-.admin-container {padding: 5%;}
+.admin-container {padding: 2%;
+  min-height: 100vh;
+}
 
 .submit-btn {margin-top: 6%;}
 
@@ -280,6 +284,10 @@ margin:2% auto}
 
 #recommendation_review{min-height: 100px;
 }
+
+/* User Page */
+
+.card-p{padding: 0 24px;}
 
 
 /* Footer */

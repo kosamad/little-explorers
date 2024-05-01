@@ -42,7 +42,7 @@
         <ul id="dropdown2" class="dropdown-content">            
             <!-- Admin specific content -->
             <li><a href="{{ url_for('holiday_types')}}">HOLIDAY TYPES</a></li>
-            <li><a href="">USERS</a></li>            
+            <li><a href="{{ url_for('users') }}">USERS</a></li>            
         </ul>
 
         <!-- Main nav-bar -->
@@ -81,7 +81,7 @@
                 <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
                 {% if session.get('is_admin') == True %}
                     <li><a href="">MANAGE HOLIDAY TYPES</a></li>
-                    <li><a href="">MANAGE USERS</a></li> 
+                    <li><a href="{{ url_for('users') }}">MANAGE USERS</a></li> 
                 {% endif %}
                 <li><a href="">PROFILE</a></li>
                 <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
