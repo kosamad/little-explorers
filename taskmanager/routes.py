@@ -1,5 +1,8 @@
 # Imports from Flask
 from flask import render_template, request, redirect, url_for, flash, session
+
+import os
+
 # Import from taskmanager package
 from taskmanager import app, db
 from taskmanager.models import Holiday, Recommendation, User
@@ -100,34 +103,44 @@ def add_user():
 # Recommendations Route
 @app.route("/recommendations")
 def recommendations():
-    return render_template("recommendations.html")
+    recommendations = list(Recommendation.query.order_by(Recommendation.id).all())
+    return render_template("recommendations.html", recommendations=recommendations)
     
 # Add Recommendation Route
+# Image upload code adapted from ????
+# defensive prgramming includes Werkzeug secure_filename function and check to ensure only jpg, png and jpeg files are uploaded
+
 @app.route("/add_recommendation", methods=["GET", "POST"])
 def add_recommendation():
     holiday_types = list(Holiday.query.order_by(Holiday.holiday_name).all())
-    user_id = session.get('user_id')
+    user_id = session.get('user_id')    
+    image_data = None
+    mimetype = None
+    image_name = None
+
     if request.method == "POST":
-        if 'image' in request.files:
-            image = request.files['image']            
-            if image.filename != '':
-                filename = secure_filename(image.filename)
-                image.save(os.path.join(app.config['user_uploaded_images'], filename))
-                mimetype = image.mimetype
-                # Create a new Image object and add it to the database
-                new_image = Image(name=filename, mimetype=mimetype) 
-                db.session.add(new_image)
-                db.session.commit()
+        mimetype = request.form.get("mimetype")  # Get the mimetype from the form
+        if mimetype.startswith('image'):  # Check if the mimetype starts with 'image'
+            if 'image' in request.files:
+                image = request.files['image']
+                if image.filename != '':
+                    # Read image data
+                    image_name = secure_filename(image.filename)
+                    image_path = os.path.join(app.config['user_uploaded_images'], image_name)
+                    image.save(image_path)  # Save the image to the file system
+        else:
+            flash("Invalid file format. Please upload only images.", "error")
 
         # Create a new Recommendation object and add it to the database
-        recommendation = Recommendation(
+        recommendation = Recommendation(            
             recommendation_name=request.form.get("recommendation_name"),
             location_name=request.form.get("location_name"),
             occupants=request.form.get("occupants"),
             recommendation_review=request.form.get("recommendation_review"),  
             region=request.form.get("region"),
-            image=request.form.get("image"),
-            mimetype=request.form.get("mimetype"),
+            image_data=image_data, 
+            mimetype=mimetype,
+            image_name=image_name,
             recommendation_date=request.form.get("recommendation_date"),
             holiday_id=request.form.get("holiday_id"),
             map_long=request.form.get("map_long"),

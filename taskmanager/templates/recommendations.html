@@ -19,7 +19,29 @@
     </div>
 </div>
 <div class="bg-lorange">
-    <div class="container admin-container">        
+    <div class="container admin-container">
+        <div class="row">
+            {% for recommendation in recommendations %}
+            <div class="col s12 m4 l3">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/user_uploaded_images/' + recommendation.image_name) }}" />
+                        <div class="image-overlay"></div>
+                        <span class="card-title" id="">{{ recommendation.image}}</span>
+                        <a class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
+                                class="fas fa-search"></i></a>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient
+                            because I require little markup to use effectively.</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+           
+           
         </div>
     </div>
 </div>

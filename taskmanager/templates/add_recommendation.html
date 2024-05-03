@@ -16,7 +16,7 @@
 <div class="bg-lblue" id="a-recommendation-page">
     <div class="container col s10 bg-white blue-container">
         <div class="row">
-            <form class="col s12" method="POST" action="{{ url_for('add_recommendation') }}">
+            <form class="col s12" method="POST" action="{{ url_for('add_recommendation') }}" enctype="multipart/form-data">
                 <!-- Recommendation name field -->
                 <div class="row">
                     <div class="input-field col s9">
@@ -129,7 +129,7 @@
 
                     <div class="col s12" id="uploaded-image"></div>
 
-                    <div class="col s6" style="display:none;">
+                    <div class="col s6" >
                         <input id="mimetype" name="mimetype" type="text" required>
                         <label for="mimetype">mimetype</label>
                     </div>

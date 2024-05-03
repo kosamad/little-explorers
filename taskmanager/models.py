@@ -54,8 +54,9 @@ class Recommendation(db.Model):
     occupants = db.Column(db.String(15), nullable=False) 
     recommendation_review = db.Column(db.Text, nullable=False)   
     region = db.Column(db.String(50), nullable=False)       
-    image = db.Column(db.Text, unique=True, nullable=False)
+    image_data = db.Column(db.LargeBinary, nullable=True) 
     mimetype = db.Column(db.Text, nullable=False) 
+    image_name = db.Column(db.Text, nullable=False, unique=True) 
     recommendation_date = db.Column(db.Date, nullable=False) 
     holiday_id = db.Column(db.Integer, db.ForeignKey("holiday.id", ondelete="CASCADE"), nullable=False)
     map_long = db.Column(db.Float, nullable=False)
@@ -66,5 +67,3 @@ class Recommendation(db.Model):
         return "#{0} - Name:{1} | Date:{2} | User ID:{3}".format(
             self.id, self.recommendation_name, self.recommendation_date, self.user_id
         )
-
-

@@ -22,6 +22,8 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 # Initialise the database
 db = SQLAlchemy(app)
 
+app.config['user_uploaded_images'] = 'taskmanager/static/images/user_uploaded_images'
+
 # Initialize LoginManager
 login_manager = LoginManager()
 login_manager.init_app(app)
