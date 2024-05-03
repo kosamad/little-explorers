@@ -56,7 +56,8 @@
                             class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('home')}}">HOME</a></li>
-                        <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>                      
+                        <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
+                        <li><a href="{{ url_for('contact')}}">CONTACT</a></li>                     
                         {% if 'user_id' in session %}                            
                             <li><a href="{{ url_for('add_recommendation')}}">ADD HOLIDAY</a></li>
                             {% if session.get('is_admin') == True %}                              
@@ -77,6 +78,7 @@
         <ul class="sidenav right font-title" id="mobile-demo">            
             <li><a href="{{ url_for('home')}}">HOME</a></li>
             <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
+            <li><a href="{{ url_for('contact')}}">CONTACT</a></li>    
             {% if 'user_id' in session %}
                 <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
                 {% if session.get('is_admin') == True %}
