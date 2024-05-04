@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Function to check if the select options have been changed by the user.
+  // Function to check if the select options have been changed by the user and that mime type = a valid image format.
   function checkSelectFields() {
     let errorMessage = '';
     let isValid = true;
@@ -52,6 +52,19 @@ document.addEventListener('DOMContentLoaded', function () {
       errorMessage += 'Please select the number of Occupants.\n';
       isValid = false;
     }
+
+    let mimetype = document.getElementById('mimetype');
+    if (mimetype.value === '') {
+      errorMessage = 'Please select a file with the format jpeg, jpg, or png.\n';
+      isValid = false;
+  } else {
+      // Check if the MIME type is an image format
+      let acceptedImageTypes = ['image/jpeg', 'image/jpg', 'image/png'];
+      if (!acceptedImageTypes.includes(mimetype.value)) {
+          errorMessage = 'Please select a file with the format jpeg, jpg, or png.\n';
+          isValid = false;
+      }
+  }
 
     if (!isValid) {
       alert(errorMessage);
