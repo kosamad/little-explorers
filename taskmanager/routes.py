@@ -23,6 +23,11 @@ def home():
 def contact():
     return render_template('contact.html')
 
+# View Recommendation (Holiday) Route
+@app.route("/recommendation/<int:recommendation_id>")
+def view_recommendation(recommendation_id):
+    return render_template('view_recommendation.html')
+
 # Create Account Route
 @app.route("/create_account")
 def create_account():
@@ -113,9 +118,7 @@ def recommendations():
 @app.route("/add_recommendation", methods=["GET", "POST"])
 def add_recommendation():
     holiday_types = list(Holiday.query.order_by(Holiday.holiday_name).all())
-    user_id = session.get('user_id')    
-    image_data = None
-    mimetype = None
+    user_id = session.get('user_id')  
     image_name = None
 
     if request.method == "POST":
@@ -128,6 +131,8 @@ def add_recommendation():
                     image_name = secure_filename(image.filename)
                     image_path = os.path.join(app.config['user_uploaded_images'], image_name)
                     image.save(image_path)  # Save the image to the file system
+                               
+             
         else:
             flash("Invalid file format. Please upload only images.", "error")
 
@@ -137,8 +142,7 @@ def add_recommendation():
             location_name=request.form.get("location_name"),
             occupants=request.form.get("occupants"),
             recommendation_review=request.form.get("recommendation_review"),  
-            region=request.form.get("region"),
-            image_data=image_data, 
+            region=request.form.get("region"),            
             mimetype=mimetype,
             image_name=image_name,
             recommendation_date=request.form.get("recommendation_date"),
