@@ -23,10 +23,6 @@ def home():
 def contact():
     return render_template('contact.html')
 
-# View Recommendation (Holiday) Route
-@app.route("/recommendation/<int:recommendation_id>")
-def view_recommendation(recommendation_id):
-    return render_template('view_recommendation.html')
 
 # Create Account Route
 @app.route("/create_account")
@@ -110,7 +106,13 @@ def add_user():
 def recommendations():
     recommendations = list(Recommendation.query.order_by(Recommendation.id).all())
     return render_template("recommendations.html", recommendations=recommendations)
-    
+
+# View Recommendation (Holiday) Route
+@app.route("/recommendation/<int:recommendation_id>", methods=["GET"])
+def view_recommendation(recommendation_id):
+    recommendation = Recommendation.query.get_or_404(recommendation_id)
+    return render_template('view_recommendation.html', recommendation=recommendation)
+
 # Add Recommendation Route
 # Image upload code adapted from ????
 # defensive prgramming includes Werkzeug secure_filename function and check to ensure only jpg, png and jpeg files are uploaded
