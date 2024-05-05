@@ -38,44 +38,16 @@
         <div class="col s12">{{ recommendation.recommendation_review}}</div>
     </div>
 
-    <!-- <div class="row">
+    <div class="row">
         
         <div id="fp-map_long">{{ recommendation.map_long}}</div>
         <div id="fp-map_lat">{{ recommendation.map_lat}}</div>
     </div>
 
-    <div id="map-canvas"></div> -->
+    <div id="map-canvas-view"></div>
 
 
-     <!-- Location Name and map (map code adapted from Imran Sayed at Codeytek Academy youtube tutorial)-->
-     <div class="row">
-        <div class="input-field col s12">
-            <input id="location_name" name="location_name" class="validate" type="text"
-                placeholder="start typing to search" maxlength="
-            120" required>
-            <label for="location_name">Address</label>
-        </div>
-    </div>
-
-    <div>Please check the location on the map and either move the marker or re-type your location.</div>
-
-    <div id="map-canvas"></div>
-
-    <!-- HIDDEN FROM USER, autofilled by JS using location/map" -->
-    <!-- map Longitude -->
-    <div class="row" style="display: none;">
-        <div class="input-field col s6">
-            <label for="map_long"></label>
-            <input id="map_long" name="map_long" type="text" required>
-        </div>
-    </div>
-    <!-- map Latitude -->
-    <div class="row" style="display: none;">
-        <div class="input-field col s6">
-            <label for="map_lat"></label>
-            <input id="map_lat" name="map_lat" type="text" required>
-        </div>
-    </div>
+    
 
 
 
@@ -93,9 +65,12 @@
 
 
 {% endblock %}
+
+{% block scripts %}
 <!-- Maps specific JS-->
-<script src="{{ url_for('static', filename='js/maps.js') }}"></script>
+<script src="{{ url_for('static', filename='js/maps-view.js') }}"></script>
 <!-- Google Maps API -->
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY8GR3DNBlbz_RmwXJF7SRbBn4igCcsUg&libraries=places&callback=initialize">
 </script>
+{% endblock %}
