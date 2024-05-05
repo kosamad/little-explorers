@@ -285,6 +285,16 @@ margin:2% auto}
 #recommendation_review{min-height: 100px;
 }
 
+/* Recommendation Full Page */
+.rec-full-image{
+  width: 100%; 
+  height: auto; 
+  display: block;  
+}
+
+.rec-full-title{font-size: 30px;
+margin: 0;}
+
 /* User Page */
 
 .card-p{padding: 0 24px;}
