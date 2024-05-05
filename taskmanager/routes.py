@@ -113,6 +113,14 @@ def view_recommendation(recommendation_id):
     recommendation = Recommendation.query.get_or_404(recommendation_id)
     return render_template('view_recommendation.html', recommendation=recommendation)
 
+# Delete Recommendation
+@app.route("/delete_recommendation/<int:recommendation_id>")
+def delete_recommendation(recommendation_id):
+    recommendation = Recommendation.query.get_or_404(recommendation_id)
+    db.session.delete(recommendation)
+    db.session.commit()
+    return redirect(url_for("recommendations"))
+
 # Add Recommendation Route
 # Image upload code adapted from ????
 # defensive prgramming includes Werkzeug secure_filename function and check to ensure only jpg, png and jpeg files are uploaded
