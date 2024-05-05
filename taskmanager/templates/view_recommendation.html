@@ -28,18 +28,19 @@
         <div class="col s12"> By:
             {{ recommendation.user.username }}</div>
     </div>
+    <!-- Recommendation Key elements, type, occupants and region-->
     <div class="row center-align">
-        <div class="col s12 m2 offset-m3"><i class="{{ recommendation.holiday.selected_icon }}"></i> {{ recommendation.holiday.holiday_name }}</div>
+        <div class="col s12 m2 offset-m3"><i class="{{ recommendation.holiday.selected_icon }}"></i>
+            {{ recommendation.holiday.holiday_name }}</div>
         <div class="col s12 m2"><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
         <div class="col s12 m2"><i class="fa-solid fa-user"></i> {{ recommendation.occupants }}</div>
     </div>
-
+    <!-- Recommendation Review-->
     <div class="row">
         <div class="col s12">{{ recommendation.recommendation_review}}</div>
     </div>
-
-    <div class="row">
-        
+    <!-- Recommendation Map-->
+    <div class="row" style="display: none;">
         <div id="fp-map_long">{{ recommendation.map_long}}</div>
         <div id="fp-map_lat">{{ recommendation.map_lat}}</div>
     </div>
@@ -47,7 +48,7 @@
     <div id="map-canvas-view"></div>
 
 
-    
+
 
 
 

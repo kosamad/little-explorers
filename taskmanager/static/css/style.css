@@ -260,17 +260,10 @@ margin:2% auto}
 #map-canvas {
   height: 400px; 
   width: 100%; 
-    margin: 0;
+  margin: 0;
 	padding: 0;
   }
-
-  #map-canvas-view {
-    height: 400px; 
-    width: 100%; 
-      margin: 0;
-    padding: 0;
-    }
-
+  
   #uploaded-image img{
   max-width: 100%;
   height:auto;  
@@ -292,15 +285,23 @@ margin:2% auto}
 #recommendation_review{min-height: 100px;
 }
 
-/* Recommendation Full Page */
+/* View Recommendation Full Page */
 .rec-full-image{
   width: 100%; 
   height: auto; 
-  display: block;  
+  display: block;
+  margin: 3% 0 0 0;  
 }
 
 .rec-full-title{font-size: 30px;
 margin: 0;}
+
+#map-canvas-view {
+  height: 400px; 
+  width: 100%; 
+  margin: 0 0 3% 0;
+  padding: 0;
+  }
 
 /* User Page */
 
