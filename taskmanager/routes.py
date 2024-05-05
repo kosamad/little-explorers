@@ -107,7 +107,7 @@ def recommendations():
     recommendations = list(Recommendation.query.order_by(Recommendation.id).all())
     return render_template("recommendations.html", recommendations=recommendations)
 
-# View Recommendation (Holiday) Route
+# View Recommendation Route
 @app.route("/recommendation/<int:recommendation_id>", methods=["GET"])
 def view_recommendation(recommendation_id):
     recommendation = Recommendation.query.get_or_404(recommendation_id)
