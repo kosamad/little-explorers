@@ -28,7 +28,7 @@
                         <span id="holiday-type-title" class="card-title">{{ holiday_type.holiday_name }}</span>
                        <i class="{{ holiday_type.selected_icon }} icon-display"></i>
                     </div>
-                    <div class="card-action holiday-type-action">
+                    <div class="card-action">
                         <a href="{{ url_for('edit_holiday_types', holiday_id=holiday_type.id) }}" class="btn btn-lgreen">Edit</a>
                         <a href="#" class="btn btn-pink">Delete</a>
                     </div>
