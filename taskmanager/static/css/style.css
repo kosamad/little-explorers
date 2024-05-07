@@ -294,11 +294,10 @@ margin:2% auto}
 
 /* View Recommendation Full Page */
 .rec-full-image{
-  width: 50%; 
-  height: auto; 
   display: block;
   margin: 3% auto;  
-}
+  height: 400px;     
+}     
 
 .rec-full-title{font-size: 30px;
 margin: 0;}
@@ -309,6 +308,11 @@ margin: 0;}
   margin: 0 0 3% 0;
   padding: 0;
   }
+
+.view-review{
+  text-align: justify;
+  font-size: 15px;
+}
 
 /* User Page */
 
@@ -360,7 +364,10 @@ footer p {
   #quote-section p{font-size: 1.8rem;}
   }
 
-@media screen and (max-width: 715px) {
+@media screen and (max-width: 700px) {
+  .rec-full-image{      
+    height: 300px;     
+  }  
   }
 
 
@@ -368,10 +375,25 @@ footer p {
   #nav-logo{
     height: 56px;   
      }
+     
+  #map-canvas-view{
+    height: 300px;
+  }
 }
 
 @media screen and (max-width: 455px) {
   #home-hero-div { background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(0 0 0 / 24%)), url(../images/pexels-tatianasyrikova-3934049-mobile.jpg);
-}}
+}
+
+.rec-full-image{      
+  height: 250px;     
+} 
+}
+
+@media screen and (max-width: 390px) {
+  .rec-full-image{      
+    height: 200px;     
+  }  
+  }
 
 
