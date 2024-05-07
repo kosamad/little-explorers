@@ -14,27 +14,38 @@ function initialize() {
   
   map = new google.maps.Map(element, mapOptions);
 
-  // Make an AJAX request to fetch map data
+  // Make an AJAX request to fetch map data and place markers
   var xhr = new XMLHttpRequest();
   xhr.open('GET', '/recommendations_map', true);
   xhr.onload = function() {
     if (xhr.status >= 200 && xhr.status < 400) {
       // Parse the response as JSON
-      var mapData = JSON.parse(xhr.responseText);
+      var mapData = JSON.parse(xhr.responseText);      
 
-      // Iterate over each recommendation to extract latitude and longitude
+      // Iterate over each recommendation to extract data from the array of objects 
       mapData.forEach(function(data) {
         var lat = parseFloat(data['map_lat']);
         var lng = parseFloat(data['map_long']);
-        var locationName = data['location_name'];       
+        var locationName = data['location_name'];
+        var recommendationId = (data['recommendation_id']);
+        console.log(recommendationId)      
 
-        // Add marker for this recommendation
+        // Add marker for the recommendation
           marker = new google.maps.Marker({
           position: { lat: lat, lng: lng }, 
           map: map,
           title: locationName,
           draggable: false
         });
+
+        // Set parameters for the user to click the marker and navigate to the correct page
+        var recommendationUrl = `${window.location.origin}/recommendation/${recommendationId}`;
+
+        // Click event listener to the marker to render specific reveiw
+        marker.addListener('click', function() {
+          window.location.href = recommendationUrl; 
+        });
+
       });
     } else {
       console.error('Request failed: ' + xhr.status);
@@ -45,26 +56,3 @@ function initialize() {
   };
   xhr.send();
 }
-
-
-
-
-
-
-  // // Get latitude and longitude values from divs on the page
-  // {% for recommendation in recommendations %}
-  //       var lat = parseFloat(document.getElementById('map_lat_{{ recommendation.id }}').innerText);
-  //       var lng = parseFloat(document.getElementById('map_long_{{ recommendation.id }}').innerText);
-
-  // // Creating a new map object using the constructor function google.maps.Map
-  // map = new google.maps.Map(element, mapOptions);
-
-  // //Adding a marker to the map
-  // marker = new google.maps.Marker({
-  //   position: { lat: lat, lng: lng }, 
-  //   map: map,
-  //   draggable: false
-  // });
-  // {% endfor %}}
-
-

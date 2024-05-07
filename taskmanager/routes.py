@@ -110,8 +110,8 @@ def recommendations():
 # Recommendation Map Route
 @app.route("/recommendations_map")
 def recommendations_map():
-    data = Recommendation.query.with_entities(Recommendation.map_lat, Recommendation.map_long, Recommendation.location_name).all()
-    map_data = [{'map_lat': item.map_lat, 'map_long': item.map_long, 'location_name': item.location_name} for item in data]
+    data = Recommendation.query.with_entities(Recommendation.id, Recommendation.map_lat, Recommendation.map_long, Recommendation.location_name).all()
+    map_data = [{'recommendation_id': item.id, 'map_lat': item.map_lat, 'map_long': item.map_long, 'location_name': item.location_name} for item in data]
     return jsonify(map_data)
 
 # View Recommendation Route

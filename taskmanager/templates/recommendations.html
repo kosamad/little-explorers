@@ -19,39 +19,15 @@
     </div>
 </div>
 <div class="bg-lblue">
-    <div class="container admin-container">
-        <!-- Call to Action, Add holiday for logged in users-->
-        {% if 'user_id' in session %}
-        <div class="row col m8 offset-m2 s12">
-            <p class="fira-600 center-align">
-                Discovered a magical spot worth sharing? Add it to our collection of holidays by clicking the button
-                below.
-            </p>
-        </div>
+    <div class="container admin-container">        
         <div class="row">
-            <div class="col s12 center-align">
-                <a href="{{ url_for('add_recommendation') }}" class=" fira-600 btn-large btn-blue"><i
-                        class="fas fa-plus-square left"></i> Holiday</a>
+            <div>
+                <a href="#map-canvas-recommendations" class="btn-large btn-blue col s6 offset-s3"><i class="fa-solid fa-map"></i> Map View</a>
             </div>
         </div>
-        {% else %}
-        <!-- Call to Action, Promt new users to create and acount-->
-        <div class="row col m8 offset-m2 s12">
-            <p class="fira-600 center-align">
-                Discovered a magical spot worth sharing? Easily add it to our collection of holidays by creating an
-                account and joining our vibrant community.
-            </p>
-        </div>
-        <div class="row center-align">
-            <div class="col s12 center-align">
-                <a href="{{ url_for('create_account')}}" class="waves-effect waves-light btn btn-blue"><i
-                        class="fas fa-user-plus"></i> Create Account</a>
-            </div>
-            <p id="account-log">
-                <a class="" href="{{ url_for('sign_in')}}">Already got an account? Log in here</a>
-            </p>
-        </div>
-        {% endif %}
+
+        
+
 
         <!-- All Holiday Recommendations added to the database -->
         <div class="row">
@@ -72,12 +48,7 @@
                         <div><i class="fa-solid fa-user"></i> {{ recommendation.occupants }}</div>
                         <div><i class="{{ recommendation.holiday.selected_icon }}"></i>
                             {{ recommendation.holiday.holiday_name }}</div>
-                    </div>
-                    <!-- Recommendation Map-->
-                    <div class="row" style="display: none;">
-                        <div id="map_long_{{ recommendation.id }}">{{ recommendation.map_long }}</div>
-                        <div id="map_lat_{{ recommendation.id }}">{{ recommendation.map_lat }}</div>
-                    </div>
+                    </div>                   
                     {% if session.get('is_admin') == True %}
                     <div class="card-action center-align">
                         <a href="#modal2" class="waves-effect btn btn-pink modal-trigger">Delete</a>
@@ -108,6 +79,40 @@
             </div>
             {% endfor %}
         </div>
+
+            <!-- Call to Action, Add holiday for logged in users-->
+            {% if 'user_id' in session %}
+            <div class="row col m8 offset-m2 s12">
+                <p class="fira-600 center-align">
+                    Discovered a magical spot worth sharing? Add it to our collection of holidays by clicking the button
+                    below.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <a href="{{ url_for('add_recommendation') }}" class=" fira-600 btn-large btn-blue"><i
+                            class="fas fa-plus-square left"></i> Holiday</a>
+                </div>
+            </div>
+            {% else %}
+            <!-- Call to Action, Promt new users to create and acount-->
+            <div class="row col m8 offset-m2 s12">
+                <p class="fira-600 center-align">
+                    Discovered a magical spot worth sharing? Easily add it to our collection of holidays by creating an
+                    account and joining our vibrant community.
+                </p>
+            </div>
+            <div class="row center-align">
+                <div class="col s12 center-align">
+                    <a href="{{ url_for('create_account')}}" class="waves-effect waves-light btn btn-blue"><i
+                            class="fas fa-user-plus"></i> Create Account</a>
+                </div>
+                <p id="account-log">
+                    <a class="" href="{{ url_for('sign_in')}}">Already got an account? Log in here</a>
+                </p>
+            </div>
+            {% endif %}
+        
 
 
 
