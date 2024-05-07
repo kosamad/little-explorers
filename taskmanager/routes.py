@@ -173,7 +173,6 @@ def holiday_types():
     holiday_types = list(Holiday.query.order_by(Holiday.holiday_name).all())
     return render_template('holiday_types.html', holiday_types=holiday_types)
 
-
 # Add holiday type. Button uses Get method, renders add_holiday_types page. Submiting the form (POST) posts data (holiday_name and icon) to database
 @app.route("/add_holiday_types", methods=["GET", "POST"])
 def add_holiday_types():
@@ -209,6 +208,13 @@ def delete_user(user_id):
     db.session.delete(users)
     db.session.commit()
     return redirect(url_for("users"))
+
+# Profile Page
+@app.route("/profile")
+def profile():
+    user_id = session.get('user_id')
+    user_recommendations = Recommendation.query.filter_by(user_id=user_id).order_by(Recommendation.recommendation_name).all() 
+    return render_template("profile.html", user_recommendations=user_recommendations) 
 
 
 @app.route("/check_current_user")

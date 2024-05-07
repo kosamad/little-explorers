@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<!-- banner -->
+<div class="bg-dgreen">
+    <div class="container heading-banner">
+        <div class="row">
+            <div class="col s12 center-align">
+                <h1 class="fira-600 white-text">Profile</h1>
+            </div>
+            <div class="row col m8 offset-m2 s12">
+                <p class="white-text center-align">
+                    Welcome to your personal holiday hub! Here, you can access the holidays you've added. Edit or delete them as you please. 
+                </p>
+            </div>            
+        </div>
+    </div>
+</div>
+<div class="bg-lblue">
+    <div class="container admin-container">
+        <div class="row col m8 offset-m2 s12">
+            <p class="fira-600 center-align">
+                Want to recommend a new holiday? Use the button below. 
+            </p>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('add_recommendation') }}" class=" fira-600 btn-large btn-blue"><i class="fas fa-plus-square left"></i> Holiday</a>
+            </div>
+        </div>
+
+        <div class="row">            
+            {% for recommendation in user_recommendations %}
+            <div class="col s12 m4 l3">
+                <div class="card">
+                    <div class="card-image">
+                        <img
+                            src="{{ url_for('static', filename='images/user_uploaded_images/' + recommendation.image_name) }}" />
+                        <div class="image-overlay"></div>
+                        <span class="card-title" id="">{{ recommendation.recommendation_name}}</span>
+                        <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"
+                            class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
+                                class="fas fa-search"></i></a>
+                    </div>
+                    <div class="card-content">
+                        <div><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
+                        <div><i class="fa-solid fa-user"></i> {{ recommendation.occupants }}</div>
+                        <div><i class="{{ recommendation.holiday.selected_icon }}"></i>
+                            {{ recommendation.holiday.holiday_name }}</div>
+                    </div>                    
+                    <div class="card-action center-align">
+                        <a href="" class="btn btn-lgreen">Edit</a>
+                        <a href="#modal2" class="waves-effect btn btn-pink modal-trigger">Delete</a>
+                    </div>                    
+                </div>
+            </div>
+            <!-- Modal Structure taken and adapted from Materialize -->
+            <div id="modal2" class="modal">
+                <div class="modal-content center-align">
+                    <h4>Delete Recommendation?</h4>
+                    <p>Note: This action is not reversible.
+                    </p>
+                </div>
+                <div class="center-align modal-btn">
+                    <div class="row">
+                        <div>
+                            <!-- Adjust the column size based on your preference -->
+                            <a href="#!" class="modal-close btn btn-pink col s3 offset-s2">No</a>
+                        </div>
+                        <div>
+                            <!-- Adjust the column size based on your preference -->
+                            <a href="{{ url_for('delete_recommendation', recommendation_id=recommendation.id ) }}" class="btn btn-lgreen col s3 offset-s2">Yes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}         
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
