@@ -172,10 +172,7 @@ main {
 margin-top: 2%;
 }
 
-#holiday-title-1,
-#holiday-title-2,
-#holiday-title-3,
-#holiday-title-4 {
+.card-title {
 margin-top: 5% ;
 font-family: "Fira Sans", sans-serif;
 font-weight: 600;
@@ -293,16 +290,16 @@ margin:2% auto}
 
 /* View Recommendation Full Page */
 .rec-full-image{
-  width: 100%; 
+  width: 50%; 
   height: auto; 
   display: block;
-  margin: 3% 0 0 0;  
+  margin: 3% auto;  
 }
 
 .rec-full-title{font-size: 30px;
 margin: 0;}
 
-#map-canvas-view {
+#map-canvas-view, #map-canvas-recommendations {
   height: 400px; 
   width: 100%; 
   margin: 0 0 3% 0;

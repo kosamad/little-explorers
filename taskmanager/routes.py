@@ -1,5 +1,5 @@
 # Imports from Flask
-from flask import render_template, request, redirect, url_for, flash, session
+from flask import render_template, request, redirect, url_for, flash, session, jsonify
 
 import os
 
@@ -16,13 +16,13 @@ from werkzeug.security import generate_password_hash, check_password_hash
 # Home page Route
 @app.route("/")
 def home():
-    return render_template("index.html")
-
+    recommendations = list(Recommendation.query.order_by(Recommendation.id).all())
+    return render_template("index.html",recommendations=recommendations)  
+    
 # Contact Route
 @app.route("/contact")
 def contact():
     return render_template('contact.html')
-
 
 # Create Account Route
 @app.route("/create_account")
@@ -106,6 +106,13 @@ def add_user():
 def recommendations():
     recommendations = list(Recommendation.query.order_by(Recommendation.id).all())
     return render_template("recommendations.html", recommendations=recommendations)
+
+# Recommendation Map Route
+@app.route("/recommendations_map")
+def recommendations_map():
+    data = Recommendation.query.with_entities(Recommendation.map_lat, Recommendation.map_long, Recommendation.location_name).all()
+    map_data = [{'map_lat': item.map_lat, 'map_long': item.map_long, 'location_name': item.location_name} for item in data]
+    return jsonify(map_data)
 
 # View Recommendation Route
 @app.route("/recommendation/<int:recommendation_id>", methods=["GET"])
