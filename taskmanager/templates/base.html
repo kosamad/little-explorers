@@ -29,13 +29,13 @@
         <!-- Nav bar from materialize, combining a dropdown menu with mobile side navbar -->
         <!-- Dropdowns -->
         <ul id="dropdown1" class="dropdown-content">
-            {% if 'user_id' in session %}        
-                <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
+            {% if 'user_id' in session %}      
                 <li><a href="{{ url_for('profile') }}">PROFILE</a></li>
+                <li><a href="{{ url_for('add_recommendation')}}">ADD HOLIDAY</a></li>
+                <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
             {% else %}                
                 <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
-                <li><a href="{{ url_for('sign_in')}}">SIGN IN</a></li>
-                <li><a href="{{ url_for('users_check')}}">Users</a></li>
+                <li><a href="{{ url_for('sign_in')}}">SIGN IN</a></li>                
             {% endif %}
         </ul>
 
@@ -58,8 +58,7 @@
                         <li><a href="{{ url_for('home')}}">HOME</a></li>
                         <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
                         <li><a href="{{ url_for('contact')}}">CONTACT</a></li>                     
-                        {% if 'user_id' in session %}                            
-                            <li><a href="{{ url_for('add_recommendation')}}">ADD HOLIDAY</a></li>
+                        {% if 'user_id' in session %}                      
                             {% if session.get('is_admin') == True %}                              
                                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">MANAGE<i
                                 class="fa-solid fa-caret-down right"></i></a></li>
