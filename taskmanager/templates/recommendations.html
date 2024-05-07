@@ -9,17 +9,27 @@
             <div class="col s12 center-align">
                 <h1 class="fira-600 white-text">Holidays</h1>
             </div>
-            <div class="row">
-                <div class="col s12 center-align">
-                    <a href="{{ url_for('add_recommendation') }}" class=" fira-600 btn-large btn-blue">Recommend A
-                        Holiday<i class="fas fa-plus-square right"></i></a>
-                </div>
-            </div>
+            <div class="row col m8 offset-m2 s12">
+                <p class="white-text center-align">
+                    Browse our curated selection of family-friendly holidays, verified by our users, and simplify your search for the perfect getaway.
+                </p>
+            </div>            
         </div>
     </div>
 </div>
-<div class="bg-lorange">
+<div class="bg-lblue">
     <div class="container admin-container">
+        <div class="row col m8 offset-m2 s12">
+            <p class="fira-600 center-align">
+                Discovered a magical spot worth sharing? Easily add it to our collection of holidays by clicking the button below. (Don't forget to sign in to your account!)
+            </p>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="{{ url_for('add_recommendation') }}" class=" fira-600 btn-large btn-blue"><i class="fas fa-plus-square left"></i> Holiday</a>
+            </div>
+        </div>
+
         <div class="row">
             {% for recommendation in recommendations %}
             <div class="col s12 m4 l3">
