@@ -31,7 +31,7 @@
         <ul id="dropdown1" class="dropdown-content">
             {% if 'user_id' in session %}        
                 <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
-                <li><a href="">PROFILE</a></li>
+                <li><a href="{{ url_for('profile') }}">PROFILE</a></li>
             {% else %}                
                 <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
                 <li><a href="{{ url_for('sign_in')}}">SIGN IN</a></li>
@@ -85,7 +85,7 @@
                     <li><a href="">MANAGE HOLIDAY TYPES</a></li>
                     <li><a href="{{ url_for('users') }}">MANAGE USERS</a></li> 
                 {% endif %}
-                <li><a href="">PROFILE</a></li>
+                <li><a href="{{ url_for('profile') }}">PROFILE</a></li>
                 <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
             {% else %}
             <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
