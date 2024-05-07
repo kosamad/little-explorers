@@ -94,6 +94,12 @@ main {
   padding: 2%;
 }
 
+
+.card .card-image img {
+  height:200px;
+  object-fit: cover;
+}
+
 /* CSS modifications for Materialize form */
   
 /* label color */
