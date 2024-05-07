@@ -47,7 +47,7 @@ def sign_in():
                 session['is_admin'] = user.is_admin
                 flash("Login Successful", "success")
                 # change below to profile page once made
-                return redirect(url_for("add_recommendation"))
+                return redirect(url_for("profile"))
             else:
                 flash('Invalid email or password. Please try again.', 'error')
                 return redirect(url_for('sign_in'))  
@@ -126,7 +126,7 @@ def delete_recommendation(recommendation_id):
     recommendation = Recommendation.query.get_or_404(recommendation_id)
     db.session.delete(recommendation)
     db.session.commit()
-    return redirect(url_for("recommendations", recommendation=recommendation))
+    return redirect(url_for("profile", recommendation=recommendation))
 
 # Add Recommendation Route
 # Image upload code adapted from ????
@@ -152,25 +152,43 @@ def add_recommendation():
         else:
             flash("Invalid file format. Please upload only images.", "error")
 
+        # Check if the recommendation title already exists in the database
+        existing_recommendation = Recommendation.query.filter_by(recommendation_name=request.form.get("recommendation_name")).first()
+
+        if existing_recommendation:
+            flash("Recommendation title already exists. Please choose a different title.", "error")
+        else:
         # Create a new Recommendation object and add it to the database
-        recommendation = Recommendation(            
-            recommendation_name=request.form.get("recommendation_name"),
-            location_name=request.form.get("location_name"),
-            occupants=request.form.get("occupants"),
-            recommendation_review=request.form.get("recommendation_review"),  
-            region=request.form.get("region"),            
-            mimetype=mimetype,
-            image_name=image_name,
-            recommendation_date=request.form.get("recommendation_date"),
-            holiday_id=request.form.get("holiday_id"),
-            map_long=request.form.get("map_long"),
-            map_lat=request.form.get("map_lat"),
-            user_id = session.get('user_id')
-        )         
-        db.session.add(recommendation)
-        db.session.commit()
-        return redirect(url_for("recommendations"))
+            recommendation = Recommendation(            
+                recommendation_name=request.form.get("recommendation_name"),
+                location_name=request.form.get("location_name"),
+                occupants=request.form.get("occupants"),
+                recommendation_review=request.form.get("recommendation_review"),  
+                region=request.form.get("region"),            
+                mimetype=mimetype,
+                image_name=image_name,
+                recommendation_date=request.form.get("recommendation_date"),
+                holiday_id=request.form.get("holiday_id"),
+                map_long=request.form.get("map_long"),
+                map_lat=request.form.get("map_lat"),
+                user_id = session.get('user_id')
+            )         
+            db.session.add(recommendation)
+            db.session.commit()
+            return redirect(url_for("recommendations"))
     return render_template('add_recommendation.html', holiday_types=holiday_types, user_id=user_id )
+
+@app.route("/check_recommendation_title", methods=["POST"])
+def check_recommendation_title():
+    recommendation_name = request.json.get("recommendation_name")
+    existing_recommendation = Recommendation.query.filter_by(recommendation_name=recommendation_name).first()
+
+    if existing_recommendation:
+        # If the recommendation title already exists, return exists=True
+        return jsonify({"exists": True})
+    else:
+        # If the recommendation title is unique, return exists=False
+        return jsonify({"exists": False})
 
 # Edit Recommendation Route
 @app.route("/edit_recommendation/<int:recommendation_id>", methods=["GET", "POST"])

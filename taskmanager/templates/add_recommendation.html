@@ -19,16 +19,17 @@
             <form class="col s12" method="POST" action="{{ url_for('add_recommendation') }}" enctype="multipart/form-data">
                 <!-- Recommendation name field -->
                 <div class="row">
-                    <div class="input-field col s9">
+                    <div class="input-field col m6 s12">
                         <input id="recommendation_name" placeholder="Max 30 characters" name="recommendation_name"
                             minlength="3" maxlength="30" type="text" class="validate" required
-                            oninput="checkMaxLength(this)">
+                            oninput="checkMaxLength(this)">                            
                         <label for="recommendation_name">Holiday Title</label>
                     </div>
+                    <div class="s12 m3" id="errorMessage" style="color: red; display: none;">Recommendation title already exists. Please choose a different title.</div>
                 </div>
                 <!-- Holiday Type Id (User select from name) -->
                 <div class="row">
-                    <div class="input-field col s9">
+                    <div class="input-field col m6 s12">
                         <select id="holiday_id" name="holiday_id" class="validate" required>
                             <option value="" disabled selected>Choose Holiday Type</option>
                             {% for holiday_type in holiday_types %}
@@ -40,7 +41,7 @@
                 </div>
                 <!-- Region (User select from options) -->
                 <div class="row">
-                    <div class="input-field col s9">
+                    <div class="input-field col m6 s12">
                         <select id="region" name="region" class="validate" placeholder="Select Region" required>
                             <option value="" disabled selected>Select</option>
                             <option value="South-West">South West</option>
@@ -58,7 +59,7 @@
                 </div>
                 <!-- Occupant Selection-->
                 <div class="row">
-                    <div class="input-field col s3">
+                    <div class="input-field col s4">
                         <select id="occupants" name="occupants" class="validate" required>
                             <option value="" disabled selected>Select</option>
                             <option value="2">2</option>
@@ -70,7 +71,7 @@
                         <label for="occupants">Occupants</label>
                     </div>
                     <!-- Date Selection-->
-                    <div class="input-field col s6">
+                    <div class="input-field col s8">
                         <input id="recommendation_date" name="recommendation_date" class="validate datepicker" required
                             placeholder="When did you visit?">
                         <label for="recommendation_date"></label>
@@ -129,59 +130,19 @@
 
                     <div class="col s12" id="uploaded-image"></div>
 
-                    <div class="col s6" >
+                    <div class="col s6" style="display: none;">
                         <input id="mimetype" name="mimetype" type="text" required>
                         <label for="mimetype">mimetype</label>
                     </div>
+                </div>             
 
-
-                </div>
-
-
-
-
-
-
-
-
-
-
-                <!-- Upload Image
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="image" name="image" minlength="5" maxlength="30" type="text" class="validate"
-                            required>
-                        <label for="image">Upload an Image</label>
-                    </div>
-
-                    <div class="col s2"> <a class="waves-effect waves-light btn modal-trigger question-mark"
-                            href="#modal1">?</a></div>
-
-                </div> -->
-
-
-                <!-- Image Modal Structure
-                <div id="modal1" class="modal">
-                    <div>
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat right"><i
-                                class="fa-solid fa-square-xmark"></i></a>
-                    </div>
-                    <div>
-                        <div style="text-align: justify;" class="modal-content fira-500">
-                            <p>HOW TO .................</p>
-                        </div>
-                        <div class="center-align modal-image">
-                            <img alt="image showing google map co-ordinates" src="../static/images/map_coordinates.png"
-                                height="150px">
-                        </div>
-                    </div>
-                </div> -->
+                
         </div>
 
 
         <!-- HIDDEN FROM USER  style="display: none;"-->
         <!-- User ID -->
-        <div class="row">
+        <div class="row" style="display: none;">
             <div class="input-field col s6">
                 <label for="user_id">User ID</label>
                 <input id="user_id" name="user_id" type="text" required value="{{ session.get('user_id') }}" required>

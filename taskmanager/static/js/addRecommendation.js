@@ -30,6 +30,50 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // Code to check if the name chosen by the user already exists in the db
+
+  var recommendationNameInput = document.getElementById("recommendation_name");
+  var errorMessage = document.getElementById("errorMessage");
+
+
+  // Listens for user typing in the input field.
+    recommendationNameInput.addEventListener("input", function() {
+        var recommendationName = recommendationNameInput.value.trim(); //removing any spaces
+        if (recommendationName !== "") {
+            checkRecommendationTitle(recommendationName);
+        } else {
+            errorMessage.style.display = "none";
+        }
+    });
+
+    //Check function sends a Post request to the server to check if the name already exits.
+    //JSON response from check recommendation route gives a exists propery (with a value True or False)
+    // when xhr has completed, reponse is parsed as JSON and error message is displayed if the title already exists.
+    function checkRecommendationTitle(recommendationName) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/check_recommendation_title", true);
+        xhr.setRequestHeader("Content-Type", "application/json"); // sets the type of data the server should expect
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);                
+                if (response.exists) {
+                    // If the title already exists, display an error message
+                    errorMessage.style.display = "block";
+                } else {
+                    // If the title is unique, hide the error message
+                    errorMessage.style.display = "none";
+                }
+            }
+        };
+        // if there is an error during the xhr
+        xhr.onerror = function() {
+            console.error("Request failed");
+        };
+        // data sent to server as JSON data to validate against existing entries in the db
+        xhr.send(JSON.stringify({ recommendation_name: recommendationName}));
+    }
+
+
   // Function to check if the select options have been changed by the user and that mime type = a valid image format.
   function checkSelectFields() {
     let errorMessage = '';
@@ -65,18 +109,16 @@ document.addEventListener('DOMContentLoaded', function () {
           isValid = false;
       }
   }
-
     if (!isValid) {
       alert(errorMessage);
     }
     return isValid;
-  }
+  }  
+});
 
-  // Function to check the maximum length of input fields.
+// Function to check the maximum length of input fields.
   function checkMaxLength(input) {
     if (input.value.length > input.maxLength) {
       input.value = input.value.slice(0, input.maxLength);
     }
   }
-
-});
