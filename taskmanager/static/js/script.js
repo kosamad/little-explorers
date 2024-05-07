@@ -60,8 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         displayInput.disabled = true;
       }
     });
-  }
-
+  }  
 
 })
 
