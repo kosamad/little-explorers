@@ -130,7 +130,6 @@ def add_recommendation():
     holiday_types = list(Holiday.query.order_by(Holiday.holiday_name).all())
     user_id = session.get('user_id')  
     image_name = None
-
     if request.method == "POST":
         mimetype = request.form.get("mimetype")  # Get the mimetype from the form
         if mimetype.startswith('image'):  # Check if the mimetype starts with 'image'
@@ -165,6 +164,44 @@ def add_recommendation():
         db.session.commit()
         return redirect(url_for("recommendations"))
     return render_template('add_recommendation.html', holiday_types=holiday_types, user_id=user_id )
+
+# Edit Recommendation Route
+@app.route("/edit_recommendation/<int:recommendation_id>", methods=["GET", "POST"])
+def edit_recommendation(recommendation_id):
+    recommendation = Recommendation.query.get_or_404(recommendation_id)
+    holiday_types = list(Holiday.query.order_by(Holiday.holiday_name).all())
+    image_name = recommendation.image_name
+    if request.method == "POST":
+        mimetype = request.form.get("mimetype") 
+        if mimetype.startswith('image'): 
+            if 'image' in request.files:
+                image = request.files['image']
+                if image.filename != '':                    
+                    image_name = secure_filename(image.filename)
+                    image_path = os.path.join(app.config['user_uploaded_images'], image_name)
+                    image.save(image_path)
+                    recommendation.image_name = image_name # Update the image name                           
+            else:
+                flash("Invalid file format. Please upload only images.", "error")
+
+        # Update the existing Recommendation object and add it to the database
+               
+        recommendation.recommendation_name=request.form.get("recommendation_name")
+        recommendation.location_name=request.form.get("location_name")
+        recommendation.occupants=request.form.get("occupants")
+        recommendation.recommendation_review=request.form.get("recommendation_review")
+        recommendation.region=request.form.get("region")          
+        recommendation.mimetype=mimetype
+        recommendation.image_name=image_name
+        recommendation.recommendation_date=request.form.get("recommendation_date")
+        recommendation.holiday_id=request.form.get("holiday_id")
+        recommendation.map_long=request.form.get("map_long")
+        recommendation.map_lat=request.form.get("map_lat")
+        recommendation.user_id = session.get('user_id')                      
+        db.session.commit()
+        return redirect(url_for("profile"))
+    return render_template('edit_recommendation.html',recommendation=recommendation, holiday_types=holiday_types, user_id=session.get('user_id'))
+
 
 # Holiday type Route
 @app.route("/holiday_types")
