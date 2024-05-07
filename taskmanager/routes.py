@@ -119,7 +119,7 @@ def delete_recommendation(recommendation_id):
     recommendation = Recommendation.query.get_or_404(recommendation_id)
     db.session.delete(recommendation)
     db.session.commit()
-    return redirect(url_for("recommendations"))
+    return redirect(url_for("recommendations", recommendation=recommendation))
 
 # Add Recommendation Route
 # Image upload code adapted from ????
