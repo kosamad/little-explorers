@@ -7,7 +7,8 @@
         <h1 class="hero-headline fira-600">Big Adventures For <span class="pacifico" id="f-little">little</span>
             EXPLORERS</h1>
         <h2 class="hero-subtitle fira-500">Discover Child Friendly Holidays Across The UK</h2>
-        <a href="{{ url_for('recommendations')}}" id="browse-hero" class="waves-effect waves-light btn btn-orange fira-500"><i class="fas fa-search"></i>
+        <a href="{{ url_for('recommendations')}}" id="browse-hero"
+            class="waves-effect waves-light btn btn-orange fira-500"><i class="fas fa-search"></i>
             Browse
             Holidays</a>
     </div>
@@ -22,68 +23,29 @@
     </div>
     <!-- Cards Modifed from Materialize-->
     <div class="row">
+        {% for recommendation in recommendations %}
+        {% if recommendation.recommendation_name in ['test', 'bob'] %}
         <div class="col s12 m4 l3">
             <div class="card">
                 <div class="card-image">
-                    <img src="../static/images/pexels-axp-photography-500641970-18729436.jpg" alt="">
+                    <img
+                        src="{{ url_for('static', filename='images/user_uploaded_images/' + recommendation.image_name) }}" />
                     <div class="image-overlay"></div>
-                    <span class="card-title" id="holiday-title-1">Riverside Lodge</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
+                    <span class="card-title" id="">{{ recommendation.recommendation_name}}</span>
+                    <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"
+                        class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
                             class="fas fa-search"></i></a>
                 </div>
                 <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient
-                        because I require little markup to use effectively.</p>
+                    <div><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
+                    <div><i class="fa-solid fa-user"></i> {{ recommendation.occupants }}</div>
+                    <div><i class="{{ recommendation.holiday.selected_icon }}"></i>
+                        {{ recommendation.holiday.holiday_name }}</div>
                 </div>
             </div>
         </div>
-        <div class="col s12 m4 l3">
-            <div class="card">
-                <div class="card-image">
-                    <img src="../static/images/pexels-axp-photography-500641970-18729436.jpg" alt="">
-                    <div class="image-overlay"></div>
-                    <span class="card-title" id="holiday-title-2">Cosy Devon Cottage</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
-                            class="fas fa-search"></i></a>
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient
-                        because I require little markup to use effectively.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m4 l3">
-            <div class="card">
-                <div class="card-image">
-                    <img src="../static/images/pexels-axp-photography-500641970-18729436.jpg" alt="">
-                    <div class="image-overlay"></div>
-                    <span class="card-title" id="holiday-title-3">Beachfront House</span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
-                            class="fas fa-search"></i></a>
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient
-                        because I require little markup to use effectively.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m4 l3 hide-on-med-only">
-            <div class="card">
-                <div class="card-image">
-                    <img src="../static/images/pexels-axp-photography-500641970-18729436.jpg" alt="">
-                    <div class="image-overlay"></div>
-                    <span>
-                        <h4 class="card-title" id="holiday-title-4">Bristol Townhouse</h4>
-                    </span>
-                    <a class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
-                            class="fas fa-search"></i></a>
-                </div>
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient
-                        because I require little markup to use effectively.</p>
-                </div>
-            </div>
-        </div>
+        {% endif %}
+        {% endfor %}
     </div>
 
     <div class="row">
@@ -93,13 +55,14 @@
 
 <!-- Quote section -->
 <div class="container">
-<div id="quote-hero-div" class="row">
-    <div class="quote-div col m4 s6 center-align valign-wrapper" id="quote-section">
-        <div class="quote-overlay"></div>
-        <p class="fira-600"><i class="fas fa-quote-left"></i> This site has truly transformed our holiday experiences.
-            <i class="fas fa-quote-right"></i> </p>
+    <div id="quote-hero-div" class="row">
+        <div class="quote-div col m4 s6 center-align valign-wrapper" id="quote-section">
+            <div class="quote-overlay"></div>
+            <p class="fira-600"><i class="fas fa-quote-left"></i> This site has truly transformed our holiday
+                experiences.
+                <i class="fas fa-quote-right"></i> </p>
+        </div>
     </div>
-</div>
 </div>
 </div>
 
@@ -114,7 +77,8 @@
             <h3 class="fira-500 no-join-margin">Join Us</h3>
             <p>Little Explorers fosters a vibrant community where you can share your fantastic holiday discoveries.
                 Join us and contribute to something extraordinary by sharing your travel experiences.</p>
-            <a href="{{ url_for('create_account')}}" class="waves-effect waves-light btn btn-blue"><i class="fas fa-user-plus"></i> Create Account</a>
+            <a href="{{ url_for('create_account')}}" class="waves-effect waves-light btn btn-blue"><i
+                    class="fas fa-user-plus"></i> Create Account</a>
             <p id="account-log">
                 <a class="" href="{{ url_for('sign_in')}}">Already got an account? Log in here</a>
             </p>

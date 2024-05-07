@@ -48,8 +48,10 @@
                 <div class="row">
                     <div class="input-field col s9">
                         <select id="region" name="region" class="validate" placeholder="Select Region" required>
-                            <option value="{{ recommendation.region }}" disabled selected>{{ recommendation.region }}
-                            </option>
+                            <option value="" disabled>Choose Region</option>
+                            {% if region == recommendation.region %}
+                            <option value="{{ recommendation.occupants }}" selected>{{ recommendation.region }}</option>
+                            {% else %}                 
                             <option value="South-West">South West</option>
                             <option value="South-East">South East</option>
                             <option value="West-Midlands">West Midlands</option>
@@ -59,30 +61,38 @@
                             <option value="Yorkshire-and-the-Humber">Yorkshire and the Humber</option>
                             <option value="East-of-England">East of England</option>
                             <option value="London">London</option>
+                            {% endif %}
                         </select>
                         <label for="region">Region</label>
                     </div>
                 </div>
-                <!-- Occupant Selection-->
+
                 <div class="row">
+                    <!-- Occupant Selection -->
                     <div class="input-field col s3">
                         <select id="occupants" name="occupants" class="validate" required>
-                            <option value="" disabled selected>{{  recommendation.occupants }}</option>                            
+                            <option value="" disabled>Select Occupants</option>
+                            {% if occupants == recommendation.occupants %}
+                            <option value="{{ recommendation.occupants }}" selected>{{ recommendation.occupants }}</option>
+                            {% else %}                                                        
                             <option value="2">2</option>
                             <option value="3-4">3-4</option>
                             <option value="5-6">5-6</option>
                             <option value="7-8">7-8</option>
                             <option value="9+">9+</option>
+                            {% endif %}
                         </select>
                         <label for="occupants">Occupants</label>
-                    </div>
-                    <!-- Date Selection-->
+                    </div>                     
+                
+                    <!-- Date Selection -->
                     <div class="input-field col s6">
+                        <label for="recommendation_date"></label>
                         <input id="recommendation_date" name="recommendation_date" class="validate datepicker" required
                             value="{{ recommendation.recommendation_date.strftime('%d %B, %Y') }}">
-                        <label for="recommendation_date"></label>
                     </div>
                 </div>
+
                 <!-- Location Name and map (map code adapted from Imran Sayed at Codeytek Academy youtube tutorial)-->
                 <div class="row">
                     <div class="input-field col s12">
