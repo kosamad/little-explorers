@@ -18,15 +18,13 @@
         </div>
     </div>
 </div>
-<div class="bg-lblue">
-    <div class="container recommendations-container">
-        <div class="row">
-            <div>
-                <a href="#map-canvas-recommendations" class="btn-large btn-orange col s6 offset-s3"><i
-                        class="fa-solid fa-map"></i> Map View</a>
-            </div>
-        </div>
 
+<div class="bg-white">
+    <div class="container recommendations-container">
+        <div class="row">       
+            <a href="#map-canvas-recommendations" id=""
+                class="waves-effect waves-light btn btn-orange col s12 fira-500">JUMP A MAP VIEW</a>
+        </div>
         <!-- All Holiday Recommendations added to the database -->
         <div class="row">
             {% for recommendation in recommendations %}
@@ -77,16 +75,11 @@
             </div>
             {% endfor %}
         </div>
+        <div id="map-canvas-recommendations"></div>
     </div>
 </div>
 
 <div class="bg-lblue">
-<div class="container recommendations-container">
-    <div id="map-canvas-recommendations"></div>
-</div>
-</div>
-
-<div class="bg-white">
     <div class="container recommendations-container">
         <!-- Call to Action, Add holiday for logged in users-->
         {% if 'user_id' in session %}
@@ -127,7 +120,7 @@
 
 
 
-    
+
 
 
 
