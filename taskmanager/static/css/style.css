@@ -252,6 +252,10 @@ margin:2% auto}
 
 .card .card-action {background-color: #beddea;}
 
+/* Recommendations Page */
+
+.recommendations-container{padding: 2% }
+
 /* Add Recommendation Page */
 #a-recommendation-page,
 #create-account-page {
