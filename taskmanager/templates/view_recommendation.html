@@ -37,7 +37,8 @@
     </div>
     <!-- Recommendation Review-->
     <div class="row">
-        <div class="col s12">{{ recommendation.recommendation_review}}</div>
+        <div class="col s12">
+        <p class="view-review">{{ recommendation.recommendation_review}}</p></div>
     </div>
     <!-- Recommendation Map-->
     <div class="row" style="display: none;">
@@ -46,6 +47,14 @@
     </div>
 
     <div id="map-canvas-view"></div>
+
+    <div class="row">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('recommendations') }}" class=" fira-600 btn-large btn-dgreen">
+            Back to Holidays</a>
+        </div>
+    </div> 
+    
 
 
 
