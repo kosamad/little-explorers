@@ -13,13 +13,9 @@ function initialize() {
   mapOptions = {
     zoom: 5,
     center: new google.maps.LatLng(54.4592725673968, -2.8300778240695252),
-
     disableDefaultUI: false,
     scrollWheel: true,
-    draggable: true,
-    //max zoom so area cannot be set too specifically.
-    //  maxZoom: 12, 
-
+    draggable: true,  
   };
 
   // Creating a new map object using the constructor function google.maps.Map
