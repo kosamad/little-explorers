@@ -20,7 +20,7 @@
 </div>
 
 <div class="bg-white">
-    <div class="container recommendations-container">                
+    <div class="container recommendations-container">
         <form method="POST" action="/search">
             <div class="row center">
                 <div class="input-field col s12 m6">
@@ -29,15 +29,20 @@
                     <span class="helper-text">You can search by keyword in the review OR holiday type title.</span>
                 </div>
                 <div class="input-field col s12 m3">
-                    <button class="btn waves-effect waves-light btn-dgreen" type="submit" name="action" id="search-recommendations">Search</button>
-                    <button class="btn waves-effect waves-light btn-blue">
-                        <a href="{{ url_for('recommendations') }}" id="clear-recommendations">Clear</a>
-                    </button>
-                </div>                                     
+                    <button class="btn waves-effect waves-light btn-dgreen" type="submit" name="action"
+                        id="search-recommendations">Search</button>                    
+                </div>
             </div>
-        </form> 
+        </form>
 
-       
+        <!-- Map View button -->
+        <div class="row">
+            <button class="btn waves-effect waves-light btn-blue col s12 fira-500">
+                <a href="{{ url_for('recommendations') }}" id="clear-recommendations">Clear Search Results</a>
+            </button>                   
+        </div>
+
+
         <!-- All Holiday Recommendations added to the database -->
         <div class="row">
             {% for recommendation in recommendations %}
@@ -55,12 +60,15 @@
                     <div class="card-content">
                         <div><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
                         <div><i class="fa-solid fa-user"></i> {{ recommendation.occupants }}</div>
+                        <div class="location-lat">{{ recommendation.map_lat }}</div>
+                        <div class="location-long">{{ recommendation.map_long }}</div>
                         <div><i class="{{ recommendation.holiday.selected_icon }}"></i>
                             {{ recommendation.holiday.holiday_name }}</div>
                     </div>
                     {% if session.get('is_admin') == True %}
                     <div class="card-action center-align">
-                        <a href="#modal_{{ recommendation.id }}" class="waves-effect btn btn-pink modal-trigger">Delete</a>
+                        <a href="#modal_{{ recommendation.id }}"
+                            class="waves-effect btn btn-pink modal-trigger">Delete</a>
                     </div>
                     {% endif %}
                 </div>
@@ -88,7 +96,8 @@
             </div>
             {% endfor %}
         </div>
-        
+        <div id="map-canvas-search"></div>
+
     </div>
 </div>
 
@@ -148,7 +157,7 @@
 {% endblock %}
 {% block scripts %}
 <!-- Maps specific JS-->
-<script src="{{ url_for('static', filename='js/maps-recommendations.js') }}"></script>
+<script src="{{ url_for('static', filename='js/maps-search.js') }}"></script>
 <!-- Google Maps API -->
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY8GR3DNBlbz_RmwXJF7SRbBn4igCcsUg&libraries=places&callback=initialize">
