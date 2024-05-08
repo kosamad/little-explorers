@@ -60,8 +60,8 @@
                     <div class="card-content">
                         <div><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
                         <div><i class="fa-solid fa-user"></i> {{ recommendation.occupants }}</div>
-                        <div class="location-lat">{{ recommendation.map_lat }}</div>
-                        <div class="location-long">{{ recommendation.map_long }}</div>
+                        <div class="location-lat" style="display: none;">{{ recommendation.map_lat }}</div>
+                        <div class="location-long" style="display: none;">{{ recommendation.map_long }}</div>
                         <div><i class="{{ recommendation.holiday.selected_icon }}"></i>
                             {{ recommendation.holiday.holiday_name }}</div>
                     </div>
