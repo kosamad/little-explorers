@@ -67,13 +67,6 @@ def sign_out():
     flash('You have been signed out.', 'info')  
     return redirect(url_for('home'))
 
-
-# Check User
-@app.route("/users_check")
-def users_check():
-    users = list(User.query.all())
-    return render_template('users_check.html', users=users)  
-
 # Route to add a new user
 @app.route('/create_account', methods=['POST'])
 def add_user():   
@@ -121,7 +114,10 @@ def search():
                 Holiday.holiday_name.ilike(search)  # Case-insensitive search
             )
         ).all()
-        return render_template("searched_recommendations.html", recommendations=results)
+        if not results:
+            flash('Sorry, no search results.')
+            return redirect('/recommendations')
+        return render_template("/recommendations.html", recommendations=results)
     else:
         return redirect('/recommendations')
 
@@ -168,8 +164,7 @@ def add_recommendation():
                     # Read image data
                     image_name = secure_filename(image.filename)
                     image_path = os.path.join(app.config['user_uploaded_images'], image_name)
-                    image.save(image_path)  # Save the image to the file system
-                               
+                    image.save(image_path)  # Save the image to the file system                              
              
         else:
             flash("Invalid file format. Please upload only images.", "error")
@@ -284,6 +279,21 @@ def edit_holiday_types(holiday_id):
 def users():
     users = list(User.query.order_by(User.username).all())
     return render_template('users.html', users=users)
+
+# Search Users Route
+@app.route("/search_users", methods=['GET','POST'])
+def search_users():
+    if request.method == "POST":
+        form = request.form
+        search_value = form['search_string']        
+        search = "%{0}%".format(search_value)        
+        results = User.query.filter(or_(User.username.ilike(search)), (User.email.ilike(search))).all()         
+        if not results:
+            flash('Sorry, no search results.')
+            return redirect('/users')
+        return render_template("/users.html", users=results)
+    else:
+        return redirect('/users')
 
 # Delete User 
 @app.route("/delete_user/<int:user_id>")

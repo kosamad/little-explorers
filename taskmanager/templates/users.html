@@ -17,7 +17,27 @@
     </div>
 </div>
 <div class="bg-lorange">
-    <div class="container admin-container">
+    <div class="container bg-white admin-container">
+        <form method="POST" action="/search_users">
+            <div class="row center">
+                <div class="input-field col s12 m6">
+                    <input id="search_string" type="text" name="search_string" placeholder="Enter keyword here">
+                    <label for="search_string">Search Users</label>
+                    <span class="helper-text">Search by username or email address</span>
+                </div>
+                <div class="input-field col s4 m2">
+                    <button class="btn waves-effect waves-light btn-dgreen" type="submit" name="action"
+                        id="search-recommendations">Search</button>
+                </div>
+                <!-- Clear Search button -->
+                <div class="input-field fira-500 col s4 m2 ">
+                    <a href="{{ url_for('users') }}" id="clear-recommendations"
+                        class="btn waves-effect waves-light btn-pink fira-500">Clear Search Results</a>
+                </div>
+            </div>
+        </form>   
+        
+
         <div class="row">
             {% for user in users %}
             <div class="col s12 l6">
