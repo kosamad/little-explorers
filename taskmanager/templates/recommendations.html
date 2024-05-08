@@ -20,10 +20,27 @@
 </div>
 
 <div class="bg-white">
-    <div class="container recommendations-container">
+    <div class="container recommendations-container">                
+        <form method="POST" action="/search">
+            <div class="row cetner">
+                <div class="input-field col s12 m6">
+                    <input id="search_string" type="text" name="search_string" placeholder="Enter keyword here">
+                    <label for="search_string">Search Holidays</label>
+                    <span class="helper-text">You can search by keyword in the review OR holiday type title.</span>
+                </div>
+                <div class="input-field col s12 m6">
+                    <button class="btn waves-effect waves-light btn-blue" type="submit" name="action">Search</button>
+                </div>
+            </div>
+        </form>
+
+
+
+
+        <!-- Map View button -->
         <div class="row">       
             <a href="#map-canvas-recommendations" id=""
-                class="waves-effect waves-light btn btn-orange col s12 fira-500">JUMP A MAP VIEW</a>
+                class="waves-effect waves-light btn btn-orange col s12 fira-500">JUMP TO MAP VIEW</a>
         </div>
         <!-- All Holiday Recommendations added to the database -->
         <div class="row">

@@ -1,5 +1,6 @@
 # Imports from Flask
 from flask import render_template, request, redirect, url_for, flash, session, jsonify
+from sqlalchemy import or_
 
 import os
 
@@ -106,6 +107,24 @@ def add_user():
 def recommendations():
     recommendations = list(Recommendation.query.order_by(Recommendation.id).all())
     return render_template("recommendations.html", recommendations=recommendations)
+
+# Search Recommendations Route
+@app.route("/search", methods=['GET','POST'])
+def search():
+    if request.method == "POST":
+        form = request.form
+        search_value = form['search_string']        
+        search = "%{0}%".format(search_value)        
+        results = db.session.query(Recommendation).join(Holiday).filter(
+            or_(
+                Recommendation.recommendation_review.ilike(search),  # Case-insensitive search
+                Holiday.holiday_name.ilike(search)  # Case-insensitive search
+            )
+        ).all()
+        return render_template("recommendations.html", recommendations=results, legend="Search Results")
+    else:
+        return redirect('/recommendations')
+
 
 # Recommendation Map Route
 @app.route("/recommendations_map")
