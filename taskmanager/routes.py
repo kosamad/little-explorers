@@ -206,6 +206,7 @@ def check_recommendation_title():
     else:
         # If the recommendation title is unique, return exists=False
         return jsonify({"exists": False})
+        
 
 # Edit Recommendation Route
 @app.route("/edit_recommendation/<int:recommendation_id>", methods=["GET", "POST"])
