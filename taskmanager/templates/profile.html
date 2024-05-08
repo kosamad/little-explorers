@@ -51,12 +51,12 @@
                     </div>                    
                     <div class="card-action center-align">
                         <a href="{{ url_for('edit_recommendation', recommendation_id=recommendation.id)}}" class="btn btn-lgreen">Edit</a>
-                        <a href="#modal2" class="waves-effect btn btn-pink modal-trigger">Delete</a>
+                        <a href="#modal_{{ recommendation.id }}" class="waves-effect btn btn-pink modal-trigger">Delete</a>
                     </div>                    
                 </div>
             </div>
             <!-- Modal Structure taken and adapted from Materialize -->
-            <div id="modal2" class="modal">
+            <div id="modal_{{ recommendation.id }}" class="modal">
                 <div class="modal-content center-align">
                     <h4>Delete Recommendation?</h4>
                     <p>Note: This action is not reversible.
@@ -75,10 +75,7 @@
                     </div>
                 </div>
             </div>
-            {% endfor %}         
-
-
-
+            {% endfor %}    
 
         </div>
     </div>

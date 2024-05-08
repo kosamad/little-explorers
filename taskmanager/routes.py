@@ -121,10 +121,9 @@ def search():
                 Holiday.holiday_name.ilike(search)  # Case-insensitive search
             )
         ).all()
-        return render_template("recommendations.html", recommendations=results, legend="Search Results")
+        return render_template("recommendations.html", recommendations=results,)
     else:
         return redirect('/recommendations')
-
 
 # Recommendation Map Route
 @app.route("/recommendations_map")
@@ -139,13 +138,17 @@ def view_recommendation(recommendation_id):
     recommendation = Recommendation.query.get_or_404(recommendation_id)
     return render_template('view_recommendation.html', recommendation=recommendation)
 
-# Delete Recommendation
+# Delete Recommendation (Admin from recommendations page)
 @app.route("/delete_recommendation/<int:recommendation_id>")
 def delete_recommendation(recommendation_id):
     recommendation = Recommendation.query.get_or_404(recommendation_id)
     db.session.delete(recommendation)
-    db.session.commit()
-    return redirect(url_for("profile", recommendation=recommendation))
+    db.session.commit()    
+    # Check if the referrer URL contains '/profile'
+    if '/profile' in request.referrer:
+        return redirect(url_for("profile"))
+    else:
+        return redirect(url_for("recommendations"))
 
 # Add Recommendation Route
 # Image upload code adapted from ????

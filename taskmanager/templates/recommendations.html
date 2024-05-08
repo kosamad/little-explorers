@@ -29,7 +29,7 @@
                     <span class="helper-text">You can search by keyword in the review OR holiday type title.</span>
                 </div>
                 <div class="input-field col s12 m6">
-                    <button class="btn waves-effect waves-light btn-blue" type="submit" name="action">Search</button>
+                    <button class="btn waves-effect waves-light btn-blue" type="submit" name="action" id="search-recommendations">Search</button>
                 </div>
             </div>
         </form>
@@ -64,13 +64,13 @@
                     </div>
                     {% if session.get('is_admin') == True %}
                     <div class="card-action center-align">
-                        <a href="#modal2" class="waves-effect btn btn-pink modal-trigger">Delete</a>
+                        <a href="#modal_{{ recommendation.id }}" class="waves-effect btn btn-pink modal-trigger">Delete</a>
                     </div>
                     {% endif %}
                 </div>
             </div>
             <!-- Modal Structure taken and adapted from Materialize -->
-            <div id="modal2" class="modal">
+            <div id="modal_{{ recommendation.id }}" class="modal">
                 <div class="modal-content center-align">
                     <h4>Delete Recommendation?</h4>
                     <p>Note: This action is not reversible.
