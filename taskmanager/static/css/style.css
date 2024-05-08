@@ -256,6 +256,11 @@ margin:2% auto}
 
 .recommendations-container{padding: 2% }
 
+#clear-recommendations {
+  text-decoration: none;
+  color: white;
+}
+
 /* Add Recommendation Page */
 #a-recommendation-page,
 #create-account-page {

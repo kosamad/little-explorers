@@ -121,7 +121,7 @@ def search():
                 Holiday.holiday_name.ilike(search)  # Case-insensitive search
             )
         ).all()
-        return render_template("recommendations.html", recommendations=results,)
+        return render_template("searched_recommendations.html", recommendations=results)
     else:
         return redirect('/recommendations')
 

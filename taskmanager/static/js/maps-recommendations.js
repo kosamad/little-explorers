@@ -1,3 +1,4 @@
+
 // Google Maps Elements, initialise function and define variables. 
 function initialize() {
   var mapOptions, map, marker, element = document.getElementById('map-canvas-recommendations');
@@ -56,3 +57,4 @@ function initialize() {
   };
   xhr.send();
 }
+
