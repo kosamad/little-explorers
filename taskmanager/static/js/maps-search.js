@@ -1,6 +1,6 @@
 function initialize() {
   var mapOptions, map, marker;
-  var elementa = document.getElementById('map-canvas-search');
+  var elementa = document.getElementById('map-canvas-recommendations');
   var locations = document.querySelectorAll('.location-lat, .location-long');
 
   //Initial Map loaded
