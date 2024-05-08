@@ -29,9 +29,7 @@ function initialize() {
     },
     map: map,
     draggable: true
-  });
-
-  //can add mutliple markers to map by creating different marker variables
+  }); 
 
   // create a search box. Places library loaded from google JS API
   searchBox = new google.maps.places.SearchBox(addressEl);
