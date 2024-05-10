@@ -2,15 +2,17 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap');
 
-.fira-600{
+.fira-600 {
   font-family: "Fira Sans", sans-serif;
-    font-weight: 600;
+  font-weight: 600;
 }
 
-.fira-500{ font-family: "Fira Sans", sans-serif;
-  font-weight: 500;}
+.fira-500 {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+}
 
-  /* .fira-400{ font-family: "Fira Sans", sans-serif;
+/* .fira-400{ font-family: "Fira Sans", sans-serif;
     font-weight: 400;} */
 
 
@@ -38,93 +40,122 @@ main {
   flex: 1 0 auto;
 }
 
-.bg-blue{
+.bg-blue {
   background-color: #268DC8;
 }
 
-.bg-white{background-color: #ffffff;}
-
-.bg-dgreen{ background-color: #04724D;}
-
-.bg-lblue{ background-color: #beddea;}
-
-.bg-lorange { background-color:#ffd5bc;}
-
-.btn-orange{
-  background-color:#FF914D;
+.bg-white {
+  background-color: #ffffff;
 }
 
-.btn-orange:hover {background-color: #04724D;}
+.bg-dgreen {
+  background-color: #04724D;
+}
 
-.btn-dgreen {background-color: #04724D;}
+.bg-lblue {
+  background-color: #beddea;
+}
 
-.btn-dgreen:hover{background-color: #268DC8;}
+.bg-lorange {
+  background-color: #ffd5bc;
+}
 
-.btn-lgreen {background-color: #20BF55;}
-
-.btn-pink {background-color: #B8336A}
-
-.btn-lgreen:hover, .btn-pink:hover {
+.btn-orange {
   background-color: #FF914D;
 }
 
-.btn-blue{
+.btn-dblue {
+  background-color: #075c87;
+}
+
+.btn-orange:hover {
+  background-color: #04724D;
+}
+
+.btn-dgreen {
+  background-color: #04724D;
+}
+
+.btn-dgreen:hover {
   background-color: #268DC8;
 }
 
-.btn-blue:hover{
+.btn-lgreen {
+  background-color: #20BF55;
+}
+
+.btn-pink {
+  background-color: #B8336A
+}
+
+.btn-lgreen:hover,
+.btn-pink:hover {
   background-color: #FF914D;
 }
 
-.modal-btn {padding: 0 0 5% 0;}
+.btn-blue {
+  background-color: #268DC8;
+}
+
+.btn-blue:hover {
+  background-color: #FF914D;
+}
+
+.modal-btn {
+  padding: 0 0 5% 0;
+}
 
 .heading-banner {
   height: 250px;
   padding: 1% 0;
 }
 
-.admin-container {padding: 2%;
+.admin-container {
+  padding: 2%;
   min-height: 100vh;
 }
 
-.submit-btn {margin-top: 6%;}
+.submit-btn {
+  margin-top: 6%;
+}
 
-#flash-messages{
+#flash-messages {
   background-color: #beddea;
   padding: 2%;
 }
 
 
 .card .card-image img {
-  height:200px;
+  height: 200px;
   object-fit: cover;
 }
 
 /* CSS modifications for Materialize form */
-  
+
 /* label color */
-  .input-field label {
-    color: #000;
-  }
+.input-field label {
+  color: #000;
+}
 
-   /* label focus color */
-   .input-field input[type=text]:focus + label {
-    color: #04724D;
-  }
+/* label focus color */
+.input-field input[type=text]:focus+label {
+  color: #04724D;
+}
 
-   /* label underline focus color */
-   .input-field input[type=text]:focus {
-    border-bottom: 1px solid #04724D;  
-    box-shadow: 0 1px 0 0 #04724D;
-  }
-   /* valid color */
-    .input-field input[type=text].valid {
-      border-bottom: 1px solid #04724D;
-      box-shadow: 0 1px 0 0 #04724D;
-    }
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #04724D;
+  box-shadow: 0 1px 0 0 #04724D;
+}
+
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #04724D;
+  box-shadow: 0 1px 0 0 #04724D;
+}
 
 /* Navbar */
-#nav-logo{
+#nav-logo {
   max-width: 100%;
   height: 63px;
   width: auto;
@@ -146,36 +177,35 @@ main {
 
 /* Home Page */
 
-#home-hero-div {  
-    position: relative;
-    height: 70vh;     
-    background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(0 0 0 / 24%)), url(../images/pexels-tatianasyrikova-3934049.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;     
-  }
-  
-  .hero-headline { 
+#home-hero-div {
+  position: relative;
+  height: 70vh;
+  background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(0 0 0 / 24%)), url(../images/pexels-tatianasyrikova-3934049.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+.hero-headline {}
 
 .hero-subtitle {
-    font-size: 1.5rem; 
-    margin-top: 20px;
-    
-  }
+  font-size: 1.5rem;
+  margin-top: 20px;
 
-.hero-inner {  
-  color: white; 
 }
 
-#browse-hero{
-margin-top: 2%;
+.hero-inner {
+  color: white;
+}
+
+#browse-hero {
+  margin-top: 2%;
 }
 
 .card-title {
-margin-top: 5% ;
-font-family: "Fira Sans", sans-serif;
-font-weight: 600;
+  margin-top: 5%;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
 }
 
 .image-overlay {
@@ -188,73 +218,98 @@ font-weight: 600;
 }
 
 #browse-cards {
-    margin-bottom: 2%;
-  }  
-
-.no-h3-margin{margin: 10% 0 0 0;
+  margin-bottom: 2%;
 }
 
-.join-p {margin:  0 0 0 0;
-    text-align: justify;}
+.no-h3-margin {
+  margin: 10% 0 0 0;
+}
 
-#account-log {margin-bottom: 10px;}
+.join-p {
+  margin: 0 0 0 0;
+  text-align: justify;
+}
+
+#account-log {
+  margin-bottom: 10px;
+}
 
 #account-log a:hover {
-  color: #FF914D; 
+  color: #FF914D;
 }
 
-#quote-hero-div{  
+#quote-hero-div {
   position: relative;
-  height: 70vh;     
+  height: 70vh;
   background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(0 0 0 / 24%)), url(../images/pexels-yuliantopoitier-1231365.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;    
+  background-size: cover;
 }
 
-.quote-div{color: white;
+.quote-div {
+  color: white;
   position: relative;
-  height: 100%; 
- }
+  height: 100%;
+}
 
-.quote-overlay{position: absolute;
+.quote-overlay {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7));
-  z-index: 1;}
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
 
-#quote-section p {font-size: 2rem;
-  position: relative; 
-  z-index: 1; 
-  color: white; }
+#quote-section p {
+  font-size: 2rem;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
 
 
-  /* Contact Page */
-.contact-container{padding: 5%;
-margin:2% auto}
+/* Contact Page */
+.contact-container {
+  padding: 5%;
+  margin: 2% auto
+}
 
 
 /* Add holiday_type Page */
-#display_only {color: rgba(0, 0, 0, 0.42);}
-
-#icon-dropdown{width:200px;}
-
-#holiday-type-title {margin-bottom: 6%;}
-
-.card-padding {border-color: #04724D;   
-  border-style: solid;
-  border-width: 10px; 
+#display_only {
+  color: rgba(0, 0, 0, 0.42);
 }
 
-.icon-display{ font-size: 25px;}
+#icon-dropdown {
+  width: 200px;
+}
 
-.card .card-action {background-color: #beddea;}
+#holiday-type-title {
+  margin-bottom: 6%;
+}
+
+.card-padding {
+  border-color: #04724D;
+  border-style: solid;
+  border-width: 10px;
+}
+
+.icon-display {
+  font-size: 25px;
+}
+
+.card .card-action {
+  background-color: #beddea;
+}
 
 /* Recommendations Page */
 
-.recommendations-container{padding: 2% }
+.recommendations-container {
+  padding: 2%
+}
 
 #clear-recommendations {
   text-decoration: none;
@@ -264,79 +319,100 @@ margin:2% auto}
 /* Add Recommendation Page */
 #a-recommendation-page,
 #create-account-page {
-  padding: 5%;}
+  padding: 5%;
+}
 
-.blue-container {padding: 5%;
-  margin:0 auto}
+.blue-container {
+  padding: 5%;
+  margin: 0 auto
+}
 
 #map-canvas {
-  height: 400px; 
-  width: 100%; 
+  height: 400px;
+  width: 100%;
   margin: 0;
-	padding: 0;
-  }
-  
-  #uploaded-image img{
+  padding: 0;
+}
+
+#uploaded-image img {
   max-width: 100%;
-  height:auto;  
-  }
-  
-.question-mark{
-  display: flex;  
+  height: auto;
+}
+
+.question-mark {
+  display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  font-size: 12px; 
+  font-size: 12px;
   padding: 0;
 }
 
-.modal-content h4 {font-size: 20px;}
+.modal-content h4 {
+  font-size: 20px;
+}
 
-#recommendation_review{min-height: 100px;
+#recommendation_review {
+  min-height: 100px;
 }
 
 /* View Recommendation Full Page */
-.rec-full-image{
+.rec-full-image {
   display: block;
-  margin: 3% auto;  
-  height: 400px;     
-}     
+  margin: 3% auto;
+  height: 400px;
+}
 
-.rec-full-title{font-size: 30px;
-margin: 0;}
+.rec-full-title {
+  font-size: 30px;
+  margin: 0;
+}
 
-#map-canvas-view, #map-canvas-recommendations, #map-canvas-search {
-  height: 400px; 
-  width: 100%; 
+#map-canvas-view,
+#map-canvas-recommendations,
+#map-canvas-search {
+  height: 400px;
+  width: 100%;
   margin: 0 0 3% 0;
   padding: 0;
-  }
+}
 
-.view-review{
+.view-review {
   text-align: justify;
   font-size: 15px;
 }
 
 /* User Page */
 
-.card-p{padding: 0 24px;}
+.card-p {
+  padding: 0 24px;
+}
+
+#admin-info {
+  padding: 16px 24px;
+}
 
 
 /* Footer */
 
 footer {
-  color:white;
+  color: white;
 }
 
 footer h4 {
-  font-size:medium;
+  font-size: medium;
   text-decoration: underline;
 }
-.email-promt{color:white;}
 
-.email-promt:hover{color:#FF914D;}
+.email-promt {
+  color: white;
+}
+
+.email-promt:hover {
+  color: #FF914D;
+}
 
 footer h5 {
   font-size: small;
@@ -348,57 +424,63 @@ footer p {
 }
 
 .social-links a {
-  color:#FF914D;
+  color: #FF914D;
   font-size: 20px;
 }
 
-.social-links a:hover{color:#B8336A;}
+.social-links a:hover {
+  color: #B8336A;
+}
 
-.linkedin {margin-left: 5px;}
+.linkedin {
+  margin-left: 5px;
+}
 
 
 
 /* Media Queries */
 @media screen and (max-width: 1241px) {
 
-  .no-join-margin{margin: 0 0 0 0;
-}   
+  .no-join-margin {
+    margin: 0 0 0 0;
+  }
 }
 
 @media screen and (max-width: 795px) {
-  #quote-section p{font-size: 1.8rem;}
+  #quote-section p {
+    font-size: 1.8rem;
   }
+}
 
 @media screen and (max-width: 700px) {
-  .rec-full-image{      
-    height: 300px;     
-  }  
+  .rec-full-image {
+    height: 300px;
   }
+}
 
 
 @media screen and (max-width: 600px) {
-  #nav-logo{
-    height: 56px;   
-     }
-     
-  #map-canvas-view{
+  #nav-logo {
+    height: 56px;
+  }
+
+  #map-canvas-view {
     height: 300px;
   }
 }
 
 @media screen and (max-width: 455px) {
-  #home-hero-div { background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(0 0 0 / 24%)), url(../images/pexels-tatianasyrikova-3934049-mobile.jpg);
-}
+  #home-hero-div {
+    background-image: linear-gradient(rgb(0 0 0 / 22%), rgb(0 0 0 / 24%)), url(../images/pexels-tatianasyrikova-3934049-mobile.jpg);
+  }
 
-.rec-full-image{      
-  height: 250px;     
-} 
+  .rec-full-image {
+    height: 250px;
+  }
 }
 
 @media screen and (max-width: 390px) {
-  .rec-full-image{      
-    height: 200px;     
-  }  
+  .rec-full-image {
+    height: 200px;
   }
-
-
+}
