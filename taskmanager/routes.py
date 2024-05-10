@@ -1,6 +1,7 @@
 # Imports from Flask
 from flask import render_template, request, redirect, url_for, flash, session, jsonify
 from sqlalchemy import or_
+import subprocess
 
 import os
 
@@ -166,7 +167,10 @@ def add_recommendation():
                     # Read image data
                     image_name = secure_filename(image.filename)
                     image_path = os.path.join(app.config['user_uploaded_images'], image_name)
-                    image.save(image_path)  # Save the image to the file system                              
+                    image.save(image_path)  # Save the image to the file system
+                    # Stage and commit the uploaded image
+                    subprocess.run(["git", "add", image_path])
+                    subprocess.run(["git", "commit", "-m", "Added image: {}".format(image_name)])                             
              
         else:
             flash("Invalid file format. Please upload only images.", "error")
