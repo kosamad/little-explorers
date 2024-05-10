@@ -54,7 +54,7 @@
                 <div class="card">
                     <div class="card-image">
                         <img
-                            src="{{ url_for('static', filename='images/user_uploaded_images/' + recommendation.image_name) }}" />
+                            src="{{ recommendation.image_url }}" />
                         <div class="image-overlay"></div>
                         <span class="card-title" id="">{{ recommendation.recommendation_name}}</span>
                         <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"
