@@ -42,7 +42,7 @@
             <!-- Admin specific content -->
             <li><a href="{{ url_for('holiday_types')}}">HOLIDAY TYPES</a></li>
             <li><a href="{{ url_for('users') }}">USERS</a></li>
-            <li><a href="{{ url_for('users') }}">ADD HOLIDAY</a></li>
+            <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
             <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
         </ul>
 
@@ -84,7 +84,7 @@
             <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
             {% endif %}
             {% if session.get('is_admin') == True %}
-            <li><a href="">MANAGE HOLIDAY TYPES</a></li>
+            <li><a href="{{ url_for('holiday_types')}}">MANAGE HOLIDAY TYPES</a></li>
             <li><a href="{{ url_for('users') }}">MANAGE USERS</a></li>
             <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
             {% endif %}
