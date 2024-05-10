@@ -55,7 +55,7 @@ class Recommendation(db.Model):
     recommendation_review = db.Column(db.Text, nullable=False)   
     region = db.Column(db.String(50), nullable=False)     
     mimetype = db.Column(db.Text, nullable=False) 
-    image_name = db.Column(db.Text, nullable=False, unique=True) 
+    image_name = db.Column(db.Text, nullable=False,) 
     recommendation_date = db.Column(db.Date, nullable=False) 
     holiday_id = db.Column(db.Integer, db.ForeignKey("holiday.id", ondelete="CASCADE"), nullable=False)
     map_long = db.Column(db.Float, nullable=False)
