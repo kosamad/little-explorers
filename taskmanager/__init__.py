@@ -6,12 +6,27 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
+# Create a Flask Instance
+app = Flask(__name__)
+
+# Cloudinary Credentials
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from cloudinary.uploader import upload
+
+
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET')
+)
+
 # Import hidden environment variables
 if os.path.exists("env.py"):
     import env  
 
-# Create a Flask Instance
-app = Flask(__name__)
+
 
 # App configuration variables
 # Secret Key

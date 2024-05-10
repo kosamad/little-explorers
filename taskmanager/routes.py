@@ -13,6 +13,9 @@ from taskmanager.models import Holiday, Recommendation, User
 from werkzeug.utils import secure_filename
 # Importing for password generation
 from werkzeug.security import generate_password_hash, check_password_hash
+# Importing for Cloudinary
+from cloudinary.uploader import upload
+
 
 
 # Home page Route
@@ -157,27 +160,23 @@ def delete_recommendation(recommendation_id):
 def add_recommendation():
     holiday_types = list(Holiday.query.order_by(Holiday.holiday_name).all())
     user_id = session.get('user_id')  
-    image_name = None
+    image_url = None
     if request.method == "POST":
         mimetype = request.form.get("mimetype")  # Get the mimetype from the form
         if mimetype.startswith('image'):  # Check if the mimetype starts with 'image'
             if 'image' in request.files:
                 image = request.files['image']
                 if image.filename != '':
-                    # Read image data
-                    image_name = secure_filename(image.filename)
-                    image_path = os.path.join(app.config['user_uploaded_images'], image_name)
-                    image.save(image_path)  # Save the image to the file system
-                    # Stage and commit the uploaded image
-                    subprocess.run(["git", "add", image_path])
-                    subprocess.run(["git", "commit", "-m", "Added image: {}".format(image_name)])                             
-             
+                    # Upload to Cloudinary 
+                    result = upload(image)
+                    if 'secure_url' in result:
+                        image_url = result['secure_url']
+                    else:
+                        flash('Failed to upload image to Cloudinary', 'error')    
         else:
             flash("Invalid file format. Please upload only images.", "error")
-
         # Check if the recommendation title already exists in the database
         existing_recommendation = Recommendation.query.filter_by(recommendation_name=request.form.get("recommendation_name")).first()
-
         if existing_recommendation:
             flash("Recommendation title already exists. Please choose a different title.", "error")
         else:
@@ -189,7 +188,7 @@ def add_recommendation():
                 recommendation_review=request.form.get("recommendation_review"),  
                 region=request.form.get("region"),            
                 mimetype=mimetype,
-                image_name=image_name,
+                image_url= image_url,
                 recommendation_date=request.form.get("recommendation_date"),
                 holiday_id=request.form.get("holiday_id"),
                 map_long=request.form.get("map_long"),
