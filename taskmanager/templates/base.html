@@ -29,20 +29,21 @@
         <!-- Nav bar from materialize, combining a dropdown menu with mobile side navbar -->
         <!-- Dropdowns -->
         <ul id="dropdown1" class="dropdown-content">
-            {% if 'user_id' in session %}      
-                <li><a href="{{ url_for('profile') }}">PROFILE</a></li>
-                <li><a href="{{ url_for('add_recommendation')}}">ADD HOLIDAY</a></li>
-                <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
-            {% else %}                
-                <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
-                <li><a href="{{ url_for('sign_in')}}">SIGN IN</a></li>                
+            {% if 'user_id' in session %}
+            <li><a href="{{ url_for('profile') }}">PROFILE</a></li>
+            <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
+            {% else %}
+            <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
+            <li><a href="{{ url_for('sign_in')}}">SIGN IN</a></li>
             {% endif %}
         </ul>
 
-        <ul id="dropdown2" class="dropdown-content">            
+        <ul id="dropdown2" class="dropdown-content">
             <!-- Admin specific content -->
             <li><a href="{{ url_for('holiday_types')}}">HOLIDAY TYPES</a></li>
-            <li><a href="{{ url_for('users') }}">USERS</a></li>            
+            <li><a href="{{ url_for('users') }}">USERS</a></li>
+            <li><a href="{{ url_for('users') }}">ADD HOLIDAY</a></li>
+            <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
         </ul>
 
         <!-- Main nav-bar -->
@@ -57,39 +58,43 @@
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('home')}}">HOME</a></li>
                         <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
-                        <li><a href="{{ url_for('contact')}}">CONTACT</a></li>                     
-                        {% if 'user_id' in session %}                      
-                            {% if session.get('is_admin') == True %}                              
-                                <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">MANAGE<i
-                                class="fa-solid fa-caret-down right"></i></a></li>
-                            {% endif %}                
-                        {% endif %}    
-                    <li>
-                     <a class="dropdown-trigger" href="#!" data-target="dropdown1">ACCOUNT<i
-                                        class="fa-solid fa-caret-down right"></i></a>
-                    </li>           
+                        <li><a href="{{ url_for('contact')}}">CONTACT</a></li>
+                        {% if 'user_id' in session and session.get('is_admin') == False %}
+                        <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
+                        {% endif %}
+                        {% if session.get('is_admin') == True %}
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">MANAGE<i
+                                    class="fa-solid fa-caret-down right"></i></a></li>                       
+                        {% endif %}
+                        <li>
+                            <a class="dropdown-trigger" href="#!" data-target="dropdown1">ACCOUNT<i
+                                    class="fa-solid fa-caret-down right"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
         <!-- Mobile nav-bar -->
-        <ul class="sidenav right font-title" id="mobile-demo">            
+        <ul class="sidenav right font-title" id="mobile-demo">
             <li><a href="{{ url_for('home')}}">HOME</a></li>
             <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
-            <li><a href="{{ url_for('contact')}}">CONTACT</a></li>    
+            <li><a href="{{ url_for('contact')}}">CONTACT</a></li>
             {% if 'user_id' in session %}
-                <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
-                {% if session.get('is_admin') == True %}
-                    <li><a href="">MANAGE HOLIDAY TYPES</a></li>
-                    <li><a href="{{ url_for('users') }}">MANAGE USERS</a></li> 
-                {% endif %}
-                <li><a href="{{ url_for('profile') }}">PROFILE</a></li>
-                <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
+            <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
+            {% endif %}
+            {% if session.get('is_admin') == True %}
+            <li><a href="">MANAGE HOLIDAY TYPES</a></li>
+            <li><a href="{{ url_for('users') }}">MANAGE USERS</a></li>
+            <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
+            {% endif %}
+            {% if 'user_id' in session %}
+            <li><a href="{{ url_for('profile') }}">PROFILE</a></li>
+            <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
             {% else %}
             <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
             <li><a href="{{ url_for('sign_in')}}">SIGN IN</a></li>
-            {% endif %}            
+            {% endif %}
         </ul>
 
     </header>
@@ -162,7 +167,7 @@
             <div class="divider"></div>
             <div class="row">
                 <div class="col s12 social-links">
-                    <p class="center-align"> COPYRIGHT © KAREN SAMAD <span id="copyright-year"></span> CONTACT <span><a
+                    <p class="center-align"> COPYRIGHT © KAREN SAMAD <span id="copyright-year"></span><span><a
                                 href="https://www.linkedin.com/in/karen-samad-n%C3%A8e-onions-phd-0376a9149/"
                                 target="_blank" aria-label="linkedin - Opens in a new tab" class="linkedin">
                                 <i class="fa-brands fa-linkedin"></i>
