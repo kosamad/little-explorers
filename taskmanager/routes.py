@@ -36,24 +36,26 @@ def sign_in():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password_hash')
-        # Check email address in database
-        user = User.query.filter_by(email=email).first()     
-        if user:
-            # Check hashed password and return true/false
-            if check_password_hash(user.password_hash, password):
-                # Assign user information to session to give user specific functionality
-                session['user_id'] = user.id
-                session['username'] = user.username
-                session['email'] = user.email
-                session['is_admin'] = user.is_admin
-                flash("Login Successful", "success")
-                # change below to profile page once made
-                return redirect(url_for("profile"))
-            else:
-                flash('Invalid email or password. Please try again.', 'error')
-                return redirect(url_for('sign_in'))  
+        # Check if the email address exists in the database
+        user = User.query.filter_by(email=email).first()
+        # if not give a message and promt to create account
+        if not user:
+            flash("There is no account with this email address", "error")
+            return redirect(url_for("create_account"))
+
+        # Check hashed password and return true/false
+        if check_password_hash(user.password_hash, password):
+            # Assign user information to session to give user specific functionality
+            session['user_id'] = user.id
+            session['username'] = user.username
+            session['email'] = user.email
+            session['is_admin'] = user.is_admin
+            flash("Login Successful", "success")            
+            return redirect(url_for("profile"))
         else:
             flash('Invalid email or password. Please try again.', 'error')
+            return redirect(url_for('sign_in'))
+            
     return render_template('sign_in.html')
 
 # Sign out Route
