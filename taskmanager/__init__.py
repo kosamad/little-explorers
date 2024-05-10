@@ -36,11 +36,11 @@ app.config['user_uploaded_images'] = 'taskmanager/static/images/user_uploaded_im
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-# Import routes and models file
-from taskmanager import routes 
-# from taskmanager import models
-
 # Function req to load user object based on the user_id (in session) from the database as part of Flasks login manager
 @login_manager.user_loader
 def load_user(user_id):    
     return User.query.get(int(user_id))
+    
+
+# Import routes and models file
+from taskmanager import routes 
