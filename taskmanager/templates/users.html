@@ -51,14 +51,17 @@
                     </div>
                     <div class="card-action center-align">
                         {% if user.email != "little.explorers@gmail.com" %}
-                        <a class="waves-effect btn btn-pink modal-trigger" href="#modal1">Delete</a>                        
+                        <a class="waves-effect btn btn-pink modal-trigger" href="#modal_{{ user.id }}">Delete</a>                        
+                        {% endif %}
+                        {% if user.email == "little.explorers@gmail.com" %}
+                        <a class="btn btn-dblue">This admin account can't be deleted</a> 
                         {% endif %}
                     </div>
                 </div>
             </div>
 
             <!-- Modal Structure taken and adapted from Materialize -->
-            <div id="modal1" class="modal">
+            <div id="modal_{{ user.id }}" class="modal">
                 <div class="modal-content center-align">
                     <h4>Delete User?</h4>
                     <p>Note: This action is not reversible. All Holidays associated with the user will also be deleted.
