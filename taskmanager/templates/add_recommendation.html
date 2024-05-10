@@ -53,6 +53,9 @@
                             <option value="Yorkshire-and-the-Humber">Yorkshire and the Humber</option>
                             <option value="East-of-England">East of England</option>
                             <option value="London">London</option>
+                            <option value="Wales">Wales</option>
+                            <option value="Scotland">Scotland</option>
+                            <option value="Northern Ireland">Northern Ireland</option>
                         </select>
                         <label for="region">Region</label>
                     </div>
@@ -116,17 +119,15 @@
                             maxlength="2000" required></textarea>
                         <label for="recommendation_review">Review</label>
                     </div>
-                </div>
-
-                <div class="row"> Please select a landscape image to accompany your recommendation </div>
+                </div>                
 
                 <!-- Image Upload-->
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="file" id="image" name="image" placeholder="Please select a Landscape image">
-                        <button type="button" id="upload-button">Save</button>
+                        <button type="button" id="upload-button">View</button>
                         <label for="image"></label>
-                        <span class="helper-text">Please select and save a landscape image to accompany your recommendation.</span>
+                        <span class="helper-text">Please select a landscape image to accompany your recommendation.</span>
                     </div>
 
                     <div class="col s12" id="uploaded-image"></div>
