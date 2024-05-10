@@ -26,8 +26,6 @@ else:
          uri = uri.replace("postgres://", "postgresql://", 1)
     app.config["SQLALCHEMY_DATABASE_URI"] = uri
 
-# Add Database
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URL")
 
 # Initialise the database
 db = SQLAlchemy(app)
