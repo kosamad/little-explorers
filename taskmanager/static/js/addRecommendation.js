@@ -30,12 +30,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Code to check if the name chosen by the user already exists in the db
 
+  // Code to check if the name chosen by the user already exists in the db
   var recommendationNameInput = document.getElementById("recommendation_name");
   var errorMessage = document.getElementById("errorMessage");
+  // Listens for user typing in the input field.
+    recommendationNameInput.addEventListener("input", function() {
+        var recommendationName = recommendationNameInput.value.trim(); //removing any spaces
+        if (recommendationName !== "") {
+            checkRecommendationTitle(recommendationName);
+        } else {
+            errorMessage.style.display = "none";
+        }
+    });
 
-
+     // Code to check if the name chosen by the user already exists in the db
+  var imageNameInput = document.getElementById("image_name");
+  var errorMessage = document.getElementById("errorMessage");
   // Listens for user typing in the input field.
     recommendationNameInput.addEventListener("input", function() {
         var recommendationName = recommendationNameInput.value.trim(); //removing any spaces
