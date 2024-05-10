@@ -314,8 +314,9 @@ def delete_user(user_id):
 @app.route("/profile")
 def profile():
     user_id = session.get('user_id')
-    user_recommendations = Recommendation.query.filter_by(user_id=user_id).order_by(Recommendation.recommendation_name).all() 
-    return render_template("profile.html", user_recommendations=user_recommendations) 
+    user = User.query.get(user_id)
+    user_recommendations = Recommendation.query.filter_by(user_id=user_id).order_by(Recommendation.recommendation_name).all()
+    return render_template("profile.html", user_recommendations=user_recommendations, user=user) 
 
 
 @app.route("/check_current_user")
