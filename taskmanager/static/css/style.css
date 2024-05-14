@@ -10,6 +10,7 @@
 .fira-500 {
   font-family: "Fira Sans", sans-serif;
   font-weight: 500;
+  letter-spacing: 1px;
 }
 
 /* .fira-400{ font-family: "Fira Sans", sans-serif;
@@ -449,6 +450,12 @@ footer p {
 @media screen and (max-width: 795px) {
   #quote-section p {
     font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+.banner-heading {
+    font-size: 3.6rem;
   }
 }
 

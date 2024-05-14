@@ -5,15 +5,16 @@
 <!-- banner -->
 <div class="bg-dgreen">
     <div class="container heading-banner">
-        <div class="row">
+        <div class="row ">
             <div class="col s12 center-align">
-                <h1 class="fira-600 white-text">User Management</h1>
-            </div>
-            <div class="row">
-                <div class="col s12 center-align">
-                </div>
-            </div>
+                <h1 class="fira-600 white-text banner-heading">Users</h1>
+            </div>           
         </div>
+        <div class="row col m8 offset-m2 s12">
+            <p class="white-text center-align fira-500">
+                Explore and manage registered users of Little Explorers. Notify users before taking any action.
+            </p>
+        </div>     
     </div>
 </div>
 <div class="bg-lorange">
@@ -26,7 +27,7 @@
                     <span class="helper-text">Search by username or email address</span>
                 </div>
                 <div class="input-field col s4 m2">
-                    <button class="btn waves-effect waves-light btn-dgreen" type="submit" name="action"
+                    <button class="btn waves-effect waves-light btn-dgreen fira-500" type="submit" name="action"
                         id="search-recommendations">Search</button>
                 </div>
                 <!-- Clear Search button -->
@@ -51,7 +52,7 @@
                     </div>
                     <div class="card-action center-align">
                         {% if user.email != "little.explorers@gmail.com" %}
-                        <a class="waves-effect btn btn-pink modal-trigger" href="#modal_{{ user.id }}">Delete</a>                        
+                        <a class="waves-effect btn btn-pink modal-trigger fira-500" href="#modal_{{ user.id }}">Delete</a>                        
                         {% endif %}
                         {% if user.email == "little.explorers@gmail.com" %}
                         <a class="btn btn-dblue">This admin account can't be deleted</a> 
