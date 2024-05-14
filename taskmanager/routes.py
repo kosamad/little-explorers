@@ -113,7 +113,7 @@ def recommendations():
 def search():
     if request.method == "POST":
         form = request.form
-        search_value = form['search_string']        
+        search_value = form['search_string']               
         search = "%{0}%".format(search_value)        
         results = db.session.query(Recommendation).join(Holiday).filter(
             or_(
@@ -124,11 +124,12 @@ def search():
         if not results:
             flash('Sorry, no search results.')
             return redirect('/recommendations')
-        return render_template("/recommendations.html", recommendations=results)
+        return render_template("/recommendations.html", recommendations=results,app=app)
     else:
         return redirect('/recommendations')
 
 # Recommendation Map Route
+# DO I STILL NEED THIS???
 @app.route("/recommendations_map")
 def recommendations_map():    
     data = Recommendation.query.with_entities(Recommendation.id, Recommendation.map_lat, Recommendation.map_long, Recommendation.location_name).all()
@@ -199,7 +200,7 @@ def add_recommendation():
             db.session.add(recommendation)
             db.session.commit()
             return redirect(url_for("recommendations"))
-    return render_template('add_recommendation.html', holiday_types=holiday_types, user_id=user_id )
+    return render_template('add_recommendation.html', holiday_types=holiday_types, user_id=user_id,app=app )
 
 @app.route("/check_recommendation_title", methods=["POST"])
 def check_recommendation_title():
