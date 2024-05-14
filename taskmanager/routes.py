@@ -279,7 +279,7 @@ def edit_holiday_types(holiday_id):
         return redirect(url_for("holiday_types"))
     return render_template('edit_holiday_types.html',holiday_type=holiday_type)
 
-# Delete User 
+# Delete Holiday Type
 @app.route("/delete_holiday_types/<int:holiday_id>")
 def delete_holiday_types(holiday_id):
     holiday_type = Holiday.query.get_or_404(holiday_id)
