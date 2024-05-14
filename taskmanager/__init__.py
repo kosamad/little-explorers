@@ -21,6 +21,10 @@ cloudinary.config(
     api_secret=os.environ.get('CLOUDINARY_API_SECRET')
 )
 
+# Google Map Credentials
+app.config["GOOGLE_MAPS_API_KEY"] = os.environ.get("GOOGLE_MAPS_API_KEY")
+
+
 # Import hidden environment variables
 if os.path.exists("env.py"):
     import env  

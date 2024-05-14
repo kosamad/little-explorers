@@ -100,12 +100,13 @@ def add_user():
     db.session.commit()
     flash("You have created an account, please Sign In", "success")
     return redirect(url_for('sign_in'))
+
      
 # Recommendations Route
 @app.route("/recommendations")
 def recommendations():
     recommendations = list(Recommendation.query.order_by(Recommendation.id).all())
-    return render_template("recommendations.html", recommendations=recommendations)
+    return render_template("recommendations.html", recommendations=recommendations,app=app)
 
 # Search Recommendations Route
 @app.route("/search", methods=['GET','POST'])
@@ -129,7 +130,7 @@ def search():
 
 # Recommendation Map Route
 @app.route("/recommendations_map")
-def recommendations_map():
+def recommendations_map():    
     data = Recommendation.query.with_entities(Recommendation.id, Recommendation.map_lat, Recommendation.map_long, Recommendation.location_name).all()
     map_data = [{'recommendation_id': item.id, 'map_lat': item.map_lat, 'map_long': item.map_long, 'location_name': item.location_name} for item in data]
     return jsonify(map_data)
