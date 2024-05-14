@@ -199,7 +199,7 @@ def add_recommendation():
             )         
             db.session.add(recommendation)
             db.session.commit()
-            return redirect(url_for("recommendations"))
+            return redirect(url_for("profile"))
     return render_template('add_recommendation.html', holiday_types=holiday_types, user_id=user_id,app=app )
 
 @app.route("/check_recommendation_title", methods=["POST"])
