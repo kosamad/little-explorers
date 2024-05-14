@@ -7,8 +7,7 @@
     <!-- Recommendation Image-->
     <div class="row">
         <div class="col s12">
-            <img src="{{ url_for('static', filename='images/user_uploaded_images/' + recommendation.image_name) }}"
-                class="rec-full-image" />
+            <img src="{{ recommendation.image_url }}" class="rec-full-image" />
         </div>
     </div>
     <!-- Recommendation title -->
@@ -38,7 +37,8 @@
     <!-- Recommendation Review-->
     <div class="row">
         <div class="col s12">
-        <p class="view-review">{{ recommendation.recommendation_review}}</p></div>
+            <p class="view-review">{{ recommendation.recommendation_review}}</p>
+        </div>
     </div>
     <!-- Recommendation Map-->
     <div class="row" style="display: none;">
@@ -51,10 +51,10 @@
     <div class="row">
         <div class="col s12 center-align">
             <a href="{{ url_for('recommendations') }}" class=" fira-600 btn-large btn-dgreen">
-            Back to Holidays</a>
+                Back to Holidays</a>
         </div>
-    </div> 
-    
+    </div>
+
 
 
 
@@ -81,6 +81,6 @@
 <script src="{{ url_for('static', filename='js/maps-view.js') }}"></script>
 <!-- Google Maps API -->
 <script async defer
-src="https://maps.googleapis.com/maps/api/js?key={{ app.config['GOOGLE_MAPS_API_KEY'] }}&libraries=places&callback=initialize">
+    src="https://maps.googleapis.com/maps/api/js?key={{ app.config['GOOGLE_MAPS_API_KEY'] }}&libraries=places&callback=initialize">
 </script>
 {% endblock %}

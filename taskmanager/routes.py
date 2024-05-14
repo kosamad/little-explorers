@@ -139,7 +139,7 @@ def recommendations_map():
 @app.route("/recommendation/<int:recommendation_id>", methods=["GET"])
 def view_recommendation(recommendation_id):
     recommendation = Recommendation.query.get_or_404(recommendation_id)
-    return render_template('view_recommendation.html', recommendation=recommendation)
+    return render_template('view_recommendation.html', recommendation=recommendation, app=app)
 
 # Delete Recommendation (Admin from recommendations page)
 @app.route("/delete_recommendation/<int:recommendation_id>")
