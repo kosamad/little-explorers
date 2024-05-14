@@ -220,37 +220,42 @@ def check_recommendation_title():
 def edit_recommendation(recommendation_id):
     recommendation = Recommendation.query.get_or_404(recommendation_id)
     holiday_types = list(Holiday.query.order_by(Holiday.holiday_name).all())
-    image_name = recommendation.image_name
+    image_url = recommendation.image_url
     if request.method == "POST":
         mimetype = request.form.get("mimetype") 
         if mimetype.startswith('image'): 
             if 'image' in request.files:
                 image = request.files['image']
-                if image.filename != '':                    
-                    image_name = secure_filename(image.filename)
-                    image_path = os.path.join(app.config['user_uploaded_images'], image_name)
-                    image.save(image_path)
-                    recommendation.image_name = image_name # Update the image name                           
+                if image.filename != '':
+                    # Upload to Cloudinary 
+                    result = upload(image)
+                    if 'secure_url' in result:
+                        image_url = result['secure_url']
+                    else:
+                        flash('Failed to upload image to Cloudinary', 'error') 
             else:
                 flash("Invalid file format. Please upload only images.", "error")
-
-        # Update the existing Recommendation object and add it to the database
-               
-        recommendation.recommendation_name=request.form.get("recommendation_name")
-        recommendation.location_name=request.form.get("location_name")
-        recommendation.occupants=request.form.get("occupants")
-        recommendation.recommendation_review=request.form.get("recommendation_review")
-        recommendation.region=request.form.get("region")          
-        recommendation.mimetype=mimetype
-        recommendation.image_name=image_name
-        recommendation.recommendation_date=request.form.get("recommendation_date")
-        recommendation.holiday_id=request.form.get("holiday_id")
-        recommendation.map_long=request.form.get("map_long")
-        recommendation.map_lat=request.form.get("map_lat")
-        recommendation.user_id = session.get('user_id')                      
-        db.session.commit()
-        return redirect(url_for("profile"))
-    return render_template('edit_recommendation.html',recommendation=recommendation, holiday_types=holiday_types, user_id=session.get('user_id'))
+        # Check if the recommendation title already exists in the database excluding the current title
+        existing_recommendation = Recommendation.query.filter(Recommendation.recommendation_name == request.form.get("recommendation_name"), Recommendation.id != recommendation_id).first()
+        if existing_recommendation:
+            flash("Recommendation title already exists. Please choose a different title.", "error")
+        else:
+            # Update the existing Recommendation object and add it to the database               
+            recommendation.recommendation_name=request.form.get("recommendation_name")
+            recommendation.location_name=request.form.get("location_name")
+            recommendation.occupants=request.form.get("occupants")
+            recommendation.recommendation_review=request.form.get("recommendation_review")
+            recommendation.region=request.form.get("region")          
+            recommendation.mimetype=mimetype
+            recommendation.image_url=image_url
+            recommendation.recommendation_date=request.form.get("recommendation_date")
+            recommendation.holiday_id=request.form.get("holiday_id")
+            recommendation.map_long=request.form.get("map_long")
+            recommendation.map_lat=request.form.get("map_lat")
+            recommendation.user_id = session.get('user_id')                      
+            db.session.commit()
+            return redirect(url_for("profile"))
+    return render_template('edit_recommendation.html',recommendation=recommendation, holiday_types=holiday_types, user_id=session.get('user_id'), app=app)
 
 
 # Holiday type Route

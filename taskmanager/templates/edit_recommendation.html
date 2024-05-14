@@ -131,26 +131,18 @@
                             required>{{ recommendation.recommendation_review }}</textarea>
                         <label for="recommendation_review">Review</label>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <p>Your chosen image is displayed below. Ensure any new images selected are in landscape
-                            orientation for optimal display. Please note, if you do not wish to change the image, leave
-                            the file upload reading "No file chosen".</p>
-                    </div>
-                </div>
+                </div>                
 
                 <!-- Image Upload-->
                 <div class="row">
                     <div class="input-field col s12">
                         <input type="file" id="image" name="image">
-                        <button type="button" id="upload-button">Save</button>
+                        <button type="button" id="upload-button">View</button>
                         <label for="image"></label>
-                    </div>
-
+                        <span class="helper-text">Your current image is displayed below. If you don't intend to change the image, leave the file upload field as 'No file chosen'. Additionally, ensure that any new selection is a landscape image.</span>
+                    </div>                    
                     <div class="col s12" id="uploaded-image"><img
-                            src="{{ url_for('static', filename='images/user_uploaded_images/' + recommendation.image_name) }}">
+                        src="{{ recommendation.image_url }}" />
                     </div>
                     <!-- HIDDEN FROM USER-->
                     <!-- Mime Type -->
@@ -193,6 +185,6 @@
 <script src="{{ url_for('static', filename='js/maps.js') }}"></script>
 <!-- Google Maps API -->
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY8GR3DNBlbz_RmwXJF7SRbBn4igCcsUg&libraries=places&callback=initialize">
+    src="https://maps.googleapis.com/maps/api/js?key={{ app.config['GOOGLE_MAPS_API_KEY'] }}&libraries=places&callback=initialize">
 </script>
 {% endblock %}
