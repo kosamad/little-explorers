@@ -7,11 +7,11 @@
     <div class="container heading-banner">
         <div class="row">
             <div class="col s12 center-align">
-                <h1 class="fira-600 white-text">{{ user.username }}'s Profile</h1>
+                <h1 class="fira-600 white-text">Profile</h1>
             </div>
             <div class="row col m8 offset-m2 s12">
-                <p class="white-text center-align">
-                   Hello {{ user.username }} to your personal holiday hub! Here, you can access the holidays you've added. Edit or delete them as you please. 
+                <p class="white-text center-align fira-500">
+                   Hello {{ user.username }}! This is your personal holiday hub. Here, you can access the holidays you've added. Edit or delete them as you please. 
                 </p>
             </div>            
         </div>
@@ -36,7 +36,7 @@
                 <div class="card">
                     <div class="card-image">
                         <img
-                            src="{{ url_for('static', filename='images/user_uploaded_images/' + recommendation.image_name) }}" />
+                            src="{{ recommendation.image_url }}" />
                         <div class="image-overlay"></div>
                         <span class="card-title" id="">{{ recommendation.recommendation_name}}</span>
                         <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"
@@ -50,8 +50,8 @@
                             {{ recommendation.holiday.holiday_name }}</div>
                     </div>                    
                     <div class="card-action center-align">
-                        <a href="{{ url_for('edit_recommendation', recommendation_id=recommendation.id)}}" class="btn btn-lgreen">Edit</a>
-                        <a href="#modal_{{ recommendation.id }}" class="waves-effect btn btn-pink modal-trigger">Delete</a>
+                        <a href="{{ url_for('edit_recommendation', recommendation_id=recommendation.id)}}" class=" fira-500 btn btn-lgreen">Edit</a>
+                        <a href="#modal_{{ recommendation.id }}" class="waves-effect btn btn-pink modal-trigger fira-500">Delete</a>
                     </div>                    
                 </div>
             </div>
