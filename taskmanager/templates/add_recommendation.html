@@ -182,6 +182,6 @@
 <script src="{{ url_for('static', filename='js/maps.js') }}"></script>
 <!-- Google Maps API -->
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY8GR3DNBlbz_RmwXJF7SRbBn4igCcsUg&libraries=places&callback=initialize">
+    src="https://maps.googleapis.com/maps/api/js?key={{ app.config['GOOGLE_MAPS_API_KEY'] }}&libraries=places&callback=initialize">
 </script>
 {% endblock %}

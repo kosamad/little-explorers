@@ -60,13 +60,10 @@
                             class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
                                 class="fas fa-search"></i></a>
                     </div>
-                    <div class="card-content">
+                    <div class="card-content" data-recommendation-id="{{ recommendation.id }}" data-location-lat="{{ recommendation.map_lat }}" data-location-long="{{ recommendation.map_long }}" data-recommendation-name="{{ recommendation.recommendation_name }}">
                         <div><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
                         <div><i class="fa-solid fa-user"></i> {{ recommendation.occupants }}</div>
-                        <div class="location-lat" style="display: none;">{{ recommendation.map_lat }}</div>
-                        <div class="location-long" style="display: none;">{{ recommendation.map_long }}</div>
-                        <div><i class="{{ recommendation.holiday.selected_icon }}"></i>
-                            {{ recommendation.holiday.holiday_name }}</div>
+                        <div><i class="{{ recommendation.holiday.selected_icon }}"></i>{{ recommendation.holiday.holiday_name }}</div>
                     </div>
                     {% if session.get('is_admin') == True %}
                     <div class="card-action center-align">
