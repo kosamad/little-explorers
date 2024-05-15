@@ -431,6 +431,18 @@ footer p {
 }
 
 
+/* Error pages */
+
+.error-bg {min-height: 75vh;
+
+}
+
+.error-heading {margin: 0 10px;
+padding-top: 15vh;}
+
+.error-bg p { text-align: justify;}
+
+
 
 /* Media Queries */
 @media screen and (max-width: 1241px) {
