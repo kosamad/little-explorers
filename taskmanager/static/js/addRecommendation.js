@@ -44,19 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-     // Code to check if the name chosen by the user already exists in the db
-  var imageNameInput = document.getElementById("image_name");
-  var errorMessage = document.getElementById("errorMessage");
-  // Listens for user typing in the input field.
-    recommendationNameInput.addEventListener("input", function() {
-        var recommendationName = recommendationNameInput.value.trim(); //removing any spaces
-        if (recommendationName !== "") {
-            checkRecommendationTitle(recommendationName);
-        } else {
-            errorMessage.style.display = "none";
-        }
-    });
-
     //Check function sends a Post request to the server to check if the name already exits.
     //JSON response from check recommendation route gives a exists propery (with a value True or False)
     // when xhr has completed, reponse is parsed as JSON and error message is displayed if the title already exists.
