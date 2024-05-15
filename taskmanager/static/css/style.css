@@ -138,8 +138,7 @@ main {
   box-shadow: 0 1px 0 0 #04724D;
 }
 
-/* valid color */
-.input-field input[type=text].valid {
+/* valid color */.input-field input[type=text].valid {
   border-bottom: 1px solid #04724D;
   box-shadow: 0 1px 0 0 #04724D;
 }
