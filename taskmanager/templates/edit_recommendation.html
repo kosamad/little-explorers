@@ -47,7 +47,7 @@
                 <!-- Region (User select from options) -->
                 <div class="row">
                     <div class="input-field col s9">
-                        <select id="region" name="region" class="validate" placeholder="Select Region" required>
+                        <select id="region" name="region" class="validate" required>
                             <option value="" disabled>Choose Region</option>
                             {% if region == recommendation.region %}
                             <option value="{{ recommendation.occupants }}" selected>{{ recommendation.region }}</option>
