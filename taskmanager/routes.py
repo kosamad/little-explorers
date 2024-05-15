@@ -333,7 +333,7 @@ def profile():
     return render_template("profile.html", user_recommendations=user_recommendations, user=user) 
 
 
-@app.route("/check_current_user")
-def check_current_user():
-    print(current_user)
-    return "Check console for current_user details"
+# 404 page Route
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("404.html"), 404
