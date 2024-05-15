@@ -70,7 +70,7 @@
                         {% endif %}
                         {% if session.get('is_admin') == True %}
                         <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">MANAGE<i
-                                    class="fa-solid fa-caret-down right"></i></a></li>                       
+                                    class="fa-solid fa-caret-down right"></i></a></li>
                         {% endif %}
                         <li>
                             <a class="dropdown-trigger" href="#!" data-target="dropdown1">ACCOUNT<i
@@ -83,27 +83,27 @@
 
         <!-- Mobile nav-bar -->
         <div>
-        <ul class="sidenav right font-title" id="mobile-demo">
-            <li><a href="{{ url_for('home')}}">HOME</a></li>
-            <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
-            <li><a href="{{ url_for('contact')}}">CONTACT</a></li>
-            {% if 'user_id' in session %}
-            <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
-            {% endif %}
-            {% if session.get('is_admin') == True %}
-            <li><a href="{{ url_for('holiday_types')}}">MANAGE HOLIDAY TYPES</a></li>
-            <li><a href="{{ url_for('users') }}">MANAGE USERS</a></li>
-            <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
-            {% endif %}
-            {% if 'user_id' in session %}
-            <li><a href="{{ url_for('profile') }}">PROFILE</a></li>
-            <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
-            {% else %}
-            <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
-            <li><a href="{{ url_for('sign_in')}}">SIGN IN</a></li>
-            {% endif %}
-        </ul>
-    </div>
+            <ul class="sidenav right font-title" id="mobile-demo">
+                <li><a href="{{ url_for('home')}}">HOME</a></li>
+                <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
+                <li><a href="{{ url_for('contact')}}">CONTACT</a></li>
+                {% if 'user_id' in session %}
+                <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
+                {% endif %}
+                {% if session.get('is_admin') == True %}
+                <li><a href="{{ url_for('holiday_types')}}">MANAGE HOLIDAY TYPES</a></li>
+                <li><a href="{{ url_for('users') }}">MANAGE USERS</a></li>
+                <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
+                {% endif %}
+                {% if 'user_id' in session %}
+                <li><a href="{{ url_for('profile') }}">PROFILE</a></li>
+                <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
+                {% else %}
+                <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
+                <li><a href="{{ url_for('sign_in')}}">SIGN IN</a></li>
+                {% endif %}
+            </ul>
+        </div>
 
     </header>
 
@@ -182,9 +182,6 @@
                             </a></span></p>
                 </div>
             </div>
-        </div>
-        </div>
-        </div>
         </div>
     </footer>
 

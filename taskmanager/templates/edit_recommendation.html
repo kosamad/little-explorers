@@ -96,9 +96,7 @@
                 <!-- Location Name and map (map code adapted from Imran Sayed at Codeytek Academy youtube tutorial)-->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="location_name" name="location_name" class="validate" type="text"
-                            value="{{ recommendation.location_name }}" maxlength="
-                        120" required>
+                        <input id="location_name" name="location_name" class="validate" type="text" value="{{ recommendation.location_name }}" maxlength="120" required>
                         <label for="location_name">Address</label>
                     </div>
                 </div>
@@ -126,8 +124,7 @@
                 <!-- Recommendation Review-->
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea id="recommendation_review" name="recommendation_review"
-                            class="materialize-textarea validate" maxlength="2000"                            
+                        <textarea id="recommendation_review" name="recommendation_review" class="materialize-textarea validate" maxlength="2000"                            
                             required>{{ recommendation.recommendation_review }}</textarea>
                         <label for="recommendation_review">Review</label>
                     </div>
@@ -142,7 +139,7 @@
                         <span class="helper-text">Your current image is displayed below. If you don't intend to change the image, leave the file upload field as 'No file chosen'. Additionally, ensure that any new selection is a landscape image.</span>
                     </div>                    
                     <div class="col s12" id="uploaded-image"><img
-                        src="{{ recommendation.image_url }}" />
+                        src="{{ recommendation.image_url }}" alt="Holiday Image"/>
                     </div>
                     <!-- HIDDEN FROM USER-->
                     <!-- Mime Type -->
@@ -159,8 +156,7 @@
                 <div class="row" style="display: none;">
                     <div class="input-field col s6">
                         <label for="user_id">User ID</label>
-                        <input id="user_id" name="user_id" type="text" required value="{{ session.get('user_id') }}"
-                            required>
+                        <input id="user_id" name="user_id" type="text" required value="{{ session.get('user_id') }}">
                     </div>
                 </div>
 
@@ -173,7 +169,6 @@
             </form>
         </div>
     </div>
-</div>
 </div>
 
 {% endblock %}
