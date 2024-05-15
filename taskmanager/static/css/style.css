@@ -437,10 +437,10 @@ footer p {
 
 }
 
-.error-heading {margin: 0 10px;
+.error-heading {margin: 0 0 20px 0;
 padding-top: 15vh;}
 
-.error-bg p { text-align: justify;}
+.error-p { text-align: justify;}
 
 
 
