@@ -27,19 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var modal = document.querySelectorAll('.modal');
   M.Modal.init(modal);
 
-
-  // // Icon idendtificaion in the new recommendation form.
-  //  var holidayTypeSelect = document.getElementById('holiday_id');
-  //  var recommendationIconDisplay = document.getElementById('icon-display')
-  // //  if statement prevents event listeners trying to attach on pages where they don't exist. 
-  //  if (holidayTypeSelect){
-  //     holidayTypeSelect.addEventListener('change', function () {
-  //     var selectedHolidayId = holidayTypeSelect.value;
-  //     recommendationIconDisplay.innerHTML = selectedHolidayId
-  //     console.log("Selected Holiday Type ID:", selectedHolidayId);        
-  //     });
-  //   }
-
   // Displaying the icon to the user and storing it in the database
   var iconDropdown = document.getElementById('icon-dropdown');
   var selectedIconHidden = document.getElementById('selected_icon');
@@ -61,8 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   }  
-
-})
+});
 
 // Removing flash messages after 3 seconds
 setTimeout(function() {

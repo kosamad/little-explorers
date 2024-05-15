@@ -39,10 +39,9 @@ function initialize() {
 
     var places = searchBox.getPlaces(), //gets the place info (address etc) from the searchbox
       bounds = new google.maps.LatLngBounds(), //gives lat and long values.
-      i, place, lat, long,
-      address = places[0].formatted_address;
+      i, place, lat, long;      
 
-    for (i = 0; place = places[i]; i++) {
+    for (i = 0; (place = places[i]); i++) {
       bounds.extend(place.geometry.location);
       marker.setPosition(place.geometry.location); // Sets marker position
     }  
@@ -54,7 +53,7 @@ function initialize() {
     long = marker.getPosition().lng();
     latEl.value = lat;
     longEl.value = long;
-  })
+  });
 
   // Capturing the marker information if the user moves the marker on the map. 
   google.maps.event.addListener(marker, "dragend", function (event) {
@@ -76,25 +75,9 @@ function initialize() {
       } else {
         console.log('Geocode was not successful for the following reason: ' + status);
       }
-
-
-
-
-      // Closes the previous info window if it already exists
-      // if (infoWindow) {
-      //   infoWindow.close();
-      // }
-
-      /**
-       * Creates the info Window at the top of the marker need to put in first function if I want it. 
-      //  */
-      // infoWindow = new google.maps.InfoWindow({
-      //   content: address
-      // });
-
-      // infoWindow.open(map, marker);
+      
     });
-  })
+  });
 
-};
+}
 
