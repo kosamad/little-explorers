@@ -42,7 +42,7 @@
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
-                        <img src="{{ recommendation.image_url }}" />
+                        <img src="{{ recommendation.image_url }}" alt="Image of holiday" />
                         <div class="image-overlay"></div>
                         <span class="card-title" id="">{{ recommendation.recommendation_name}}</span>
                         <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"

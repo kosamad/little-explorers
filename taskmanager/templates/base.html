@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Little Explorers</title>
     <!-- Email JS script -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
-    <script type="text/javascript">
+    <script>
         (function () {
             emailjs.init({
                 publicKey: "C6RAnwHYDU25eyBmm",
@@ -82,6 +82,7 @@
         </nav>
 
         <!-- Mobile nav-bar -->
+        <div>
         <ul class="sidenav right font-title" id="mobile-demo">
             <li><a href="{{ url_for('home')}}">HOME</a></li>
             <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
@@ -102,6 +103,7 @@
             <li><a href="{{ url_for('sign_in')}}">SIGN IN</a></li>
             {% endif %}
         </ul>
+    </div>
 
     </header>
 
