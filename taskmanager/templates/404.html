@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- 404 message -->
+<div class="bg-lblue error-bg">
+    <div class="container">
+        <div class="row center-align">
+            <h4 class="fira-600 error-heading">Oops!</h4>
+        </div>
+        <div class="row">
+            <p class="col s12 m6 offset-m3">It seems the page you're looking for has gone on it's own little adventure.</p>
+        </div>
+        <div class="row">
+            <p class="col s12 m6 offset-m3"> No
+                worries, though! Let's get you
+                back on track. You can use the navigation menu above to explore our site, or use the button below. If you're still having trouble, feel free to contact us – we're here to assist you
+                every step of the way!</p>
+        </div>
+        <div class="row center-align">
+            <a href="{{ url_for('home') }}" class=" fira-600 btn-large btn-dgreen">
+                Return to the Home Page</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- 404 message -->
+<div class="bg-lblue error-bg">
+    <div class="container">
+        <div class="row center-align">
+            <h4 class="fira-600 error-heading">Oops!</h4>
+        </div>
+        <div class="row">
+            <p class="col s12 m6 offset-m3">It seems like the server is unable to process the media type of the request.</p>
+        </div>
+        <div class="row">
+            <p class="col s12 m6 offset-m3"> Please ensure that the content type of your request is supported by our server. If you believe this is an error, kindly double-check your request and try again. For further assistance, don't hesitate to contact our support team. We're here to help you get back on track!</p>
+        </div>
+        <div class="row center-align">
+            <a href="{{ url_for('home') }}" class=" fira-600 btn-large btn-dgreen">
+                Return to the Home Page</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
