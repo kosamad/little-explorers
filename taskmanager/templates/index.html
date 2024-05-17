@@ -29,15 +29,14 @@
             <div class="card">
                 <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"></a>
                 <div class="card-image">
-                    <img
-                        src="{{ recommendation.image_url }}" alt="Image of holiday"/>
+                    <img src="{{ recommendation.image_url }}" alt="Image of holiday" />
                     <div class="image-overlay"></div>
                     <span class="card-title">{{ recommendation.recommendation_name}}</span>
                     <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"
                         class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
                             class="fas fa-search"></i></a>
                 </div>
-            </a>
+                </a>
                 <div class="card-content">
                     <div><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
                     <div><i class="fa-solid fa-user"></i> {{ recommendation.occupants }}</div>
@@ -51,7 +50,8 @@
     </div>
 
     <div class="row">
-        <a href="{{ url_for('recommendations')}}" id="browse-cards" class="waves-effect waves-light btn btn-orange col s12 fira-500">SEE MORE HOLIDAYS</a>
+        <a href="{{ url_for('recommendations')}}" id="browse-cards"
+            class="waves-effect waves-light btn btn-orange col s12 fira-500">SEE MORE HOLIDAYS</a>
     </div>
 </div>
 
@@ -68,8 +68,25 @@
 </div>
 
 
-<!-- Call To Action *Join* Section -->
-
+<!-- Call To Action *Join* Section for all users.  -->
+{% if 'user_id' in session %}
+<div class="container">
+    <div class="row">
+        <div class="col s12 m12 l6">
+            <img src="../static/images/ben-wicks-iDCtsz-INHI-unsplash.jpg" alt="Image" class="responsive-img">
+        </div>
+        <div class="col s12 m12 l6 center-align">
+            <h3 class="fira-500 no-join-margin">Share a Gem</h3>
+            <p>Welcome back, Explorer! Share your recent travel experiences with our community. Your recommendations
+                help others discover amazing holiday spots.</p>
+                <a href="{{ url_for('add_recommendation') }}" class="waves-effect waves-light btn btn-blue fira-500"><i class="fas fa-plus-square"></i> Recommend a Holiday</a>
+            <p id="account-log">
+                Looking for your profile? <a class="" href="{{ url_for('profile')}}">Click Here!</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% else %}
 <div class="container">
     <div class="row">
         <div class="col s12 m12 l6">
@@ -87,6 +104,7 @@
         </div>
     </div>
 </div>
+{% endif %}
 
 
 
