@@ -162,6 +162,8 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 ## Mobile and Desktop Test Results
 
+#### All Users
+
 <details><summary>Nav Bar (base.html)</summary>
 
 | ****Feature****              | ****Expected Outcome****                     | ****Test Performed**** | ****Result****                                   | ****Pass/Fail**** |
@@ -259,7 +261,7 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 </details>
 
-<details><summary>Contact Page (contat.html)</summary>
+<details><summary>Contact Page (contact.html)</summary>
 
 | **Feature**     | **Expected Outcome**                                                                                   | **Test Performed**       | **Result**                                                                                           | **Pass/Fail** |
 |-----------------|--------------------------------------------------------------------------------------------------------|--------------------------|------------------------------------------------------------------------------------------------------|---------------|
@@ -290,7 +292,7 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 </details>
 
-<details><summary>Sign In Page(sign_in.html)</summary>
+<details><summary>Sign In Page (sign_in.html)</summary>
 
 | **Feature**                       | **Expected Outcome**                                                                    | **Test Performed**                                   | **Result**                                                                                                   | **Pass/Fail** |
 |-----------------------------------|-----------------------------------------------------------------------------------------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|---------------|
@@ -304,7 +306,7 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 </details>
 
-Logged In Users Only
+#### Logged In Users Only
 
 <details><summary>Profile Page (profile.html)</summary>
 
@@ -367,7 +369,7 @@ Logged In Users Only
 
 </details>
 
-Admin Only Features
+#### Admin Only Features
 
 <details><summary>Holiday Types Page (holiday_types.html)</summary>
 
@@ -422,7 +424,58 @@ Admin Only Features
 
 ## Testing User Stories
 
-** My User story testing
+The site was built from the User Stories documented in the [Readme](README.md#user-stories). The site was tested against each of them and the results are documented below.
+
+As a user, I want to be able to:
+
+- Find what I’m looking for on the site easily and intuitively from the home page and navigation bar.
+
+    - The navigation bar is displayed on all pages with relevant links for each type of user. All links direct users to the correct pages. The home page guides users to the holidays page multiple times and encourages them to join the community at the bottom. If the user is logged in, this message changes to prompt them to add a new holiday.
+
+- View the site any device and for the site to be responsive.
+
+    - The site is responsive across a diverse range of devices. The navigation bar and page layout adjust according to the screen size. Modals are also fully responsive and function correctly on all tested devices.
+
+- View and filter holiday recommendations posted by other users.
+
+    - Holidays can be searched by keyword, either by holiday type (allowing users to narrow down their options to the type of holiday they want to take) or by keyword from the holiday reviews. This enables users to conduct more detailed searches, such as "zoo" or "age 3."
+
+- Contact the site owners to suggest a new holiday type, ask questions or report a malicious recommendation.
+
+    - There are multiple ways for a user to navigate to the contact form. There is a link in the footer on every page, and the page can also be accessed from the main navigation menu. Detailed information on each recommendation allows users to notify admin staff of problematic posts, enabling targeted actions against specific content or users.
+
+- Return to the home page without having to use my browser buttons. including when I navigate to a non-existent page or I’m thrown an error.
+
+    - The Home page can be accessed at any time using the logo in the navigation bar or from the home option in the navigation menu. On error pages, a button is provided for users to "Return to the Home Page."
+
+As a user without an account, I want to be able to:
+
+- Understand the purpose of the site from the home page.
+
+    - The Home page features clear imagery that identifies it as a holiday site focused on children. The opening title and slogan, "Big adventures for little explorers," explain the purpose of the site, with a subtitle stating "Discover child-friendly holidays across the UK." Recommended holidays are displayed directly underneath the header to entice users and showcase what the site is about. Further down, users are prompted to join the site, informing them that this is a community site with holidays recommended by fellow users.
+
+- Set up an account so I can create my own recommendations.
+
+    - There are several promts for a user to create and account. Firstly, from the home page but also from the nav bar (present on every page).
+
+As a user with an account, I want to be able to:
+
+- Sign into my account.
+- Add my own holiday recommendation using a user-friendly form.
+- View my previously posted holiday recommendations.
+- Edit/Delete recommendations I have posted.
+- Comment on holiday recommendations, adding information about a holiday destination and verifying the post.
+- Log out of my account easily. 
+
+4. As an administrator I want to be able to:
+
+    - Sign into my account quickly and easily.
+    - Edit any recommendation if necessary.
+    - Add a new holiday type category.
+    - Edit a new holiday type category.
+    - Delete a user if necessary.
+    - Receive email messages from the site users. 
+    - Log out of my account easily. 
 
 ## Real User Testing
 
