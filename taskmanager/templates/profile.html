@@ -20,11 +20,13 @@
 </div>
 <div class="bg-lblue">
     <div class="container admin-container">
-        <!-- Map View button -->
+        {% if session.get('is_admin') %}
+        <!-- admin only link to content -->        
         <div class="row">
             <a href="#admin-content" id="map-button"
                 class="waves-effect waves-light btn btn-orange col s12 fira-500">NAVIGATE TO ADMIN FEATURES</a>
         </div>
+        {% endif %}
         <div class="row col m8 offset-m2 s12">
             <p class="fira-600 center-align">
                 Want to recommend a new holiday? Use the button below.
