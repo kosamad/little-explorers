@@ -162,7 +162,7 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 ## Mobile and Desktop Test Results
 
-<details><summary>Nav Bar</summary>
+<details><summary>Nav Bar (base.html)</summary>
 
 | ****Feature****              | ****Expected Outcome****                     | ****Test Performed**** | ****Result****                                   | ****Pass/Fail**** |
 |------------------------------|----------------------------------------------|------------------------|--------------------------------------------------|-------------------|
@@ -188,7 +188,7 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 </details>
 
-<details><summary>Footer</summary>
+<details><summary>Footer (base.html)</summary>
 
 | **Feature**                  | **Expected Outcome**             | **Test Performed** | **Result**                       | **Pass/Fail** |
 |------------------------------|----------------------------------|--------------------|----------------------------------|---------------|
@@ -201,11 +201,9 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 | Social Media Icon: LinkedIn  | Navigates to LinkedIn home page  | clicked on icon    | Nagivaged to LinkedIn Home Page  | Pass          |
 | Social Media Icon Hover      | Changes Clour                    | Hovered over link  | Colour changed                   | Pass          |
  
-
-
 </details>
 
-<details><summary>Home Page (Index.html)</summary>
+<details><summary>Home Page (index.html)</summary>
 
 | **Feature**                               | **Expected Outcome**                 | **Test Performed**          | **Result**                            | **Pass/Fail** |
 |-------------------------------------------|--------------------------------------|-----------------------------|---------------------------------------|---------------|
@@ -226,10 +224,9 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 | Profile Click Here                        | Navigates to the Profile Page        | Clicked Button              | Redirected to the Profile Page        | Pass          |
 | Profile Click Here  Hover                 | Changes Colour                       | Hovered over link           | Changes Colour                        | Pass          |
 
-
 </details>
 
-<details><summary>Holidays Page (Recommendations.html)</summary>
+<details><summary>Holidays Page (recommendations.html)</summary>
 
 | **Feature**                               | **Expected Outcome**                                          | **Test Performed**                     | **Result**                                               | **Pass/Fail**  |
 |-------------------------------------------|---------------------------------------------------------------|----------------------------------------|----------------------------------------------------------|----------------|
@@ -250,10 +247,19 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 | Modal No Button                           | Returns the user to the holidays page                         | Clicked No                             | Brought out of the modal, back to the holidays page      | Pass           |
 | Modal Yes Button                          | Deletes the specific review and updated a new holidays page.  | Clicked Button                         | Returned to the holidays page, specific review deleted.  | Pass           |
 
+</details>
+
+<details><summary>View Holidays Whole Page (view_recommendations.html)</summary>
+
+| **Feature**                                    | **Expected Outcome**                                                             | **Test Performed**             | **Result**                                                              | **Pass/Fail** |
+|------------------------------------------------|----------------------------------------------------------------------------------|--------------------------------|-------------------------------------------------------------------------|---------------|
+| Page autopopulated with data from the database | See all content related to a particular recommended holiday rendered on the page | Loaded different holiday pages | Saw different content depending on which holiday review had been loaded | Pass          |
+| Back to Holidays button                        | Navigates to main holidays page                                                  | Clicked on button              | redirected back to the main holidays page                               | Pass          |
+| Back to Holidays button hover                  | Changes Colour                                                                   | Hovered over button            | Changes Colour                                                          | Pass          |
 
 </details>
 
-<details><summary>Contact Page</summary>
+<details><summary>Contact Page (contat.html)</summary>
 
 | **Feature**     | **Expected Outcome**                                                                                   | **Test Performed**       | **Result**                                                                                           | **Pass/Fail** |
 |-----------------|--------------------------------------------------------------------------------------------------------|--------------------------|------------------------------------------------------------------------------------------------------|---------------|
@@ -265,7 +271,7 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 </details>
 
-<details><summary>Create Account Page</summary>
+<details><summary>Create Account Page (create_account.html)</summary>
 
 | **Feature**                  | **Expected Outcome**                                            | **Test Performed**                   | **Result**                                                                   | **Pass/Fail** |
 |------------------------------------------|-----------------------------------------------------------------------------|---------------------------------------------------|------------------------------------------------------------------------------------------|---------------------------|
@@ -284,7 +290,23 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 </details>
 
-<details><summary>Profile Page</summary>
+<details><summary>Sign In Page(sign_in.html)</summary>
+
+| **Feature**                       | **Expected Outcome**                                                                    | **Test Performed**                                   | **Result**                                                                                                   | **Pass/Fail** |
+|-----------------------------------|-----------------------------------------------------------------------------------------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|---------------|
+| Input boxes                       | Notify the user when they are empty and Promt to fill in                                | Left Input's blank and tried to submit the from      | Form promts the user to input data                                                                           | Pass          |
+| Input Box Email                   | Tells the user an email address (@) is required                                         | Inputed an invalid email                             | Notified to "Please include an @..."                                                                         | Pass          |
+| Invalid email address or password | Notified there is an issue with either the email address of password (flash message)     | Added an icorrect password with a registered account | Notifed that there is an issue with either the email address or password. Asked to try again (flash message) | Pass          |
+| Submit Button                     | Logs the user into a session (can see logged in content) and redirects to Profile page  | Clicked button                                       | Logged in (can see correct content) and am redirected to Profile Page                                        | Pass          |
+| Submit Button Hover               | Changes Colour                                                                          | Hovered over button                                  | Changes Colour                                                                                               | Pass          |
+| Don't have an account promt       | Directs user to Create account page when clicked                                        | Clicked link                                         | Redirected to Create Account page                                                                            | Pass          |
+| Don't have an account promt hover | Changes Colour                                                                          | Hovered over link                                    | Changes Colour                                                                                               | Pass          |
+
+</details>
+
+Logged In Users Only
+
+<details><summary>Profile Page (profile.html)</summary>
 
 | **Feature**                           | ***Expected Outcome**                                 | **Test Performed**      | **Result**                                       | **Pass/Fail** |
 |-------------------------------------------|----------------------------------------------------------|-----------------------------|------------------------------------------------------|-------------------|
@@ -306,10 +328,9 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 | Holiday Types Button                      | Navigates to the Holiday Types Page                      | Clicked Button              | Redirected to the Holiday Types page                 | Pass              |
 | Holidays Button                           | Navigates to the Holidays Page                           | Clicked Button              | Redirected to the Holidays page                      | Pass              |
 
-
 </details>
 
-<details><summary>Add Holiday Page</summary>
+<details><summary>Add Holiday Page (add_recommendation.html)</summary>
 
 | **Feature**        | **Expected Outcome**                                           | **Test Performed**                        | ***Result**                                                                            | **Pass/Fail** |
 |------------------------|-----------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------------------------------------------------------|-------------------|
@@ -324,16 +345,32 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 | Sumbit Button          | Sends the form/data and returns user to their profile page            | Submitted the form using the button           | Returned to the Profile page with the added holiday displayed                             | Pass              |
 | Submit Button Hover    | Changes Colour                                                        | Hovered over button                           | Changes Colour                                                                            | Pass              |
 
+</details>
+
+<details><summary>Edit Holiday (edit_recommendation.html)</summary>
+
+| **Feature**                                                                     | **Expected Outcome**                                                                | **Test Performed**                      | **Result**                                                                                                      | **Pass/Fail** |
+|---------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------|-----------------------------------------------------------------------------------------------------------------|---------------|
+| Input Box's (Title, Holiday Type, Region, Occupants, Address, Review and Image) | All boxes are autopopulated but can be edited to save new content to the holiday.id | Each Input box was updated individually | When Saved, the elements were updated in the database and those parts displayed, render correctly to the user.  | Pass          |
+| Save Button                                                                     | Saves content and redirects user to their Profile page                              | Clicked Save                            | Redirected to Profile page with updated content                                                                 | Pass          |
+| Save Button Hover                                                               | Changes Colour                                                                      | Hovered over button                     | Changes Colour                                                                                                  | Pass          |
 
 </details>
 
 <details><summary>Sign Out</summary>
 
+| **Feature** | **Expected Outcome**                                                                               | **Test Performed** | **Result**                                                                                        | **Pass/Fail** |
+|-------------|----------------------------------------------------------------------------------------------------|--------------------|---------------------------------------------------------------------------------------------------|---------------|
+| Sign Out    | Clicking the sign out button, logs the user out of the session and redirects them to the home page | Clicked Sign Out   | Signed out of session (can only see logged out user content) and am redirected to the home page.  | Pass          |
+
+</details>
+
 </details>
 
 Admin Only Features
 
-<details><summary>Holiday Types Page</summary>
+<details><summary>Holiday Types Page (holiday_types.html)</summary>
+
 | **Feature**                | **Expected Outcome**                                     | **Test Performed**   | **Result**                                          | **Pass/Fail** |
 |----------------------------|----------------------------------------------------------|----------------------|-----------------------------------------------------|---------------|
 | Add Holiday Type Button    | Navigates to the Add Holiday Type Page                   | Clicked Button       | Redirected to the Add Holiday Type Page             | Pass          |
@@ -341,12 +378,12 @@ Admin Only Features
 | Edit/Delete Buttons Hover  | Change Colour                                            | Hovered over buttons | Change Colour                                       | Pass          |
 | Edit Button                | Redirects to the Edit Holiday Type Page.                 | Clicked Button       | Redirected to the Edit Holiday Type Page            | Pass          |
 | Delete Button              | Brings up the confirmation Modal                         | Clicked on Button    | Brings up confirmation Modal                        | Pass          |
-| Modal No Button            | Returns the user to the holidays page                    | Clicked No           | Brought out of the modal, back to the holidays page | Pass          |
-| Modal Yes Button           | Deletes the specific review and loads a new profile page | Clicked Button       | Returned to the profile, specific review deleted.   | Pass          |
+| Modal No Button            | Returns the user to the holiday Type page                    | Clicked No           | Brought out of the modal, back to the holiday Type page | Pass          |
+| Modal Yes Button           | Deletes the specific holiday type and loads a new holiday type page | Clicked Button       | Returned to the holiday type page, specific type deleted from database   | Pass          |
 
 </details>
 
-<details><summary>Add Holiday Types Page</summary>
+<details><summary>Add Holiday Types Page (add_holiday_types.html)</summary>
 
 | **Feature**         | **Expected Outcome**                                           | **Test Performed**                                      | **Result**                                                                                | **Pass/Fail** |
 |---------------------|----------------------------------------------------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------|---------------|
@@ -357,7 +394,18 @@ Admin Only Features
 
 </details>
 
-<details><summary>Users</summary>
+<details><summary>Edit Holiday Types Page (edit_holiday_types.html)</summary>
+
+| **Feature**                 | **Expected Outcome**                                           | **Test Performed**                                          | **Result**                                                                            | **Pass/Fail** |
+|-----------------------------|----------------------------------------------------------------|-------------------------------------------------------------|---------------------------------------------------------------------------------------|---------------|
+| Input Box Holiday Type Name | A Different title can be saved for this holiday-id             | Removed auto poultated title and changed to something new.  | When Saved, the new title is saved to the db and displays on the Holiday Types page.  | Pass          |
+| Input Box Icon              | A Different icon can be saved for this holiday-id              | Used Select Icon button to chose a new icon                 | When Saved, the new icon is saved to the db and displays on the Holiday Type page     | Pass          |
+| Select Icon Button          | Allows the user to pick an icon for the holiday type           | Clicked on different "Select"'s to pick different icons     | Icon image updated in the input box                                                   | Pass          |
+| Save Button                 | Sends the form/data and returns user to the holiday types page | Submitted the form using the button                         | Returned to the Holiday Types Page with the Holiday Type edited                       | Pass          |
+
+</details>
+
+<details><summary>Users (users.html)</summary>
 
 | **Feature**                  | **Expected Outcome**                                                            | **Test Performed**  | **Result**                                         | **Pass/Fail** |
 |------------------------------|---------------------------------------------------------------------------------|---------------------|----------------------------------------------------|---------------|
@@ -367,26 +415,9 @@ Admin Only Features
 | Delete Button Hover          | Change Colour                                                                   | Hovered over button | Changes Colour                                     | Pass          |
 | Delete Button                | Brings up the confirmation Modal                                                | Clicked on Button   | Brings up confirmation Modal                       | Pass          |
 | Modal No Button              | Returns the user to the users page                                              | Clicked No          | Brought out of the modal, back to the users page   | Pass          |
-| Modal Yes Button             | Deletes the specific User (and associated holidays) and loads updated user page | Clicked Button      | Returned to the user page, specific user deleted.  | Pass          |
-
-
-</details>
-
-
-LEFT TO DO:
-
-<details><summary>Edit Holiday</summary>
+| Modal Yes Button             | Deletes the specific User (and associated holidays) and loads updated user page | Clicked Button      | Returned to the user page, specific user deleted from the database  | Pass          |
 
 </details>
-
-<details><summary>Edit Holiday Type</summary>
-
-</details>
-
-<details><summary>Sign Out</summary>
-
-</details>
-
 
 
 ## Testing User Stories
