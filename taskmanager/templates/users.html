@@ -72,11 +72,11 @@
                     <div class="row">
                         <div>
                             <!-- Adjust the column size based on your preference -->
-                            <a href="#!" class="modal-close btn btn-pink col s3 offset-s2">No</a>
+                            <a href="#" class="modal-close btn btn-pink col s3 offset-s2">No</a>
                         </div>
                         <div>
                             <!-- Adjust the column size based on your preference -->
-                            <a href="{{ url_for('delete_user', user_id=user.id ) }}" class="btn btn-lgreen col s3 offset-s2">Yes</a>
+                            <a href="{{ url_for('delete_user', user_id=user.id ) }}" class="btn btn-lgreen col s3 offset-s2">Yes  <span class="sr-only">Yes, delete user {{ user.username }}</span></a>
                         </div>
                     </div>
                 </div>
