@@ -21,8 +21,9 @@ from cloudinary.uploader import upload
 # Home page Route
 @app.route("/")
 def home():
-    recommendations = list
-    (Recommendation.query.order_by(Recommendation.id).all())
+    recommendations = list(
+        Recommendation.query.order_by(Recommendation.id).all()
+        )
     return render_template("index.html", recommendations=recommendations)
 
 
@@ -30,12 +31,6 @@ def home():
 @app.route("/contact")
 def contact():
     return render_template('contact.html')
-
-
-# Create Account Route
-@app.route("/create_account")
-def create_account():
-    return render_template('create_account.html')
 
 
 # Sign in Route
@@ -79,44 +74,47 @@ def sign_out():
     return redirect(url_for('home'))
 
 
-# Route to add a new user
-@app.route('/create_account', methods=['POST'])
-def add_user():
-    username = request.form.get('username')
-    email = request.form.get('email')
-    is_admin = request.form.get("is_admin", "").lower() == "true"
-    password = request.form.get('password_hash')
-    # sha256 is an algorhythm to generate the hashed password
-    password_hash = generate_password_hash(password, "sha256")
+# Create Account Route
+@app.route("/create_account", methods=['GET', 'POST'])
+def create_account():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        is_admin = request.form.get("is_admin", "").lower() == "true"
+        password = request.form.get('password_hash')
+        # sha256 is an algorithm to generate the hashed password
+        password_hash = generate_password_hash(password, "sha256")
 
-    # Check if the username already exists in the database
-    existing_user = User.query.filter_by(username=username).first()
-    if existing_user:
-        flash("Sorry, the username you entered is already taken.", "error")
-        return redirect(url_for("create_account"))
+        # Check if the username already exists in the database
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user:
+            flash("Sorry, the username you entered is already taken.", "error")
+            return redirect(url_for("create_account"))
 
-    # Check if the email address already exists in the database
-    existing_email = User.query.filter_by(email=email).first()
-    if existing_email:
-        flash("Email already in use. Please sign in.")
-        return redirect(url_for("sign_in"))
+        # Check if the email address already exists in the database
+        existing_email = User.query.filter_by(email=email).first()
+        if existing_email:
+            flash("Email already in use. Please sign in.")
+            return redirect(url_for("sign_in"))
 
-    new_user = User(
-        username=username,
-        email=email,
-        password_hash=password_hash,
-        is_admin=is_admin)
-    db.session.add(new_user)
-    db.session.commit()
-    flash("You have created an account, please Sign In", "success")
-    return redirect(url_for('sign_in'))
+        new_user = User(
+            username=username,
+            email=email,
+            password_hash=password_hash,
+            is_admin=is_admin)
+        db.session.add(new_user)
+        db.session.commit()
+        flash("You have created an account, please Sign In", "success")
+        return redirect(url_for('sign_in'))
+    return render_template('create_account.html')
 
 
 # Recommendations Route
 @app.route("/recommendations")
 def recommendations():
     recommendations = list(
-        Recommendation.query.order_by(Recommendation.id).all())
+        Recommendation.query.order_by(Recommendation.id).all()
+        )
     return render_template(
         "recommendations.html",
         recommendations=recommendations,
@@ -147,7 +145,7 @@ def search():
             recommendations=results,
             app=app)
     else:
-        return redirect('/recommendations')
+        return redirect(url_for('recommendations'))
 
 
 # Recommendation Map Route
@@ -215,8 +213,8 @@ def add_recommendation():
             flash("Invalid file format. Please upload only images.", "error")
         # Check if the recommendation title already exists in the database
         existing_recommendation = Recommendation.query.filter_by(
-            recommendation_name=request.form.get(
-                "recommendation_name")).first()
+            recommendation_name=request.form.get("recommendation_name")
+            ).first()
         if existing_recommendation:
             flash("Title exists. Please choose again.", "error")
         else:
@@ -226,7 +224,8 @@ def add_recommendation():
                 location_name=request.form.get("location_name"),
                 occupants=request.form.get("occupants"),
                 recommendation_review=request.form.get(
-                    "recommendation_review"),
+                    "recommendation_review"
+                ),
                 region=request.form.get("region"),
                 mimetype=mimetype,
                 image_url=image_url,
@@ -279,13 +278,13 @@ def edit_recommendation(recommendation_id):
                         image_url = result['secure_url']
                     else:
                         flash('Failed to upload image to Cloudinary', 'error')
-            else:
-                flash("Invalid file format. Images only.", "error")
+        else:
+            flash("Invalid file format. Images only.", "error")
         # Check if title already exists in the db excluding the current title
         existing_recommendation = Recommendation.query.filter(
-            Recommendation.recommendation_name == request.form.get(
-                "recommendation_name"),
-            Recommendation.id != recommendation_id).first()
+            Recommendation.recommendation_name == request.form.get("recommendation_name"),
+            Recommendation.id != recommendation_id
+        ).first()
         if existing_recommendation:
             flash("Title already exists.", "error")
         else:

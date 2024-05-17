@@ -1,9 +1,6 @@
 # Import operating system
 import os
 
-# Import routes and models file
-from taskmanager import routes
-
 # Cloudinary Credentials
 import cloudinary
 import cloudinary.uploader
@@ -58,3 +55,7 @@ login_manager.init_app(app)
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
+
+# Import routes and models file
+from taskmanager import routes
