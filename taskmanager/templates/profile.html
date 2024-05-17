@@ -21,7 +21,7 @@
 <div class="bg-lblue">
     <div class="container admin-container">
         {% if session.get('is_admin') %}
-        <!-- admin only link to content -->        
+        <!-- admin only link to content -->
         <div class="row">
             <a href="#admin-content" id="map-button"
                 class="waves-effect waves-light btn btn-orange col s12 fira-500">NAVIGATE TO ADMIN FEATURES</a>
@@ -43,6 +43,7 @@
             {% for recommendation in user_recommendations %}
             <div class="col s12 m4">
                 <div class="card">
+                    <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}">
                     <div class="card-image">
                         <img src="{{ recommendation.image_url }}" alt="Image of holiday" />
                         <div class="image-overlay"></div>
@@ -51,6 +52,7 @@
                             class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
                                 class="fas fa-search"></i></a>
                     </div>
+                    </a>
                     <div class="card-content">
                         <div><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
                         <div><i class="fa-solid fa-user"></i> {{ recommendation.occupants }}</div>
@@ -95,7 +97,7 @@
 <!-- admin only content banner -->
 <div class="bg-dgreen">
     <div class="container heading-banner">
-        <div class="row admin-content">
+        <div class="row" id="admin-content">
             <div class="col s12 center-align">
                 <h1 class="fira-600 white-text">Admin only</h1>
             </div>
@@ -111,10 +113,14 @@
 <div class="container">
     <div class="row">
         <div class="col s12 center-align manage-area">
-            <p class="fira-500">If you need to delete a specific recommended holiday, please search for it through the Holidays main page where you will see a delete button.</p>
-            <a href="{{ url_for('users') }}" class="fira-600 btn-large btn-blue">USERS<i class="fas fa-user right"></i></a>
-            <a href="{{ url_for('add_holiday_types') }}" class="fira-600 btn-large btn-blue">HOLIDAY TYPES<i class="fa-solid fa-house right"></i></a>
-            <a href="{{ url_for('recommendations') }}" class="fira-600 btn-large btn-blue">HOLIDAYS<i class="fa-solid fa-pen right"></i></a>
+            <p class="fira-500">If you need to delete a specific recommended holiday, please search for it through the
+                Holidays main page where you will see a delete button.</p>
+            <a href="{{ url_for('users') }}" class="fira-600 btn-large btn-blue">USERS<i
+                    class="fas fa-user right"></i></a>
+            <a href="{{ url_for('add_holiday_types') }}" class="fira-600 btn-large btn-blue">HOLIDAY TYPES<i
+                    class="fa-solid fa-house right"></i></a>
+            <a href="{{ url_for('recommendations') }}" class="fira-600 btn-large btn-blue">HOLIDAYS<i
+                    class="fa-solid fa-pen right"></i></a>
         </div>
     </div>
 </div>
