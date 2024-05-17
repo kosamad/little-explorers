@@ -442,7 +442,7 @@ As a user, I want to be able to:
 
 - Contact the site owners to suggest a new holiday type, ask questions or report a malicious recommendation.
 
-    - There are multiple ways for a user to navigate to the contact form. There is a link in the footer on every page, and the page can also be accessed from the main navigation menu. Detailed information on each recommendation allows users to notify admin staff of problematic posts, enabling targeted actions against specific content or users.
+    - There are multiple ways for a user to navigate to the contact form. There is a link in the footer on every page, and the page can also be accessed from the main navigation menu. Detailed information on each recommendation allows users to notify admin staff of problematic posts, enabling targeted actions against specific content or users. After submitting the form, the user is notified that their message has been sent. 
 
 - Return to the home page without having to use my browser buttons. including when I navigate to a non-existent page or I’m thrown an error.
 
@@ -476,7 +476,7 @@ As a user with an account, I want to be able to:
 
 - Edit/Delete recommendations I have posted.
 
-    - A user can edit their posts by clicking the "edit" button on the specific holiday they wish to edit on the recommendations page. The delete button prompts a modal which asks the user if they are sure. This ensures the user is absolutely sure they wish to delete a post from the database. 
+    - A user can edit their posts by clicking the "edit" button on the specific holiday they wish to edit on the recommendations page. The delete button prompts a modal which asks the user if they are sure. This ensures the user is absolutely sure they wish to delete a post from the database. Posts cannot be edited/deleted by other users. 
 
 - Log out of my account easily. 
 
