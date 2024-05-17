@@ -11,7 +11,7 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-## Introduction
+# Introduction
 
 Testing is essential to ensure that the website functions properly, free from bugs, and that users can fully utilise its features before its release to the general market. This guarantees a positive user experience (UX) and encourages repeat visits from players.
 
@@ -21,9 +21,9 @@ In troubleshooting, I utilised the console to log and monitor JavaScript code, a
 
 ---
 
-## Automated Testing
+# Automated Testing
 
-### HTML Validation
+## HTML Validation
 
 [W3C](https://validator.w3.org/) was used to validate the HTML.
 
@@ -56,14 +56,14 @@ As all validated screens look the same I am just displaying one here with the in
 
 </details>
 
-### CSS Validation
+## CSS Validation
 CSS was validated using [W3C Jigsaw](https://jigsaw.w3.org/css-validator/).
 
 <details><summary>CSS Validation Screenshot</summary>
 <img src="documentation/testing/images/validation/valid_css.png">
 </details>
 
-### Javascript Validation
+## Javascript Validation
 
 The JavaScript code was validated using [JSHint](https://jshint.com/). 
 
@@ -107,7 +107,7 @@ Please note, warnings relate the use of ES6/8 and are acceptable for the paramet
 1. Documented undefined/unused variables - all are called elsewhere by emailJS in the contact form. 
 </details>
 
-### Python Validation
+## Python Validation
 
 Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/).
 
@@ -127,7 +127,7 @@ Python pep8 validation was done via [Code Institute's Python Linter](https://pep
 1. Resolved issues included correcting gaps/whitespace and retructuring to reduce line length.
 </details>
 
-### Accessibility
+## Accessibility
 
 The site underwent an accessibility check using [Silktide's Accessibility Checker.](https://silktide.com/toolbar/)
 
@@ -144,3 +144,71 @@ Several changes were implemented to enhance accessibility:
 5. Autocomplete options were added to various elements. 
 
 While most contrast issues were addressed, some persist with elements inherited from Materialize form input components.
+
+## Performance
+
+The site was run through the Google Chrome Developer tool Lighthouse to assess it's performance. The scores for each page are listed below. 
+
+** light house results 
+
+**other content - testing results (manual)
+
+
+# Manual Testing
+
+The desktop version of the site underwent testing across various browsers and devices to ensure compatibility. Testing included Google Chrome, Mozilla Firefox, and Microsoft Edge on desktop computers. Additionally, Chrome was tested on both Lenovo Tablet and Pixel devices, while Safari was used for mobile testing.
+
+The site was responsive on all browsers and devices (down to  320px as recommended by [Free Code Camp](https://www.freecodecamp.org/news/media-query-css-example-max-and-min-screen-width-for-mobile-responsive-design/))
+
+## Mobile and Desktop Test Results
+
+<details><summary>Nav Bar</summary>
+
+</details>
+
+
+## Testing User Stories
+
+** My User story testing
+
+## Real User Testing
+
+Little Explorers was reviewed by friends and family. They were encouraged to comment on their user experience and feedback on any bugs they found. In each testing environment, users were asked to pay particular attention to the buttons and the overall look of the page.
+
+Comments from User 1 (iphone 13 ):
+
+1:
+
+- Comment: "It is difficult to know how much of the review space you have left when you're typing, a countdown on character's left would be helpful"
+
+- Action Taken: A character countdown paragraph was added to notify the users of their remaining entitlemnt. this was imnpletments using javascript. 
+
+2:
+
+- Comment: "When tyring to select a holiday type when adding a recommended holiday, the drop down menu doesn't always register what they pressed."  
+
+- Action Taken: I have tried to replicate this error but using my pixel 4, the issue doesn't arise and I don't have an apple device to complete thourough testing. This would need to be addressed before a wide-spread roll out. 
+
+3:
+
+- Comment: "I couldn't find an option that I wanted as my holiday didn't fit under any of your catagories"
+
+- Action Taken: I have added an "Other" catagory to pick these up. an admin could group them accordignly as the site grew it's database. 
+
+4:
+
+- Comment: "It would be better if the image on the holidays page, also took you to the main reveiw page, rather than just the magnifying glass."
+
+- Action Taken: I have added code so that the image is also a clickable link.  
+
+5:
+
+- Comment: "Is it possible to add a part which allows you to know the ages of the children, so I could filter by holidays suitable for a 3yr old for example"
+
+- Action Taken: This comment has picked up a feature that would be very valuble to this website. However, to implement it would reqire signficant restructuring of the database, the displayed information and the search functionality. Therefore at this time, I have not made changes to respond to this comment but they should be addressed for future roll outs.  
+
+6:
+
+- Comment: "It could be nice to let the user add a link to the air b and b/place they stayed or to link to places they visited"
+
+- Action Taken: As above.  
