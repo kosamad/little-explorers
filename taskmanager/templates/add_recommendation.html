@@ -36,14 +36,16 @@
                 </div>
                 <!-- Holiday Type Id (User select from name) -->
                 <div class="row">
-                    <div class="input-field col m6 s12">
-                        <select id="holiday_id" name="holiday_id" class="validate" required>
-                            <option value="" disabled selected>Choose Holiday Type</option>
-                            {% for holiday_type in holiday_types %}
-                            <option value="{{ holiday_type.id }}">{{ holiday_type.holiday_name }}</option>
-                            {% endfor %}
-                        </select>
-                        <label for="holiday_id">Holiday Type</label>
+                    <div class="col m6 s12">
+                        <div class="input-field">                            
+                            <select id="holiday_id" name="holiday_id" class="validate" required>
+                                <option value="" disabled selected>Choose Holiday Type</option>
+                                {% for holiday_type in holiday_types %}
+                                <option value="{{ holiday_type.id }}">{{ holiday_type.holiday_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="holiday_id">Holiday Type</label>
+                        </div>
                     </div>
                 </div>
                 <!-- Region (User select from options) -->
