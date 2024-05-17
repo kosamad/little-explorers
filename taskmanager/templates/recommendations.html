@@ -51,7 +51,7 @@
             {% for recommendation in recommendations %}
             <div class="col s12 m4">
                 <div class="card">
-                    <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}" class="review-link">
+                    <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}">
                         <div class="card-image">
                             <img src="{{ recommendation.image_url }}" alt="Image of holiday" />
                             <div class="image-overlay"></div>

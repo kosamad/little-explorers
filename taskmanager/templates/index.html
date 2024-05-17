@@ -27,6 +27,7 @@
         {% if recommendation.recommendation_name in ['Bristol Balloons!', 'Peak District Paradise', 'Beachfront Chalet'] %}
         <div class="col s12 m3 l3">
             <div class="card">
+                <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"></a>
                 <div class="card-image">
                     <img
                         src="{{ recommendation.image_url }}" alt="Image of holiday"/>
@@ -36,6 +37,7 @@
                         class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
                             class="fas fa-search"></i></a>
                 </div>
+            </a>
                 <div class="card-content">
                     <div><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
                     <div><i class="fa-solid fa-user"></i> {{ recommendation.occupants }}</div>
