@@ -58,5 +58,5 @@ def load_user(user_id):
 
 
 # Import routes and models file
-# Needs to stay a the bottom of the file to ensure programme runs correctly. 
+# Needs to stay a the bottom to prevent a circular import. 
 from taskmanager import routes
