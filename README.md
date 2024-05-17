@@ -221,6 +221,10 @@ The Favicon for the site was created from the logo using [favicon](https://favic
 
 ## ?. Finished site
 
+Updates from Design:
+
+The blue background colour was updated to #0f72a8 to provde more contrast and comply with accesibility requiremnts. 
+
 Base.html
 
 Base.html serves as the foundation for every page, reducing redundancy in code and enhancing efficiency. By consolidating common HTML elements, it accelerates load times, streamlines webpage appearance, and optimizes backend performance.
