@@ -114,7 +114,7 @@ Python pep8 validation was done via [Code Institute's Python Linter](https://pep
 
 <details><summary>__init__ Python</summary>
 <img src="documentation/testing/images/validation/python-init.PNG">
-1. Resolved issues included moving all imports at the top of file and correcting gaps/whitespace
+1. Resolved issues included correcting gaps and whitespace. The import of routes has been left at the bottom of the file. Although this doesn't comply with PEP8, it is necessary to prevent a circular import.
 </details>
 
 <details><summary>Models Python</summary>
@@ -127,6 +127,20 @@ Python pep8 validation was done via [Code Institute's Python Linter](https://pep
 1. Resolved issues included correcting gaps/whitespace and retructuring to reduce line length.
 </details>
 
+### Accessibility
 
+The site underwent an accessibility check using [Silktide's Accessibility Checker.](https://silktide.com/toolbar/)
 
+Several changes were implemented to enhance accessibility:
 
+1. Contrast improvements were applied to the footer and similarly colored buttons to enhance readability.
+
+2. The exclamation mark ("!") was removed from links that do not lead to new pages, ensuring consistency and clarity.
+
+3. Specific descriptions were added as screen reader-only content to aid users in navigating to specific pages and ensuring they are deleting the correct content.
+
+4. Contrast on orange buttons was adjusted to display black text instead of white, improving visibility.
+
+5. Autocomplete options were added to various elements. 
+
+While most contrast issues were addressed, some persist with elements inherited from Materialize form input components.
