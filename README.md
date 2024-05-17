@@ -51,7 +51,7 @@ Applying UX design principles, I carefully considered the essential features nee
 4. As an administrator I want to be able to:
 
     - Sign into my account quickly and easily.
-    - Edit any recommendation if necessary.
+    - Edit any recommendation if necessary (This was not implemented, see [Testing.md](TESTING.md#testing-user-stories]))
     - Add a new holiday type category.
     - Edit a new holiday type category.
     - Delete a user if necessary.
