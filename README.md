@@ -203,10 +203,10 @@ I employed Coolers to select a colour palette that complements the theme of the 
 
 #### Typography
 
-The font selected for the website was chosen to match those featured in the logo, ensuring a cohesive design. For general text, I opted for Lexend due to its exceptional readability, especially for users with additional needs. 
+The website's font was chosen to match the logo, ensuring a cohesive design. The fonts are easy to read, enhancing overall readability and user experience.
 
 * [Pacifico](https://fonts.google.com/specimen/Pacifico)
-* [Lexend](https://fonts.google.com/specimen/Lexend)
+* [Fira Sans](https://fonts.google.com/specimen/Fira+Sans)
 
 They complement each other well and offer distinct contrast across various sections of the site. 
 
