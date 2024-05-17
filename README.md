@@ -45,8 +45,7 @@ Applying UX design principles, I carefully considered the essential features nee
     - Sign into my account.
     - Add my own holiday recommendation using a user-friendly form.
     - View my previously posted holiday recommendations.
-    - Edit/Delete recommendations I have posted.
-    - Comment on holiday recommendations, adding information about a holiday destination and verifying the post.
+    - Edit/Delete recommendations I have posted.    
     - Log out of my account easily. 
 
 4. As an administrator I want to be able to:

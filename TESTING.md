@@ -448,6 +448,7 @@ As a user, I want to be able to:
 
     - The Home page can be accessed at any time using the logo in the navigation bar or from the home option in the navigation menu. On error pages, a button is provided for users to "Return to the Home Page."
 
+
 As a user without an account, I want to be able to:
 
 - Understand the purpose of the site from the home page.
@@ -458,23 +459,43 @@ As a user without an account, I want to be able to:
 
     - There are several promts for a user to create and account. Firstly, from the home page but also from the nav bar (present on every page).
 
+
 As a user with an account, I want to be able to:
 
 - Sign into my account.
+
+    - Users can sign in to their account from the link in the navigation menu. There are also prompts on the create account page if the user tries to create an account with an email already registered on the site. Additionally, wherever users are informed that they can create an account, there is also an option to sign in if they "already have an account."
+
 - Add my own holiday recommendation using a user-friendly form.
+
+    - The Add Holiday/Recommendations page can be easily accessed from various places on the site, including the navigation bar, the main recommendations page, the user's profile, and the bottom of the home screen (for logged-in users only). On the Add Recommendation page, users have access to an easy and clear form that enhances the user experience (UX). Each field prompts the user with what they need to write and notifies them if any section is blank before submission can occur.
+
 - View my previously posted holiday recommendations.
+
+    - The user can see thier posted holidays from their profile page, which only renders holidays added by that logged in user.  
+
 - Edit/Delete recommendations I have posted.
-- Comment on holiday recommendations, adding information about a holiday destination and verifying the post.
+
+    - A user can edit their posts by clicking the "edit" button on the specific holiday they wish to edit on the recommendations page. The delete button prompts a modal which asks the user if they are sure. This ensures the user is absolutely sure they wish to delete a post from the database. 
+
 - Log out of my account easily. 
+
+    - A user can easily log out of their account using the "Sign Out" button in the nav bar.  
 
 4. As an administrator I want to be able to:
 
     - Sign into my account quickly and easily.
+
     - Edit any recommendation if necessary.
+
     - Add a new holiday type category.
+
     - Edit a new holiday type category.
+
     - Delete a user if necessary.
+
     - Receive email messages from the site users. 
+    
     - Log out of my account easily. 
 
 ## Real User Testing
