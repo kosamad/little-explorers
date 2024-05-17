@@ -111,7 +111,17 @@ document.addEventListener('DOMContentLoaded', function () {
       alert(errorMessage);
     }
     return isValid;
-  }  
+  }
+  
+  
+// Function to give the user a count down of remaining characters for the reveiw
+document.getElementById('recommendation_review').addEventListener('input', function() {
+  var textLength = this.value.length;
+    var maxLength = parseInt(this.getAttribute('maxlength'));
+    var remainingChars = maxLength - textLength;
+    document.getElementById('charCount').textContent = remainingChars;
+});
+
 });
 
 // Function to check the maximum length of input fields.
