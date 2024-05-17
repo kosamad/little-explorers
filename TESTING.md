@@ -482,21 +482,37 @@ As a user with an account, I want to be able to:
 
     - A user can easily log out of their account using the "Sign Out" button in the nav bar.  
 
-4. As an administrator I want to be able to:
 
-    - Sign into my account quickly and easily.
+As an administrator I want to be able to:
 
-    - Edit any recommendation if necessary.
+- Sign into my account quickly and easily.
 
-    - Add a new holiday type category.
+    - Admins log in via the same navigation link as all users in the navigation bar.
 
-    - Edit a new holiday type category.
+- Edit any recommendation if necessary.
 
-    - Delete a user if necessary.
+    - Admin users cannot edit a user's post. After working on the site, I realized that allowing admins to edit user posts might undermine user confidence, as they wouldn't know if a review was genuine or if it had been altered by an admin. Users have the ability to edit their own posts and can contact admins for assistance if needed. Admins retain the ability to delete posts to ensure that malicious or inappropriate content can be addressed promptly.
 
-    - Receive email messages from the site users. 
+- Add a new holiday type category.
+
+    - A new holiday type can be added from the Holiday Type page using the Add button. The form is easy and simple to use making it easy for admin staff to add new catagories. 
+
+- Edit a new holiday type category.
+
+    - A existing holiday type can be edited easily using the "Edit" button on each Holiday type. 
+
+- Delete a user if necessary.
+
+    - The Users page, accessible only to admin staff, provides an overview of all registered users on the site. Admins can search for users by email address or username, granting them the ability to identify and address any instances of inappropriate content posted by users. This functionality ensures the maintenance of a safe and appropriate environment on the site.
+
+- Receive email messages from the site users. 
+
+    - The contact form is seamlessly integrated with the little.explorers@gmail.com account. When messages are submitted, they are automatically sent and the content is formatted for easy readability. Each email includes the sender's name, email address, and the message content, ensuring efficient communication and follow-up.
     
-    - Log out of my account easily. 
+- Log out of my account easily. 
+
+    - Like all users of the site. It is easy to log out using the "Sign out" Link in the navigation bar. 
+
 
 ## Real User Testing
 
