@@ -31,7 +31,7 @@ main {
 }
 
 .bg-blue {
-  background-color: #268DC8;
+  background-color: #0F72A8;
 }
 
 .bg-white {
@@ -52,6 +52,7 @@ main {
 
 .btn-orange {
   background-color: #FF914D;
+  color:black;
 }
 
 .btn-dblue {
@@ -60,6 +61,7 @@ main {
 
 .btn-orange:hover {
   background-color: #04724D;
+  color:white;
 }
 
 .btn-dgreen {
@@ -67,7 +69,7 @@ main {
 }
 
 .btn-dgreen:hover {
-  background-color: #268DC8;
+  background-color: #0F72A8;
 }
 
 .btn-lgreen {
@@ -84,7 +86,7 @@ main {
 }
 
 .btn-blue {
-  background-color: #268DC8;
+  background-color: #0F72A8;
 }
 
 .btn-blue:hover {
@@ -221,6 +223,10 @@ main {
 
 #account-log {
   margin-bottom: 10px;
+}
+
+#account-log a {
+  color: #075c87;
 }
 
 #account-log a:hover {
