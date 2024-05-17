@@ -164,7 +164,229 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 <details><summary>Nav Bar</summary>
 
+| ****Feature****              | ****Expected Outcome****                     | ****Test Performed**** | ****Result****                                   | ****Pass/Fail**** |
+|------------------------------|----------------------------------------------|------------------------|--------------------------------------------------|-------------------|
+| All Users                    |                                              |                        |                                                  |                   |
+| Little Explorer Logo         | Redirect to Home page when clicked           | Clicked Logo/Title     | Redirects to Home Page                           | Pass              |
+| Home Page Link               | Redirect to Home page when clicked           | Clicked Link           | Redirects to Home Page                           | Pass              |
+| Holidays Page Link           | Redirect to Holidays page when clicked       | Clicked Link           | Redirects to Holidays Page                       | Pass              |
+| Contact Page Link            | Redirect to Contact page when clicked        | Clicked Link           | Redirects to Contact Page                        | Pass              |
+| Account Dropdown             | Reveals Links to all users                   | Clicked Account Title  | DropDown menu shown                              | Pass              |
+| Create Account Link          | Redirect to Create Account page when clicked | Clicked Link           | Redirects to Create Account Page                 | Pass              |
+| Sign In Link                 | Redirect to Sign In Page when clicked        | Clicked Sign In        | Redirected to Sign in Page                       | Pass              |
+| Logged In User (not Admin)   |                                              |                        |                                                  |                   |
+| Add Holiday Link             | Redirect to Add Holiday page when clicked    | Clicked Link           | Redirects to Add Holiday Page                    | Pass              |
+| Account Dropdown             | Reveals Links to all users                   | Clicked Account Title  | DropDown menu shown                              | Pass              |
+| Profile Link                 | Redirect to Profile Page when clicked        | Clicked Link           | Redirects to Profile Page                        | Pass              |
+| Sign Out Link                | Signs the User out                           | Clicked Sign Out       | Logged out of the system (notified with message) | Pass              |
+| Admin only                   |                                              |                        |                                                  |                   |
+| Manage (admin only) Dropdown | Reveals links for admin                      | Clicked Manage Title   | DropDown menu shown                              | Pass              |
+| Holiday Types Link           | Redirect to Holiday Types page when clicked  | Clicked Link           | Redirects to Holiday Types Page                  | Pass              |
+| Users Link                   | Redirect to Users page when clicked          | Clicked Link           | Redirects to Users Page                          | Pass              |
+| Add Holiday page             | Redirect to Add Holiday page when clicked    | Clicked Link           | Redirects to Add Holiday Page                    | Pass              |
+| Create Account               | Redirect to Create Account page when clicked | Clicked Link           | Redirects to Create Account Page                 | Pass              |         
+
 </details>
+
+<details><summary>Footer</summary>
+
+| **Feature**                  | **Expected Outcome**             | **Test Performed** | **Result**                       | **Pass/Fail** |
+|------------------------------|----------------------------------|--------------------|----------------------------------|---------------|
+| Question Link                | Navigates to the Contact Pagr    | clicked on link    | Redirected to the Contact Page   | Pass          |
+| Question Link Hover          | Changes Clour                    | Hovered over link  | Colour changed                   | Pass          |
+| Social Media Icon: X         | Navigates to Twitter home page   | clicked on icon    | Nagivaged to Twitter Home Page   | Pass          |
+| Social Media Icon:  Facebook | Navigates to  Facebook home page | clicked on icon    | Nagivaged to  Facebook Home Page | Pass          |
+| Social Media Icon: Instagram | Navigates to Instagram home page | clicked on icon    | Nagivaged to Instagram Home Page | Pass          |
+| Social Media Icon: Pintrest  | Navigates to Pintrest home page  | clicked on icon    | Nagivaged to Pintrest Home Page  | Pass          |
+| Social Media Icon: LinkedIn  | Navigates to LinkedIn home page  | clicked on icon    | Nagivaged to LinkedIn Home Page  | Pass          |
+| Social Media Icon Hover      | Changes Clour                    | Hovered over link  | Colour changed                   | Pass          |
+ 
+
+
+</details>
+
+<details><summary>Home Page (Index.html)</summary>
+
+| **Feature**                               | **Expected Outcome**                 | **Test Performed**          | **Result**                            | **Pass/Fail** |
+|-------------------------------------------|--------------------------------------|-----------------------------|---------------------------------------|---------------|
+| All users                                 |                                      |                             |                                       |               |
+| Browse Holidays Button                    | Navigates to the Holidays Page       | Clicked Button              | Redirected to the Holidays Page       | Pass          |
+| Browse Holidays Button Hover              | Changes Colour                       | Hovered over button         | Changes Colour                        | Pass          |
+| Holiday Card Image                        | Navigates to full page reveiw        | Clicked on card image       | Redirected to full page reveiw        | Pass          |
+| Holiday Card Image Magnifying glass image | Navigates to full page reveiw        | Clicked on magnifying glass | Redirected to full page reveiw        | Pass          |
+| See More holidays Button                  | Navigates to the Holidays Page       | Clicked Button              | Redirected to the Holidays Page       | Pass          |
+| See More holidays Button Hover            | Changes Colour                       | Hovered over button         | Changes Colour                        | Pass          |
+| Logged Out users only                     |                                      |                             |                                       |               |
+| Create Account Button                     | Navigates to the Create Account Page | Clicked Button              | Redirected to the Create account Page | Pass          |
+| Create Account Button Hover               | Changes Colour                       | Hovered over button         | Changes Colour                        | Pass          |
+| Already have an account link              | Navigates to the Sign In page        | Clicked Button              | Redirected to the Sign In Page        | Pass          |
+| Logged In users only                      |                                      |                             |                                       |               |
+| Add Holidays Button                       | Navigates to the Add Holiday Page    | Clicked Button              | Redirected to the Add Holiday Page    | Pass          |
+| Add Holidays Button Hover                 | Changes Colour                       | Hovered over button         | Changes Colour                        | Pass          |
+| Profile Click Here                        | Navigates to the Profile Page        | Clicked Button              | Redirected to the Profile Page        | Pass          |
+| Profile Click Here  Hover                 | Changes Colour                       | Hovered over link           | Changes Colour                        | Pass          |
+
+
+</details>
+
+<details><summary>Holidays Page (Recommendations.html)</summary>
+
+| **Feature**                               | **Expected Outcome**                                          | **Test Performed**                     | **Result**                                               | **Pass/Fail**  |
+|-------------------------------------------|---------------------------------------------------------------|----------------------------------------|----------------------------------------------------------|----------------|
+| All users                                 |                                                               |                                        |                                                          |                |
+| Search Function                           | Filters results based on search                               | Typed in  a keyword and clicked search | Rendered holidays that realte to the search              | Pass           |
+| Clear Button                              | Removes searched results and renders all holidays again       | Clicked on Clear                       | All holidays displayed on the page                       | Pass           |
+| Search/Clear Button Hover                 | Changes Colour                                                | Hovered over button                    | Changes Colour                                           | Pass           |
+| Jump to Map View Button                   | Navigates to the map at the bottom of the screen              | Clicked on Button                      | Directed to the map                                      | Pass           |
+| Map View Button Hover                     | Changes Colour                                                | Hovered over button                    | Changes Colour                                           | Pass           |
+| Holiday Card Image                        | Navigates to full page reveiw                                 | Clicked on card image                  | Redirected to full page reveiw                           | Pass           |
+| Holiday Card Image Magnifying glass image | Navigates to full page reveiw                                 | Clicked on magnifying glass            | Redirected to full page reveiw                           | Pass           |
+| Map Marker                                | Directs the user to the specific review for that pin          | Clicked on Markers                     | Directed to specific holiday page                        | Pass           |
+| Logges In Users Only                      |                                                               |                                        |                                                          |                |
+| Add Holidays Button                       | Navigates to the Add Holiday Page                             | Clicked Button                         | Redirected to the Add Holiday Page                       | Pass           |
+| Add Holiday Button Hover                  | Changes Colour                                                | Hovered over button                    | Changes Colour                                           | Pass           |
+| Admin Only                                |                                                               |                                        |                                                          |                |
+| Delete Button                             | Brings up the confirmation Modal                              | Clicked on Button                      | Brings up confirmation Modal                             | Pass           |
+| Modal No Button                           | Returns the user to the holidays page                         | Clicked No                             | Brought out of the modal, back to the holidays page      | Pass           |
+| Modal Yes Button                          | Deletes the specific review and updated a new holidays page.  | Clicked Button                         | Returned to the holidays page, specific review deleted.  | Pass           |
+
+
+</details>
+
+<details><summary>Contact Page</summary>
+
+| **Feature**     | **Expected Outcome**                                                                                   | **Test Performed**       | **Result**                                                                                           | **Pass/Fail** |
+|-----------------|--------------------------------------------------------------------------------------------------------|--------------------------|------------------------------------------------------------------------------------------------------|---------------|
+| All users       |                                                                                                        |                          |                                                                                                      |               |
+| Input boxes     | Allow typing                                                                                           | Typed into boxes         | Form validates the input (green line)                                                                | Pass          |
+| Input Boxes     | Notify user input is required                                                                          | left boxes blank         | Red line n the form, if I try to submit I'm notified which part of the form is missing.              | Pass          |
+| Input Box Email | Tells the user an email address (@) is required                                                        | Inputed an invalid email | Notified to "Please include an @..."                                                                 | Pass          |
+| Send Button     | Sends email to little.explorers@gmail.com with the info from the form. Notifies user the email was sent | Sent a test email        | little explorers gmail account reveives an [email](documentation/testing/images/test-email.PNG). The website notifes the user theyr email was sent! | Pass          |
+
+</details>
+
+<details><summary>Create Account Page</summary>
+
+| **Feature**                  | **Expected Outcome**                                            | **Test Performed**                   | **Result**                                                                   | **Pass/Fail** |
+|------------------------------------------|-----------------------------------------------------------------------------|---------------------------------------------------|------------------------------------------------------------------------------------------|---------------------------|
+| All users                                |                                                                             |                                                   |                                                                                          |                           |
+| Input boxes                              | Allow typing                                                                | Typed into boxes                                  | Form validates the input (green line)                                                    | Pass                      |
+| Input Boxes                              | Notify user input is required                                               | left boxes blank                                  | Red line in the form, if I try to submit I'm notified which part of the form is missing. | Pass                      |
+| Input Box Email                          | Tells the user an email address (@) is required                             | Inputed an invalid email                          | Notified to "Please include an @..."                                                     | Pass                      |
+| Input Box Check Password                 | Notified if the passwords don't match                                       | Typed an incorect Password                        | Cannot submit the form if passwords don't match                                          | Pass                      |
+| Already registered email address         | Notified there is an account with this email and redirected to sign in page | Added an already in use email address             | Notified and redirected to the Sign In Page.                                             | Pass                      |
+| Submit Button                            | Remains disabled until passwords match                                      | Typed correct and incorrect passwords             | Submit button is only clickable once passwords match                                     | Pass                      |
+| Submit Button (Active)                   | Logs the User in and redirects to Profile Page                              | Clicked the Button                                | Notified I've been logged in (flash meesage) and redireced to Profile page               | Pass                      |
+| Submit Button Hover                      | Changes Colour                                                              | Hovered over button                               | Changes Colour                                                                           | Pass                      |
+| Admin Only                               |                                                                             |                                                   |                                                                                          |                           |
+| Swipe button to create other admin users | Check function works and creates an admin user                              | Checked the box and looked at the subsequent uers | Admin account created                                                                    | Pass                      |
+
+
+</details>
+
+<details><summary>Profile Page</summary>
+
+| **Feature**                           | ***Expected Outcome**                                 | **Test Performed**      | **Result**                                       | **Pass/Fail** |
+|-------------------------------------------|----------------------------------------------------------|-----------------------------|------------------------------------------------------|-------------------|
+| All users                                 |                                                          |                             |                                                      |                   |
+| Add Holidays Button                       | Navigates to the Add Holiday Page                        | Clicked Button              | Redirected to the Add Holiday Page                   | Pass              |
+| Add Holiday Button Hover                  | Changes Colour                                           | Hovered over button         | Changes Colour                                       | Pass              |
+| Holiday Card Image                        | Navigates to full page reveiw                            | Clicked on card image       | Redirected to full page reveiw                       | Pass              |
+| Holiday Card Image Magnifying glass image | Navigates to full page reveiw                            | Clicked on magnifying glass | Redirected to full page reveiw                       | Pass              |
+| Edit/Delete Buttons Hover                 | Change Colour                                            | Hovered over buttons        | Change Colour                                        | Pass              |
+| Edit Button                               | Redirects to the Edit Recommendation (Holiday) Page.     | Clicked Button              | Redirected to the Edit Recommendation (Holiday) Page | Pass              |
+| Delete Button                             | Brings up the confirmation Modal                         | Clicked on Button           | Brings up confirmation Modal                         | Pass              |
+| Modal No Button                           | Returns the user to the holidays page                    | Clicked No                  | Brought out of the modal, back to the holidays page  | Pass              |
+| Modal Yes Button                          | Deletes the specific review and loads a new profile page | Clicked Button              | Returned to the profile, specific review deleted.    | Pass              |
+| Admin Only Users                          |                                                          |                             |                                                      |                   |
+| Navigate to admin features button         | Navigates to the bottom of the page, admin features      | Clicked Button              | Moved down the page to the admin content             | Pass              |
+| Navigate to admin Button Hover            | Changes Colour                                           | Hovered over button         | Changes Colour                                       | Pass              |
+| Users/Holiday Tuypes/Holiday Buttons      | Change Colour                                            | Hovered over buttons        | Change Colour                                        | Pass              |
+| Users Button                              | Navigates to the Users Management Page                   | Clicked Button              | Redirected to the Users page                         | Pass              |
+| Holiday Types Button                      | Navigates to the Holiday Types Page                      | Clicked Button              | Redirected to the Holiday Types page                 | Pass              |
+| Holidays Button                           | Navigates to the Holidays Page                           | Clicked Button              | Redirected to the Holidays page                      | Pass              |
+
+
+</details>
+
+<details><summary>Add Holiday Page</summary>
+
+| **Feature**        | **Expected Outcome**                                           | **Test Performed**                        | ***Result**                                                                            | **Pass/Fail** |
+|------------------------|-----------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------------------------------------------------------|-------------------|
+| All users              |                                                                       |                                               |                                                                                           |                   |
+| Input Boxes            | Notify user input is required                                         | left boxes each box blank and tried to submit | Red line in the form, if I try to submit I'm notified which part of the form is missing.  | Pass              |
+| Address Input          | Allows a user to type an address (and get drop down suggestions).     | Started Typing an address                     | Addresses are suggested and clickable                                                     | Pass              |
+| Address Input from Map | Address is auto generated from where the map pin is positioned.       | Moved map pin                                 | Address is auto-poulated                                                                  | Pass              |
+| Map Marker             | Moves when the address is inputed                                     | Typed in an address                           | Map Marker moves to correct position                                                      | Pass              |
+| Character Count        | Counts down how many characters are remaining in the review text area | Typed in the review box                       | Remaining characters box updated with each character typed.                               | Pass              |
+| Image file             | Only allows Images to be uploaded                                     | Added a PDF to the form                       | Notifed that I must select a file with the format jpeg, jpg or png                        | Pass              |
+| Image View Button      | Allows the user to see what image they have uploaded                  | Added an image file and clicked View          | image is displayed on the page                                                            | Pass              |
+| Sumbit Button          | Sends the form/data and returns user to their profile page            | Submitted the form using the button           | Returned to the Profile page with the added holiday displayed                             | Pass              |
+| Submit Button Hover    | Changes Colour                                                        | Hovered over button                           | Changes Colour                                                                            | Pass              |
+
+
+</details>
+
+<details><summary>Sign Out</summary>
+
+</details>
+
+Admin Only Features
+
+<details><summary>Holiday Types Page</summary>
+| **Feature**                | **Expected Outcome**                                     | **Test Performed**   | **Result**                                          | **Pass/Fail** |
+|----------------------------|----------------------------------------------------------|----------------------|-----------------------------------------------------|---------------|
+| Add Holiday Type Button    | Navigates to the Add Holiday Type Page                   | Clicked Button       | Redirected to the Add Holiday Type Page             | Pass          |
+| Add Holiday Button Hover   | Changes Colour                                           | Hovered over button  | Changes Colour                                      | Pass          |
+| Edit/Delete Buttons Hover  | Change Colour                                            | Hovered over buttons | Change Colour                                       | Pass          |
+| Edit Button                | Redirects to the Edit Holiday Type Page.                 | Clicked Button       | Redirected to the Edit Holiday Type Page            | Pass          |
+| Delete Button              | Brings up the confirmation Modal                         | Clicked on Button    | Brings up confirmation Modal                        | Pass          |
+| Modal No Button            | Returns the user to the holidays page                    | Clicked No           | Brought out of the modal, back to the holidays page | Pass          |
+| Modal Yes Button           | Deletes the specific review and loads a new profile page | Clicked Button       | Returned to the profile, specific review deleted.   | Pass          |
+
+</details>
+
+<details><summary>Add Holiday Types Page</summary>
+
+| **Feature**         | **Expected Outcome**                                           | **Test Performed**                                      | **Result**                                                                                | **Pass/Fail** |
+|---------------------|----------------------------------------------------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------|---------------|
+| Input Boxes         | Notify user input is required                                  | left boxes each box blank and tried to submit           | Red line in the form, if I try to submit I'm notified which part of the form is missing.  | Pass          |
+| Select Icon Button  | Allows the user to pick an icon for the holiday type           | Clicked on different "Select"'s to pick different icons | Icon image updated in the input box                                                       | Pass          |
+| Submit Button       | Sends the form/data and returns user to the holiday types page | Submitted the form using the button                     | Returned to the Holiday Types Page with the Holiday Type added                            | Pass          |
+| Submit Button Hover | Changes Colour                                                 | Hovered over button                                     | Changes Colour                                                                            | Pass          |
+
+</details>
+
+<details><summary>Users</summary>
+
+| **Feature**                  | **Expected Outcome**                                                            | **Test Performed**  | **Result**                                         | **Pass/Fail** |
+|------------------------------|---------------------------------------------------------------------------------|---------------------|----------------------------------------------------|---------------|
+| Search Input + Search Button | Returns Users from username/email address info                                  | Typed in a user     | Shown specific user                                | Pass          |
+| Clear Button                 | Removes searched results and renders all holidays again                         | Clicked on Clear    | All holidays displayed on the page                 | Pass          |
+| Search/Clear Button Hover    | Changes Colour                                                                  | Hovered over button | Changes Colour                                     | Pass          |
+| Delete Button Hover          | Change Colour                                                                   | Hovered over button | Changes Colour                                     | Pass          |
+| Delete Button                | Brings up the confirmation Modal                                                | Clicked on Button   | Brings up confirmation Modal                       | Pass          |
+| Modal No Button              | Returns the user to the users page                                              | Clicked No          | Brought out of the modal, back to the users page   | Pass          |
+| Modal Yes Button             | Deletes the specific User (and associated holidays) and loads updated user page | Clicked Button      | Returned to the user page, specific user deleted.  | Pass          |
+
+
+</details>
+
+
+LEFT TO DO:
+
+<details><summary>Edit Holiday</summary>
+
+</details>
+
+<details><summary>Edit Holiday Type</summary>
+
+</details>
+
+<details><summary>Sign Out</summary>
+
+</details>
+
 
 
 ## Testing User Stories
@@ -187,7 +409,7 @@ Comments from User 1 (iphone 13 ):
 
 - Comment: "When tyring to select a holiday type when adding a recommended holiday, the drop down menu doesn't always register what they pressed."  
 
-- Action Taken: I have tried to replicate this error but using my pixel 4, the issue doesn't arise and I don't have an apple device to complete thourough testing. This would need to be addressed before a wide-spread roll out. 
+- Action Taken: After researching this issue, I found that it is a common and well-documented problem with Materialize select boxes. [This post](https://github.com/Dogfalo/materialize/issues/6464) identified a patch that I could implement to resolve the issue. Further testing by the user confirmed that this solution was successful.
 
 3:
 
