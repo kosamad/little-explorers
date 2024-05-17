@@ -43,8 +43,8 @@ def sign_in():
         user = User.query.filter_by(email=email).first()
         # if not give a message and promt to create account
         if not user:
-            flash("There is no account with this email address", "error")
-            return redirect(url_for("create_account"))
+            flash('Invalid email or password. Please try again.', 'error')
+            return redirect(url_for('sign_in'))
 
         # Check hashed password and return true/false
         if check_password_hash(user.password_hash, password):
