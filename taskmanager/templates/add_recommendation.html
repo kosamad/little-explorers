@@ -176,6 +176,8 @@
 <script src="{{ url_for('static', filename='js/addRecommendation.js') }}"></script>
 <!-- Maps specific JS-->
 <script src="{{ url_for('static', filename='js/maps.js') }}"></script>
+<!-- Patch to fix select buttons on IOS-->
+<script src="{{ url_for('static', filename='js/materialize-patch.js') }}"></script>
 <!-- Google Maps API -->
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key={{ app.config['GOOGLE_MAPS_API_KEY'] }}&libraries=places&callback=initialize">
