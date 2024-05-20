@@ -291,7 +291,7 @@ At the conclusion of the page, users are encouraged to join the site and contrib
 
 The main holidays page presents users with a comprehensive collection of all holidays listed on the site, each displayed as an informative card featuring essential details such as the title, region, occupancy, and holiday type. Leveraging Jinja templating and database data, this information is seamlessly auto-populated. Each card allows a user to navigate to the full page review using either the magnifying glass icon or clicking the main image. 
 
-Users enjoy the flexibility of searching (case insensitive) through posts using keywords found within the reviews or holiday types. This dynamically updates the page to display only relevant holidays matching the search criteria. In cases where no search results are found, users are promptly notified with a flash message.
+Users enjoy the flexibility of searching (case insensitive) through posts using keywords found within the reviews or holiday types. This dynamically updates the page to display only relevant holidays matching the search criteria. In cases where no search results are found, users are promptly notified with a flash message. Additionally, the clear button removes any search criteria, allowing for a fresh search if needed.
 
 Additionally, users can opt for a map view of the holidays if preferred. A prominent button facilitates easy navigation to this section. During a search, the map pins are dynamically updated to exclusively display the searched holidays, ensuring a synchronised experience between search results and map visualisation.
 
@@ -456,7 +456,7 @@ Here, administrators have the ability to set the holiday types that categorise e
 
 <details><summary>Holiday Types (holiday_types.html)</summary>
 
-![Admin Holiday Type](documentation/site_images/air_holiday_types.PNG)
+![Admin Holiday Types](documentation/site_images/air_holiday_types.PNG)
 
 The categories set by administrators are showcased on the Holiday Types page, presented as Materialize cards. Leveraging Jinja templating and information from the database, these cards are automatically populated with the title, icon, and buttons. The 'Edit' button directs administrators to the edit holiday type page, while the 'Delete' button utilizes protective programming and modals, as outlined previously, to ensure secure deletion. They are notified that deleting a holiday type will also result in the deletion of all holiday recommendations categorised under that specific heading.
 
@@ -464,14 +464,24 @@ The categories set by administrators are showcased on the Holiday Types page, pr
 
 <details><summary>Edit Holiday Type (edit_holiday_types.html)</summary>
 
-![Admin Holiday Type](documentation/site_images/air_edit_holiday_type.PNG)
+![Admin Edit Holiday Type](documentation/site_images/air_edit_holiday_type.PNG)
 
 The edit page is tailored to the specific holiday type being edited. It is preloaded with the previously saved title and icon that had been selected. Users can update the records as they see fit and then utilise the save button. Upon clicking "save," they are redirected back to the main holiday types page. 
 
 </details>
 
-<details><summary>Users Page</summary>
-<img src="documentation/">
+<details><summary>Users Page (users.html)</summary>
+
+![Admin Users](documentation/site_images/air_users.PNG)
+
+This page facilitates administrators in managing the user database, empowering them to delete any users engaging in inappropriate content on the site. Upon loading, the page displays all users, showcasing their usernames, email addresses, and whether they have admin privileges. Administrators can utilise the search box to find a specific user by username or email address. Additionally, the clear button removes any search criteria, allowing for a fresh search if needed.
+
+As before, a defense modal prompts administrators to confirm their action before deleting a user (and all associated holiday recommendations).
+
+"Little Explorers" has been designated as an overriding administrator and cannot be deleted. This ensures that there is always an administrator able to access the site, and the admin functions cannot be lost through a careless deletion of all admin users.
+
+![Little Explorer admin](documentation/site_images/user_little_e.PNG)
+
 </details>
 
 <details><summary>Create Account (Admin)</summary>
