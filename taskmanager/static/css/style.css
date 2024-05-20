@@ -154,7 +154,6 @@ main {
   background-size: cover;
 }
 
-.hero-headline {}
 
 .hero-subtitle {
   font-size: 1.5rem;
@@ -481,8 +480,10 @@ padding-top: 15vh;}
     height: 200px;
   }
 
+  #home-hero-div {height: 80vh;}
+
   .hero-headline {font-size: 3.2rem;}
 
-  .hero-subtitle{font-size: 1rem;}
+  .hero-subtitle{font-size: 1.2rem;}
 
 }
