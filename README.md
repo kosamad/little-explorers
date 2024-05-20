@@ -401,12 +401,12 @@ The final section of the form requests users to upload an image. Users can selec
 Once a user feels they have completed the form, they can use the submit button to send the data. If any elements of the form are missing, the user is promptly notified. Once submitted, they are redirected to their profile page where the review will be displayed.
 </details>
 
-<details><summary>Edit Recommendation</summary>
-<img src="documentation/g">
-</details>
+<details><summary>Edit Holiday  (edit recommendation.html) </summary>
 
-<details><summary>Modal Example</summary>
- <img src="documentation/">
+![Edit Holiday](documentation/site_images/air_edit_holiday.PNG)
+
+From a user's profile page, they can access the edit holiday page, enabling them to amend any holiday recommendation they have previously posted on the site. The form auto-populates the data already submitted, mirroring the information outlined in the add holiday section. Users have the freedom to edit any section as desired and then simply click 'Save' at the bottom. This action updates the holiday in the database and on the site.
+
 </details>
 
 ### Admin Only Content
