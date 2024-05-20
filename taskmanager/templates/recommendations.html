@@ -11,7 +11,8 @@
             </div>
             <div class="row col m8 offset-m2 s12">
                 <p class="white-text center-align fira-500">
-                    Browse our curated selection of family-friendly holidays, verified by our users, and simplify your search for the perfect getaway.
+                    Browse our curated selection of family-friendly holidays, verified by our users, and simplify your
+                    search for the perfect getaway.
                 </p>
             </div>
         </div>
@@ -23,9 +24,11 @@
         <form method="POST" action="/search">
             <div class="row center">
                 <div class="input-field col s12 m6">
-                    <input id="search_string" type="text" name="search_string" placeholder="Enter keyword here" autocomplete="on">
+                    <input id="search_string" type="text" name="search_string" placeholder="Enter keyword here"
+                        autocomplete="on">
                     <label for="search_string">Search Holidays</label>
-                    <span class="helper-text black-text">You can search by keyword in the review OR holiday type title e.g
+                    <span class="helper-text black-text">You can search by keyword in the review OR holiday type title
+                        e.g
                         Woodland.</span>
                 </div>
                 <div class="input-field col s4 m2">
@@ -39,6 +42,15 @@
                 </div>
             </div>
         </form>
+
+        <!-- If no search results alert -->
+        {% if alert_message %}
+        <div class="row center-align">
+        <div class="alert alert-warning fira-500" role="alert">
+            {{ alert_message }}
+        </div>
+    </div>
+        {% endif %}
 
         <!-- Map View button -->
         <div class="row">
@@ -56,16 +68,22 @@
                             <img src="{{ recommendation.image_url }}" alt="Image of holiday" />
                             <div class="image-overlay"></div>
                             <span class="card-title">{{ recommendation.recommendation_name}}</span>
-                            <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}" class="btn-floating halfway-fab waves-effect waves-light btn-dgreen">
+                            <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"
+                                class="btn-floating halfway-fab waves-effect waves-light btn-dgreen">
                                 <i class="fas fa-search"></i>
-                                <span class="sr-only">View full review page for {{ recommendation.recommendation_name }}</span>
+                                <span class="sr-only">View full review page for
+                                    {{ recommendation.recommendation_name }}</span>
                             </a>
                         </div>
                     </a>
-                    <div class="card-content" data-recommendation-id="{{ recommendation.id }}" data-location-lat="{{ recommendation.map_lat }}" data-location-long="{{ recommendation.map_long }}" data-recommendation-name="{{ recommendation.recommendation_name }}">
+                    <div class="card-content" data-recommendation-id="{{ recommendation.id }}"
+                        data-location-lat="{{ recommendation.map_lat }}"
+                        data-location-long="{{ recommendation.map_long }}"
+                        data-recommendation-name="{{ recommendation.recommendation_name }}">
                         <div><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
                         <div><i class="fa-solid fa-user"></i> {{ recommendation.occupants }}</div>
-                        <div><i class="{{ recommendation.holiday.selected_icon }}"></i> {{ recommendation.holiday.holiday_name }}</div>
+                        <div><i class="{{ recommendation.holiday.selected_icon }}"></i>
+                            {{ recommendation.holiday.holiday_name }}</div>
                     </div>
                     {% if session.get('is_admin') == True %}
                     <div class="card-action center-align">
@@ -91,7 +109,8 @@
                         <div>
                             <!-- Adjust the column size based on your preference -->
                             <a href="{{ url_for('delete_recommendation', recommendation_id=recommendation.id ) }}"
-                                class="btn btn-lgreen col s3 offset-s2">Yes <span class="sr-only">Yes, delete {{ recommendation.recommendation_name }}</span></a>
+                                class="btn btn-lgreen col s3 offset-s2">Yes <span class="sr-only">Yes, delete
+                                    {{ recommendation.recommendation_name }}</span></a>
                         </div>
                     </div>
                 </div>

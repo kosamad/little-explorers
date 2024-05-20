@@ -138,8 +138,13 @@ def search():
                 )
         ).all()
         if not results:
-            flash('Sorry, no search results.')
-            return redirect('/recommendations')
+            alert_message = 'Sorry, no search results.'
+            return render_template(
+            "/recommendations.html",
+            recommendations=results,
+            app=app,
+            alert_message=alert_message)
+
         return render_template(
             "/recommendations.html",
             recommendations=results,

@@ -50,10 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }  
 });
 
-// Removing flash messages after 3 seconds
+// Removing flash messages after 5 seconds
 setTimeout(function() {
   var flashMessages = document.getElementById('flash-messages');
   if (flashMessages) {
       flashMessages.remove();
   }
-}, 3000); 
+}, 5000); 

@@ -555,3 +555,11 @@ Comments from User 1 (iphone 13 ):
 - Comment: "It could be nice to let the user add a link to the air b and b/place they stayed or to link to places they visited"
 
 - Action Taken: As above.  
+
+Comments from User 2 (Pixel 7):
+
+- Comment: "When my search result doesn't have any hits, I get all results returned rather than none. Might be nice to have a message that notifies the user this has happened."
+
+Action Taken: This user is visually impaired and might not have noticed the flash message that appears when a search yields no results. Therefore, I modified the route to achieve two improvements. Firstly, if the search returns no results, no cards are displayed, providing a clear indication of the absence of results. Additionally, I replaced the flash message with an alert div, which explicitly informs the user that no search results were found.
+
+Other flash messages have been designed to be more intuitive and guide the user to a page where they can infer what has happened. Therefore, I have left them unchanged.
