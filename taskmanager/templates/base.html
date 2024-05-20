@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" maximum-scale=1.0, user-scalable=no>
-    <meta name="description" content="Little Explorers - Your Ultimate Destination for Family Adventures and Travel Experiences">
+    <meta name="description"
+        content="Little Explorers - Your Ultimate Destination for Family Adventures and Travel Experiences">
     <meta name="keywords" content="family travel, kids activities, adventure holidays, educational trips">
     <!-- Favicon Files -->
     <link rel="apple-touch-icon" sizes="180x180" href="../static/images/favicon/apple-touch-icon.png">
@@ -63,17 +64,24 @@
                     <a href="#" aria-label="Mobile Nav Trigger" data-target="mobile-demo" class="sidenav-trigger"><i
                             class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="{{ url_for('home')}}">HOME</a></li>
-                        <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
-                        <li><a href="{{ url_for('contact')}}">CONTACT</a></li>
+                        <li class="{% if request.endpoint == 'home' %} active {% endif %}"><a
+                                href="{{ url_for('home')}}">HOME</a></li>
+                        <li class="{% if request.endpoint == 'recommendations' %} active {% endif %}"><a
+                                href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
+                        <li class="{% if request.endpoint == 'contact' %} active {% endif %}"><a
+                                href="{{ url_for('contact')}}">CONTACT</a></li>
                         {% if 'user_id' in session and session.get('is_admin') == False %}
-                        <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
+                        <li class="{% if request.endpoint == 'add_recommendation' %} active {% endif %}"><a
+                                href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
                         {% endif %}
                         {% if session.get('is_admin') == True %}
-                        <li><a class="dropdown-trigger" href="#" data-target="dropdown2">MANAGE<i
+                        <li
+                            class="{% if request.endpoint in ['users', 'add_recommendation','recommendations', 'create_account'] %} active {% endif %}">
+                            <a class="dropdown-trigger" href="#" data-target="dropdown2">MANAGE<i
                                     class="fa-solid fa-caret-down right"></i></a></li>
                         {% endif %}
-                        <li>
+                        <li
+                            class="{% if request.endpoint in ['profile', 'create_account', 'sign_in'] %} active {% endif %}">
                             <a class="dropdown-trigger" href="#" data-target="dropdown1">ACCOUNT<i
                                     class="fa-solid fa-caret-down right"></i></a>
                         </li>
@@ -85,23 +93,45 @@
         <!-- Mobile nav-bar -->
         <div>
             <ul class="sidenav right font-title" id="mobile-demo">
-                <li><a href="{{ url_for('home')}}">HOME</a></li>
-                <li><a href="{{ url_for('recommendations')}}">HOLIDAYS</a></li>
-                <li><a href="{{ url_for('contact')}}">CONTACT</a></li>
+                <li class="{% if request.endpoint == 'home' %} active {% endif %}">
+                    <a href="{{ url_for('home') }}">HOME</a>
+                </li>
+                <li class="{% if request.endpoint == 'recommendations' %} active {% endif %}">
+                    <a href="{{ url_for('recommendations') }}">HOLIDAYS</a>
+                </li>
+                <li class="{% if request.endpoint == 'contact' %} active {% endif %}">
+                    <a href="{{ url_for('contact') }}">CONTACT</a>
+                </li>
                 {% if 'user_id' in session %}
-                <li><a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
+                <li class="{% if request.endpoint == 'add_recommendation' %} active {% endif %}">
+                    <a href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a>
+                </li>
                 {% endif %}
                 {% if session.get('is_admin') == True %}
-                <li><a href="{{ url_for('holiday_types')}}">MANAGE HOLIDAY TYPES</a></li>
-                <li><a href="{{ url_for('users') }}">MANAGE USERS</a></li>
-                <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
+                <li class="{% if request.endpoint == 'holiday_types' %} active {% endif %}">
+                    <a href="{{ url_for('holiday_types') }}">MANAGE HOLIDAY TYPES</a>
+                </li>
+                <li class="{% if request.endpoint == 'users' %} active {% endif %}">
+                    <a href="{{ url_for('users') }}">MANAGE USERS</a>
+                </li>
+                <li class="{% if request.endpoint == 'create_account' %} active {% endif %}">
+                    <a href="{{ url_for('create_account') }}">CREATE ACCOUNT</a>
+                </li>
                 {% endif %}
                 {% if 'user_id' in session %}
-                <li><a href="{{ url_for('profile') }}">PROFILE</a></li>
-                <li><a href="{{ url_for('sign_out') }}">SIGN OUT</a></li>
+                <li class="{% if request.endpoint == 'profile' %} active {% endif %}">
+                    <a href="{{ url_for('profile') }}">PROFILE</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('sign_out') }}">SIGN OUT</a>
+                </li>
                 {% else %}
-                <li><a href="{{ url_for('create_account')}}">CREATE ACCOUNT</a></li>
-                <li><a href="{{ url_for('sign_in')}}">SIGN IN</a></li>
+                <li class="{% if request.endpoint == 'create_account' %} active {% endif %}">
+                    <a href="{{ url_for('create_account') }}">CREATE ACCOUNT</a>
+                </li>
+                <li class="{% if request.endpoint == 'sign_in' %} active {% endif %}">
+                    <a href="{{ url_for('sign_in') }}">SIGN IN</a>
+                </li>
                 {% endif %}
             </ul>
         </div>
