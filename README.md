@@ -533,6 +533,8 @@ HTML, CSS, JavaScript & Python
 * [Git](https://git-scm.com/) - for version control, using the Gittpod terminal to commit to Git and Push to GitHub.
 * [Flask](https://flask.palletsprojects.com/en/3.0.x/) - a Python framework which helps build web applications quickly and easily. 
 * [SQLAlchemy](https://www.sqlalchemy.org/) - a Python SQL toolkit and Object-Relational Mapping (ORM) library that facilitates efficient database interactions and management.
+* [ElephantSQL](https://www.elephantsql.com/) - a cloud-based PostgreSQL database hosting service, offering managed solutions for easy integration and maintenance.
+* [Heroku]() - to deploy the site.
 * [Google Developer Tools](https://developer.chrome.com/docs/devtools/) - to view responsive styling and troubleshoot/solve issues.
 * [Pip](https://pip.pypa.io/en/stable/) - for installing Python packages.
 * [Jinja] - a templating engine for Python, used to generate dynamic web content.
@@ -552,33 +554,133 @@ HTML, CSS, JavaScript & Python
 * [Am I Responsive?](http://ami.responsivedesign.is/) - to show the website on different devices/screen sizes.
 * [Silktide Accessibility Checker ](https://chromewebstore.google.com/detail/mpobacholfblmnpnfbiomjkecoojakah)  - to check the website for accessibility.
 
+## Testing
 
+Please see the separate [TESTING.md](TESTING.md) file for testing carried out on little Explorers
 
-## ?. Testing
-## ?. Deployment
-## ?. Credits
+## Deployment and Local Development
+
+### Deployment
+
+Little Explorers was created from the base [GitPod template](https://github.com/Code-Institute-Org/gitpod-full-template) by Code Institue. 
+
+To integrate and host the datbase utlilise ElephantSQL:
+
+1. Create an account with Elephant SQL and Log In.
+
+2. Create a New Intance, using the button.
+
+3. Give the name of the project and select the "Tiny Turtle (free)" plan (leave the tags field blank)
+
+4. Select a Region and datacenter near you.
+
+5. Click Review and if all details are correct, click "Create Instance"
+
+6. From the dashboard, click on the database instance name (project name)
+
+7. Copy the database URL to use in the __init__.py file
+
+Connect the database to the web application:
+
+1. Create a Procfile with the content " web: python run.py" ensuring any extra lines are removed from the end.
+
+2. If not already present, create a requirements.txt file
+
+3. Create a runtime.txt file, containing the text "python-3.9.19"
+
+4. Ensure the __init__.py file has the following structure. This ensures SQLAlchamy can read from the external database. Push all changes to GitHub.
+
+![init.py setup](documentation/site_images/init_py_setup.PNG)
+
+Deploying via Heroku:
+
+1. Create a Heroku account and then log in.
+
+2. Click the "create new app" button. Give a unique name for the app and choose the closest region to your location (e.g for the UK it would be Europe). Click Create App.
+
+3. Under the Settings tab of the new app, Reveal the Config Vars.
+
+4. Add the following config vars which will correlate to those in the __init__.py/env.py files:
+
+    - DATABASE_URL : paste URL from elephantSQL
+    - IP: 0.0.0.0
+    - PORT: 5000
+    - SECRET_KEY : secret key info
+    - DEBUG: False
+    - CLOUDINARY_API_KEY : add cloudinary api key
+    - CLOUDINARY_API_SECRET: add cloudinary secret key
+    - CLOUDINARY_CLOUD_NAME : cloudinary cloud name
+    - GOOGLE_MAPS_API_KEY : add google maps api key
+
+5. Navigate to the Deploy Tab and select "Coonect to GitHub"
+
+6. Find the correct repository and click Connect, ensuring automatic deployment is selected.  
+
+7. Manualy deploy the branch
+
+Intgrate the database:
+
+1. At present the database on the deployed site has not been created and is empty. To initialise it, click the More tab and Run the Console. 
+
+2. Type in python3 and click Run
+
+3. In the terminal type:
+- from taskmanager import db
+- db.create_all()
+- exit()
+
+4. Access the app from the Open app button
+
+### Cloning the Github Repository
+
+It may be necessary to clone the repository from GitHub to your local computer. Cloning the repository makes a copy of all the of repository data and takes it from GitHub to your local machine. The following steps, detailed below, should be taken to clone a repository:
+
+1. Navigate to the GitHub repository (https://github.com/kosamad/little-explorers).
+
+2. Click on the code button and under the "Local" tab and select how you would like to clone (HTTPS, SSH or GitHub CLI.)
+
+3.  Copy the link and use it to create a new workspace in your chosen IDE (code editor).
+
+__NB: An env.py file is required to configure the environment variables. These are not included in the GitHub files for security reasons.__
+
+### Forking the Github Repository
+
+1. Navigate to the GitHub repository (https://github.com/kosamad/little-explorers).
+
+2. Click on the 'Fork' button at the top right of the page. This will duplicate the project for you to work on.
+
+## Credits
+
+### Content
+
+* The framework for the website uses [Materialize](https://materializecss.com/).
+
+* The structure for the modals and routes was inspired by the Code Institute’s Relational Database, walkthrough project.
 
 * The email functionality was adapted from the Code Institute’s tutorial for EmailJS - Putting it all together > Sending Emails Using EmailJS > Sending Emails!
 
-* The map on the add recommendation page was adapted from the YouTube tutorial by [Imran Sayed](https://www.youtube.com/watch?v=yhhkNtdg5x0&list=PLD8nQCAhR3tT9dU8JKLpG3av-WMQGPPFP&index=1)
+* The maps were adapted from the YouTube tutorial by [Imran Sayed](https://www.youtube.com/watch?v=yhhkNtdg5x0&list=PLD8nQCAhR3tT9dU8JKLpG3av-WMQGPPFP&index=1)
 
+* Cloudinary was integrated using cloudinary documentation/ [Youtube Video](https://www.youtube.com/watch?v=0ZZSNJm7VpI) and the YouTube tutorial by [Techical Rajni](https://www.youtube.com/watch?v=khphZzuaosQ) to help configure the code in my project. 
 
-## Gitpod Reminders
+* The search functionality was adapted from the code in this Youtube tutorial by [Mike Colbert](https://www.youtube.com/watch?v=HXKDyZ_W6rI)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* User login functionlaity and password hashing was integrated by adapting the code from the YouTube tutorials by [Arpan Neupane](https://www.youtube.com/watch?v=71EU8gnZqZQ) and [Codemy.com](https://www.youtube.com/playlist?list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz)
 
-`python3 -m http.server`
+### Media
 
-A blue button should appear to click: _Make Public_,
+* The hero image for the site was sourced from Pexels and is by tatianasyrikova
 
-Another blue button should appear to click: _Open Browser_.
+* The admin added cards use images from Pexels, specifically the photographers shanix, stefanstefancik, jsalamanca, frans-van-heerden, axp-photography and images from unsplash by mason-field, jarred-kyle, juliane-liebermann, ben-wicks and annie-spratt.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Acknowledgments
 
-A blue button should appear to click: _Make Public_,
+I would like to thank:
 
-Another blue button should appear to click: _Open Browser_.
+* My mentor, Jubril, for his helpful feedback and industry insights.
 
-------
+* My family and friends who tested the site and gave me their comments.
 
+* The City Of Bristol 2023 September cohort, for providing support and solidarity on slack.
 
+* The tutors and staff at Code Institute for their support.
