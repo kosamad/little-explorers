@@ -218,6 +218,8 @@ The Favicon for the site was created from the logo using [favicon](https://favic
 
 #### Features
 
+ALL FORMS
+
 ## Finished site
 
 ![All Screens](documentation/site_images/air_all_screens.PNG)
@@ -268,7 +270,7 @@ At the conclusion of the page, users are encouraged to join the site and contrib
 
 ![Holidays page](documentation/site_images/air_holidays.PNG)
 
-The main holidays page presents users with a comprehensive collection of all holidays listed on the site, each displayed as an informative card featuring essential details such as the title, region, occupancy, and holiday type. Leveraging Jinja templating and database data, this information is seamlessly auto-populated.
+The main holidays page presents users with a comprehensive collection of all holidays listed on the site, each displayed as an informative card featuring essential details such as the title, region, occupancy, and holiday type. Leveraging Jinja templating and database data, this information is seamlessly auto-populated. Each card allows a user to navigate to the full page review using either the magnifying glass icon or clicking the main image. 
 
 Users enjoy the flexibility of searching (case insensitive) through posts using keywords found within the reviews or holiday types. This dynamically updates the page to display only relevant holidays matching the search criteria. In cases where no search results are found, users are promptly notified with a flash message.
 
@@ -277,30 +279,74 @@ Additionally, users can opt for a map view of the holidays if preferred. A promi
 ![Searchd Map](documentation/site_images/updated_map.PNG)
 </details>
 
-<details><summary>Full Page Holiday</summary>
- <img src="documentation/">
+<details><summary>Full Page Holiday (view_recommendation.html)</summary>
+
+![Full Page Holiday](documentation/site_images/air_full_page_holiday.PNG)
+
+The full-page holiday review showcases all the information submitted by the user when they wrote about the holiday. It prominently displays the user-chosen image along with the holiday's title, date of visit, author's name, holiday type, region, and the number of occupants. Following this, the complete review is presented, providing comprehensive insights into the holiday experience.
+
+At the bottom of the page, a map displays a single pin indicating the holiday's location. Additionally, a convenient button allows users to easily navigate back to the main holidays page without relying on their browser's back button.
+
 </details>
 
 <details><summary>Contact Form</summary>
-<img src="documentation/">
+
+![Contact From](documentation/site_images/air_contact.PNG)
+
+The contact form provides users with a straightforward way to reach out to the site administrators. Upon sending the email, users receive a confirmation message indicating that their email has been successfully sent.
+
+![Email Confirmation](documentation/site_images/email_confirmation.PNG)
+
+The email functionality was implemented using Email.JS, incorporating a template that automatically sends the user's name, email address, and message to the admin team.
+
 </details>
 
 ### Under the Account Dropdown
 
 #### Signed Out Users:
 
-<details><summary>Create Account</summary>
- <img src="documentation/">
+<details><summary>Create Account (create_account.html)</summary>
+
+![Create Account](documentation/site_images/air_create_account.PNG)
+
+Users can utilise the form to register an account and unlock additional features of the site. They are prompted to select a unique username and enter their email address, both of which must be unique. They are then asked for a password and to repeat the password. When both passwords match, the submit button becomes active so the user can submit the form.
+
+The password stored in the database undergoes hashing using Wexueg's robust security method to generate a password hash.
+
+If their email address has already been used to create an account, they are prompted and automatically taken to the sign-in page. 
+
+![Email in use](documentation/site_images/email_used.PNG)
+
 </details>
 
-<details><summary>Sign In</summary>
- <img src="documentation/">
+<details><summary>Sign In (sign_in.html)</summary>
+
+![Sign In](documentation/site_images/air_sign_in.PNG)
+
+Upon accessing the login page, users are prompted to input their email address and password. If either of these credentials are incorrect, users are promptly presented with a generic error message indicating that either their email or password is incorrect. This intentionally ambiguous wording is employed as a security measure to deter potential hacking attempts.
+
+The submission of the form, initiated by clicking the submit button located at the bottom, adds the user to the session and therefore allows them to access signed-in user only content. Upon successful sign-in, users are automatically redirected to their profile page.
+
+Additionally, a link to the create account form is provided in case users navigate to the login page erroneously.
+
 </details>
 
 #### Signed In Users:
 
-<details><summary>User Profile Page</summary>
-<img src="documentation/">
+<details><summary>User Profile Page (profile.html)</summary>
+
+![Profile page](documentation/site_images/air_profile.PNG)
+
+![User Profile page](documentation/site_images/user_profile.PNG)
+
+The profile page warmly welcomes the user with a personalised greeting in the heading banner, such as 'Hello, Karen' (or whichever user is logged in), injecting personality and familiarity into the site to enhance user engagement.
+
+Within this personalised space, users can explore all the recommendations they've contributed to the site, creating a tailored experience focused on their individual contributions. Utilising Jinja templating and Materialize cards, the page dynamically presents content based on the user's session and unique user ID, ensuring precise display of their contributions. As with the Holidays page the image and magnifying glass on each card act as links to the full page review. 
+
+Furthermore, a prominently displayed button encourages users to continue sharing their experiences by adding another holiday to the site, streamlining the content creation process.
+
+Moreover, users retain control over their previous posts, with options to edit or delete them directly from their profile page. Opting to edit redirects users to the edit holiday page. Should users choose to delete a post, they encounter a protective modal, designed to prevent accidental deletions. This modal employs defensive programming techniques, requiring users to confirm their decision, thereby mitigating the risk of unintended deletions." 
+ 
 </details>
 
 <details><summary>Sign Out</summary>
@@ -324,7 +370,31 @@ Additionally, users can opt for a map view of the holidays if preferred. A promi
 ### Admin Only Content
 
 <details><summary>Admin Profile Page</summary>
-<img src="documentation/">
+
+![Profile content](documentation/site_images/profile_content.PNG)
+
+![Profile content](documentation/site_images/admin_profile.PNG)
+
+The Profile page for an admin user functions similarly to that of a non-admin user, with additional features tailored to aid admins in using the site effectively. In addition to standard user profile functionality, admin users have access to exclusive admin-only content.
+
+This includes a button that allows them to navigate to the admin-only section. Within this section, admins are presented with three buttons:
+
+1. 'Users': This button directs admins to the user management page, where they can manage user accounts.
+
+2. 'Holiday Type': This button navigates admins to a page dedicated to managing holiday type categories for each recommendation.
+
+3. 'Main Holidays': Admins are provided with a link to the main holidays page, equipped with search functionality. This enables admins to efficiently delete any recommendation as needed.
+
+</details>
+
+<details><summary>Holidays page (Admin)</summary>
+
+![Admin Delete Holiday](documentation/site_images/admin_delete_holiday.PNG)
+
+In addition to the functionality outlined above, admins possess the authority to delete any recommendation from the holidays site, irrespective of the author. This capability empowers admins to maintain oversight of the site's content and promptly remove any malicious or inappropriate submissions.
+
+It's worth noting that admins do not have the ability to edit posts. This intentional design choice aligns with the site's ethos, ensuring that recommendations remain authentic and are authored solely by the respective user.
+
 </details>
 
 <details><summary>Add Holiday Type</summary>
@@ -339,8 +409,12 @@ Additionally, users can opt for a map view of the holidays if preferred. A promi
 <img src="documentation/">
 </details>
 
-<details><summary>Create Account</summary>
-<img src="documentation/">
+<details><summary>Create Account (Admin)</summary>
+
+![Admin Create Account](documentation/site_images/admin_create_account.PNG)
+
+To facilitate seamless scalability, administrators have the capability to add other administrators to the site. This form is distinct from the one accessible to general users, featuring an additional checkbox option that enables the user to be designated as an administrator. This grants them access to all administrative features. 
+
 </details>
 
 
