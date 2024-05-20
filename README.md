@@ -296,6 +296,7 @@ Users enjoy the flexibility of searching (case insensitive) through posts using 
 Additionally, users can opt for a map view of the holidays if preferred. A prominent button facilitates easy navigation to this section. During a search, the map pins are dynamically updated to exclusively display the searched holidays, ensuring a synchronised experience between search results and map visualisation.
 
 ![Searchd Map](documentation/site_images/updated_map.PNG)
+
 </details>
 
 <details><summary>Full Page Holiday (view_recommendation.html)</summary>
@@ -433,22 +434,40 @@ This includes a button that allows them to navigate to the admin-only section. W
 
 </details>
 
-<details><summary>Holidays page (Admin)</summary>
+<details><summary>Holidays page (Admin) (recommendations.html) </summary>
 
 ![Admin Delete Holiday](documentation/site_images/admin_delete_holiday.PNG)
 
-In addition to the functionality outlined above, admins possess the authority to delete any recommendation from the holidays site, irrespective of the author. This capability empowers admins to maintain oversight of the site's content and promptly remove any malicious or inappropriate submissions.
+In addition to the functionality outlined on the "Holidays" page for all users, admins possess the authority to delete any recommendation from the holidays site, irrespective of the author. This capability empowers admins to maintain oversight of the site's content and promptly remove any malicious or inappropriate submissions.
 
 It's worth noting that admins do not have the ability to edit posts. This intentional design choice aligns with the site's ethos, ensuring that recommendations remain authentic and are authored solely by the respective user.
 
 </details>
 
-<details><summary>Add Holiday Type</summary>
-<img src="documentation/">
+<details><summary>Add Holiday Type (add_holiday_type.html)</summary>
+
+![Admin Add Holiday Type](documentation/site_images/air_add_holiday_type.PNG)
+
+Here, administrators have the ability to set the holiday types that categorise each holiday. They need to input a holiday type name (up to 15 characters) and select an icon from a dropdown menu. These icons are predefined but offer administrators flexibility to choose an appropriate icon for the holiday type they wish to categorise.
+
+![Admin Add Holiday Type](documentation/site_images/icon_selection.PNG)
+
 </details>
 
-<details><summary>Edit Holiday Type</summary>
-<img src="documentation/">
+<details><summary>Holiday Types (holiday_types.html)</summary>
+
+![Admin Holiday Type](documentation/site_images/air_holiday_types.PNG)
+
+The categories set by administrators are showcased on the Holiday Types page, presented as Materialize cards. Leveraging Jinja templating and information from the database, these cards are automatically populated with the title, icon, and buttons. The 'Edit' button directs administrators to the edit holiday type page, while the 'Delete' button utilizes protective programming and modals, as outlined previously, to ensure secure deletion. They are notified that deleting a holiday type will also result in the deletion of all holiday recommendations categorised under that specific heading.
+
+</details>
+
+<details><summary>Edit Holiday Type (edit_holiday_types.html)</summary>
+
+![Admin Holiday Type](documentation/site_images/air_edit_holiday_type.PNG)
+
+The edit page is tailored to the specific holiday type being edited. It is preloaded with the previously saved title and icon that had been selected. Users can update the records as they see fit and then utilise the save button. Upon clicking "save," they are redirected back to the main holiday types page. 
+
 </details>
 
 <details><summary>Users Page</summary>
