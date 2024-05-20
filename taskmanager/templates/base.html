@@ -75,16 +75,19 @@
                                 href="{{ url_for('add_recommendation') }}">ADD HOLIDAY</a></li>
                         {% endif %}
                         {% if session.get('is_admin') == True %}
-                        <li
-                            class="{% if request.endpoint in ['users', 'add_recommendation','recommendations', 'create_account'] %} active {% endif %}">
-                            <a class="dropdown-trigger" href="#" data-target="dropdown2">MANAGE<i
-                                    class="fa-solid fa-caret-down right"></i></a></li>
-                        {% endif %}
-                        <li
-                            class="{% if request.endpoint in ['profile', 'create_account', 'sign_in'] %} active {% endif %}">
-                            <a class="dropdown-trigger" href="#" data-target="dropdown1">ACCOUNT<i
-                                    class="fa-solid fa-caret-down right"></i></a>
+                        <li class="{% if 'user_id' in session and request.endpoint in ['users', 'add_recommendation','recommendations', 'create_account'] %} active {% endif %}">
+                            <a class="dropdown-trigger" href="#" data-target="dropdown2">MANAGE<i class="fa-solid fa-caret-down right"></i></a>
                         </li>
+                        {% endif %}
+                        {% if 'user_id' in session %}
+                        <li class="{% if request.endpoint in ['profile'] %} active {% endif %}">
+                            <a class="dropdown-trigger" href="#" data-target="dropdown1">ACCOUNT<i class="fa-solid fa-caret-down right"></i></a>
+                        </li>
+                        {% else %}
+                        <li class="{% if request.endpoint in ['create_account', 'sign_in'] %} active {% endif %}">
+                            <a class="dropdown-trigger" href="#" data-target="dropdown1">ACCOUNT<i class="fa-solid fa-caret-down right"></i></a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
