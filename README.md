@@ -216,10 +216,7 @@ The images featured across the site serve to inform users about the experiences 
 The Favicon for the site was created from the logo using [favicon](https://favicon.io/). The title text has been removed for clarity. 
 
 
-#### Features
-
-## Finished site
-
+### Finished Site Features
 
 ![All Screens](documentation/site_images/air_all_screens.PNG)
 
@@ -231,13 +228,17 @@ Updates from Design:
 
 * The word "recommendations" was changed to "holidays" when referring to the holiday recommendations posted by users. I felt this was more informative about the site's purpose, and the shorter word improved the page design.
 
-All page information:
+* Other minor adjustments from the wireframe design are implemented across the site. These changes, though small, enhance the user experience and align with modifications needed in the code as the site was developed.
+
+### All Pages Information:
 
 All forms across our site utilize Materialize form inputs, ensuring a consistent and visually appealing user interface. These inputs come with added functionality, including dynamic feedback that visually signals correct (green) or incorrect (red) completion of fields, thereby improving user understanding and interaction.
 
 Additionally, our forms feature built-in validation prompts that guide users to input valid email addresses (containing '@') when required, promoting data accuracy and submission reliability.
 
 Furthermore, for elements lacking built-in Materialize checks, custom programming has been implemented to enhance the user experience. These checks ensure all form elements are completed before submission. In instances where input is missing, clear messages prompt users to fill in the required fields or make necessary modifications, facilitating form completion.
+
+All buttons/links change colour when they are hovered over to imporve the user experience.
 
 ### All Users
 
@@ -309,7 +310,7 @@ At the bottom of the page, a map displays a single pin indicating the holiday's 
 
 </details>
 
-<details><summary>Contact Form</summary>
+<details><summary>Contact Form (contact.html)</summary>
 
 ![Contact From](documentation/site_images/air_contact.PNG)
 
@@ -321,11 +322,7 @@ The email functionality was implemented using Email.JS, incorporating a template
 
 </details>
 
-### Under the Account Dropdown
-
-#### Signed Out Users:
-
-<details><summary>Create Account (create_account.html)</summary>
+<details><summary>Create Account (Under Account Dropdown) (create_account.html)</summary>
 
 ![Create Account](documentation/site_images/air_create_account.PNG)
 
@@ -339,7 +336,7 @@ If their email address has already been used to create an account, they are prom
 
 </details>
 
-<details><summary>Sign In (sign_in.html)</summary>
+<details><summary>Sign In (Under Account Dropdown) (sign_in.html)</summary>
 
 ![Sign In](documentation/site_images/air_sign_in.PNG)
 
@@ -351,37 +348,14 @@ Additionally, a link to the create account form is provided in case users naviga
 
 </details>
 
-#### Signed In Users:
+<details><summary>404 Error Page (404.html)</summary>
 
-<details><summary>User Profile Page (profile.html)</summary>
+![Sign In](documentation/site_images/404.PNG)
 
-![Profile page](documentation/site_images/air_profile.PNG)
-
-![User Profile page](documentation/site_images/user_profile.PNG)
-
-The profile page warmly welcomes the user with a personalised greeting in the heading banner, such as 'Hello, Karen' (or whichever user is logged in), injecting personality and familiarity into the site to enhance user engagement.
-
-Within this personalised space, users can explore all the recommendations they've contributed to the site, creating a tailored experience focused on their individual contributions. Utilising Jinja templating and Materialize cards, the page dynamically presents content based on the user's session and unique user ID, ensuring precise display of their contributions. As with the Holidays page the image and magnifying glass on each card act as links to the full page review. 
-
-Furthermore, a prominently displayed button encourages users to continue sharing their experiences by adding another holiday to the site, streamlining the content creation process.
-
-Moreover, users retain control over their previous posts, with options to edit or delete them directly from their profile page. Opting to edit redirects users to the edit holiday page. 
-
-![Modal Example](documentation/site_images/profile_edit_holiday.PNG)
-
-Should users choose to delete a post, they encounter a protective modal, designed to prevent accidental deletions. This modal employs defensive programming techniques, requiring users to confirm their decision, thereby mitigating the risk of unintended deletions." 
-
-![Modal Example](documentation/site_images/delete_modal.PNG)
- 
-</details>
-
-<details><summary>Sign Out</summary>
-
-![Sign Out](documentation/site_images/sign_out_success.PNG)
-
-When users click 'Sign Out,' they are immediately logged out of their session. They are then redirected to the home screen, where they can only access base user content. A flash message confirms the successful completion of this action, ensuring users are informed of their logout status.
+A custom 404 error page has been implemented to help users navigate back to the home page effortlessly when they encounter an unknown page. It includes a link that allows users to quickly return to the home page.
 
 </details>
+
 
 ### Signed In User Content
 
@@ -406,11 +380,41 @@ The final section of the form requests users to upload an image. Users can selec
 Once a user feels they have completed the form, they can use the submit button to send the data. If any elements of the form are missing, the user is promptly notified. Once submitted, they are redirected to their profile page where the review will be displayed.
 </details>
 
-<details><summary>Edit Holiday  (edit recommendation.html) </summary>
+<details><summary>Edit Holiday  (edit_recommendation.html) </summary>
 
 ![Edit Holiday](documentation/site_images/air_edit_holiday.PNG)
 
 From a user's profile page, they can access the edit holiday page, enabling them to amend any holiday recommendation they have previously posted on the site. The form auto-populates the data already submitted, mirroring the information outlined in the add holiday section. Users have the freedom to edit any section as desired and then simply click 'Save' at the bottom. This action updates the holiday in the database and on the site.
+
+</details>
+
+<details><summary>User Profile Page (Under Account Dropdown) (profile.html)</summary>
+
+![Profile page](documentation/site_images/air_profile.PNG)
+
+![User Profile page](documentation/site_images/user_profile.PNG)
+
+The profile page warmly welcomes the user with a personalised greeting in the heading banner, such as 'Hello, Karen' (or whichever user is logged in), injecting personality and familiarity into the site to enhance user engagement.
+
+Within this personalised space, users can explore all the recommendations they've contributed to the site, creating a tailored experience focused on their individual contributions. Utilising Jinja templating and Materialize cards, the page dynamically presents content based on the user's session and unique user ID, ensuring precise display of their contributions. As with the Holidays page the image and magnifying glass on each card act as links to the full page review. 
+
+Furthermore, a prominently displayed button encourages users to continue sharing their experiences by adding another holiday to the site, streamlining the content creation process.
+
+Moreover, users retain control over their previous posts, with options to edit or delete them directly from their profile page. Opting to edit redirects users to the edit holiday page. 
+
+![Modal Example](documentation/site_images/profile_edit_holiday.PNG)
+
+Should users choose to delete a post, they encounter a protective modal, designed to prevent accidental deletions. This modal employs defensive programming techniques, requiring users to confirm their decision, thereby mitigating the risk of unintended deletions." 
+
+![Modal Example](documentation/site_images/delete_modal.PNG)
+ 
+</details>
+
+<details><summary>Sign Out (Under Account Dropdown)</summary>
+
+![Sign Out](documentation/site_images/sign_out_success.PNG)
+
+When users click 'Sign Out,' they are immediately logged out of their session. They are then redirected to the home screen, where they can only access base user content. A flash message confirms the successful completion of this action, ensuring users are informed of their logout status.
 
 </details>
 
@@ -492,26 +496,29 @@ To facilitate seamless scalability, administrators have the capability to add ot
 
 </details>
 
+### Future Ideas
 
+For future updates, I would like to integrate the following features:
 
-### Home.html
-### Recommendations.html (Holidays Page)
-### Contact.html
+* Favourite Holidays: Introduce a feature allowing users to save their favourite holidays by implementing a many-to-many relationship or a joining table.
 
-### Under the Account dropdown
+* User Comments: Enable users to comment on reviews, providing additional information about holiday destinations and validating recommendations.
 
-### Profile.html
-### Home.html
-### Home.html
-### Home.html
-### Home.html
-### Home.html
+* Password Management: Implement functionality for users to change their passwords and a mechanism to handle forgotten passwords.
 
+* Account Deletion: Offer users the option to delete their accounts, ensuring flexibility and user control over their data.
 
-### Contact.html
+* Filter Functionality: Integrate a filtering system alongside the search function, allowing users to select multiple options to tailor their holiday search criteria for the perfect vacation.
 
-The emails functionality was created using Email.JS with a template that sends to the admin team the name, email address and message submitted by the user. 
+* E-Commerce Integration: Implement an e-commerce platform that enables site owners to generate revenue without relying on ads, allowing users to rent child-appropriate, holiday-related equipment.
 
+* Holiday Type Management: Enhance the functionality of the holiday type feature to accommodate site growth, enabling admins to modify holiday types and re-categorise existing posts as needed.
+
+Following Real User feedback I would also implement:
+
+* Age Category: Add a category to the database and site to specify the ages of children for which the holiday is suitable.
+
+* Optional Links: Include an optional input field that allows users to add a link to the holiday cottage or stay information.
 
 
 ## Technologies
@@ -532,6 +539,7 @@ HTML, CSS, JavaScript & Python
 * [Favicon](https://favicon.io/) - to generate the favicons for the page. 
 * [Email.JS] (https://www.emailjs.com/) - to send and recieve emails. 
 * [Google Maps JS API](https://developers.google.com/maps/documentation/javascript/overview) - to create and update features on the maps. 
+* [Cloudinary API](https://cloudinary.com/) - to integrate image upload, storing only URLs in the database, with images hosted on Cloudinary.
 
 ## ?. Testing
 ## ?. Deployment
