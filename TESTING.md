@@ -153,8 +153,152 @@ The site was run through the Google Chrome Developer tool Lighthouse to assess i
 
 **other content - testing results (manual)
 
-
 # Manual Testing
+
+## Testing User Stories
+
+The site was built from the User Stories documented in the [Readme](README.md#user-stories). The site was tested against each of them and the results are documented below.
+
+As a user, I want to be able to:
+
+- Find what I’m looking for on the site easily and intuitively from the home page and navigation bar.
+
+    - The navigation bar is displayed on all pages with relevant links for each type of user. All links direct users to the correct pages. The home page guides users to the holidays page multiple times and encourages them to join the community at the bottom. If the user is logged in, this message changes to prompt them to add a new holiday.
+
+- View the site any device and for the site to be responsive.
+
+    - The site is responsive across a diverse range of devices. The navigation bar and page layout adjust according to the screen size. Modals are also fully responsive and function correctly on all tested devices.
+
+- View and filter holiday recommendations posted by other users.
+
+    - Holidays can be searched by keyword, either by holiday type (allowing users to narrow down their options to the type of holiday they want to take) or by keyword from the holiday reviews. This enables users to conduct more detailed searches, such as "zoo" or "age 3."
+
+- Contact the site owners to suggest a new holiday type, ask questions or report a malicious recommendation.
+
+    - There are multiple ways for a user to navigate to the contact form. There is a link in the footer on every page, and the page can also be accessed from the main navigation menu. Detailed information on each recommendation allows users to notify admin staff of problematic posts, enabling targeted actions against specific content or users. After submitting the form, the user is notified that their message has been sent. 
+
+- Return to the home page without having to use my browser buttons. including when I navigate to a non-existent page or I’m thrown an error.
+
+    - The Home page can be accessed at any time using the logo in the navigation bar or from the home option in the navigation menu. On error pages, a button is provided for users to "Return to the Home Page."
+
+
+As a user without an account, I want to be able to:
+
+- Understand the purpose of the site from the home page.
+
+    - The Home page features clear imagery that identifies it as a holiday site focused on children. The opening title and slogan, "Big adventures for little explorers," explain the purpose of the site, with a subtitle stating "Discover child-friendly holidays across the UK." Recommended holidays are displayed directly underneath the header to entice users and showcase what the site is about. Further down, users are prompted to join the site, informing them that this is a community site with holidays recommended by fellow users.
+
+- Set up an account so I can create my own recommendations.
+
+    - There are several promts for a user to create and account. Firstly, from the home page but also from the nav bar (present on every page).
+
+
+As a user with an account, I want to be able to:
+
+- Sign into my account.
+
+    - Users can sign in to their account from the link in the navigation menu. There are also prompts on the create account page if the user tries to create an account with an email already registered on the site. Additionally, wherever users are informed that they can create an account, there is also an option to sign in if they "already have an account."
+
+- Add my own holiday recommendation using a user-friendly form.
+
+    - The Add Holiday/Recommendations page can be easily accessed from various places on the site, including the navigation bar, the main recommendations page, the user's profile, and the bottom of the home screen (for logged-in users only). On the Add Recommendation page, users have access to an easy and clear form that enhances the user experience (UX). Each field prompts the user with what they need to write and notifies them if any section is blank before submission can occur.
+
+- View my previously posted holiday recommendations.
+
+    - The user can see thier posted holidays from their profile page, which only renders holidays added by that logged in user.  
+
+- Edit/Delete recommendations I have posted.
+
+    - A user can edit their posts by clicking the "edit" button on the specific holiday they wish to edit on the recommendations page. The delete button prompts a modal which asks the user if they are sure. This ensures the user is absolutely sure they wish to delete a post from the database. Posts cannot be edited/deleted by other users. 
+
+- Log out of my account easily. 
+
+    - A user can easily log out of their account using the "Sign Out" button in the nav bar.  
+
+
+As an administrator I want to be able to:
+
+- Sign into my account quickly and easily.
+
+    - Admins log in via the same navigation link as all users in the navigation bar.
+
+- Edit any recommendation if necessary.
+
+    - Admin users cannot edit a user's post. After working on the site, I realized that allowing admins to edit user posts might undermine user confidence, as they wouldn't know if a review was genuine or if it had been altered by an admin. Users have the ability to edit their own posts and can contact admins for assistance if needed. Admins retain the ability to delete posts to ensure that malicious or inappropriate content can be addressed promptly.
+
+- Add a new holiday type category.
+
+    - A new holiday type can be added from the Holiday Type page using the Add button. The form is easy and simple to use making it easy for admin staff to add new catagories. 
+
+- Edit a new holiday type category.
+
+    - A existing holiday type can be edited easily using the "Edit" button on each Holiday type. 
+
+- Delete a user if necessary.
+
+    - The Users page, accessible only to admin staff, provides an overview of all registered users on the site. Admins can search for users by email address or username, granting them the ability to identify and address any instances of inappropriate content posted by users. This functionality ensures the maintenance of a safe and appropriate environment on the site.
+
+- Receive email messages from the site users. 
+
+    - The contact form is seamlessly integrated with the little.explorers@gmail.com account. When messages are submitted, they are automatically sent and the content is formatted for easy readability. Each email includes the sender's name, email address, and the message content, ensuring efficient communication and follow-up.
+    
+- Log out of my account easily. 
+
+    - Like all users of the site. It is easy to log out using the "Sign out" Link in the navigation bar. 
+
+
+## Real User Testing
+
+Little Explorers was reviewed by friends and family. They were encouraged to comment on their user experience and feedback on any bugs they found. In each testing environment, users were asked to pay particular attention to the buttons and the overall look of the page.
+
+Comments from User 1 (iphone 13 ):
+
+1:
+
+- Comment: "It is difficult to know how much of the review space you have left when you're typing, a countdown on character's left would be helpful"
+
+- Action Taken: A character countdown paragraph was added to notify the users of their remaining entitlemnt. this was imnpletments using javascript. 
+
+2:
+
+- Comment: "When tyring to select a holiday type when adding a recommended holiday, the drop down menu doesn't always register what they pressed."  
+
+- Action Taken: After researching this issue, I found that it is a common and well-documented problem with Materialize select boxes. [This post](https://github.com/Dogfalo/materialize/issues/6464) identified a patch that I could implement to resolve the issue. Further testing by the user confirmed that this solution was successful.
+
+3:
+
+- Comment: "I couldn't find an option that I wanted as my holiday didn't fit under any of your catagories"
+
+- Action Taken: I have added an "Other" catagory to pick these up. an admin could group them accordignly as the site grew it's database. 
+
+4:
+
+- Comment: "It would be better if the image on the holidays page, also took you to the main reveiw page, rather than just the magnifying glass."
+
+- Action Taken: I have added code so that the image is also a clickable link.  
+
+5:
+
+- Comment: "Is it possible to add a part which allows you to know the ages of the children, so I could filter by holidays suitable for a 3yr old for example"
+
+- Action Taken: This comment has picked up a feature that would be very valuble to this website. However, to implement it would reqire signficant restructuring of the database, the displayed information and the search functionality. Therefore at this time, I have not made changes to respond to this comment but they should be addressed for future roll outs.  
+
+6:
+
+- Comment: "It could be nice to let the user add a link to the air b and b/place they stayed or to link to places they visited"
+
+- Action Taken: As above.  
+
+Comments from User 2 (Pixel 7):
+
+- Comment: "When my search result doesn't have any hits, I get all results returned rather than none. Might be nice to have a message that notifies the user this has happened."
+
+Action Taken: This user is visually impaired and might not have noticed the flash message that appears when a search yields no results. Therefore, I modified the route to achieve two improvements. Firstly, if the search returns no results, no cards are displayed, providing a clear indication of the absence of results. Additionally, I replaced the flash message with an alert div, which explicitly informs the user that no search results were found.
+
+Other flash messages have been designed to be more intuitive and guide the user to a page where they can infer what has happened. Therefore, I have left them unchanged.
+
+
+## Testing Code Functions
 
 The desktop version of the site underwent testing across various browsers and devices to ensure compatibility. Testing included Google Chrome, Mozilla Firefox, and Microsoft Edge on desktop computers. Additionally, Chrome was tested on both Lenovo Tablet and Pixel devices, while Safari was used for mobile testing.
 
@@ -233,7 +377,7 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 | **Feature**                               | **Expected Outcome**                                          | **Test Performed**                     | **Result**                                               | **Pass/Fail**  |
 |-------------------------------------------|---------------------------------------------------------------|----------------------------------------|----------------------------------------------------------|----------------|
 | All users                                 |                                                               |                                        |                                                          |                |
-| Search Function                           | Filters results based on search                               | Typed in  a keyword and clicked search | Rendered holidays that realte to the search              | Pass           |
+| Search Function                           | Filters results based on search if no results the user is notified                             | Typed in known and unknown keywords and clicked search | Rendered holidays that realte to the search/ displayed no search results and gave the alert message              | Pass           |
 | Clear Button                              | Removes searched results and renders all holidays again       | Clicked on Clear                       | All holidays displayed on the page                       | Pass           |
 | Search/Clear Button Hover                 | Changes Colour                                                | Hovered over button                    | Changes Colour                                           | Pass           |
 | Jump to Map View Button                   | Navigates to the map at the bottom of the screen              | Clicked on Button                      | Directed to the map                                      | Pass           |
@@ -421,145 +565,13 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 </details>
 
+# Bugs and Fixes 
 
-## Testing User Stories
+Note:
+When initially implementing the code to search the map and update the markers, I mistakenly believed that each element, along with its respective ID, would override the previous one, resulting in only one map pin for multiple search hits. Consequently, I implemented a method involving a database search and an AJAX request. However, after consulting a YouTube video on creating the search function, I discovered that using a for loop would populate individual pins instead of overriding previous ones. I opted to utilize this simpler method, which demonstrates the diversity of approaches available to achieve the same outcome, with some being unnecessarily complex.
 
-The site was built from the User Stories documented in the [Readme](README.md#user-stories). The site was tested against each of them and the results are documented below.
+Original code and route
 
-As a user, I want to be able to:
-
-- Find what I’m looking for on the site easily and intuitively from the home page and navigation bar.
-
-    - The navigation bar is displayed on all pages with relevant links for each type of user. All links direct users to the correct pages. The home page guides users to the holidays page multiple times and encourages them to join the community at the bottom. If the user is logged in, this message changes to prompt them to add a new holiday.
-
-- View the site any device and for the site to be responsive.
-
-    - The site is responsive across a diverse range of devices. The navigation bar and page layout adjust according to the screen size. Modals are also fully responsive and function correctly on all tested devices.
-
-- View and filter holiday recommendations posted by other users.
-
-    - Holidays can be searched by keyword, either by holiday type (allowing users to narrow down their options to the type of holiday they want to take) or by keyword from the holiday reviews. This enables users to conduct more detailed searches, such as "zoo" or "age 3."
-
-- Contact the site owners to suggest a new holiday type, ask questions or report a malicious recommendation.
-
-    - There are multiple ways for a user to navigate to the contact form. There is a link in the footer on every page, and the page can also be accessed from the main navigation menu. Detailed information on each recommendation allows users to notify admin staff of problematic posts, enabling targeted actions against specific content or users. After submitting the form, the user is notified that their message has been sent. 
-
-- Return to the home page without having to use my browser buttons. including when I navigate to a non-existent page or I’m thrown an error.
-
-    - The Home page can be accessed at any time using the logo in the navigation bar or from the home option in the navigation menu. On error pages, a button is provided for users to "Return to the Home Page."
-
-
-As a user without an account, I want to be able to:
-
-- Understand the purpose of the site from the home page.
-
-    - The Home page features clear imagery that identifies it as a holiday site focused on children. The opening title and slogan, "Big adventures for little explorers," explain the purpose of the site, with a subtitle stating "Discover child-friendly holidays across the UK." Recommended holidays are displayed directly underneath the header to entice users and showcase what the site is about. Further down, users are prompted to join the site, informing them that this is a community site with holidays recommended by fellow users.
-
-- Set up an account so I can create my own recommendations.
-
-    - There are several promts for a user to create and account. Firstly, from the home page but also from the nav bar (present on every page).
-
-
-As a user with an account, I want to be able to:
-
-- Sign into my account.
-
-    - Users can sign in to their account from the link in the navigation menu. There are also prompts on the create account page if the user tries to create an account with an email already registered on the site. Additionally, wherever users are informed that they can create an account, there is also an option to sign in if they "already have an account."
-
-- Add my own holiday recommendation using a user-friendly form.
-
-    - The Add Holiday/Recommendations page can be easily accessed from various places on the site, including the navigation bar, the main recommendations page, the user's profile, and the bottom of the home screen (for logged-in users only). On the Add Recommendation page, users have access to an easy and clear form that enhances the user experience (UX). Each field prompts the user with what they need to write and notifies them if any section is blank before submission can occur.
-
-- View my previously posted holiday recommendations.
-
-    - The user can see thier posted holidays from their profile page, which only renders holidays added by that logged in user.  
-
-- Edit/Delete recommendations I have posted.
-
-    - A user can edit their posts by clicking the "edit" button on the specific holiday they wish to edit on the recommendations page. The delete button prompts a modal which asks the user if they are sure. This ensures the user is absolutely sure they wish to delete a post from the database. Posts cannot be edited/deleted by other users. 
-
-- Log out of my account easily. 
-
-    - A user can easily log out of their account using the "Sign Out" button in the nav bar.  
-
-
-As an administrator I want to be able to:
-
-- Sign into my account quickly and easily.
-
-    - Admins log in via the same navigation link as all users in the navigation bar.
-
-- Edit any recommendation if necessary.
-
-    - Admin users cannot edit a user's post. After working on the site, I realized that allowing admins to edit user posts might undermine user confidence, as they wouldn't know if a review was genuine or if it had been altered by an admin. Users have the ability to edit their own posts and can contact admins for assistance if needed. Admins retain the ability to delete posts to ensure that malicious or inappropriate content can be addressed promptly.
-
-- Add a new holiday type category.
-
-    - A new holiday type can be added from the Holiday Type page using the Add button. The form is easy and simple to use making it easy for admin staff to add new catagories. 
-
-- Edit a new holiday type category.
-
-    - A existing holiday type can be edited easily using the "Edit" button on each Holiday type. 
-
-- Delete a user if necessary.
-
-    - The Users page, accessible only to admin staff, provides an overview of all registered users on the site. Admins can search for users by email address or username, granting them the ability to identify and address any instances of inappropriate content posted by users. This functionality ensures the maintenance of a safe and appropriate environment on the site.
-
-- Receive email messages from the site users. 
-
-    - The contact form is seamlessly integrated with the little.explorers@gmail.com account. When messages are submitted, they are automatically sent and the content is formatted for easy readability. Each email includes the sender's name, email address, and the message content, ensuring efficient communication and follow-up.
-    
-- Log out of my account easily. 
-
-    - Like all users of the site. It is easy to log out using the "Sign out" Link in the navigation bar. 
-
-
-## Real User Testing
-
-Little Explorers was reviewed by friends and family. They were encouraged to comment on their user experience and feedback on any bugs they found. In each testing environment, users were asked to pay particular attention to the buttons and the overall look of the page.
-
-Comments from User 1 (iphone 13 ):
-
-1:
-
-- Comment: "It is difficult to know how much of the review space you have left when you're typing, a countdown on character's left would be helpful"
-
-- Action Taken: A character countdown paragraph was added to notify the users of their remaining entitlemnt. this was imnpletments using javascript. 
-
-2:
-
-- Comment: "When tyring to select a holiday type when adding a recommended holiday, the drop down menu doesn't always register what they pressed."  
-
-- Action Taken: After researching this issue, I found that it is a common and well-documented problem with Materialize select boxes. [This post](https://github.com/Dogfalo/materialize/issues/6464) identified a patch that I could implement to resolve the issue. Further testing by the user confirmed that this solution was successful.
-
-3:
-
-- Comment: "I couldn't find an option that I wanted as my holiday didn't fit under any of your catagories"
-
-- Action Taken: I have added an "Other" catagory to pick these up. an admin could group them accordignly as the site grew it's database. 
-
-4:
-
-- Comment: "It would be better if the image on the holidays page, also took you to the main reveiw page, rather than just the magnifying glass."
-
-- Action Taken: I have added code so that the image is also a clickable link.  
-
-5:
-
-- Comment: "Is it possible to add a part which allows you to know the ages of the children, so I could filter by holidays suitable for a 3yr old for example"
-
-- Action Taken: This comment has picked up a feature that would be very valuble to this website. However, to implement it would reqire signficant restructuring of the database, the displayed information and the search functionality. Therefore at this time, I have not made changes to respond to this comment but they should be addressed for future roll outs.  
-
-6:
-
-- Comment: "It could be nice to let the user add a link to the air b and b/place they stayed or to link to places they visited"
-
-- Action Taken: As above.  
-
-Comments from User 2 (Pixel 7):
-
-- Comment: "When my search result doesn't have any hits, I get all results returned rather than none. Might be nice to have a message that notifies the user this has happened."
-
-Action Taken: This user is visually impaired and might not have noticed the flash message that appears when a search yields no results. Therefore, I modified the route to achieve two improvements. Firstly, if the search returns no results, no cards are displayed, providing a clear indication of the absence of results. Additionally, I replaced the flash message with an alert div, which explicitly informs the user that no search results were found.
-
-Other flash messages have been designed to be more intuitive and guide the user to a page where they can infer what has happened. Therefore, I have left them unchanged.
+![Original Code 1](documentation/testing/bugs/original_map_search_JS_p1.PNG)
+![Original Code 1](documentation/testing/bugs/original_map_search_JS_p2.PNG)
+![Original Code 1](documentation/testing/bugs/original_map_search_route.PNG)
