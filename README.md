@@ -220,7 +220,7 @@ The Favicon for the site was created from the logo using [favicon](https://favic
 
 ## Finished site
 
-
+![All Screens](documentation/site_images/air_all_screens.PNG)
 
 Updates from Design:
 
@@ -250,7 +250,6 @@ The footer contains a link to the contact form asking users "Got a Question?". I
 
 </details>
 
-
 <details><summary>Home Page (index.html)</summary>
 
 ![Home Page](documentation/site_images/air_home.PNG)
@@ -265,11 +264,20 @@ At the conclusion of the page, users are encouraged to join the site and contrib
 
 </details>
 
-<details><summary>Recommendations Gallery</summary>
-<img src="documentation/">
+<details><summary>Holidays Page (recommendations.html)</summary>
+
+![Holidays page](documentation/site_images/air_holidays.PNG)
+
+The main holidays page presents users with a comprehensive collection of all holidays listed on the site, each displayed as an informative card featuring essential details such as the title, region, occupancy, and holiday type. Leveraging Jinja templating and database data, this information is seamlessly auto-populated.
+
+Users enjoy the flexibility of searching (case insensitive) through posts using keywords found within the reviews or holiday types. This dynamically updates the page to display only relevant holidays matching the search criteria. In cases where no search results are found, users are promptly notified with a flash message.
+
+Additionally, users can opt for a map view of the holidays if preferred. A prominent button facilitates easy navigation to this section. During a search, the map pins are dynamically updated to exclusively display the searched holidays, ensuring a synchronised experience between search results and map visualisation.
+
+![Searchd Map](documentation/site_images/updated_map.PNG)
 </details>
 
-<details><summary>Full Page Reccomendation</summary>
+<details><summary>Full Page Holiday</summary>
  <img src="documentation/">
 </details>
 
