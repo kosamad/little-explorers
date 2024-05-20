@@ -531,15 +531,28 @@ HTML, CSS, JavaScript & Python
 
 * [Github](https://github.com/) - to save and store the files for the website.
 * [Git](https://git-scm.com/) - for version control, using the Gittpod terminal to commit to Git and Push to GitHub.
+* [Flask](https://flask.palletsprojects.com/en/3.0.x/) - a Python framework which helps build web applications quickly and easily. 
+* [SQLAlchemy](https://www.sqlalchemy.org/) - a Python SQL toolkit and Object-Relational Mapping (ORM) library that facilitates efficient database interactions and management.
+* [Google Developer Tools](https://developer.chrome.com/docs/devtools/) - to view responsive styling and troubleshoot/solve issues.
+* [Pip](https://pip.pypa.io/en/stable/) - for installing Python packages.
+* [Jinja] - a templating engine for Python, used to generate dynamic web content.
 * [LucidCharts](https://www.lucidchart.com) - to produce the site flow chart and database design.
 * [TableConvert](https://tableconvert.com/csv-to-markdown)- for simplifying the writing of Markdown tables
 * [Balsamiq](https://balsamiq.com/) - to create wireframes.
 * [Coolers](https://coolors.co/) - to view the colour scheme.
 * [Canva](https://www.canva.com/) - to create the logo.
-* [Favicon](https://favicon.io/) - to generate the favicons for the page. 
+* [Google Fonts](https://fonts.google.com/) - for the fonts used on the website.
+* [Favicon](https://favicon.io/) - to generate the favicons for the page.
+* [Font Awesome:](https://fontawesome.com/) - to add icons and improve the UX.
+* [ColorZilla](https://chromewebstore.google.com/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp) - to pick colours from the background image and get hex codes.
+* [Werzberg](https://werkzeug.palletsprojects.com/en/2.3.x/) - for secure password hashing and secure filename storage.
 * [Email.JS] (https://www.emailjs.com/) - to send and recieve emails. 
 * [Google Maps JS API](https://developers.google.com/maps/documentation/javascript/overview) - to create and update features on the maps. 
 * [Cloudinary API](https://cloudinary.com/) - to integrate image upload, storing only URLs in the database, with images hosted on Cloudinary.
+* [Am I Responsive?](http://ami.responsivedesign.is/) - to show the website on different devices/screen sizes.
+* [Silktide Accessibility Checker ](https://chromewebstore.google.com/detail/mpobacholfblmnpnfbiomjkecoojakah)  - to check the website for accessibility.
+
+
 
 ## ?. Testing
 ## ?. Deployment
