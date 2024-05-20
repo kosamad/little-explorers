@@ -218,33 +218,52 @@ The Favicon for the site was created from the logo using [favicon](https://favic
 
 #### Features
 
-ALL FORMS
-
 ## Finished site
+
 
 ![All Screens](documentation/site_images/air_all_screens.PNG)
 
 Updates from Design:
 
-The blue background colour was updated to #0f72a8 to provde more contrast and comply with accesibility requiremnts. 
+* The blue background colour was updated to #0f72a8 to provde more contrast and comply with accesibility requiremnts. 
 
-A specific reporting interface was not implemented at this time. I felt that the contact process was sufficiently easy, allowing users to report inappropriate posts without needing a separate form.
+* A specific reporting interface was not implemented at this time. I felt that the contact process was sufficiently easy, allowing users to report inappropriate posts without needing a separate form.
 
-The word "recommendations" was changed to "holidays" when referring to the holiday recommendations posted by users. I felt this was more informative about the site's purpose, and the shorter word improved the page design.
+* The word "recommendations" was changed to "holidays" when referring to the holiday recommendations posted by users. I felt this was more informative about the site's purpose, and the shorter word improved the page design.
+
+All page information:
+
+All forms across our site utilize Materialize form inputs, ensuring a consistent and visually appealing user interface. These inputs come with added functionality, including dynamic feedback that visually signals correct (green) or incorrect (red) completion of fields, thereby improving user understanding and interaction.
+
+Additionally, our forms feature built-in validation prompts that guide users to input valid email addresses (containing '@') when required, promoting data accuracy and submission reliability.
+
+Furthermore, for elements lacking built-in Materialize checks, custom programming has been implemented to enhance the user experience. These checks ensure all form elements are completed before submission. In instances where input is missing, clear messages prompt users to fill in the required fields or make necessary modifications, facilitating form completion.
 
 ### All Users
 
 <details><summary>Base.html</summary>
 
-Base.html serves as the foundation for every page, reducing redundancy in code and enhancing efficiency. By consolidating common HTML elements, it accelerates load times, streamlines webpage appearance, and optimises backend performance.
+Base.html serves as the foundation for every page, reducing redundancy in code and enhancing efficiency. By consolidating common HTML elements, it accelerates load times, streamlines webpage appearance, and optimises backend performance. The base page loads the Nav Bar and the Footer for every page. 
 
-The base page loads the Nav Bar and the Footer for every page. 
+The navigation bar enhances user experience by highlighting the current page and providing seamless navigation throughout the site. The logo and site title serve as a convenient link back to the home page. 
 
 ![Navbar](documentation/site_images/navbar.PNG)
 
-The navigation bar highlights the current page the user is on and allows for easy navigation throughout the site. The logo and site title function as a link back to the home page. On small devices the navigation bar shrinks to a burger dropdown menu.
+For logged-out users, the navigation menu includes options for 'Home,' 'Holidays,' 'Contact,' and an 'Account' dropdown, offering choices for 'Sign In' and 'Create Account.' Upon logging in, users gain access to additional features such as 'Add Holiday,' and the 'Account' dropdown transforms into 'Profile' and 'Sign Out'. 
 
-![Navbar](documentation/site_images/navbar_mobile.PNG)
+![User Navbar](documentation/site_images/user_navbar.PNG)
+
+Administrators enjoy an exclusive 'Manage' tab, replacing 'Add Holiday,' granting them access to functionalities like managing holiday types, users, adding holidays, and creating new administrator accounts
+
+![Admin Navbar](documentation/site_images/admin_navbar.PNG)
+
+![manage drop down](documentation/site_images/manage_dropdown.PNG)
+
+On small devices the navigation bar shrinks to a burger dropdown menu.
+
+![Mobile Navbar](documentation/site_images/navbar_mobile.PNG)
+
+![Mobile navbar dropdown](documentation/site_images/mobile_navbar.PNG)
 
 The footer contains a link to the contact form asking users "Got a Question?". It also highlights the social media pages for Little Explorers and credits the designer of the site. Additionally, there is a disclaimer stating that this is an educational site and that the reviews are not real.
 
@@ -346,17 +365,40 @@ Within this personalised space, users can explore all the recommendations they'v
 Furthermore, a prominently displayed button encourages users to continue sharing their experiences by adding another holiday to the site, streamlining the content creation process.
 
 Moreover, users retain control over their previous posts, with options to edit or delete them directly from their profile page. Opting to edit redirects users to the edit holiday page. Should users choose to delete a post, they encounter a protective modal, designed to prevent accidental deletions. This modal employs defensive programming techniques, requiring users to confirm their decision, thereby mitigating the risk of unintended deletions." 
+
+![Modal Example](documentation/site_images/delete_modal.PNG)
  
 </details>
 
 <details><summary>Sign Out</summary>
- <img src="documentation/">
+
+![Sign Out](documentation/site_images/sign_out_success.PNG)
+
+When users click 'Sign Out,' they are immediately logged out of their session. They are then redirected to the home screen, where they can only access base user content. A flash message confirms the successful completion of this action, ensuring users are informed of their logout status.
+
 </details>
 
 ### Signed In User Content
 
-<details><summary>Add Recommendation</summary>
- <img src="documentation/">
+<details><summary>Add Holiday (add_recommendation.html)</summary>
+
+![Add Holiday](documentation/site_images/air_add_holiday.PNG)
+
+The 'Add Holiday' page empowers logged-in users to contribute by recommending new family-friendly holiday destinations to the site. Users are prompted to provide a concise holiday title (up to 30 characters) and select the holiday type from a dropdown menu, populated with options curated by admin users and stored in the database.
+
+Next, users specify the holiday's region and the number of occupants via dropdown menus. Additionally, they select the date when they undertook the holiday, completing the submission process.
+
+In the following section, users are prompted to specify the location of the holiday. They have the option to input the full address manually into the provided text box or begin typing and select from a dropdown menu populated by the Google API. Alternatively, users can interactively move the map pin to their desired location on the map interface. This automatically updates the address field to be saved in the database. 
+
+![Address](documentation/site_images/address_capture.PNG)
+
+Subsequently, users are presented with a text box where they can input their review. A word limit of 1000 characters is enforced, with a helpful countdown indicating the remaining characters available to the user.
+
+The final section of the form requests users to upload an image. Users can select their file, ensuring it is in image format. Protective programming notifies the user if they have selected an incorrect file format. Before submitting the form, users have the option to preview the selected image. This image interface leverages the Cloudinary API, where only the image URL is saved to the database, with the main image being stored on the Cloudinary server.
+
+![Image Upload](documentation/site_images/picture_upload.PNG)
+
+Once a user feels they have completed the form, they can use the submit button to send the data. If any elements of the form are missing, the user is promptly notified. Once submitted, they are redirected to their profile page where the review will be displayed.
 </details>
 
 <details><summary>Edit Recommendation</summary>
