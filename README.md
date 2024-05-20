@@ -218,24 +218,146 @@ The Favicon for the site was created from the logo using [favicon](https://favic
 
 #### Features
 
-## ?. Finished site
+## Finished site
+
+
 
 Updates from Design:
 
 The blue background colour was updated to #0f72a8 to provde more contrast and comply with accesibility requiremnts. 
 
-Base.html
+A specific reporting interface was not implemented at this time. I felt that the contact process was sufficiently easy, allowing users to report inappropriate posts without needing a separate form.
 
-Base.html serves as the foundation for every page, reducing redundancy in code and enhancing efficiency. By consolidating common HTML elements, it accelerates load times, streamlines webpage appearance, and optimizes backend performance.
+The word "recommendations" was changed to "holidays" when referring to the holiday recommendations posted by users. I felt this was more informative about the site's purpose, and the shorter word improved the page design.
+
+### All Users
+
+<details><summary>Base.html</summary>
+
+Base.html serves as the foundation for every page, reducing redundancy in code and enhancing efficiency. By consolidating common HTML elements, it accelerates load times, streamlines webpage appearance, and optimises backend performance.
+
+The base page loads the Nav Bar and the Footer for every page. 
+
+![Navbar](documentation/site_images/navbar.PNG)
+
+The navigation bar highlights the current page the user is on and allows for easy navigation throughout the site. The logo and site title function as a link back to the home page. On small devices the navigation bar shrinks to a burger dropdown menu.
+
+![Navbar](documentation/site_images/navbar_mobile.PNG)
+
+The footer contains a link to the contact form asking users "Got a Question?". It also highlights the social media pages for Little Explorers and credits the designer of the site. Additionally, there is a disclaimer stating that this is an educational site and that the reviews are not real.
+
+![Footer](documentation/site_images/footer.PNG)
+
+</details>
 
 
-Contact.html
+<details><summary>Home Page (index.html)</summary>
+
+![Home Page](documentation/site_images/air_home.PNG)
+
+Users are greeted with a crisp hero image that promotes the sense of adventure, family, and holidays the site aims to portray. It features the slogan "Big Adventures For Little Explorers" and the subtitle "Discover child-friendly holidays across the UK," immediately providing users with the information they need to understand the site's purpose.
+
+![Hero](documentation/site_images/hero.PNG)
+
+The site offers a direct link for users to begin browsing holidays immediately. However, for users who may be uncertain about using the platform, strategically curated suggestions by site admins are prominently displayed. These suggestions are designed to inspire users and provide a glimpse of the diverse content available on the site. Additionally, users are presented with a convenient "See More Holidays" button, ensuring easy access to further exploration without the need to backtrack or search extensively. This button is present in the same viewing plane as a quote which highlights how fantastic another user has found little Explorers. This approach aims to enhance user experience by guiding users seamlessly through the site and facilitating effortless navigation to desired content.
+
+At the conclusion of the page, users are encouraged to join the site and contribute their holiday recommendations. They are presented with options to either create an account or sign in if they already have one. Upon logging in, the content dynamically updates to prompt users to "Share A Gem" and submit a recommendation to the site. Additionally, users can access their profile by following the provided link to review their previously added recommendations. 
+
+</details>
+
+<details><summary>Recommendations Gallery</summary>
+<img src="documentation/">
+</details>
+
+<details><summary>Full Page Reccomendation</summary>
+ <img src="documentation/">
+</details>
+
+<details><summary>Contact Form</summary>
+<img src="documentation/">
+</details>
+
+### Under the Account Dropdown
+
+#### Signed Out Users:
+
+<details><summary>Create Account</summary>
+ <img src="documentation/">
+</details>
+
+<details><summary>Sign In</summary>
+ <img src="documentation/">
+</details>
+
+#### Signed In Users:
+
+<details><summary>User Profile Page</summary>
+<img src="documentation/">
+</details>
+
+<details><summary>Sign Out</summary>
+ <img src="documentation/">
+</details>
+
+### Signed In User Content
+
+<details><summary>Add Recommendation</summary>
+ <img src="documentation/">
+</details>
+
+<details><summary>Edit Recommendation</summary>
+<img src="documentation/g">
+</details>
+
+<details><summary>Modal Example</summary>
+ <img src="documentation/">
+</details>
+
+### Admin Only Content
+
+<details><summary>Admin Profile Page</summary>
+<img src="documentation/">
+</details>
+
+<details><summary>Add Holiday Type</summary>
+<img src="documentation/">
+</details>
+
+<details><summary>Edit Holiday Type</summary>
+<img src="documentation/">
+</details>
+
+<details><summary>Users Page</summary>
+<img src="documentation/">
+</details>
+
+<details><summary>Create Account</summary>
+<img src="documentation/">
+</details>
+
+
+
+### Home.html
+### Recommendations.html (Holidays Page)
+### Contact.html
+
+### Under the Account dropdown
+
+### Profile.html
+### Home.html
+### Home.html
+### Home.html
+### Home.html
+### Home.html
+
+
+### Contact.html
 
 The emails functionality was created using Email.JS with a template that sends to the admin team the name, email address and message submitted by the user. 
 
 
 
-## ?. Technologies
+## Technologies
 
 ### Languages
 
