@@ -24,8 +24,8 @@
     <!-- Cards Modifed from Materialize-->
     <div class="row">
         {% for recommendation in recommendations %}
-        {% if recommendation.recommendation_name in ['Bristol Balloons!', 'Peak District Paradise', 'Beachfront Chalet'] %}
-        <div class="col s12 m3 l3">
+        {% if recommendation.recommendation_name in ['Bristol Balloons!', 'Walking Wonderland', 'Beachfront Chalet', 'Yorkshire Retreat'] %}
+        <div class="col s12 m3">
             <div class="card">
                 <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"></a>
                 <div class="card-image">
