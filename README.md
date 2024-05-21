@@ -546,6 +546,7 @@ HTML, CSS, JavaScript & Python
 * [Google Fonts](https://fonts.google.com/) - for the fonts used on the website.
 * [Favicon](https://favicon.io/) - to generate the favicons for the page.
 * [Font Awesome:](https://fontawesome.com/) - to add icons and improve the UX.
+- [TinyPNG](https://tinypng.com/) - to compress site images.
 * [ColorZilla](https://chromewebstore.google.com/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp) - to pick colours from the background image and get hex codes.
 * [Werzberg](https://werkzeug.palletsprojects.com/en/2.3.x/) - for secure password hashing and secure filename storage.
 * [Email.JS] (https://www.emailjs.com/) - to send and recieve emails. 

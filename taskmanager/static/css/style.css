@@ -52,7 +52,7 @@ main {
 
 .btn-orange {
   background-color: #FF914D;
-  color:black;
+  color: black;
 }
 
 .btn-dblue {
@@ -61,7 +61,7 @@ main {
 
 .btn-orange:hover {
   background-color: #04724D;
-  color:white;
+  color: white;
 }
 
 .btn-dgreen {
@@ -123,6 +123,7 @@ main {
 }
 
 /* Navbar */
+
 #nav-logo {
   max-width: 100%;
   height: 63px;
@@ -154,11 +155,9 @@ main {
   background-size: cover;
 }
 
-
 .hero-subtitle {
   font-size: 1.5rem;
   margin-top: 20px;
-
 }
 
 .hero-inner {
@@ -243,6 +242,7 @@ main {
 
 
 /* Contact Page */
+
 .contact-container {
   padding: 5%;
   margin: 2% auto
@@ -250,6 +250,7 @@ main {
 
 
 /* Add holiday_type Page */
+
 #display_only {
   color: rgba(0, 0, 0, 0.42);
 }
@@ -288,6 +289,7 @@ main {
 }
 
 /* Add Recommendation Page */
+
 #a-recommendation-page,
 #create-account-page {
   padding: 5%;
@@ -330,6 +332,7 @@ main {
 }
 
 /* View Recommendation Full Page */
+
 .rec-full-image {
   display: block;
   margin: 3% auto;
@@ -366,11 +369,14 @@ main {
 }
 
 /* Profile Page */
+
 .manage-area a {
   margin: 5px;
 }
 
-#sign-in a:hover{color:#B8336A;}
+#sign-in a:hover {
+  color: #B8336A;
+}
 
 
 /* Footer */
@@ -417,18 +423,23 @@ footer p {
 
 /* Error pages */
 
-.error-bg {min-height: 75vh;
+.error-bg {
+  min-height: 75vh;
 
 }
 
-.error-heading {margin: 0 0 20px 0;
-padding-top: 15vh;}
+.error-heading {
+  margin: 0 0 20px 0;
+  padding-top: 15vh;
+}
 
-.error-p { text-align: justify;}
-
+.error-p {
+  text-align: justify;
+}
 
 
 /* Media Queries */
+
 @media screen and (max-width: 1241px) {
 
   .no-join-margin {
@@ -453,7 +464,6 @@ padding-top: 15vh;}
     height: 300px;
   }
 }
-
 
 @media screen and (max-width: 600px) {
   #nav-logo {
@@ -480,12 +490,19 @@ padding-top: 15vh;}
     height: 200px;
   }
 
-  #home-hero-div {height: 90vh;}
+  #home-hero-div {
+    height: 90vh;
+  }
 
-  .hero-headline {font-size: 3.2rem;}
+  .hero-headline {
+    font-size: 3.2rem;
+  }
 
-  .hero-subtitle{font-size: 1.2rem;}
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
 
-  .heading-banner{height: 300px;}
-
+  .heading-banner {
+    height: 300px;
+  }
 }
