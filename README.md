@@ -3,13 +3,48 @@
 
 ![Little Explorers All screens](documentation/site_images/air_all_screens.PNG)
 
+The deployed site can be found [here](https://little-explorers-c2ba86cc535f.herokuapp.com/)
+
 Little Explorers is a user-friendly website dedicated to effortlessly browsing and recommending child-friendly holiday destinations. Searching through the recommendations is simplified with an intuitive filter mechanism. Users possess the capability to view, edit, and delete their recommendations effortlessly, while also having the convenience to contact the site's administrators for any inquiries. Furthermore, the site is fortified against malicious content through a "report a post" feature, enabling users to flag inappropriate content, which administrators can promptly review and remove as necessary.
 
 This project is my third Milestone Project as part of the Code Institute's Diploma in Web Application Development. 
 
 ---
 
-**** table of contents *****
+- [User Experience Design](#user-experience-design)
+  * [Strategy Plane](#strategy-plane)
+    + [Site Goals](#site-goals)
+    + [User Stories](#user-stories)
+  * [Scope Plane](#--scope-plane--)
+    + [Table 1 Opportunity Summary](#--table-1-opportunity-summary--)
+  * [Stucture Plane](#stucture-plane)
+  * [Skeleton Plane](#skeleton-plane)
+    + [Wireframes](#wireframes)
+  * [Surface Design](#surface-design)
+    + [Logo](#logo)
+    + [Colours](#colours)
+    + [Typography](#typography)
+    + [Imagery](#imagery)
+  * [Finished Site Features](#finished-site-features)
+  * [All Pages Information:](#all-pages-information-)
+  * [All Users](#all-users)
+  * [Signed In User Content](#signed-in-user-content)
+  * [Admin Only Content](#admin-only-content)
+  * [Future Ideas](#future-ideas)
+- [Technologies](#technologies)
+  * [Languages](#languages)
+  * [Frameworks, Libraries and Programs Used](#frameworks--libraries-and-programs-used)
+- [Testing](#testing)
+- [Deployment and Local Development](#deployment-and-local-development)
+  * [Deployment](#deployment)
+  * [Cloning the Github Repository](#cloning-the-github-repository)
+  * [Forking the Github Repository](#forking-the-github-repository)
+- [Credits](#credits)
+  * [Content](#content)
+  * [Media](#media)
+  * [Acknowledgments](#acknowledgments)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ---
 
@@ -59,7 +94,7 @@ Applying UX design principles, I carefully considered the essential features nee
     - Log out of my account easily. 
 
 
-### **Scope Plane**
+### Scope Plane
 
 The following opportunity matrix summarises the key features that could be implemented on Little Explorers and the difficulty/viabitliy of each feature. The opportunities will be developed based on their priority scores.
 

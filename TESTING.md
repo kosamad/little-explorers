@@ -6,8 +6,25 @@
 
 ---
 
-<h2>Contents</h2
+<h2>Contents</h2>
 
+- [Introduction](#introduction)
+- [Automated Testing](#automated-testing)
+  * [HTML Validation](#html-validation)
+  * [CSS Validation](#css-validation)
+  * [Javascript Validation](#javascript-validation)
+  * [Python Validation](#python-validation)
+  * [Performance (Lighthouse)](#performance--lighthouse-)
+  * [Accessibility](#accessibility)
+- [Manual Testing](#manual-testing)
+  * [Testing User Stories](#testing-user-stories)
+  * [Real User Testing](#real-user-testing)
+  * [Testing Code Functions](#testing-code-functions)
+  * [Mobile and Desktop Test Results](#mobile-and-desktop-test-results)
+      - [All Users](#all-users)
+      - [Logged In Users Only](#logged-in-users-only)
+      - [Admin Only Features](#admin-only-features)
+- [Bugs and Fixes](#bugs-and-fixes)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -134,9 +151,9 @@ Python pep8 validation was done via [Code Institute's Python Linter](https://pep
 
 ___
 
-## Lighthouse
+## Performance (Lighthouse)
 
-Lighthouse (a Chrome Developer tool) was used to test the performance, quality and correctness of Cosmo Keys on a desktop.
+The site was run through the Google Chrome Developer tool Lighthouse to assess it's performance. The scores for each page are listed below. 
 
 <details><summary>Home (index.html)</summary>
 <img src="documentation/testing/images/validation/lighthouse_home.PNG">
@@ -214,16 +231,6 @@ Several changes were implemented to enhance accessibility:
 
 While most contrast issues were addressed, some persist with elements inherited from Materialize form input components.
 ____
-
-## Performance
-
-The site was run through the Google Chrome Developer tool Lighthouse to assess it's performance. The scores for each page are listed below. 
-
-** light house results 
-
-**other content - testing results (manual)
-
-___
 
 # Manual Testing
 
