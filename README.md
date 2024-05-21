@@ -1,7 +1,7 @@
 
 # Little Explorers - A Holiday Recommendation Website by Karen Samad
 
-**** device image *****
+![Little Explorers All screens](documentation/site_images/air_all_screens.PNG)
 
 Little Explorers is a user-friendly website dedicated to effortlessly browsing and recommending child-friendly holiday destinations. Searching through the recommendations is simplified with an intuitive filter mechanism. Users possess the capability to view, edit, and delete their recommendations effortlessly, while also having the convenience to contact the site's administrators for any inquiries. Furthermore, the site is fortified against malicious content through a "report a post" feature, enabling users to flag inappropriate content, which administrators can promptly review and remove as necessary.
 
@@ -17,7 +17,7 @@ This project is my third Milestone Project as part of the Code Institute's Diplo
 
 Applying UX design principles, I carefully considered the essential features needed by both site owners and users to foster engagement and mutual benefits, resulting in a functional, user-friendly website.
 
-### **Strategy Plane**
+### Strategy Plane
 
 #### Site Goals
 
@@ -58,7 +58,6 @@ Applying UX design principles, I carefully considered the essential features nee
     - Receive email messages from the site users. 
     - Log out of my account easily. 
 
---- 
 
 ### **Scope Plane**
 
@@ -520,7 +519,6 @@ Following Real User feedback I would also implement:
 
 * Optional Links: Include an optional input field that allows users to add a link to the holiday cottage or stay information.
 
-
 ## Technologies
 
 ### Languages
@@ -678,7 +676,7 @@ __NB: An env.py file is required to configure the environment variables. These a
 
 I would like to thank:
 
-* My mentor, Jubril, for his helpful feedback and industry insights.
+* My mentor, Jubril Akolade, for his helpful feedback and industry insights.
 
 * My family and friends who tested the site and gave me their comments.
 
