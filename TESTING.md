@@ -571,7 +571,30 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 # Bugs and Fixes 
 
-Note:
+**Bug 1** 
+
+Issue: Add Hoiday Types Page: Icons could not be displayed directly using the select and options HTML elements
+
+Solution: JavaScript was employed to circumvent this limitation and dynamically render HTML based on the user's selection. Consequently, icons are not rendered on the add recommendation page due to this issue. However, I believe this does not significantly impact the user experience.
+
+**Bug 2**
+
+Issue: Google Maps Markers
+
+
+Solution: Google Maps has undergone an update as of April 2024, introducing changes in the code required to achieve similar results. The updated method for placing markers is through google.maps.marker.AdvancedMarkerElement. Despite following the step-by-step instructions provided in the documentation, I encountered difficulties in loading this feature. Given the need for reliable support, I opted to utilise the legacy maps.marker element instead, which is currently not scheduled for discontinuation
+
+**Bug 3**
+
+Issue:
+
+Solution:
+
+Issue: Map Update after a search (see **note below)
+
+Solution: A for loop was utlised to update each marker as their information would be updated individually. The inspiration for this can from this [Youtube tutorial]( https://www.youtube.com/watch?v=HXKDyZ_W6rI)
+
+**Note:
 When initially implementing the code to search the map and update the markers, I mistakenly believed that each element, along with its respective ID, would override the previous one, resulting in only one map pin for multiple search hits. Consequently, I implemented a method involving a database search and an AJAX request. However, after consulting a YouTube video on creating the search function, I discovered that using a for loop would populate individual pins instead of overriding previous ones. I opted to utilize this simpler method, which demonstrates the diversity of approaches available to achieve the same outcome, with some being unnecessarily complex.
 
 Original code and route
@@ -579,3 +602,17 @@ Original code and route
 ![Original Code 1](documentation/testing/bugs/original_map_search_JS_p1.PNG)
 ![Original Code 1](documentation/testing/bugs/original_map_search_JS_p2.PNG)
 ![Original Code 1](documentation/testing/bugs/original_map_search_route.PNG)
+
+**Bug 4** 
+
+Issue: Iphone didn't allow the user to use select elements
+
+Solution: After researching this issue, I found that it is a documented problem with Materialize select boxes. [This post](https://github.com/Dogfalo/materialize/issues/6464) identified a patch that I could implement to resolve the issue. 
+
+**Bug 5**
+
+Issue: Image Upload Function wouldn't upload images on deployed site
+
+Solution: Initially, my image upload code stored images directly in the repository [Old image upload](documentation/testing/bugs/old_image_recommendation.PNG). While this approach was acceptable for the scale of my web application, it became ineffective when I deployed the site. Upon researching alternatives, I found Cloudinary, which allows hosting images and storing only their URLs in the database. This solution is more efficient and aligns better with the future scope of the application.
+
+
