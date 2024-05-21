@@ -8,17 +8,18 @@
         <div class="row ">
             <div class="col s12 center-align">
                 <h1 class="fira-600 white-text banner-heading">Users</h1>
-            </div>           
+            </div>
         </div>
         <div class="row col m8 offset-m2 s12">
             <p class="white-text center-align fira-500">
                 Explore and manage registered users of Little Explorers. Notify users before taking any action.
             </p>
-        </div>     
+        </div>
     </div>
 </div>
 <div class="bg-lorange">
     <div class="container bg-white admin-container">
+        <!-- search -->
         <form method="POST" action="/search_users">
             <div class="row center">
                 <div class="input-field col s12 m6">
@@ -36,9 +37,9 @@
                         class="btn waves-effect waves-light btn-pink fira-500">Clear Search Results</a>
                 </div>
             </div>
-        </form>   
-        
+        </form>
 
+        <!-- User display cards-->
         <div class="row">
             {% for user in users %}
             <div class="col s12 l6">
@@ -52,10 +53,11 @@
                     </div>
                     <div class="card-action center-align">
                         {% if user.email != "little.explorers@gmail.com" %}
-                        <a class="waves-effect btn btn-pink modal-trigger fira-500" href="#modal_{{ user.id }}">Delete</a>                        
+                        <a class="waves-effect btn btn-pink modal-trigger fira-500"
+                            href="#modal_{{ user.id }}">Delete</a>
                         {% endif %}
                         {% if user.email == "little.explorers@gmail.com" %}
-                        <a class="btn btn-dblue">This admin account can't be deleted</a> 
+                        <a class="btn btn-dblue">This admin account can't be deleted</a>
                         {% endif %}
                     </div>
                 </div>
@@ -71,12 +73,12 @@
                 <div class="center-align modal-btn">
                     <div class="row">
                         <div>
-                            <!-- Adjust the column size based on your preference -->
                             <a href="#" class="modal-close btn btn-pink col s3 offset-s2">No</a>
                         </div>
                         <div>
-                            <!-- Adjust the column size based on your preference -->
-                            <a href="{{ url_for('delete_user', user_id=user.id ) }}" class="btn btn-lgreen col s3 offset-s2">Yes  <span class="sr-only">Yes, delete user {{ user.username }}</span></a>
+                            <a href="{{ url_for('delete_user', user_id=user.id ) }}"
+                                class="btn btn-lgreen col s3 offset-s2">Yes <span class="sr-only">Yes, delete user
+                                    {{ user.username }}</span></a>
                         </div>
                     </div>
                 </div>

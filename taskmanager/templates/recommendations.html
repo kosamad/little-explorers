@@ -21,6 +21,7 @@
 
 <div class="bg-white">
     <div class="container recommendations-container">
+        <!--  Search -->
         <form method="POST" action="/search">
             <div class="row center">
                 <div class="input-field col s12 m6">
@@ -46,10 +47,10 @@
         <!-- If no search results alert -->
         {% if alert_message %}
         <div class="row center-align">
-        <div class="alert alert-warning fira-500" role="alert">
-            {{ alert_message }}
+            <div class="alert alert-warning fira-500" role="alert">
+                {{ alert_message }}
+            </div>
         </div>
-    </div>
         {% endif %}
 
         <!-- Map View button -->
@@ -103,11 +104,9 @@
                 <div class="center-align modal-btn">
                     <div class="row">
                         <div>
-                            <!-- Adjust the column size based on your preference -->
                             <a href="#" class="modal-close btn btn-pink col s3 offset-s2">No</a>
                         </div>
                         <div>
-                            <!-- Adjust the column size based on your preference -->
                             <a href="{{ url_for('delete_recommendation', recommendation_id=recommendation.id ) }}"
                                 class="btn btn-lgreen col s3 offset-s2">Yes <span class="sr-only">Yes, delete
                                     {{ recommendation.recommendation_name }}</span></a>
@@ -117,6 +116,7 @@
             </div>
             {% endfor %}
         </div>
+        <!-- Map -->
         <div id="map-canvas-recommendations"></div>
     </div>
 </div>

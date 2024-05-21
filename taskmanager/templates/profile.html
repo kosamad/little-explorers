@@ -27,6 +27,7 @@
                 class="waves-effect waves-light btn btn-orange col s12 fira-500">NAVIGATE TO ADMIN FEATURES</a>
         </div>
         {% endif %}
+        <!-- Add holiday button -->
         <div class="row col m8 offset-m2 s12">
             <p class="fira-600 center-align">
                 Want to recommend a new holiday? Use the button below.
@@ -40,6 +41,7 @@
         </div>
 
         <div class="row">
+            <!-- Profile Specific recommended holidays by user -->
             {% for recommendation in user_recommendations %}
             <div class="col s12 m4">
                 <div class="card">
@@ -67,6 +69,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- Modal Structure taken and adapted from Materialize -->
             <div id="modal_{{ recommendation.id }}" class="modal">
                 <div class="modal-content center-align">
@@ -76,12 +79,10 @@
                 </div>
                 <div class="center-align modal-btn">
                     <div class="row">
-                        <div>
-                            <!-- Adjust the column size based on your preference -->
+                        <div>                            
                             <a href="#!" class="modal-close btn btn-pink col s3 offset-s2">No</a>
                         </div>
-                        <div>
-                            <!-- Adjust the column size based on your preference -->
+                        <div>                            
                             <a href="{{ url_for('delete_recommendation', recommendation_id=recommendation.id ) }}"
                                 class="btn btn-lgreen col s3 offset-s2">Yes</a>
                         </div>
@@ -109,7 +110,7 @@
         </div>
     </div>
 </div>
-
+<!-- Admin only content buttons -->
 <div class="container">
     <div class="row">
         <div class="col s12 center-align manage-area">
@@ -124,8 +125,5 @@
         </div>
     </div>
 </div>
-
-{% endif %}s
-
-
+{% endif %}
 {% endblock %}
