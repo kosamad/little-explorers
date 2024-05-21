@@ -194,10 +194,6 @@ Accesibiltiy issue comes from the Materialze set styles on form.
 <img src="documentation/testing/images/validation/lighthouse_signin_mobile.PNG">
 </details>
 
-
-
- 
-
 ___
 
 ## Accessibility
@@ -649,6 +645,15 @@ ____
 
 </details>
 
+<details><summary>404 Error Page (404.hmtl)</summary>
+
+| **Feature**                      | **Expected Outcome**             | **Test Performed**      | **Result**                  | **Pass/Fail** |
+|----------------------------------|----------------------------------|-------------------------|-----------------------------|---------------|
+| Return to home page button       | Redirects user to the home page  | Clicked on button       | Redirectd to the home page  | Pass          |
+| Return to home page button hover | Changes colour                   | Hovered over the button | Changed colour              | Pass          |                   
+
+
+</details>
 ____
 
 # Bugs and Fixes 
