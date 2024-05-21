@@ -19,7 +19,7 @@ Throughout the game development process, I relied on Chrome developer tools to a
 
 In troubleshooting, I utilised the console to log and monitor JavaScript code, aiding in resolving aspects of the game that did not perform as intended. All the test results detailed below are based on the [deployed site](https://little-explorers-c2ba86cc535f.herokuapp.com/).
 
----
+____
 
 # Automated Testing
 
@@ -56,12 +56,16 @@ As all validated screens look the same I am just displaying one here with the in
 
 </details>
 
+____
+
 ## CSS Validation
 CSS was validated using [W3C Jigsaw](https://jigsaw.w3.org/css-validator/).
 
 <details><summary>CSS Validation Screenshot</summary>
 <img src="documentation/testing/images/validation/valid_css.png">
 </details>
+
+____
 
 ## Javascript Validation
 
@@ -107,10 +111,11 @@ Please note, warnings relate the use of ES6/8 and are acceptable for the paramet
 1. Documented undefined/unused variables - all are called elsewhere by emailJS in the contact form. 
 </details>
 
+___
+
 ## Python Validation
 
 Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/).
-
 
 <details><summary>__init__ Python</summary>
 <img src="documentation/testing/images/validation/python-init.PNG">
@@ -126,6 +131,74 @@ Python pep8 validation was done via [Code Institute's Python Linter](https://pep
 <img src="documentation/testing/images/validation/python-routes.PNG">
 1. Resolved issues included correcting gaps/whitespace and retructuring to reduce line length.
 </details>
+
+___
+
+## Lighthouse
+
+Lighthouse (a Chrome Developer tool) was used to test the performance, quality and correctness of Cosmo Keys on a desktop.
+
+<details><summary>Home (index.html)</summary>
+<img src="documentation/testing/images/validation/lighthouse_home.PNG">
+<img src="documentation/testing/images/validation/lighthouse_home_mobile.PNG">
+</details>
+
+<details><summary>Holidays (recommendations.html)</summary>
+<img src="documentation/testing/images/validation/lighthouse_recommendations.PNG">
+<img src="documentation/testing/images/validation/lighthouse_recommendations_mobile.PNG">
+
+Accesibiltiy issue comes from the Materialze set styles and that links do not have a discernible name. However I have already addressd this and set screen reader only classes which describe each link using the recommendation name.
+
+</details>
+
+<details><summary>Contact</summary>
+<img src="documentation/testing/images/validation/lighthouse_contact.PNG">
+<img src="documentation/testing/images/validation/lighthouse_contact_mobile.PNG">
+</details>
+
+<details><summary>Add Holiday</summary>
+<img src="documentation/testing/images/validation/lighthouse_addholiday.PNG">
+<img src="documentation/testing/images/validation/lighthouse_addholiday_mobile.PNG">
+
+Accesibiltiy issue comes from the Materialze set styles on form. 
+
+</details>
+
+<details><summary>Holiday Types</summary>
+<img src="documentation/testing/images/validation/lighthouse_holidaytypes.PNG">
+<img src="documentation/testing/images/validation/lighthouse_holidaytypes_mobile.PNG">
+</details>
+
+<details><summary>Add Holiday Type</summary>
+<img src="documentation/testing/images/validation/lighthouse_addholidaytype.PNG">
+<img src="documentation/testing/images/validation/lighthouse_addholidaytype_mobile.PNG">
+</details>
+
+<details><summary>Users</summary>
+<img src="documentation/testing/images/validation/lighthouse_users.PNG">
+<img src="documentation/testing/images/validation/lighthouse_users_mobile.PNG">
+</details>
+
+<details><summary>Create Account</summary>
+<img src="documentation/testing/images/validation/lighthouse_createaccount.PNG">
+<img src="documentation/testing/images/validation/lighthouse_createaccount_mobile.PNG">
+</details>
+
+<details><summary>Profile</summary>
+<img src="documentation/testing/images/validation/lighthouse_profile.PNG">
+<img src="documentation/testing/images/validation/lighthouse_profile_mobile.PNG">
+</details>
+
+<details><summary>Sign In</summary>
+<img src="documentation/testing/images/validation/lighthouse_signin.PNG">
+<img src="documentation/testing/images/validation/lighthouse_signin_mobile.PNG">
+</details>
+
+
+
+ 
+
+___
 
 ## Accessibility
 
@@ -144,6 +217,7 @@ Several changes were implemented to enhance accessibility:
 5. Autocomplete options were added to various elements. 
 
 While most contrast issues were addressed, some persist with elements inherited from Materialize form input components.
+____
 
 ## Performance
 
@@ -152,6 +226,8 @@ The site was run through the Google Chrome Developer tool Lighthouse to assess i
 ** light house results 
 
 **other content - testing results (manual)
+
+___
 
 # Manual Testing
 
@@ -246,6 +322,7 @@ As an administrator I want to be able to:
 
     - Like all users of the site. It is easy to log out using the "Sign out" Link in the navigation bar. 
 
+____
 
 ## Real User Testing
 
@@ -301,12 +378,15 @@ Other flash messages have been designed to be more intuitive and guide the user 
 
 - Action Taken: Prior to using cloudinary I was saving images directly to the repositroy. This didn't require the view button to be clicked and hence I chose the wording view, being an option for the user. However, Cloudinary's interface is different and requires the image to be visible on the page. Therefore I have changed the wording from "view" to "save".
 
+____
 
 ## Testing Code Functions
 
 The desktop version of the site underwent testing across various browsers and devices to ensure compatibility. Testing included Google Chrome, Mozilla Firefox, and Microsoft Edge on desktop computers. Additionally, Chrome was tested on both Lenovo Tablet and Pixel devices, while Safari was used for mobile testing.
 
 The site was responsive on all browsers and devices (down to  320px as recommended by [Free Code Camp](https://www.freecodecamp.org/news/media-query-css-example-max-and-min-screen-width-for-mobile-responsive-design/))
+
+____
 
 ## Mobile and Desktop Test Results
 
@@ -569,6 +649,8 @@ The site was responsive on all browsers and devices (down to  320px as recommend
 
 </details>
 
+____
+
 # Bugs and Fixes 
 
 **Bug 1** 
@@ -615,4 +697,6 @@ Issue: Image Upload Function wouldn't upload images on deployed site
 
 Solution: Initially, my image upload code stored images directly in the repository [Old image upload](documentation/testing/bugs/old_image_recommendation.PNG). While this approach was acceptable for the scale of my web application, it became ineffective when I deployed the site. Upon researching alternatives, I found Cloudinary, which allows hosting images and storing only their URLs in the database. This solution is more efficient and aligns better with the future scope of the application.
 
+___ 
 
+Back to [README.md](README.md)
