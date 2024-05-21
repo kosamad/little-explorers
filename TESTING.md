@@ -1,6 +1,6 @@
 <h1 align="center">Little Explorers-Testing</h1>
 
-![Little Explorers on different screens]()
+![Little Explorers on different screens](documentation/site_images/air_all_screens.PNG)
 
 [View the live website here - Little Explorers](https://little-explorers-c2ba86cc535f.herokuapp.com/)
 
