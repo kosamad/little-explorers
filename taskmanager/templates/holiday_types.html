@@ -21,15 +21,17 @@
 <div class="bg-lorange">
     <div class="container admin-container">
         <div class="row">
+            <!-- Holidy Type Cards -->
             {% for holiday_type in holiday_types %}
             <div class="col s12 m6 l4">
                 <div class="card center-align">
                     <div class="card-content card-padding">
                         <span class="card-title holiday-type-title">{{ holiday_type.holiday_name }}</span>
-                       <i class="{{ holiday_type.selected_icon }} icon-display"></i>
+                        <i class="{{ holiday_type.selected_icon }} icon-display"></i>
                     </div>
                     <div class="card-action">
-                        <a href="{{ url_for('edit_holiday_types', holiday_id=holiday_type.id) }}" class="btn btn-lgreen fira-500">Edit</a>
+                        <a href="{{ url_for('edit_holiday_types', holiday_id=holiday_type.id) }}"
+                            class="btn btn-lgreen fira-500">Edit</a>
                         <a href="#modal_{{ holiday_type.id}}"
                             class="waves-effect btn btn-pink modal-trigger fira-500">Delete</a>
                     </div>
@@ -45,13 +47,12 @@
                 <div class="center-align modal-btn">
                     <div class="row">
                         <div>
-                            <!-- Adjust the column size based on your preference -->
                             <a href="#" class="modal-close btn btn-pink col s3 offset-s2">No</a>
                         </div>
                         <div>
-                            <!-- Adjust the column size based on your preference -->
-                            <a href="{{ url_for('delete_holiday_types', holiday_id=holiday_type.id ) }}" class="btn btn-lgreen col s3 offset-s2">
-                                Yes 
+                            <a href="{{ url_for('delete_holiday_types', holiday_id=holiday_type.id ) }}"
+                                class="btn btn-lgreen col s3 offset-s2">
+                                Yes
                                 <span class="sr-only">Yes, delete {{ holiday_type.holiday_name }}</span>
                             </a>
                         </div>
