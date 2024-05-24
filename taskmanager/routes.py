@@ -397,15 +397,15 @@ def add_holiday_types():
 def edit_holiday_types(holiday_id):
     holiday_type = Holiday.query.get_or_404(holiday_id)
     if request.method == "POST":
-        holiday_type.holiday_name = request.form.get("holiday_name").strip()
-        holiday_type.selected_icon = request.form.get("selected_icon")
+        holiday_name = request.form.get("holiday_name").strip()
+        selected_icon = request.form.get("selected_icon")
         if not holiday_name:
             flash("Holiday name cannot be empty or whitespace only.", "error")
             return redirect(url_for("edit_holiday_types", holiday_id=holiday_id))
         if holiday_name != holiday_type.holiday_name:
             existing_holiday = Holiday.query.filter_by(holiday_name=holiday_name).first()
             if existing_holiday:
-                flash("Holiday name already exists. Please choose again.", "error")
+                flash("Holiday name already exists. Please choose a different name.", "error")
                 return redirect(url_for("edit_holiday_types", holiday_id=holiday_id))
         # Update the holiday type with the new name and icon
         holiday_type.holiday_name = holiday_name

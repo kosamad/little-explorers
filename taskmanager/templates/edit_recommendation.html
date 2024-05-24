@@ -34,11 +34,11 @@
                         <select id="holiday_id" name="holiday_id" class="validate" required>
                             <option value="" disabled>Choose Holiday Type</option>
                             {% for holiday_type in holiday_types %}
-                                {% if holiday_type == recommendation.holiday_type %}
-                                <option value="{{ holiday_type.id }}" selected>{{ holiday_type.holiday_name }}</option>
-                                {% else %}
-                                <option value="{{ holiday_type.id }}">{{ holiday_type.holiday_name }}</option>
-                                {% endif %}
+                            {% if holiday_type.id == recommendation.holiday_id %}
+                            <option value="{{ holiday_type.id }}" selected>{{ holiday_type.holiday_name }}</option>
+                            {% else %}
+                            <option value="{{ holiday_type.id }}">{{ holiday_type.holiday_name }}</option>
+                            {% endif %}
                             {% endfor %}
                         </select>
                         <label for="holiday_id">Holiday Type</label>
@@ -49,21 +49,66 @@
                     <div class="input-field col s9">
                         <select id="region" name="region" class="validate" required>
                             <option value="" disabled>Choose Region</option>
-                            {% if region == recommendation.region %}
-                            <option value="{{ recommendation.region }}" selected>{{ recommendation.region }}</option>
-                            {% endif %}        
+                            {% if recommendation.region == "South-West" %}
+                            <option value="South-West" selected>South West</option>
+                            {% else %}
                             <option value="South-West">South West</option>
+                            {% endif %}
+                            {% if recommendation.region == "South-East" %}
+                            <option value="South-East" selected>South East</option>
+                            {% else %}
                             <option value="South-East">South East</option>
-                            <option value="West-Midlands">West Mids</option>
-                            <option value="East-Midlands">East Mids</option>
-                            <option value="North-West">North West</option>
-                            <option value="North-East">North East</option>
-                            <option value="Yorkshire-and-the-Humber">Yorks & Hum</option>
-                            <option value="East-of-England">East England</option>
+                            {% endif %}
+                            {% if recommendation.region == "West Mids" %}
+                            <option value="West Mids" selected>West Mids</option>
+                            {% else %}
+                            <option value="West Mids">West Mids</option>
+                            {% endif %}
+                            {% if recommendation.region == "East Mids" %}
+                            <option value="East Mids" selected>East Mids</option>
+                            {% else %}
+                            <option value="East Mids">East Mids</option>
+                            {% endif %}
+                            {% if recommendation.region == "North West" %}
+                            <option value="North West" selected>North West</option>
+                            {% else %}
+                            <option value="North West">North West</option>
+                            {% endif %}
+                            {% if recommendation.region == "North East" %}
+                            <option value="North East" selected>North East</option>
+                            {% else %}
+                            <option value="North East">North East</option>
+                            {% endif %}
+                            {% if recommendation.region == "Yorks & Hum" %}
+                            <option value="Yorks & Hum" selected>Yorks & Hum</option>
+                            {% else %}
+                            <option value="Yorks & Hum">Yorks & Hum</option>
+                            {% endif %}
+                            {% if recommendation.region == "East England" %}
+                            <option value="East England" selected>East England</option>
+                            {% else %}
+                            <option value="East England">East England</option>
+                            {% endif %}
+                            {% if recommendation.region == "London" %}
+                            <option value="London" selected>London</option>
+                            {% else %}
                             <option value="London">London</option>
+                            {% endif %}
+                            {% if recommendation.region == "Wales" %}
+                            <option value="Wales" selected>Wales</option>
+                            {% else %}
                             <option value="Wales">Wales</option>
+                            {% endif %}
+                            {% if recommendation.region == "Scotland" %}
+                            <option value="Scotland" selected>Scotland</option>
+                            {% else %}
                             <option value="Scotland">Scotland</option>
-                            <option value="Northern Ireland">N. Ireland</option>                            
+                            {% endif %}
+                            {% if recommendation.region == "N. Ireland" %}
+                            <option value="N. Ireland" selected>N. Ireland</option>
+                            {% else %}
+                            <option value="N. Ireland">N. Ireland</option>
+                            {% endif %}
                         </select>
                         <label for="region">Region</label>
                     </div>
@@ -74,18 +119,35 @@
                     <div class="input-field col s3">
                         <select id="occupants" name="occupants" class="validate" required>
                             <option value="" disabled>Select Occupants</option>
-                            {% if recommendation and occupants == recommendation.occupants %}
-                                <option value="{{ recommendation.occupants }}" selected>{{ recommendation.occupants }}</option>
+                            {% if recommendation.occupants == "2" %}
+                            <option value="2" selected>2</option>
+                            {% else %}
+                            <option value="2">2/option>
                             {% endif %}
-                            <option value="2">2</option>
+                            {% if recommendation.occupants == "3-4" %}
+                            <option value="3-4" selected>3-4</option>
+                            {% else %}
                             <option value="3-4">3-4</option>
+                            {% endif %}
+                            {% if recommendation.occupants == "5-6" %}
+                            <option value="5-6" selected>5-6</option>
+                            {% else %}
                             <option value="5-6">5-6</option>
+                            {% endif %}
+                            {% if recommendation.occupants == "7-8" %}
+                            <option value="7-8" selected>7-8</option>
+                            {% else %}
                             <option value="7-8">7-8</option>
+                            {% endif %}
+                            {% if recommendation.occupants == "9+" %}
+                            <option value="9+" selected>9+</option>
+                            {% else %}
                             <option value="9+">9+</option>
+                            {% endif %}                           
                         </select>
                         <label for="occupants">Occupants</label>
-                    </div>                  
-                
+                    </div>
+
                     <!-- Date Selection -->
                     <div class="input-field col s6">
                         <label for="recommendation_date"></label>
@@ -97,7 +159,8 @@
                 <!-- Location Name and map (map code adapted from Imran Sayed at Codeytek Academy youtube tutorial)-->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="location_name" name="location_name" class="validate" type="text" value="{{ recommendation.location_name }}" maxlength="120" required>
+                        <input id="location_name" name="location_name" class="validate" type="text"
+                            value="{{ recommendation.location_name }}" maxlength="120" required>
                         <label for="location_name">Address</label>
                     </div>
                 </div>
@@ -125,11 +188,12 @@
                 <!-- Recommendation Review-->
                 <div class="row">
                     <div class="input-field col s12">
-                        <textarea id="recommendation_review" name="recommendation_review" class="materialize-textarea validate" maxlength="2000"                            
+                        <textarea id="recommendation_review" name="recommendation_review"
+                            class="materialize-textarea validate" maxlength="2000"
                             required>{{ recommendation.recommendation_review }}</textarea>
                         <label for="recommendation_review">Review</label>
                     </div>
-                </div>                
+                </div>
 
                 <!-- Image Upload-->
                 <div class="row">
@@ -137,10 +201,12 @@
                         <input type="file" id="image" name="image">
                         <button type="button" id="upload-button">View</button>
                         <label for="image"></label>
-                        <span class="helper-text">Your current image is displayed below. If you don't intend to change the image, leave the file upload field as 'No file chosen'. Additionally, ensure that any new selection is a landscape image.</span>
-                    </div>                    
-                    <div class="col s12" id="uploaded-image"><img
-                        src="{{ recommendation.image_url }}" alt="Holiday Image"/>
+                        <span class="helper-text">Your current image is displayed below. If you don't intend to change
+                            the image, leave the file upload field as 'No file chosen'. Additionally, ensure that any
+                            new selection is a landscape image.</span>
+                    </div>
+                    <div class="col s12" id="uploaded-image"><img src="{{ recommendation.image_url }}"
+                            alt="Holiday Image" />
                     </div>
                     <!-- HIDDEN FROM USER-->
                     <!-- Mime Type -->
