@@ -27,15 +27,15 @@
         {% if recommendation.recommendation_name in ['Bristol Balloons!', 'Walking Wonderland', 'Beachfront Chalet', 'Yorkshire Retreat'] %}
         <div class="col s12 m3">
             <div class="card">
-                <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"></a>
-                <div class="card-image">
-                    <img src="{{ recommendation.image_url }}" alt="Image of holiday" />
-                    <div class="image-overlay"></div>
-                    <span class="card-title">{{ recommendation.recommendation_name}}</span>
-                    <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"
-                        class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
-                            class="fas fa-search"></i></a>
-                </div>
+                <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}">
+                    <div class="card-image">
+                        <img src="{{ recommendation.image_url }}" alt="Image of holiday" />
+                        <div class="image-overlay"></div>
+                        <span class="card-title">{{ recommendation.recommendation_name}}</span>
+                        <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"
+                            class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
+                                class="fas fa-search"></i></a>
+                    </div>
                 </a>
                 <div class="card-content">
                     <div><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
@@ -78,7 +78,8 @@
             <h3 class="fira-500 no-join-margin">Share A Gem</h3>
             <p>Welcome back, Explorer! Share your recent travel experiences with our community. Your recommendations
                 help others discover amazing holiday spots.</p>
-                <a href="{{ url_for('add_recommendation') }}" class="waves-effect waves-light btn btn-blue fira-500"><i class="fas fa-plus-square"></i> Recommend a Holiday</a>
+            <a href="{{ url_for('add_recommendation') }}" class="waves-effect waves-light btn btn-blue fira-500"><i
+                    class="fas fa-plus-square"></i> Recommend a Holiday</a>
             <p id="account-log">
                 Looking for your profile? <a class="" href="{{ url_for('profile')}}">Click Here!</a>
             </p>
