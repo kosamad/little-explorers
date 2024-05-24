@@ -376,11 +376,6 @@ Comments from User 2 (Pixel 7):
 - Action Taken: This user is visually impaired and might not have noticed the flash message that appears when a search yields no results. Therefore, I modified the route to achieve two improvements. Firstly, if the search returns no results, no cards are displayed, providing a clear indication of the absence of results. Additionally, I replaced the flash message with an alert div, which explicitly informs the user that no search results were found.
 
 Other flash messages have been designed to be more intuitive and guide the user to a page where they can infer what has happened. Therefore, I have left them unchanged.
-
-- Comment: "I couldn't submit the form unitl I realised that you had to click view on the image before submitting"
-
-- Action Taken: Prior to using cloudinary I was saving images directly to the repositroy. This didn't require the view button to be clicked and hence I chose the wording view, being an option for the user. However, Cloudinary's interface is different and requires the image to be visible on the page. Therefore I have changed the wording from "view" to "save".
-
 ____
 
 ## Testing Code Functions
