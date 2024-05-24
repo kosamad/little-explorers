@@ -46,14 +46,14 @@
             <div class="col s12 m4">
                 <div class="card">
                     <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}">
-                    <div class="card-image">
-                        <img src="{{ recommendation.image_url }}" alt="Image of holiday" />
-                        <div class="image-overlay"></div>
-                        <span class="card-title">{{ recommendation.recommendation_name}}</span>
-                        <a href="{{ url_for('view_recommendation', recommendation_id=recommendation.id)}}"
-                            class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
-                                class="fas fa-search"></i></a>
-                    </div>
+                        <div class="card-image">
+                            <img src="{{ recommendation.image_url }}" alt="Image of holiday" />
+                            <div class="image-overlay"></div>
+                            <span class="card-title">{{ recommendation.recommendation_name}}</span>
+                            <div class="btn-floating halfway-fab waves-effect waves-light btn-dgreen"><i
+                                    class="fas fa-search"></i><span class="sr-only">View full review page for
+                                    {{ recommendation.recommendation_name }}</span></div>
+                        </div>
                     </a>
                     <div class="card-content">
                         <div><i class="fa-solid fa-location-dot"></i> {{ recommendation.region }}</div>
@@ -79,10 +79,10 @@
                 </div>
                 <div class="center-align modal-btn">
                     <div class="row">
-                        <div>                            
+                        <div>
                             <a href="#!" class="modal-close btn btn-pink col s3 offset-s2">No</a>
                         </div>
-                        <div>                            
+                        <div>
                             <a href="{{ url_for('delete_recommendation', recommendation_id=recommendation.id ) }}"
                                 class="btn btn-lgreen col s3 offset-s2">Yes</a>
                         </div>
