@@ -24,7 +24,7 @@ document.getElementById('password_hash').addEventListener('blur', function () {
     function checkPasswordMatch() {
         var password = document.getElementById("password_hash").value;
         var confirmPassword = document.getElementById("password_hash2").value;
-        var errorDiv = document.getElementById("password_error");
+        var errorDiv = document.getElementById("password_error_confirm");
         var submitButton = document.getElementById("submit_button");
 
         if (password !== confirmPassword) {
