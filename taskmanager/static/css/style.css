@@ -334,7 +334,9 @@ main {
 #location_error,
 #review_error,
 #title_error,
-#recommendation_name_error { 
+#recommendation_name_error,
+#password_error,
+#username_error { 
   text-align: justify;
   color:red;
 }

@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('recommendation_name').addEventListener('blur', function () {
     var errorMessageWS = document.getElementById('recommendation_name_error');
     if (this.value.trim() === '') {
-      recommendation_name_error.style.display = "block";
+      errorMessageWS.style.display = "block";
     } else {
       errorMessageWS.style.display = 'none';
     }

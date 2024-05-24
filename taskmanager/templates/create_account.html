@@ -28,6 +28,7 @@
                         <input id="username" name="username" type="text" class="validate" autocomplete="name" required>
                         <label for="username">Username</label>
                     </div>
+                    <div class="col s12" id="username_error" style="display: none;"><p>The username cannot be empty or consist of whitespace characters only.</p></div>
                 </div>
                 <!-- Email address field -->
                 <div class="row">
@@ -44,6 +45,7 @@
                             class="validate" required>
                         <label for="password_hash">Password</label>
                     </div>
+                    <div class="col s12" id="password_error" style="display: none;"><p>The password cannot be empty or consist of whitespace characters only.</p></div>
                 </div>
                 <!-- Repeat password field -->
                 <div class="row">
