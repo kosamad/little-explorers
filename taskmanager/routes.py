@@ -78,10 +78,23 @@ def sign_out():
 @app.route("/create_account", methods=['GET', 'POST'])
 def create_account():
     if request.method == 'POST':
-        username = request.form.get('username')
-        email = request.form.get('email')
+        # strip method removes whitespace
+        username = request.form.get('username').strip()
+        email = request.form.get('email').strip()
         is_admin = request.form.get("is_admin", "").lower() == "true"
-        password = request.form.get('password_hash')
+        password = request.form.get('password_hash').strip()        
+
+        # Check for empty or whitespace-only fields
+        if not username:
+            flash("Username cannot be empty or whitespace only.", "error")
+            return redirect(url_for("create_account"))
+        if not email:
+            flash("Email cannot be empty or whitespace only.", "error")
+            return redirect(url_for("create_account"))
+        if not password:
+            flash("Password cannot be empty or whitespace only.", "error")
+            return redirect(url_for("create_account"))
+
         # sha256 is an algorithm to generate the hashed password
         password_hash = generate_password_hash(password, "sha256")
 
@@ -223,14 +236,26 @@ def add_recommendation():
         if existing_recommendation:
             flash("Title exists. Please choose again.", "error")
         else:
+            # Check if fields are not empty or whitespace only
+            recommendation_name = request.form.get("recommendation_name").strip()
+            location_name = request.form.get("location_name").strip()
+            recommendation_review = request.form.get("recommendation_review").strip()
+            if not recommendation_name:
+                flash("Recommendation name cannot be empty or whitespace only.", "error")
+                return redirect(url_for("add_recommendation"))
+            if not location_name:
+                flash("Location name cannot be empty or whitespace only.", "error")
+                return redirect(url_for("add_recommendation"))
+            if not recommendation_review:
+                flash("Recommendation review cannot be empty or whitespace only.", "error")
+                return redirect(url_for("add_recommendation"))
+
             # Create a new Recommendation object and add it to the database
             recommendation = Recommendation(
-                recommendation_name=request.form.get("recommendation_name"),
-                location_name=request.form.get("location_name"),
+                recommendation_name=recommendation_name,
+                location_name=location_name,
+                recommendation_review=recommendation_review,
                 occupants=request.form.get("occupants"),
-                recommendation_review=request.form.get(
-                    "recommendation_review"
-                ),
                 region=request.form.get("region"),
                 mimetype=mimetype,
                 image_url=image_url,
@@ -242,6 +267,7 @@ def add_recommendation():
             )
             db.session.add(recommendation)
             db.session.commit()
+            flash('Recommendation added successfully!', 'success')
             return redirect(url_for("profile"))
     return render_template(
         'add_recommendation.html',
@@ -293,24 +319,35 @@ def edit_recommendation(recommendation_id):
         if existing_recommendation:
             flash("Title already exists.", "error")
         else:
-            # Update the existing Recommendation object
-            recommendation.recommendation_name = request.form.get(
-                "recommendation_name")
-            recommendation.location_name = request.form.get("location_name")
-            recommendation.occupants = request.form.get("occupants")
-            recommendation.recommendation_review = request.form.get(
-                "recommendation_review")
-            recommendation.region = request.form.get("region")
-            recommendation.mimetype = mimetype
-            recommendation.image_url = image_url
-            recommendation.recommendation_date = request.form.get(
-                "recommendation_date")
-            recommendation.holiday_id = request.form.get("holiday_id")
-            recommendation.map_long = request.form.get("map_long")
-            recommendation.map_lat = request.form.get("map_lat")
-            recommendation.user_id = session.get('user_id')
-            db.session.commit()
-            return redirect(url_for("profile"))
+            # Check if fields are not empty or whitespace only
+            recommendation_name = request.form.get("recommendation_name").strip()
+            location_name = request.form.get("location_name").strip()
+            recommendation_review = request.form.get("recommendation_review").strip()         
+            if not recommendation_name:
+                flash("Recommendation name cannot be empty or whitespace only.", "error")
+                return redirect(url_for("add_recommendation"))
+            if not location_name:
+                flash("Location name cannot be empty or whitespace only.", "error")
+                return redirect(url_for("add_recommendation"))
+            if not recommendation_review:
+                flash("Recommendation review cannot be empty or whitespace only.", "error")
+                return redirect(url_for("add_recommendation"))
+            else:   
+                # Update the existing Recommendation object
+                recommendation.recommendation_name = recommendation_name
+                recommendation.location_name = location_name
+                recommendation.recommendation_review = recommendation_review
+                recommendation.occupants = request.form.get("occupants")
+                recommendation.region = request.form.get("region")
+                recommendation.mimetype = mimetype
+                recommendation.image_url = image_url
+                recommendation.recommendation_date = request.form.get("recommendation_date")
+                recommendation.holiday_id = request.form.get("holiday_id")
+                recommendation.map_long = request.form.get("map_long")
+                recommendation.map_lat = request.form.get("map_lat")
+                recommendation.user_id = session.get('user_id')               
+                db.session.commit()
+                return redirect(url_for("profile"))
     return render_template(
         'edit_recommendation.html',
         recommendation=recommendation,
@@ -331,13 +368,28 @@ def holiday_types():
 @app.route("/add_holiday_types", methods=["GET", "POST"])
 def add_holiday_types():
     if request.method == "POST":
-        holiday_type = Holiday(
-            holiday_name=request.form.get("holiday_name"),
-            selected_icon=request.form.get("selected_icon"))
+        if request.method == "POST":
+            holiday_name = request.form.get("holiday_name").strip()
+            selected_icon = request.form.get("selected_icon")
+        
+            # Check if holiday name is not empty or whitespace-only
+            if not holiday_name:
+                flash("Holiday name cannot be empty or whitespace only.", "error")
+                return redirect(url_for("add_holiday_types"))
+        
+            # Check if holiday name already exists in the database
+            existing_holiday = Holiday.query.filter_by(holiday_name=holiday_name).first()
+            if existing_holiday:
+                flash("Holiday name already exists. Please choose a different name.", "error")
+                return redirect(url_for("add_holiday_types"))
+        
+        # Create a new Holiday object and add it to the database
+        holiday_type = Holiday(holiday_name=holiday_name, selected_icon=selected_icon)
         db.session.add(holiday_type)
-        db.session.commit()
-        return redirect(url_for("holiday_types"))
-    return render_template('add_holiday_types.html')
+        db.session.commit()        
+        flash("Holiday type added successfully!", "success")
+        return redirect(url_for("holiday_types"))    
+    return render_template('add_holiday_types.html')        
 
 
 # Edit holiday types (name and icon)
@@ -345,10 +397,22 @@ def add_holiday_types():
 def edit_holiday_types(holiday_id):
     holiday_type = Holiday.query.get_or_404(holiday_id)
     if request.method == "POST":
-        holiday_type.holiday_name = request.form.get("holiday_name")
+        holiday_type.holiday_name = request.form.get("holiday_name").strip()
         holiday_type.selected_icon = request.form.get("selected_icon")
+        if not holiday_name:
+            flash("Holiday name cannot be empty or whitespace only.", "error")
+            return redirect(url_for("edit_holiday_types", holiday_id=holiday_id))
+        if holiday_name != holiday_type.holiday_name:
+            existing_holiday = Holiday.query.filter_by(holiday_name=holiday_name).first()
+            if existing_holiday:
+                flash("Holiday name already exists. Please choose again.", "error")
+                return redirect(url_for("edit_holiday_types", holiday_id=holiday_id))
+        # Update the holiday type with the new name and icon
+        holiday_type.holiday_name = holiday_name
+        holiday_type.selected_icon = selected_icon
         db.session.commit()
-        return redirect(url_for("holiday_types"))
+        flash("Holiday type updated successfully!", "success")
+        return redirect(url_for("holiday_types"))            
     return render_template(
         'edit_holiday_types.html',
         holiday_type=holiday_type)
