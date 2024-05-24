@@ -324,14 +324,11 @@ def edit_recommendation(recommendation_id):
             location_name = request.form.get("location_name").strip()
             recommendation_review = request.form.get("recommendation_review").strip()         
             if not recommendation_name:
-                flash("Recommendation name cannot be empty or whitespace only.", "error")
-                return redirect(url_for("add_recommendation"))
-            if not location_name:
-                flash("Location name cannot be empty or whitespace only.", "error")
-                return redirect(url_for("add_recommendation"))
-            if not recommendation_review:
-                flash("Recommendation review cannot be empty or whitespace only.", "error")
-                return redirect(url_for("add_recommendation"))
+                flash("Recommendation name cannot be empty or whitespace only.", "error")                
+            elif not location_name:
+                flash("Location name cannot be empty or whitespace only.", "error")                
+            elif not recommendation_review:
+                flash("Recommendation review cannot be empty or whitespace only.", "error")                
             else:   
                 # Update the existing Recommendation object
                 recommendation.recommendation_name = recommendation_name

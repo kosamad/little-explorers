@@ -334,8 +334,8 @@ main {
 #location_error,
 #review_error,
 #title_error,
-#recommendation_name_error {
-  margin: 10px;
+#recommendation_name_error { 
+  text-align: justify;
 }
 
 /* View Recommendation Full Page */
