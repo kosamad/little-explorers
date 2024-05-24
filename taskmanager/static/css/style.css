@@ -331,6 +331,13 @@ main {
   min-height: 100px;
 }
 
+#location_error,
+#review_error,
+#title_error,
+#recommendation_name_error {
+  margin: 10px;
+}
+
 /* View Recommendation Full Page */
 
 .rec-full-image {

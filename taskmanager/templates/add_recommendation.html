@@ -31,8 +31,9 @@
                             oninput="checkMaxLength(this)">
                         <label for="recommendation_name">Holiday Title</label>
                     </div>
-                    <div class="s12 m3" id="errorMessage" style="color: red; display: none;">Recommendation title
+                    <div class="s12 m3" id="title_error" style="color: red; display: none;">Recommendation title
                         already exists. Please choose a different title.</div>
+                    <div class="s12 m3" id="recommendation_name_error" style="color: red; display: none;"><p>Recommendation name cannot be empty or consist of whitespace characters only</p></div>
                 </div>
                 <!-- Holiday Type Id (User select from name) -->
                 <div class="row">
@@ -96,6 +97,7 @@
                             placeholder="start typing to search" maxlength="120" required autocomplete="on">
                         <label for="location_name">Address</label>
                     </div>
+                    <div class="s12" id="location_error" style="color: red; display: none;"><p>Location name cannot be empty or consist of whitespace characters only</p></div>
                 </div>
 
                 <div>Please check the location on the map and either move the marker or re-type your location.</div>
@@ -120,6 +122,7 @@
 
                 <!-- Recommendation Review-->
                 <div class="row">
+                    <div class="s12 m3" id="review_error" style="color: red; display: none;"><p>the reveiw cannot be empty or consist of whitespace characters only</p></div>
                     <div class="input-field col s12">
                         <textarea id="recommendation_review" name="recommendation_review"
                             class="materialize-textarea validate"
