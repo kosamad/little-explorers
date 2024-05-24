@@ -675,10 +675,6 @@ Solution: Google Maps has undergone an update as of April 2024, introducing chan
 
 **Bug 3**
 
-Issue:
-
-Solution:
-
 Issue: Map Update after a search (see **note below)
 
 Solution: A for loop was utlised to update each marker as their information would be updated individually. The inspiration for this can from this [Youtube tutorial]( https://www.youtube.com/watch?v=HXKDyZ_W6rI)

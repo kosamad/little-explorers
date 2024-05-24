@@ -161,7 +161,7 @@ All pages will consist of a logo and navigation bar, enabling users to navigate 
 
 Additionally, each page will feature a footer providing links to social media platforms, a site disclaimer, and a contact link for reaching the site administrators.
 
-The content on each page is customised to its specific purpose but maintains a consistent design language across all pages, ensuring seamless flow and enhancing the user experience. Further details about the features on each page are outlined in the ????????[finished site]()section below. 
+The content on each page is customised to its specific purpose but maintains a consistent design language across all pages, ensuring seamless flow and enhancing the user experience. Further details about the features on each page are outlined in the [finished site](README.md#finished-site-features)section below. 
 
 <details><summary>Home Page</summary>
 <img src="documentation/design_images/wireframes/home.png">
