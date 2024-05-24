@@ -336,6 +336,7 @@ main {
 #title_error,
 #recommendation_name_error { 
   text-align: justify;
+  color:red;
 }
 
 /* View Recommendation Full Page */

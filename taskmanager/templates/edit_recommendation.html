@@ -27,10 +27,10 @@
                             class="validate" required oninput="checkMaxLength(this)">
                         <label for="recommendation_name">Holiday Title</label>
                     </div>
-                    <div class="col s9" id="title_error" style="color: red; display: none;">Recommendation title
+                    <div class="col s9" id="title_error" style="display: none;">Recommendation title
                         already exists. Please choose a different title.</div>
-                    <div class="col s9" id="recommendation_name_error" style="color: red; display: none;">
-                        <p>Recommendation name cannot be empty or consist of whitespace characters only</p>
+                    <div class="col s9" id="recommendation_name_error" style="display: none;">
+                        <p>Recommendation name cannot be empty or consist of whitespace characters only.</p>
                     </div>
                 </div>
                 <!-- Holiday Type Id (User select from name) -->
@@ -167,7 +167,7 @@
                         <input id="location_name" name="location_name" class="validate" type="text"
                             value="{{ recommendation.location_name }}" maxlength="120" required>
                         <label for="location_name">Address</label>
-                        <div class="col s12" id="location_error" style="color: red; display: none;"><p>Location name cannot be empty or consist of whitespace characters only</p></div>
+                        <div class="col s12" id="location_error" style="display: none;"><p>Location name cannot be empty or consist of whitespace characters only.</p></div>
                     </div>
                 </div>
 
@@ -193,7 +193,7 @@
 
                 <!-- Recommendation Review-->
                 <div class="row">
-                    <div class="col s12" id="review_error" style="color: red; display: none;"><p>The reveiw cannot be empty or consist of whitespace characters only.</p></div>
+                    <div class="col s12" id="review_error" style="display: none;"><p>The reveiw cannot be empty or consist of whitespace characters only.</p></div>
                     <div class="input-field col s12">
                         <textarea id="recommendation_review" name="recommendation_review"
                             class="materialize-textarea validate" maxlength="2000"
