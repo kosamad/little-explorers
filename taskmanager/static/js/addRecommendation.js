@@ -72,10 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-
-
-
-
   //Check function sends a Post request to the server to check if the name already exits.
   //JSON response from check recommendation route gives a exists propery (with a value True or False)
   // when xhr has completed, reponse is parsed as JSON and error message is displayed if the title already exists.
@@ -104,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
       recommendation_name: recommendationName
     }));
   }
-
 
   // Function to check if the select options have been changed by the user and that mime type = a valid image format.
   function checkSelectFields() {
