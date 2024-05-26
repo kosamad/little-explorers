@@ -270,7 +270,7 @@ All forms across our site utilize Materialize form inputs, ensuring a consistent
 
 Additionally, our forms feature built-in validation prompts that guide users to input valid email addresses (containing '@') when required, promoting data accuracy and submission reliability.
 
-Furthermore, for elements lacking built-in Materialize checks, custom programming has been implemented to enhance the user experience. These checks ensure all form elements are completed before submission. In instances where input is missing, clear messages prompt users to fill in the required fields or make necessary modifications, facilitating form completion.
+Furthermore, for elements lacking built-in Materialize checks, custom programming has been implemented to enhance the user experience. These checks ensure all form elements are completed before submission and do contain only whitespace (where this is applicable). In instances where input is missing, clear messages prompt users to fill in the required fields or make necessary modifications, facilitating form completion.
 
 All buttons/links change colour when they are hovered over to imporve the user experience.
 
