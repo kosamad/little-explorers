@@ -153,7 +153,7 @@ ___
 
 ## Performance (Lighthouse)
 
-The site was run through the Google Chrome Developer tool Lighthouse to assess it's performance. The scores for each page are listed below. 
+The site was run through the Google Chrome Developer tool Lighthouse to assess it's performance. The scores for each page are listed below. Unless Otherwise stated, the accessibility issues stem from the default styles set by Materialize for form inputs (lack sufficient contrast). The heading elements not being in sequential order result from extending the base.html template, and an h4 link to the contact page, which doesn't always descend sequentially on all pages.
 
 <details><summary>Home (index.html)</summary>
 <img src="documentation/testing/images/validation/lighthouse_home.PNG">
@@ -164,31 +164,31 @@ The site was run through the Google Chrome Developer tool Lighthouse to assess i
 <img src="documentation/testing/images/validation/lighthouse_recommendations.PNG">
 <img src="documentation/testing/images/validation/lighthouse_recommendations_mobile.PNG">
 
-Accesibiltiy issue comes from the Materialze set styles and that links do not have a discernible name. However I have already addressd this and set screen reader only classes which describe each link using the recommendation name.
-
 </details>
 
 <details><summary>Contact</summary>
-<img src="documentation/testing/images/validation/lighthouse_contact.PNG">
+<img src="documentation/testing/images/validation/lighthouse_contactt.PNG">
 <img src="documentation/testing/images/validation/lighthouse_contact_mobile.PNG">
+
+
 </details>
 
 <details><summary>Add Holiday</summary>
-<img src="documentation/testing/images/validation/lighthouse_addholiday.PNG">
-<img src="documentation/testing/images/validation/lighthouse_addholiday_mobile.PNG">
+<img src="documentation/testing/images/validation/lighthouse_add_recommendation.PNG">
+<img src="documentation/testing/images/validation/lighthouse_add_recommendation_mobile.PNG">
 
-Accesibiltiy issue comes from the Materialze set styles on form. 
+Additional accesibility issue from set styles by the Google Maps API. 
 
 </details>
 
 <details><summary>Holiday Types</summary>
-<img src="documentation/testing/images/validation/lighthouse_holidaytypes.PNG">
-<img src="documentation/testing/images/validation/lighthouse_holidaytypes_mobile.PNG">
+<img src="documentation/testing/images/validation/lighthouse_holiday_types.PNG">
+<img src="documentation/testing/images/validation/lighthouse_holiday_types_mobile.PNG">
 </details>
 
 <details><summary>Add Holiday Type</summary>
-<img src="documentation/testing/images/validation/lighthouse_addholidaytype.PNG">
-<img src="documentation/testing/images/validation/lighthouse_addholidaytype_mobile.PNG">
+<img src="documentation/testing/images/validation/lighthouse_add_holiday_types.PNG">
+<img src="documentation/testing/images/validation/lighthouse_add_holiday_types_mobile.PNG">
 </details>
 
 <details><summary>Users</summary>
@@ -197,8 +197,8 @@ Accesibiltiy issue comes from the Materialze set styles on form.
 </details>
 
 <details><summary>Create Account</summary>
-<img src="documentation/testing/images/validation/lighthouse_createaccount.PNG">
-<img src="documentation/testing/images/validation/lighthouse_createaccount_mobile.PNG">
+<img src="documentation/testing/images/validation/lighthouse_create_account.PNG">
+<img src="documentation/testing/images/validation/lighthouse_create_account_mobile.PNG">
 </details>
 
 <details><summary>Profile</summary>
@@ -207,8 +207,8 @@ Accesibiltiy issue comes from the Materialze set styles on form.
 </details>
 
 <details><summary>Sign In</summary>
-<img src="documentation/testing/images/validation/lighthouse_signin.PNG">
-<img src="documentation/testing/images/validation/lighthouse_signin_mobile.PNG">
+<img src="documentation/testing/images/validation/lighthouse_sign_in.PNG">
+<img src="documentation/testing/images/validation/lighthouse_sign_in_mobile.PNG">
 </details>
 
 ___
