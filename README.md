@@ -5,7 +5,11 @@
 
 [View the live website here - Little Explorers](https://little-explorers-c2ba86cc535f.herokuapp.com/)
 
-Little Explorers is a user-friendly website dedicated to effortlessly browsing and recommending child-friendly holiday destinations. Searching through the recommendations is simplified with an intuitive filter mechanism. Users possess the capability to view, edit, and delete their recommendations effortlessly, while also having the convenience to contact the site's administrators for any inquiries. Furthermore, the site is fortified against malicious content through a "report a post" feature, enabling users to flag inappropriate content, which administrators can promptly review and remove as necessary.
+Little Explorers is a holiday recommendation site where users can discover and share family freindly UK holiday ideas. The platform offers search functionality by keyword or holiday type, a map view powered by the Google Maps API, and the ability for users to manage their recommendations. Specific admin profiles allow staff to easliy manage site content. Throughout the project, a strong emphasis was placed on user experience, ensuring the site is intuitive, visually appealing, and accessible, with well-placed buttons and clear features that enhance user engagement.
+
+This site was built using Flask, SQLAlchemy, and PostgreSQL, and incorporates HTML, CSS, JavaScript, and Python. 
+
+Please note that the Google Maps API has reached its 90-day free trial, and the map now displays a "developer" view with limited features, most notably the inability to zoom.
 
 This project is my third Milestone Project as part of the Code Institute's Diploma in Web Application Development. 
 
