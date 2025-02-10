@@ -602,6 +602,8 @@ Please see the separate [TESTING.md](TESTING.md) file for testing carried out on
 
 Little Explorers was created from the base [GitPod template](https://github.com/Code-Institute-Org/gitpod-full-template) by Code Institue. 
 
+*** Elephant SQL has reached end of life. The database was migrated to a database created using the CI database creator after submission of this project. 
+
 To integrate and host the datbase utlilise ElephantSQL:
 
 1. Create an account with Elephant SQL and Log In.
